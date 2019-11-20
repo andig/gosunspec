@@ -1,6 +1,4 @@
 language: go
 
-go:
-  - master
-
-script: go test -v ./impl ./memory ./xml ./modbus ./layout
+script:
+- go test -v ./impl ./memory ./xml ./modbus ./layout
