@@ -128,15 +128,18 @@ func newBlock(blockSmdx *smdx.BlockElement, driver spi.Driver, fixedBlock *block
 		var sp *point
 		var ok bool
 
-		if pe.ScaleFactor != "" {
-			// scaleFactor in same block?
-			if sfp, ok = b.points[pe.ScaleFactor]; !ok && fixedBlock != nil {
-				// scaleFactor for repeated block found in fixed block?
-				sfp = fixedBlock.points[pe.ScaleFactor]
+		if sfp, ok = b.points[pe.ScaleFactor]; ok {
+			sp = newPoint(pe, sfp, b)
+		} else if pe.ScaleFactor != "" && fixedBlock != nil {
+			if sfp, ok = fixedBlock.points[pe.ScaleFactor]; ok {
+				sp = newPoint(pe, sfp, b)
+			} else {
+				sp = newPoint(pe, nil, b)
 			}
+		} else {
+			sp = newPoint(pe, nil, b)
 		}
 
-		sp = newPoint(pe, sfp, b)
 		b.points[pe.Id] = sp
 	}
 
