@@ -1,11 +1,12 @@
 package impl
 
 import (
-	"github.com/andig/gosunspec"
+	"log"
+
+	sunspec "github.com/andig/gosunspec"
 	"github.com/andig/gosunspec/smdx"
 	"github.com/andig/gosunspec/spi"
 	"github.com/andig/gosunspec/typelabel"
-	"log"
 )
 
 func NewArray() spi.ArraySPI {
@@ -68,7 +69,6 @@ func NewContiguousModel(me *smdx.ModelElement, bound uint16, phys spi.Driver) sp
 		// apply such truncations in this case.
 		m.MustBlock(0).(spi.BlockSPI).SetLength(bound)
 	} else {
-
 		// If the model length is not strictly identical to the canaonical
 		// length of a model instance with 'nr' repeat blocks, then report
 		// the inconsistency but don't otherwise do anything. It is likely
@@ -84,8 +84,7 @@ func NewContiguousModel(me *smdx.ModelElement, bound uint16, phys spi.Driver) sp
 // Answer a new model with nr repeats of the repating block, if any. The caller
 // determines the number of repeats.
 func NewModel(me *smdx.ModelElement, nr int, driver spi.Driver) spi.ModelSPI {
-
-	blocks := []*block{newBlock(&me.Blocks[0], driver)}
+	blocks := []*block{newBlock(&me.Blocks[0], driver, nil)}
 
 	m := &model{
 		smdx:   me,
@@ -102,7 +101,9 @@ func NewModel(me *smdx.ModelElement, nr int, driver spi.Driver) spi.ModelSPI {
 }
 
 // Answer a new block.
-func newBlock(blockSmdx *smdx.BlockElement, driver spi.Driver) *block {
+// The fixedBlock param is used to find scale factors that are
+// outside of a repeating block.
+func newBlock(blockSmdx *smdx.BlockElement, driver spi.Driver, fixedBlock *block) *block {
 	b := &block{
 		smdx:   blockSmdx,
 		points: map[string]*point{},
@@ -126,18 +127,23 @@ func newBlock(blockSmdx *smdx.BlockElement, driver spi.Driver) *block {
 		var sfp sunspec.Point
 		var sp *point
 		var ok bool
-		if sfp, ok = b.points[pe.ScaleFactor]; ok {
-			sp = newPoint(pe, sfp, b)
-		} else {
-			sp = newPoint(pe, nil, b)
+
+		if pe.ScaleFactor != "" {
+			// scaleFactor in same block?
+			if sfp, ok = b.points[pe.ScaleFactor]; !ok && fixedBlock != nil {
+				// scaleFactor for repeated block found in fixed block?
+				sfp = fixedBlock.points[pe.ScaleFactor]
+			}
 		}
+
+		sp = newPoint(pe, sfp, b)
 		b.points[pe.Id] = sp
 	}
 
 	return b
 }
 
-// Answer a new ppint.
+// Answer a new point.
 func newPoint(smdx *smdx.PointElement, scaleFactor sunspec.Point, b *block) *point {
 	return &point{
 		smdx:        smdx,

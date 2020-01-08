@@ -1,7 +1,7 @@
 package impl
 
 import (
-	"github.com/andig/gosunspec"
+	sunspec "github.com/andig/gosunspec"
 	"github.com/andig/gosunspec/smdx"
 	"github.com/andig/gosunspec/spi"
 )
@@ -44,8 +44,9 @@ func (m *model) Do(f func(b sunspec.Block)) {
 }
 
 func (m *model) AddRepeat() error {
+	fixed := m.blocks[0]
 	repeat := &m.smdx.Blocks[len(m.smdx.Blocks)-1]
-	m.blocks = append(m.blocks, newBlock(repeat, m.driver))
+	m.blocks = append(m.blocks, newBlock(repeat, m.driver, fixed))
 	return nil
 }
 

@@ -1,11 +1,12 @@
 package impl
 
 import (
-	"github.com/andig/gosunspec"
+	"sort"
+
+	sunspec "github.com/andig/gosunspec"
 	"github.com/andig/gosunspec/smdx"
 	"github.com/andig/gosunspec/spi"
 	"github.com/andig/gosunspec/typelabel"
-	"sort"
 )
 
 type block struct {
@@ -71,8 +72,7 @@ func (b *block) SetLength(l uint16) {
 }
 
 // Plan expands and re-orders the specified set of points, if any, then returns a
-// slice that is ordered in the order that they should be applied to the
-// model.
+// slice that is ordered in the order that they should be applied to the model.
 //
 // If no points are specified, then the set is expanded to all points in the
 // block. If any points with scale factors are specified, then the scale
@@ -84,6 +84,10 @@ func (b *block) SetLength(l uint16) {
 // Then the points are sorted so scale factors appear first in the list,
 // then non-scale factors and then within each section, the points
 // are sorted in offset order.
+//
+// Plan operates on a single block and is this unable- in case of repeating blocks-
+// to include scale factors from the fixed block. It is application responsibility
+// to ensure fixed blocks containing scale factors are read/written as needed.
 func (b *block) Plan(pointIds ...string) ([]spi.PointSPI, error) {
 	points := []spi.PointSPI{}
 
