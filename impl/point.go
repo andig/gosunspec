@@ -128,20 +128,32 @@ func (p *point) NotImplemented() bool {
 		if v == uint64(math.MaxUint64) {
 			notImplemented = true
 		}
+	case sunspec.Acc16:
+		if v == sunspec.Acc16(math.MaxUint16) {
+			notImplemented = true
+		}
+	case sunspec.Acc32:
+		if v == sunspec.Acc32(math.MaxUint32) {
+			notImplemented = true
+		}
+	case sunspec.Acc64:
+		if v == sunspec.Acc64(math.MaxUint64) {
+			notImplemented = true
+		}
 	case sunspec.Enum16:
-		if uint16(v) == uint16(math.MaxUint16) {
+		if v == sunspec.Enum16(math.MaxUint16) {
 			notImplemented = true
 		}
 	case sunspec.Enum32:
-		if uint32(v) == uint32(math.MaxUint32) {
+		if v == sunspec.Enum32(math.MaxUint32) {
 			notImplemented = true
 		}
 	case sunspec.Bitfield16:
-		if uint16(v) == uint16(math.MaxUint16) {
+		if v == sunspec.Bitfield16(math.MaxUint16) {
 			notImplemented = true
 		}
 	case sunspec.Bitfield32:
-		if uint32(v) == uint32(math.MaxUint32) {
+		if v == sunspec.Bitfield32(math.MaxUint32) {
 			notImplemented = true
 		}
 	case sunspec.Ipaddr:
