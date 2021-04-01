@@ -27,7 +27,7 @@ func (s *SunSpecLayout) Open(a AddressSpaceDriver) (spi.ArraySPI, error) {
 		if id, err := a.ReadWords(b, 2); err != nil {
 			// if one query fails with network error including timeout,
 			// then assume they all will.
-			if err, ok := err.(net.Error); ok && !err.Temporary() {
+			if err, ok := err.(net.Error); ok {
 				return nil, err
 			}
 			continue
