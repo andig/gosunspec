@@ -51,7 +51,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 8,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: NomRmpUpRte, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "Rmp_SF", Units: "Pct", Access: "rw", Length: 1, Label: "Ramp Up Rate", Description: "Ramp up rate as a percentage of max current."},
 					{Id: NomRmpDnRte, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "Rmp_SF", Units: "Pct", Access: "rw", Length: 1, Label: "NomRmpDnRte", Description: "Ramp down rate as a percentage of max current."},

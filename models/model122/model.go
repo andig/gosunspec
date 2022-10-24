@@ -75,7 +75,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 44,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: PVConn, Offset: 0, Type: typelabel.Bitfield16, Access: "r", Length: 1, Mandatory: true, Label: "PVConn", Description: "PV inverter present/available status. Enumerated value."},
 					{Id: StorConn, Offset: 1, Type: typelabel.Bitfield16, Access: "r", Length: 1, Mandatory: true, Label: "StorConn", Description: "Storage inverter present/available status. Enumerated value."},

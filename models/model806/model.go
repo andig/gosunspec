@@ -23,11 +23,11 @@ const (
 )
 
 type Block806Repeat struct {
-	BatStTBD uint16 `sunspec:"offset=0"`
+	BatStTBD uint16 `sunspec:"offset=0,len=1,access=r"`
 }
 
 type Block806 struct {
-	BatTBD uint16 `sunspec:"offset=0"`
+	BatTBD uint16 `sunspec:"offset=0,len=1,access=r"`
 
 	Repeats []Block806Repeat
 }
@@ -45,14 +45,14 @@ func init() {
 			{
 				Length: 1,
 				Points: []smdx.PointElement{
-					{Id: BatTBD, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Battery Points To Be Determined", Description: ""},
+					{Id: BatTBD, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Battery Points To Be Determined", Description: ""},
 				},
 			},
 			{Name: "battery_string",
 				Length: 1,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: BatStTBD, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Battery String Points To Be Determined", Description: ""},
+					{Id: BatStTBD, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Battery String Points To Be Determined", Description: ""},
 				},
 			},
 		}})

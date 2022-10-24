@@ -54,42 +54,42 @@ const (
 )
 
 type Block64020Repeat struct {
-	SerialNumber string `sunspec:"offset=0,len=9"`
-	Firmware     string `sunspec:"offset=9,len=6"`
-	Hardware     uint16 `sunspec:"offset=15"`
+	SerialNumber string `sunspec:"offset=0,len=9,access=r"`
+	Firmware     string `sunspec:"offset=9,len=6,access=r"`
+	Hardware     uint16 `sunspec:"offset=15,len=1,access=r"`
 }
 
 type Block64020 struct {
-	Aux0Tmp           int16               `sunspec:"offset=0"`
-	Aux1Tmp           int16               `sunspec:"offset=1"`
-	Aux2Tmp           int16               `sunspec:"offset=2"`
-	Aux3Tmp           int16               `sunspec:"offset=3"`
-	Aux4Tmp           int16               `sunspec:"offset=4"`
-	ProbeTmp          int16               `sunspec:"offset=6"`
-	MainTmp           int16               `sunspec:"offset=5"`
-	SensorV_SF        sunspec.ScaleFactor `sunspec:"offset=7"`
-	SensorA_SF        sunspec.ScaleFactor `sunspec:"offset=8"`
-	SensorHz_SF       sunspec.ScaleFactor `sunspec:"offset=9"`
-	Sensor1Voltage    int16               `sunspec:"offset=10,sf=SensorV_SF"`
-	Sensor2Voltage    int16               `sunspec:"offset=11,sf=SensorV_SF"`
-	Sensor3Voltage    int16               `sunspec:"offset=12,sf=SensorV_SF"`
-	Sensor4Voltage    int16               `sunspec:"offset=13,sf=SensorV_SF"`
-	Sensor5Voltage    int16               `sunspec:"offset=14,sf=SensorV_SF"`
-	Sensor6Voltage    int16               `sunspec:"offset=15,sf=SensorV_SF"`
-	Sensor7Voltage    int16               `sunspec:"offset=16,sf=SensorV_SF"`
-	Sensor1Current    int16               `sunspec:"offset=17,sf=SensorA_SF"`
-	Sensor2Current    int16               `sunspec:"offset=18,sf=SensorA_SF"`
-	Sensor3Current    int16               `sunspec:"offset=19,sf=SensorA_SF"`
-	Sensor4Current    int16               `sunspec:"offset=20,sf=SensorA_SF"`
-	Sensor5Current    int16               `sunspec:"offset=21,sf=SensorA_SF"`
-	Sensor6Current    int16               `sunspec:"offset=22,sf=SensorA_SF"`
-	Sensor7Current    int16               `sunspec:"offset=23,sf=SensorA_SF"`
-	Sensor8           uint16              `sunspec:"offset=24,sf=SensorHz_SF"`
-	Relay1            uint16              `sunspec:"offset=25"`
-	Relay2            uint16              `sunspec:"offset=26"`
-	Relay3            uint16              `sunspec:"offset=27"`
-	ResetAccumulators uint16              `sunspec:"offset=28"`
-	Reset             uint16              `sunspec:"offset=29"`
+	Aux0Tmp           int16               `sunspec:"offset=0,len=1,access=r"`
+	Aux1Tmp           int16               `sunspec:"offset=1,len=1,access=r"`
+	Aux2Tmp           int16               `sunspec:"offset=2,len=1,access=r"`
+	Aux3Tmp           int16               `sunspec:"offset=3,len=1,access=r"`
+	Aux4Tmp           int16               `sunspec:"offset=4,len=1,access=r"`
+	ProbeTmp          int16               `sunspec:"offset=5,len=1,access=r"`
+	MainTmp           int16               `sunspec:"offset=6,len=1,access=r"`
+	SensorV_SF        sunspec.ScaleFactor `sunspec:"offset=7,len=1,access=r"`
+	SensorA_SF        sunspec.ScaleFactor `sunspec:"offset=8,len=1,access=r"`
+	SensorHz_SF       sunspec.ScaleFactor `sunspec:"offset=9,len=1,access=r"`
+	Sensor1Voltage    int16               `sunspec:"offset=10,len=1,sf=SensorV_SF,access=r"`
+	Sensor2Voltage    int16               `sunspec:"offset=11,len=1,sf=SensorV_SF,access=r"`
+	Sensor3Voltage    int16               `sunspec:"offset=12,len=1,sf=SensorV_SF,access=r"`
+	Sensor4Voltage    int16               `sunspec:"offset=13,len=1,sf=SensorV_SF,access=r"`
+	Sensor5Voltage    int16               `sunspec:"offset=14,len=1,sf=SensorV_SF,access=r"`
+	Sensor6Voltage    int16               `sunspec:"offset=15,len=1,sf=SensorV_SF,access=r"`
+	Sensor7Voltage    int16               `sunspec:"offset=16,len=1,sf=SensorV_SF,access=r"`
+	Sensor1Current    int16               `sunspec:"offset=17,len=1,sf=SensorA_SF,access=r"`
+	Sensor2Current    int16               `sunspec:"offset=18,len=1,sf=SensorA_SF,access=r"`
+	Sensor3Current    int16               `sunspec:"offset=19,len=1,sf=SensorA_SF,access=r"`
+	Sensor4Current    int16               `sunspec:"offset=20,len=1,sf=SensorA_SF,access=r"`
+	Sensor5Current    int16               `sunspec:"offset=21,len=1,sf=SensorA_SF,access=r"`
+	Sensor6Current    int16               `sunspec:"offset=22,len=1,sf=SensorA_SF,access=r"`
+	Sensor7Current    int16               `sunspec:"offset=23,len=1,sf=SensorA_SF,access=r"`
+	Sensor8           uint16              `sunspec:"offset=24,len=1,sf=SensorHz_SF,access=r"`
+	Relay1            uint16              `sunspec:"offset=25,len=1,access=r"`
+	Relay2            uint16              `sunspec:"offset=26,len=1,access=r"`
+	Relay3            uint16              `sunspec:"offset=27,len=1,access=r"`
+	ResetAccumulators uint16              `sunspec:"offset=28,len=1,access=r"`
+	Reset             uint16              `sunspec:"offset=29,len=1,access=r"`
 
 	Repeats []Block64020Repeat
 }
@@ -101,51 +101,51 @@ func (block *Block64020) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_64020",
 		Length: 46,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 30,
 				Points: []smdx.PointElement{
-					{Id: Aux0Tmp, Offset: 0, Type: typelabel.Int16, Units: "C", Label: "Aux 0 temperature", Description: ""},
-					{Id: Aux1Tmp, Offset: 1, Type: typelabel.Int16, Units: "C", Label: "Aux 1 temperature", Description: ""},
-					{Id: Aux2Tmp, Offset: 2, Type: typelabel.Int16, Units: "C", Label: "Aux 2 temperature", Description: ""},
-					{Id: Aux3Tmp, Offset: 3, Type: typelabel.Int16, Units: "C", Label: "Aux 3 temperature", Description: ""},
-					{Id: Aux4Tmp, Offset: 4, Type: typelabel.Int16, Units: "C", Label: "Aux 4 temperature", Description: ""},
-					{Id: ProbeTmp, Offset: 6, Type: typelabel.Int16, Units: "C", Mandatory: true, Label: "Probe Temperature", Description: ""},
-					{Id: MainTmp, Offset: 5, Type: typelabel.Int16, Units: "C", Mandatory: true, Label: "Main Temperature", Description: ""},
-					{Id: SensorV_SF, Offset: 7, Type: typelabel.ScaleFactor, Mandatory: true, Label: "Voltage scale factor for the sensors", Description: ""},
-					{Id: SensorA_SF, Offset: 8, Type: typelabel.ScaleFactor, Mandatory: true, Label: "Current scale factor for the sensors", Description: ""},
-					{Id: SensorHz_SF, Offset: 9, Type: typelabel.ScaleFactor, Mandatory: true, Label: "Frequency scale factor for the sensors", Description: ""},
-					{Id: Sensor1Voltage, Offset: 10, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Label: "Sensor1 Voltage", Description: "scale of 0-10V"},
-					{Id: Sensor2Voltage, Offset: 11, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Label: "Sensor2 Voltage", Description: "scale of 0-10V"},
-					{Id: Sensor3Voltage, Offset: 12, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Label: "Sensor3 Voltage", Description: "scale of 0-10V"},
-					{Id: Sensor4Voltage, Offset: 13, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Label: "Sensor4 Voltage", Description: "scale of 0-10V"},
-					{Id: Sensor5Voltage, Offset: 14, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Label: "Sensor5 Voltage", Description: "scale of 0-10V"},
-					{Id: Sensor6Voltage, Offset: 15, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Label: "Sensor6 Voltage", Description: "scale of 0-10V"},
-					{Id: Sensor7Voltage, Offset: 16, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Label: "Sensor7 Voltage", Description: "scale of 0-10V"},
-					{Id: Sensor1Current, Offset: 17, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Label: "Sensor1 Current", Description: "scale of 4-20mA"},
-					{Id: Sensor2Current, Offset: 18, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Label: "Sensor2 Current", Description: "in 4-20mA or 4-20mA"},
-					{Id: Sensor3Current, Offset: 19, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Label: "Sensor3 Current", Description: "in 4-20mA or 4-20mA"},
-					{Id: Sensor4Current, Offset: 20, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Label: "Sensor4 Current", Description: "in 4-20mA or 4-20mA"},
-					{Id: Sensor5Current, Offset: 21, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Label: "Sensor5 Current", Description: "in 4-20mA or 4-20mA"},
-					{Id: Sensor6Current, Offset: 22, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Label: "Sensor6 Current", Description: "in 4-20mA or 4-20mA"},
-					{Id: Sensor7Current, Offset: 23, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Label: "Sensor7 Current", Description: "in 4-20mA or 4-20mA"},
-					{Id: Sensor8, Offset: 24, Type: typelabel.Uint16, ScaleFactor: "SensorHz_SF", Units: "Hz", Label: "Sensor8 frequency", Description: "frequency in Hz"},
-					{Id: Relay1, Offset: 25, Type: typelabel.Uint16, Label: "Relay 1 state", Description: ""},
-					{Id: Relay2, Offset: 26, Type: typelabel.Uint16, Label: "Relay 2 state", Description: ""},
-					{Id: Relay3, Offset: 27, Type: typelabel.Uint16, Label: "Relay 3 state", Description: ""},
-					{Id: ResetAccumulators, Offset: 28, Type: typelabel.Uint16, Label: "Reset the accumulators", Description: "always 0 in reading, used the code 0xC0DA during the writing for resetting them"},
-					{Id: Reset, Offset: 29, Type: typelabel.Uint16, Label: "Reset the system", Description: "always 0 in reading, used the code 0xC0DA during the writing for resetting the system"},
+					{Id: Aux0Tmp, Offset: 0, Type: typelabel.Int16, Units: "C", Access: "r", Length: 1, Label: "Aux 0 temperature", Description: ""},
+					{Id: Aux1Tmp, Offset: 1, Type: typelabel.Int16, Units: "C", Access: "r", Length: 1, Label: "Aux 1 temperature", Description: ""},
+					{Id: Aux2Tmp, Offset: 2, Type: typelabel.Int16, Units: "C", Access: "r", Length: 1, Label: "Aux 2 temperature", Description: ""},
+					{Id: Aux3Tmp, Offset: 3, Type: typelabel.Int16, Units: "C", Access: "r", Length: 1, Label: "Aux 3 temperature", Description: ""},
+					{Id: Aux4Tmp, Offset: 4, Type: typelabel.Int16, Units: "C", Access: "r", Length: 1, Label: "Aux 4 temperature", Description: ""},
+					{Id: ProbeTmp, Offset: 5, Type: typelabel.Int16, Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Probe Temperature", Description: ""},
+					{Id: MainTmp, Offset: 6, Type: typelabel.Int16, Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Main Temperature", Description: ""},
+					{Id: SensorV_SF, Offset: 7, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true, Label: "Voltage scale factor for the sensors", Description: ""},
+					{Id: SensorA_SF, Offset: 8, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true, Label: "Current scale factor for the sensors", Description: ""},
+					{Id: SensorHz_SF, Offset: 9, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true, Label: "Frequency scale factor for the sensors", Description: ""},
+					{Id: Sensor1Voltage, Offset: 10, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Access: "r", Length: 1, Label: "Sensor1 Voltage", Description: "scale of 0-10V"},
+					{Id: Sensor2Voltage, Offset: 11, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Access: "r", Length: 1, Label: "Sensor2 Voltage", Description: "scale of 0-10V"},
+					{Id: Sensor3Voltage, Offset: 12, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Access: "r", Length: 1, Label: "Sensor3 Voltage", Description: "scale of 0-10V"},
+					{Id: Sensor4Voltage, Offset: 13, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Access: "r", Length: 1, Label: "Sensor4 Voltage", Description: "scale of 0-10V"},
+					{Id: Sensor5Voltage, Offset: 14, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Access: "r", Length: 1, Label: "Sensor5 Voltage", Description: "scale of 0-10V"},
+					{Id: Sensor6Voltage, Offset: 15, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Access: "r", Length: 1, Label: "Sensor6 Voltage", Description: "scale of 0-10V"},
+					{Id: Sensor7Voltage, Offset: 16, Type: typelabel.Int16, ScaleFactor: "SensorV_SF", Units: "V", Access: "r", Length: 1, Label: "Sensor7 Voltage", Description: "scale of 0-10V"},
+					{Id: Sensor1Current, Offset: 17, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Access: "r", Length: 1, Label: "Sensor1 Current", Description: "scale of 4-20mA"},
+					{Id: Sensor2Current, Offset: 18, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Access: "r", Length: 1, Label: "Sensor2 Current", Description: "in 4-20mA or 4-20mA"},
+					{Id: Sensor3Current, Offset: 19, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Access: "r", Length: 1, Label: "Sensor3 Current", Description: "in 4-20mA or 4-20mA"},
+					{Id: Sensor4Current, Offset: 20, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Access: "r", Length: 1, Label: "Sensor4 Current", Description: "in 4-20mA or 4-20mA"},
+					{Id: Sensor5Current, Offset: 21, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Access: "r", Length: 1, Label: "Sensor5 Current", Description: "in 4-20mA or 4-20mA"},
+					{Id: Sensor6Current, Offset: 22, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Access: "r", Length: 1, Label: "Sensor6 Current", Description: "in 4-20mA or 4-20mA"},
+					{Id: Sensor7Current, Offset: 23, Type: typelabel.Int16, ScaleFactor: "SensorA_SF", Units: "A", Access: "r", Length: 1, Label: "Sensor7 Current", Description: "in 4-20mA or 4-20mA"},
+					{Id: Sensor8, Offset: 24, Type: typelabel.Uint16, ScaleFactor: "SensorHz_SF", Units: "Hz", Access: "r", Length: 1, Label: "Sensor8 frequency", Description: "frequency in Hz"},
+					{Id: Relay1, Offset: 25, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Relay 1 state", Description: ""},
+					{Id: Relay2, Offset: 26, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Relay 2 state", Description: ""},
+					{Id: Relay3, Offset: 27, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Relay 3 state", Description: ""},
+					{Id: ResetAccumulators, Offset: 28, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Reset the accumulators", Description: "always 0 in reading, used the code 0xC0DA during the writing for resetting them"},
+					{Id: Reset, Offset: 29, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Reset the system", Description: "always 0 in reading, used the code 0xC0DA during the writing for resetting the system"},
 				},
 			},
-			{
+			{Name: "repeating",
 				Length: 16,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: SerialNumber, Offset: 0, Type: typelabel.String, Length: 9, Mandatory: true, Label: "Serial number", Description: "strings of 16 characters"},
-					{Id: Firmware, Offset: 9, Type: typelabel.String, Length: 6, Mandatory: true, Label: "Firmware version", Description: "string of 11 characters"},
-					{Id: Hardware, Offset: 15, Type: typelabel.Uint16, Mandatory: true, Label: "Hardware version", Description: ""},
+					{Id: SerialNumber, Offset: 0, Type: typelabel.String, Access: "r", Length: 9, Mandatory: true, Label: "Serial number", Description: "strings of 16 characters"},
+					{Id: Firmware, Offset: 9, Type: typelabel.String, Access: "r", Length: 6, Mandatory: true, Label: "Firmware version", Description: "string of 11 characters"},
+					{Id: Hardware, Offset: 15, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Hardware version", Description: ""},
 				},
 			},
 		}})

@@ -28,13 +28,13 @@ const (
 )
 
 type Block11 struct {
-	Spd    uint16             `sunspec:"offset=0"`
-	CfgSt  sunspec.Bitfield16 `sunspec:"offset=1"`
-	St     sunspec.Enum16     `sunspec:"offset=2"`
-	MAC    sunspec.Eui48      `sunspec:"offset=3"`
+	Spd    uint16             `sunspec:"offset=0,len=1,access=r"`
+	CfgSt  sunspec.Bitfield16 `sunspec:"offset=1,len=1,access=r"`
+	St     sunspec.Enum16     `sunspec:"offset=2,len=1,access=r"`
+	MAC    sunspec.Eui48      `sunspec:"offset=3,len=4,access=r"`
 	Nam    string             `sunspec:"offset=7,len=4,access=rw"`
-	Ctl    sunspec.Bitfield16 `sunspec:"offset=11,access=rw"`
-	FrcSpd uint16             `sunspec:"offset=12,access=rw"`
+	Ctl    sunspec.Bitfield16 `sunspec:"offset=11,len=1,access=rw"`
+	FrcSpd uint16             `sunspec:"offset=12,len=1,access=rw"`
 }
 
 func (block *Block11) GetId() sunspec.ModelId {
@@ -44,19 +44,19 @@ func (block *Block11) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_11",
 		Length: 13,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 13,
 				Points: []smdx.PointElement{
-					{Id: Spd, Offset: 0, Type: typelabel.Uint16, Units: "Mbps", Mandatory: true, Label: "Ethernet Link Speed", Description: "Interface speed in Mb/s"},
-					{Id: CfgSt, Offset: 1, Type: typelabel.Bitfield16, Mandatory: true, Label: "Interface Status Flags", Description: "Bitmask values Interface flags."},
-					{Id: St, Offset: 2, Type: typelabel.Enum16, Mandatory: true, Label: "Link State", Description: "Enumerated value. State information for this interface"},
-					{Id: MAC, Offset: 3, Type: typelabel.Eui48, Label: "MAC", Description: "IEEE MAC address of this interface"},
+					{Id: Spd, Offset: 0, Type: typelabel.Uint16, Units: "Mbps", Access: "r", Length: 1, Mandatory: true, Label: "Ethernet Link Speed", Description: "Interface speed in Mb/s"},
+					{Id: CfgSt, Offset: 1, Type: typelabel.Bitfield16, Access: "r", Length: 1, Mandatory: true, Label: "Interface Status Flags", Description: "Bitmask values Interface flags."},
+					{Id: St, Offset: 2, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Link State", Description: "Enumerated value. State information for this interface"},
+					{Id: MAC, Offset: 3, Type: typelabel.Eui48, Access: "r", Length: 4, Label: "MAC", Description: "IEEE MAC address of this interface"},
 					{Id: Nam, Offset: 7, Type: typelabel.String, Access: "rw", Length: 4, Label: "Name", Description: "Interface name (8 chars)"},
-					{Id: Ctl, Offset: 11, Type: typelabel.Bitfield16, Access: "rw", Label: "Control", Description: "Control flags"},
-					{Id: FrcSpd, Offset: 12, Type: typelabel.Uint16, Units: "Mbps", Access: "rw", Label: "Forced Speed", Description: "Forced interface speed in Mb/s when AUTO is disabled"},
+					{Id: Ctl, Offset: 11, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Label: "Control", Description: "Control flags"},
+					{Id: FrcSpd, Offset: 12, Type: typelabel.Uint16, Units: "Mbps", Access: "rw", Length: 1, Label: "Forced Speed", Description: "Forced interface speed in Mb/s when AUTO is disabled"},
 				},
 			},
 		}})

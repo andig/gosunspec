@@ -38,11 +38,11 @@ const (
 
 type Block12 struct {
 	Nam     string             `sunspec:"offset=0,len=4,access=rw"`
-	CfgSt   sunspec.Enum16     `sunspec:"offset=4"`
-	ChgSt   sunspec.Bitfield16 `sunspec:"offset=5"`
-	Cap     sunspec.Bitfield16 `sunspec:"offset=6"`
-	Cfg     sunspec.Enum16     `sunspec:"offset=7,access=rw"`
-	Ctl     sunspec.Enum16     `sunspec:"offset=8,access=rw"`
+	CfgSt   sunspec.Enum16     `sunspec:"offset=4,len=1,access=r"`
+	ChgSt   sunspec.Bitfield16 `sunspec:"offset=5,len=1,access=r"`
+	Cap     sunspec.Bitfield16 `sunspec:"offset=6,len=1,access=r"`
+	Cfg     sunspec.Enum16     `sunspec:"offset=7,len=1,access=rw"`
+	Ctl     sunspec.Enum16     `sunspec:"offset=8,len=1,access=rw"`
 	Addr    string             `sunspec:"offset=9,len=8,access=rw"`
 	Msk     string             `sunspec:"offset=17,len=8,access=rw"`
 	Gw      string             `sunspec:"offset=25,len=8,access=rw"`
@@ -52,7 +52,7 @@ type Block12 struct {
 	NTP2    string             `sunspec:"offset=61,len=12,access=rw"`
 	DomNam  string             `sunspec:"offset=73,len=12,access=rw"`
 	HostNam string             `sunspec:"offset=85,len=12,access=rw"`
-	Pad     sunspec.Pad        `sunspec:"offset=97"`
+	Pad     sunspec.Pad        `sunspec:"offset=97,len=1,access=r"`
 }
 
 func (block *Block12) GetId() sunspec.ModelId {
@@ -62,18 +62,18 @@ func (block *Block12) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_12",
 		Length: 98,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 98,
 				Points: []smdx.PointElement{
 					{Id: Nam, Offset: 0, Type: typelabel.String, Access: "rw", Length: 4, Label: "Name", Description: "Interface name"},
-					{Id: CfgSt, Offset: 4, Type: typelabel.Enum16, Mandatory: true, Label: "Config Status", Description: "Enumerated value.  Configuration status"},
-					{Id: ChgSt, Offset: 5, Type: typelabel.Bitfield16, Mandatory: true, Label: "Change Status", Description: "Bitmask value.  A configuration change is pending"},
-					{Id: Cap, Offset: 6, Type: typelabel.Bitfield16, Mandatory: true, Label: "Config Capability", Description: "Bitmask value. Identify capable sources of configuration"},
-					{Id: Cfg, Offset: 7, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "IPv4 Config", Description: "Enumerated value.  Configuration method used."},
-					{Id: Ctl, Offset: 8, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Control", Description: "Configure use of services"},
+					{Id: CfgSt, Offset: 4, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Config Status", Description: "Enumerated value.  Configuration status"},
+					{Id: ChgSt, Offset: 5, Type: typelabel.Bitfield16, Access: "r", Length: 1, Mandatory: true, Label: "Change Status", Description: "Bitmask value.  A configuration change is pending"},
+					{Id: Cap, Offset: 6, Type: typelabel.Bitfield16, Access: "r", Length: 1, Mandatory: true, Label: "Config Capability", Description: "Bitmask value. Identify capable sources of configuration"},
+					{Id: Cfg, Offset: 7, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "IPv4 Config", Description: "Enumerated value.  Configuration method used."},
+					{Id: Ctl, Offset: 8, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Control", Description: "Configure use of services"},
 					{Id: Addr, Offset: 9, Type: typelabel.String, Access: "rw", Length: 8, Mandatory: true, Label: "IP", Description: "IPv4 numeric address as a dotted string xxx.xxx.xxx.xxx"},
 					{Id: Msk, Offset: 17, Type: typelabel.String, Access: "rw", Length: 8, Mandatory: true, Label: "Netmask", Description: "IPv4 numeric netmask as a dotted string xxx.xxx.xxx.xxx"},
 					{Id: Gw, Offset: 25, Type: typelabel.String, Access: "rw", Length: 8, Label: "Gateway", Description: "IPv4 numeric gateway address as a dotted string xxx.xxx.xxx.xxx"},
@@ -83,7 +83,7 @@ func init() {
 					{Id: NTP2, Offset: 61, Type: typelabel.String, Access: "rw", Length: 12, Label: "NTP2", Description: "IPv4 numeric NTP address as a dotted string xxx.xxx.xxx.xxx"},
 					{Id: DomNam, Offset: 73, Type: typelabel.String, Access: "rw", Length: 12, Label: "Domain", Description: "Domain name (24 chars max)"},
 					{Id: HostNam, Offset: 85, Type: typelabel.String, Access: "rw", Length: 12, Label: "Host Name", Description: "Host name (24 chars max)"},
-					{Id: Pad, Offset: 97, Type: typelabel.Pad},
+					{Id: Pad, Offset: 97, Type: typelabel.Pad, Access: "r", Length: 1},
 				},
 			},
 		}})

@@ -63,7 +63,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 14,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: ArGraMod, Offset: 0, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "ArGraMod", Description: "Indicates if gradients trend toward zero at the edges of the deadband or trend toward zero at the center of the deadband."},
 					{Id: ArGraSag, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "ArGra_SF", Units: "%ARtg/%dV", Access: "rw", Length: 1, Mandatory: true, Label: "ArGraSag", Description: "The gradient used to increase capacitive dynamic current. A value of 0 indicates no additional reactive current support."},

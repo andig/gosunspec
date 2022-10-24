@@ -23,11 +23,11 @@ const (
 )
 
 type Block808Repeat struct {
-	StackTBD uint16 `sunspec:"offset=0"`
+	StackTBD uint16 `sunspec:"offset=0,len=1,access=r"`
 }
 
 type Block808 struct {
-	ModuleTBD uint16 `sunspec:"offset=0"`
+	ModuleTBD uint16 `sunspec:"offset=0,len=1,access=r"`
 
 	Repeats []Block808Repeat
 }
@@ -45,14 +45,14 @@ func init() {
 			{
 				Length: 1,
 				Points: []smdx.PointElement{
-					{Id: ModuleTBD, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Module Points To Be Determined", Description: ""},
+					{Id: ModuleTBD, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Module Points To Be Determined", Description: ""},
 				},
 			},
 			{Name: "stack",
 				Length: 1,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: StackTBD, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Stack Points To Be Determined", Description: ""},
+					{Id: StackTBD, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Stack Points To Be Determined", Description: ""},
 				},
 			},
 		}})

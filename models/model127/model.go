@@ -55,7 +55,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 10,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: WGra, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "WGra_SF", Units: "% PM/Hz", Access: "rw", Length: 1, Mandatory: true, Label: "WGra", Description: "The slope of the reduction in the maximum allowed watts output as a function of frequency."},
 					{Id: HzStr, Offset: 1, Type: typelabel.Int16, ScaleFactor: "HzStrStop_SF", Units: "Hz", Access: "rw", Length: 1, Mandatory: true, Label: "HzStr", Description: "The frequency deviation from nominal frequency (ECPNomHz) at which a snapshot of the instantaneous power output is taken to act as the CAPPED power level (PM) and above which reduction in power output occurs."},

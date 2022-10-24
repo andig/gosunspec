@@ -114,7 +114,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 6,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: ActSchd, Offset: 0, Type: typelabel.Bitfield32, Access: "rw", Length: 2, Mandatory: true, Label: "ActSchd", Description: "Bitfield of active schedules"},
 					{Id: ModEna, Offset: 2, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "Is basic scheduling active."},
@@ -123,7 +122,7 @@ func init() {
 					{Id: Pad, Offset: 5, Type: typelabel.Pad, Access: "r", Length: 1, Label: "Pad", Description: "Pad register."},
 				},
 			},
-			{
+			{Name: "repeating",
 				Length: 60,
 				Type:   "repeating",
 				Points: []smdx.PointElement{

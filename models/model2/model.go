@@ -31,16 +31,16 @@ const (
 )
 
 type Block2 struct {
-	AID    uint16             `sunspec:"offset=0"`
-	N      uint16             `sunspec:"offset=1"`
-	UN     uint16             `sunspec:"offset=2"`
-	St     sunspec.Enum16     `sunspec:"offset=3"`
-	StVnd  sunspec.Enum16     `sunspec:"offset=4"`
-	Evt    sunspec.Bitfield32 `sunspec:"offset=5"`
-	EvtVnd sunspec.Bitfield32 `sunspec:"offset=7"`
-	Ctl    sunspec.Enum16     `sunspec:"offset=9"`
-	CtlVnd sunspec.Enum32     `sunspec:"offset=10"`
-	CtlVl  sunspec.Enum32     `sunspec:"offset=12"`
+	AID    uint16             `sunspec:"offset=0,len=1,access=r"`
+	N      uint16             `sunspec:"offset=1,len=1,access=r"`
+	UN     uint16             `sunspec:"offset=2,len=1,access=r"`
+	St     sunspec.Enum16     `sunspec:"offset=3,len=1,access=r"`
+	StVnd  sunspec.Enum16     `sunspec:"offset=4,len=1,access=r"`
+	Evt    sunspec.Bitfield32 `sunspec:"offset=5,len=2,access=r"`
+	EvtVnd sunspec.Bitfield32 `sunspec:"offset=7,len=2,access=r"`
+	Ctl    sunspec.Enum16     `sunspec:"offset=9,len=1,access=r"`
+	CtlVnd sunspec.Enum32     `sunspec:"offset=10,len=2,access=r"`
+	CtlVl  sunspec.Enum32     `sunspec:"offset=12,len=2,access=r"`
 }
 
 func (block *Block2) GetId() sunspec.ModelId {
@@ -56,16 +56,16 @@ func init() {
 			{
 				Length: 14,
 				Points: []smdx.PointElement{
-					{Id: AID, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "AID", Description: "Aggregated model id"},
-					{Id: N, Offset: 1, Type: typelabel.Uint16, Mandatory: true, Label: "N", Description: "Number of aggregated models"},
-					{Id: UN, Offset: 2, Type: typelabel.Uint16, Mandatory: true, Label: "UN", Description: "Update Number.  Incrementing number each time the mapping is changed.  If the number is not changed from the last reading the direct access to a specific offset will result in reading the same logical model as before.  Otherwise the entire model must be read to refresh the changes"},
-					{Id: St, Offset: 3, Type: typelabel.Enum16, Mandatory: true, Label: "Status", Description: "Enumerated status code"},
-					{Id: StVnd, Offset: 4, Type: typelabel.Enum16, Label: "Vendor Status", Description: "Vendor specific status code"},
-					{Id: Evt, Offset: 5, Type: typelabel.Bitfield32, Mandatory: true, Label: "Event Code", Description: "Bitmask event code"},
-					{Id: EvtVnd, Offset: 7, Type: typelabel.Bitfield32, Label: "Vendor Event Code", Description: "Vendor specific event code"},
-					{Id: Ctl, Offset: 9, Type: typelabel.Enum16, Label: "Control", Description: "Control register for all aggregated devices"},
-					{Id: CtlVnd, Offset: 10, Type: typelabel.Enum32, Label: "Vendor Control", Description: "Vendor control register for all aggregated devices"},
-					{Id: CtlVl, Offset: 12, Type: typelabel.Enum32, Label: "Control Value", Description: "Numerical value used as a parameter to the control"},
+					{Id: AID, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "AID", Description: "Aggregated model id"},
+					{Id: N, Offset: 1, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "N", Description: "Number of aggregated models"},
+					{Id: UN, Offset: 2, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "UN", Description: "Update Number.  Incrementing number each time the mapping is changed.  If the number is not changed from the last reading the direct access to a specific offset will result in reading the same logical model as before.  Otherwise the entire model must be read to refresh the changes"},
+					{Id: St, Offset: 3, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Status", Description: "Enumerated status code"},
+					{Id: StVnd, Offset: 4, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Vendor Status", Description: "Vendor specific status code"},
+					{Id: Evt, Offset: 5, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Event Code", Description: "Bitmask event code"},
+					{Id: EvtVnd, Offset: 7, Type: typelabel.Bitfield32, Access: "r", Length: 2, Label: "Vendor Event Code", Description: "Vendor specific event code"},
+					{Id: Ctl, Offset: 9, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Control", Description: "Control register for all aggregated devices"},
+					{Id: CtlVnd, Offset: 10, Type: typelabel.Enum32, Access: "r", Length: 2, Label: "Vendor Control", Description: "Vendor control register for all aggregated devices"},
+					{Id: CtlVl, Offset: 12, Type: typelabel.Enum32, Access: "r", Length: 2, Label: "Control Value", Description: "Numerical value used as a parameter to the control"},
 				},
 			},
 		}})

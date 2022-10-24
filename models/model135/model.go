@@ -146,7 +146,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 10,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
 					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "LHzRT control mode. Enable active curve.  Bitfield value."},

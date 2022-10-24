@@ -32,17 +32,17 @@ const (
 )
 
 type Block307 struct {
-	TmpAmb  int16 `sunspec:"offset=0,sf=-1"`
-	RH      int16 `sunspec:"offset=1"`
-	Pres    int16 `sunspec:"offset=2"`
-	WndSpd  int16 `sunspec:"offset=3"`
-	WndDir  int16 `sunspec:"offset=4"`
-	Rain    int16 `sunspec:"offset=5"`
-	Snw     int16 `sunspec:"offset=6"`
-	PPT     int16 `sunspec:"offset=7"`
-	ElecFld int16 `sunspec:"offset=8"`
-	SurWet  int16 `sunspec:"offset=9"`
-	SoilWet int16 `sunspec:"offset=10"`
+	TmpAmb  int16 `sunspec:"offset=0,len=1,sf=-1,access=r"`
+	RH      int16 `sunspec:"offset=1,len=1,access=r"`
+	Pres    int16 `sunspec:"offset=2,len=1,access=r"`
+	WndSpd  int16 `sunspec:"offset=3,len=1,access=r"`
+	WndDir  int16 `sunspec:"offset=4,len=1,access=r"`
+	Rain    int16 `sunspec:"offset=5,len=1,access=r"`
+	Snw     int16 `sunspec:"offset=6,len=1,access=r"`
+	PPT     int16 `sunspec:"offset=7,len=1,access=r"`
+	ElecFld int16 `sunspec:"offset=8,len=1,access=r"`
+	SurWet  int16 `sunspec:"offset=9,len=1,access=r"`
+	SoilWet int16 `sunspec:"offset=10,len=1,access=r"`
 }
 
 func (block *Block307) GetId() sunspec.ModelId {
@@ -58,17 +58,17 @@ func init() {
 			{
 				Length: 11,
 				Points: []smdx.PointElement{
-					{Id: TmpAmb, Offset: 0, Type: typelabel.Int16, ScaleFactor: "-1", Units: "C", Label: "Ambient Temperature", Description: ""},
-					{Id: RH, Offset: 1, Type: typelabel.Int16, Units: "Pct", Label: "Relative Humidity", Description: ""},
-					{Id: Pres, Offset: 2, Type: typelabel.Int16, Units: "HPa", Label: "Barometric Pressure", Description: ""},
-					{Id: WndSpd, Offset: 3, Type: typelabel.Int16, Units: "mps", Label: "Wind Speed", Description: ""},
-					{Id: WndDir, Offset: 4, Type: typelabel.Int16, Units: "deg", Label: "Wind Direction", Description: ""},
-					{Id: Rain, Offset: 5, Type: typelabel.Int16, Units: "mm", Label: "Rainfall", Description: ""},
-					{Id: Snw, Offset: 6, Type: typelabel.Int16, Units: "mm", Label: "Snow Depth", Description: ""},
-					{Id: PPT, Offset: 7, Type: typelabel.Int16, Label: "Precipitation Type", Description: " Precipitation Type (WMO 4680 SYNOP code reference)"},
-					{Id: ElecFld, Offset: 8, Type: typelabel.Int16, Units: "Vm", Label: "Electric Field", Description: ""},
-					{Id: SurWet, Offset: 9, Type: typelabel.Int16, Units: "kO", Label: "Surface Wetness", Description: ""},
-					{Id: SoilWet, Offset: 10, Type: typelabel.Int16, Units: "Pct", Label: "Soil Wetness", Description: ""},
+					{Id: TmpAmb, Offset: 0, Type: typelabel.Int16, ScaleFactor: "-1", Units: "C", Access: "r", Length: 1, Label: "Ambient Temperature", Description: ""},
+					{Id: RH, Offset: 1, Type: typelabel.Int16, Units: "Pct", Access: "r", Length: 1, Label: "Relative Humidity", Description: ""},
+					{Id: Pres, Offset: 2, Type: typelabel.Int16, Units: "HPa", Access: "r", Length: 1, Label: "Barometric Pressure", Description: ""},
+					{Id: WndSpd, Offset: 3, Type: typelabel.Int16, Units: "mps", Access: "r", Length: 1, Label: "Wind Speed", Description: ""},
+					{Id: WndDir, Offset: 4, Type: typelabel.Int16, Units: "deg", Access: "r", Length: 1, Label: "Wind Direction", Description: ""},
+					{Id: Rain, Offset: 5, Type: typelabel.Int16, Units: "mm", Access: "r", Length: 1, Label: "Rainfall", Description: ""},
+					{Id: Snw, Offset: 6, Type: typelabel.Int16, Units: "mm", Access: "r", Length: 1, Label: "Snow Depth", Description: ""},
+					{Id: PPT, Offset: 7, Type: typelabel.Int16, Access: "r", Length: 1, Label: "Precipitation Type", Description: " Precipitation Type (WMO 4680 SYNOP code reference)"},
+					{Id: ElecFld, Offset: 8, Type: typelabel.Int16, Units: "Vm", Access: "r", Length: 1, Label: "Electric Field", Description: ""},
+					{Id: SurWet, Offset: 9, Type: typelabel.Int16, Units: "kO", Access: "r", Length: 1, Label: "Surface Wetness", Description: ""},
+					{Id: SoilWet, Offset: 10, Type: typelabel.Int16, Units: "Pct", Access: "r", Length: 1, Label: "Soil Wetness", Description: ""},
 				},
 			},
 		}})

@@ -28,13 +28,13 @@ const (
 )
 
 type Block64101 struct {
-	Eltek_Country_Code   uint16 `sunspec:"offset=0"`
-	Eltek_Feeding_Phase  uint16 `sunspec:"offset=1"`
-	Eltek_APD_Method     uint16 `sunspec:"offset=2"`
-	Eltek_APD_Power_Ref  uint16 `sunspec:"offset=3"`
-	Eltek_RPS_Method     uint16 `sunspec:"offset=4"`
-	Eltek_RPS_Q_Ref      uint16 `sunspec:"offset=5"`
-	Eltek_RPS_CosPhi_Ref int16  `sunspec:"offset=6"`
+	Eltek_Country_Code   uint16 `sunspec:"offset=0,len=1,access=r"`
+	Eltek_Feeding_Phase  uint16 `sunspec:"offset=1,len=1,access=r"`
+	Eltek_APD_Method     uint16 `sunspec:"offset=2,len=1,access=r"`
+	Eltek_APD_Power_Ref  uint16 `sunspec:"offset=3,len=1,access=r"`
+	Eltek_RPS_Method     uint16 `sunspec:"offset=4,len=1,access=r"`
+	Eltek_RPS_Q_Ref      uint16 `sunspec:"offset=5,len=1,access=r"`
+	Eltek_RPS_CosPhi_Ref int16  `sunspec:"offset=6,len=1,access=r"`
 }
 
 func (block *Block64101) GetId() sunspec.ModelId {
@@ -44,19 +44,19 @@ func (block *Block64101) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_64101",
 		Length: 7,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 7,
 				Points: []smdx.PointElement{
-					{Id: Eltek_Country_Code, Offset: 0, Type: typelabel.Uint16},
-					{Id: Eltek_Feeding_Phase, Offset: 1, Type: typelabel.Uint16},
-					{Id: Eltek_APD_Method, Offset: 2, Type: typelabel.Uint16},
-					{Id: Eltek_APD_Power_Ref, Offset: 3, Type: typelabel.Uint16},
-					{Id: Eltek_RPS_Method, Offset: 4, Type: typelabel.Uint16},
-					{Id: Eltek_RPS_Q_Ref, Offset: 5, Type: typelabel.Uint16},
-					{Id: Eltek_RPS_CosPhi_Ref, Offset: 6, Type: typelabel.Int16},
+					{Id: Eltek_Country_Code, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1},
+					{Id: Eltek_Feeding_Phase, Offset: 1, Type: typelabel.Uint16, Access: "r", Length: 1},
+					{Id: Eltek_APD_Method, Offset: 2, Type: typelabel.Uint16, Access: "r", Length: 1},
+					{Id: Eltek_APD_Power_Ref, Offset: 3, Type: typelabel.Uint16, Access: "r", Length: 1},
+					{Id: Eltek_RPS_Method, Offset: 4, Type: typelabel.Uint16, Access: "r", Length: 1},
+					{Id: Eltek_RPS_Q_Ref, Offset: 5, Type: typelabel.Uint16, Access: "r", Length: 1},
+					{Id: Eltek_RPS_CosPhi_Ref, Offset: 6, Type: typelabel.Int16, Access: "r", Length: 1},
 				},
 			},
 		}})

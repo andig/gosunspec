@@ -87,7 +87,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 26,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: DERTyp, Offset: 0, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "DERTyp", Description: "Type of DER device. Default value is 4 to indicate PV device."},
 					{Id: WRtg, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "WRtg_SF", Units: "W", Access: "r", Length: 1, Mandatory: true, Label: "WRtg", Description: "Continuous power output capability of the inverter."},

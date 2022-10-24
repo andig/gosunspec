@@ -95,7 +95,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 30,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: WMax, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "WMax_SF", Units: "W", Access: "rw", Length: 1, Mandatory: true, Label: "WMax", Description: "Setting for maximum power output. Default to WRtg."},
 					{Id: VRef, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "VRef_SF", Units: "V", Access: "rw", Length: 1, Mandatory: true, Label: "VRef", Description: "Voltage at the PCC."},

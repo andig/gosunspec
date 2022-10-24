@@ -41,29 +41,29 @@ const (
 )
 
 type Block601Repeat struct {
-	Id     string             `sunspec:"offset=0,len=8"`
-	ElTrgt int32              `sunspec:"offset=8,sf=Dgr_SF"`
-	AzTrgt int32              `sunspec:"offset=10,sf=Dgr_SF"`
-	ElPos  int32              `sunspec:"offset=12,sf=Dgr_SF"`
-	AzPos  int32              `sunspec:"offset=14,sf=Dgr_SF"`
-	ElCtl  int32              `sunspec:"offset=16,sf=Dgr_SF,access=rw"`
-	AzCtl  int32              `sunspec:"offset=18,sf=Dgr_SF,access=rw"`
-	Ctl    sunspec.Enum16     `sunspec:"offset=20,access=rw"`
-	Alm    sunspec.Bitfield16 `sunspec:"offset=21"`
+	Id     string             `sunspec:"offset=0,len=8,access=r"`
+	ElTrgt int32              `sunspec:"offset=8,len=2,sf=Dgr_SF,access=r"`
+	AzTrgt int32              `sunspec:"offset=10,len=2,sf=Dgr_SF,access=r"`
+	ElPos  int32              `sunspec:"offset=12,len=2,sf=Dgr_SF,access=r"`
+	AzPos  int32              `sunspec:"offset=14,len=2,sf=Dgr_SF,access=r"`
+	ElCtl  int32              `sunspec:"offset=16,len=2,sf=Dgr_SF,access=rw"`
+	AzCtl  int32              `sunspec:"offset=18,len=2,sf=Dgr_SF,access=rw"`
+	Ctl    sunspec.Enum16     `sunspec:"offset=20,len=1,access=rw"`
+	Alm    sunspec.Bitfield16 `sunspec:"offset=21,len=1,access=r"`
 }
 
 type Block601 struct {
-	Nam       string              `sunspec:"offset=0,len=8"`
-	Typ       sunspec.Enum16      `sunspec:"offset=8"`
-	DtLoc     string              `sunspec:"offset=9,len=5"`
-	TmLoc     string              `sunspec:"offset=14,len=3"`
-	Day       uint16              `sunspec:"offset=17"`
-	GlblElCtl int32               `sunspec:"offset=18,sf=Dgr_SF,access=rw"`
-	GlblAzCtl int32               `sunspec:"offset=20,sf=Dgr_SF,access=rw"`
-	GlblCtl   sunspec.Enum16      `sunspec:"offset=22,access=rw"`
-	GlblAlm   sunspec.Bitfield16  `sunspec:"offset=23"`
-	Dgr_SF    sunspec.ScaleFactor `sunspec:"offset=24"`
-	N         uint16              `sunspec:"offset=25"`
+	Nam       string              `sunspec:"offset=0,len=8,access=r"`
+	Typ       sunspec.Enum16      `sunspec:"offset=8,len=1,access=r"`
+	DtLoc     string              `sunspec:"offset=9,len=5,access=r"`
+	TmLoc     string              `sunspec:"offset=14,len=3,access=r"`
+	Day       uint16              `sunspec:"offset=17,len=1,access=r"`
+	GlblElCtl int32               `sunspec:"offset=18,len=2,sf=Dgr_SF,access=rw"`
+	GlblAzCtl int32               `sunspec:"offset=20,len=2,sf=Dgr_SF,access=rw"`
+	GlblCtl   sunspec.Enum16      `sunspec:"offset=22,len=1,access=rw"`
+	GlblAlm   sunspec.Bitfield16  `sunspec:"offset=23,len=1,access=r"`
+	Dgr_SF    sunspec.ScaleFactor `sunspec:"offset=24,len=1,access=r"`
+	N         uint16              `sunspec:"offset=25,len=1,access=r"`
 
 	Repeats []Block601Repeat
 }
@@ -81,32 +81,32 @@ func init() {
 			{
 				Length: 26,
 				Points: []smdx.PointElement{
-					{Id: Nam, Offset: 0, Type: typelabel.String, Length: 8, Label: "Controller", Description: "Descriptive name for this control unit"},
-					{Id: Typ, Offset: 8, Type: typelabel.Enum16, Mandatory: true, Label: "Type", Description: "Type of tracker"},
-					{Id: DtLoc, Offset: 9, Type: typelabel.String, Units: "YYYYMMDD", Length: 5, Label: "Date", Description: "Local date in YYYYMMDD format"},
-					{Id: TmLoc, Offset: 14, Type: typelabel.String, Units: "hhmmss", Length: 3, Label: "Time", Description: "24 hour local time stamp to second"},
-					{Id: Day, Offset: 17, Type: typelabel.Uint16, Label: "Day", Description: "Number of the day in the year (1-366)"},
-					{Id: GlblElCtl, Offset: 18, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "rw", Label: "Manual Elevation", Description: "Global manual override target position of elevation in degrees from horizontal.  Unimplemented for single axis azimuth tracker type"},
-					{Id: GlblAzCtl, Offset: 20, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "rw", Label: "Manual Azimuth", Description: "Global manual override target position of azimuth in degrees from true north towards east.  Unimplemented for single axis azimuth tracker type"},
-					{Id: GlblCtl, Offset: 22, Type: typelabel.Enum16, Access: "rw", Label: "Global Mode", Description: "Global Control register operates on all trackers. Normal operation is automatic.  Operator can override the position by setting the ElCtl, AzCtl and enabling Manual operation. Entering calibration mode will revert to automatic operation after calibration is complete."},
-					{Id: GlblAlm, Offset: 23, Type: typelabel.Bitfield16, Label: "Global Alarm", Description: "Global tracker alarm conditions"},
-					{Id: Dgr_SF, Offset: 24, Type: typelabel.ScaleFactor, Mandatory: true, Label: "SF", Description: "Scale Factor for targets and position measurements in degrees"},
-					{Id: N, Offset: 25, Type: typelabel.Uint16, Mandatory: true, Label: "Trackers", Description: "Number of trackers being controlled.  Size of repeating block."},
+					{Id: Nam, Offset: 0, Type: typelabel.String, Access: "r", Length: 8, Label: "Controller", Description: "Descriptive name for this control unit"},
+					{Id: Typ, Offset: 8, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Type", Description: "Type of tracker"},
+					{Id: DtLoc, Offset: 9, Type: typelabel.String, Units: "YYYYMMDD", Access: "r", Length: 5, Label: "Date", Description: "Local date in YYYYMMDD format"},
+					{Id: TmLoc, Offset: 14, Type: typelabel.String, Units: "hhmmss", Access: "r", Length: 3, Label: "Time", Description: "24 hour local time stamp to second"},
+					{Id: Day, Offset: 17, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Day", Description: "Number of the day in the year (1-366)"},
+					{Id: GlblElCtl, Offset: 18, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "rw", Length: 2, Label: "Manual Elevation", Description: "Global manual override target position of elevation in degrees from horizontal.  Unimplemented for single axis azimuth tracker type"},
+					{Id: GlblAzCtl, Offset: 20, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "rw", Length: 2, Label: "Manual Azimuth", Description: "Global manual override target position of azimuth in degrees from true north towards east.  Unimplemented for single axis azimuth tracker type"},
+					{Id: GlblCtl, Offset: 22, Type: typelabel.Enum16, Access: "rw", Length: 1, Label: "Global Mode", Description: "Global Control register operates on all trackers. Normal operation is automatic.  Operator can override the position by setting the ElCtl, AzCtl and enabling Manual operation. Entering calibration mode will revert to automatic operation after calibration is complete."},
+					{Id: GlblAlm, Offset: 23, Type: typelabel.Bitfield16, Access: "r", Length: 1, Label: "Global Alarm", Description: "Global tracker alarm conditions"},
+					{Id: Dgr_SF, Offset: 24, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true, Label: "SF", Description: "Scale Factor for targets and position measurements in degrees"},
+					{Id: N, Offset: 25, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Trackers", Description: "Number of trackers being controlled.  Size of repeating block."},
 				},
 			},
 			{Name: "tracker",
 				Length: 22,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: Id, Offset: 0, Type: typelabel.String, Length: 8, Label: "Tracker", Description: "Descriptive name for this tracker unit"},
-					{Id: ElTrgt, Offset: 8, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Label: "Target Elevation", Description: "Auto target elevation in degrees from horizontal.  Unimplemented for single axis azimuth tracker type"},
-					{Id: AzTrgt, Offset: 10, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Label: "Target Azimuth", Description: "Auto target azimuth  in degrees from true north towards east.  Unimplemented for single axis horizontal tracker type"},
-					{Id: ElPos, Offset: 12, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Label: "Elevation", Description: "Actual elevation position  in degrees from horizontal.  Unimplemented for single axis azimuth tracker type"},
-					{Id: AzPos, Offset: 14, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Label: "Azimuth", Description: "Actual azimuth position  in degrees from true north towards east.  Unimplemented for single axis horizontal tracker type"},
-					{Id: ElCtl, Offset: 16, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "rw", Label: "Manual Elevation", Description: "Manual override target position of elevation in degrees from horizontal.  Unimplemented for single axis azimuth tracker type"},
-					{Id: AzCtl, Offset: 18, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "rw", Label: "Manual Azimuth", Description: "Manual override target position of azimuth in degrees from true north towards east.  Unimplemented for single axis azimuth tracker type"},
-					{Id: Ctl, Offset: 20, Type: typelabel.Enum16, Access: "rw", Label: "Mode", Description: "Control register. Normal operation is automatic.  Operator can override the position by setting the ElCtl, AzCtl and enabling Manual operation. Entering calibration mode will revert to automatic operation after calibration is complete."},
-					{Id: Alm, Offset: 21, Type: typelabel.Bitfield16, Label: "Alarm", Description: "Tracker alarm conditions"},
+					{Id: Id, Offset: 0, Type: typelabel.String, Access: "r", Length: 8, Label: "Tracker", Description: "Descriptive name for this tracker unit"},
+					{Id: ElTrgt, Offset: 8, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "r", Length: 2, Label: "Target Elevation", Description: "Auto target elevation in degrees from horizontal.  Unimplemented for single axis azimuth tracker type"},
+					{Id: AzTrgt, Offset: 10, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "r", Length: 2, Label: "Target Azimuth", Description: "Auto target azimuth  in degrees from true north towards east.  Unimplemented for single axis horizontal tracker type"},
+					{Id: ElPos, Offset: 12, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "r", Length: 2, Label: "Elevation", Description: "Actual elevation position  in degrees from horizontal.  Unimplemented for single axis azimuth tracker type"},
+					{Id: AzPos, Offset: 14, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "r", Length: 2, Label: "Azimuth", Description: "Actual azimuth position  in degrees from true north towards east.  Unimplemented for single axis horizontal tracker type"},
+					{Id: ElCtl, Offset: 16, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "rw", Length: 2, Label: "Manual Elevation", Description: "Manual override target position of elevation in degrees from horizontal.  Unimplemented for single axis azimuth tracker type"},
+					{Id: AzCtl, Offset: 18, Type: typelabel.Int32, ScaleFactor: "Dgr_SF", Units: "Degrees", Access: "rw", Length: 2, Label: "Manual Azimuth", Description: "Manual override target position of azimuth in degrees from true north towards east.  Unimplemented for single axis azimuth tracker type"},
+					{Id: Ctl, Offset: 20, Type: typelabel.Enum16, Access: "rw", Length: 1, Label: "Mode", Description: "Control register. Normal operation is automatic.  Operator can override the position by setting the ElCtl, AzCtl and enabling Manual operation. Entering calibration mode will revert to automatic operation after calibration is complete."},
+					{Id: Alm, Offset: 21, Type: typelabel.Bitfield16, Access: "r", Length: 1, Label: "Alarm", Description: "Tracker alarm conditions"},
 				},
 			},
 		}})

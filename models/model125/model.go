@@ -51,7 +51,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 8,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: ModEna, Offset: 0, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "Is price-based charge/discharge mode active?"},
 					{Id: SigType, Offset: 1, Type: typelabel.Enum16, Access: "rw", Length: 1, Label: "SigType", Description: "Meaning of the pricing signal. When a Price schedule is used, type must match the schedule range variable description."},

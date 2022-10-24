@@ -154,7 +154,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 10,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
 					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "Is Volt-Watt control active."},
@@ -164,7 +163,7 @@ func init() {
 					{Id: NCrv, Offset: 5, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "NCrv", Description: "Number of curves supported (recommend min. 4)."},
 					{Id: NPt, Offset: 6, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "NPt", Description: "Number of points in array (maximum 20)."},
 					{Id: V_SF, Offset: 7, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true, Label: "V_SF", Description: "Scale factor for percent VRef."},
-					{Id: DeptRef_SF, Offset: 8, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true, Label: "DeptRef_SF", Description: "Scale factor for % DeptRef."},
+					{Id: DeptRef_SF, Offset: 8, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true, Label: "DeptRef_SF", Description: "Scale Factor for % DeptRef"},
 					{Id: RmpIncDec_SF, Offset: 9, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Label: "RmpIncDec_SF", Description: "Scale factor for increment and decrement ramps."},
 				},
 			},

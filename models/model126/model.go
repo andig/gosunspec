@@ -153,13 +153,12 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 10,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
 					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "Is Volt-VAR control active."},
 					{Id: WinTms, Offset: 2, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "WinTms", Description: "Time window for volt-VAR change."},
 					{Id: RvrtTms, Offset: 3, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RvrtTms", Description: "Timeout period for volt-VAR curve selection."},
-					{Id: RmpTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "Ramp time for moving from current mode to new mode."},
+					{Id: RmpTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "The time of the PT1 in seconds (time to accomplish a change of 95%)."},
 					{Id: NCrv, Offset: 5, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "NCrv", Description: "Number of curves supported (recommend 4)."},
 					{Id: NPt, Offset: 6, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "NPt", Description: "Number of curve points supported (maximum of 20)."},
 					{Id: V_SF, Offset: 7, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true, Label: "V_SF", Description: "Scale factor for percent VRef."},
@@ -214,7 +213,7 @@ func init() {
 					{Id: V20, Offset: 40, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V20", Description: "Point 20 Volts."},
 					{Id: VAr20, Offset: 41, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr20", Description: "Point 20 VARs."},
 					{Id: CrvNam, Offset: 42, Type: typelabel.String, Access: "rw", Length: 8, Label: "CrvNam", Description: "Optional description for curve. (Max 16 chars)"},
-					{Id: RmpTms, Offset: 50, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "Ramp time for moving from current mode to new mode."},
+					{Id: RmpTms, Offset: 50, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "The time of the PT1 in seconds (time to accomplish a change of 95%)."},
 					{Id: RmpDecTmm, Offset: 51, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% ref_value/min", Access: "rw", Length: 1, Label: "RmpDecTmm", Description: "The maximum rate at which the VAR value may be reduced in response to changes in the voltage value. %refVal is %WMax %VArMax or %VArAval depending on value of DeptRef."},
 					{Id: RmpIncTmm, Offset: 52, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% ref_value/min", Access: "rw", Length: 1, Label: "RmpIncTmm", Description: "The maximum rate at which the VAR value may be increased in response to changes in the voltage value. %refVal is %WMax %VArMax or %VArAval depending on value of DeptRef."},
 					{Id: ReadOnly, Offset: 53, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "ReadOnly", Description: "Boolean flag indicates if curve is read-only or can be modified."},

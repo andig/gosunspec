@@ -24,9 +24,9 @@ const (
 )
 
 type Block304Repeat struct {
-	Inclx int32 `sunspec:"offset=0,sf=-2"`
-	Incly int32 `sunspec:"offset=2,sf=-2"`
-	Inclz int32 `sunspec:"offset=4,sf=-2"`
+	Inclx int32 `sunspec:"offset=0,len=2,sf=-2,access=r"`
+	Incly int32 `sunspec:"offset=2,len=2,sf=-2,access=r"`
+	Inclz int32 `sunspec:"offset=4,len=2,sf=-2,access=r"`
 }
 
 type Block304 struct {
@@ -47,9 +47,9 @@ func init() {
 				Length: 6,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: Inclx, Offset: 0, Type: typelabel.Int32, ScaleFactor: "-2", Units: "Degrees", Mandatory: true, Label: "X", Description: "X-Axis inclination"},
-					{Id: Incly, Offset: 2, Type: typelabel.Int32, ScaleFactor: "-2", Units: "Degrees", Label: "Y", Description: "Y-Axis inclination"},
-					{Id: Inclz, Offset: 4, Type: typelabel.Int32, ScaleFactor: "-2", Units: "Degrees", Label: "Z", Description: "Z-Axis inclination"},
+					{Id: Inclx, Offset: 0, Type: typelabel.Int32, ScaleFactor: "-2", Units: "Degrees", Access: "r", Length: 2, Mandatory: true, Label: "X", Description: "X-Axis inclination"},
+					{Id: Incly, Offset: 2, Type: typelabel.Int32, ScaleFactor: "-2", Units: "Degrees", Access: "r", Length: 2, Label: "Y", Description: "Y-Axis inclination"},
+					{Id: Inclz, Offset: 4, Type: typelabel.Int32, ScaleFactor: "-2", Units: "Degrees", Access: "r", Length: 2, Label: "Z", Description: "Z-Axis inclination"},
 				},
 			},
 		}})

@@ -24,12 +24,12 @@ const (
 )
 
 type Block8Repeat struct {
-	Cert uint16 `sunspec:"offset=0,access=r"`
+	Cert uint16 `sunspec:"offset=0,len=1,access=r"`
 }
 
 type Block8 struct {
-	Fmt sunspec.Enum16 `sunspec:"offset=0,access=r"`
-	N   uint16         `sunspec:"offset=1,access=r"`
+	Fmt sunspec.Enum16 `sunspec:"offset=0,len=1,access=r"`
+	N   uint16         `sunspec:"offset=1,len=1,access=r"`
 
 	Repeats []Block8Repeat
 }
@@ -41,21 +41,21 @@ func (block *Block8) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_8",
 		Length: 3,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 2,
 				Points: []smdx.PointElement{
-					{Id: Fmt, Offset: 0, Type: typelabel.Enum16, Access: "r", Mandatory: true, Label: "Format", Description: "X.509 format of the certificate. DER or PEM."},
-					{Id: N, Offset: 1, Type: typelabel.Uint16, Access: "r", Mandatory: true, Label: "N", Description: "Number of registers to follow for the certificate"},
+					{Id: Fmt, Offset: 0, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Format", Description: "X.509 format of the certificate. DER or PEM."},
+					{Id: N, Offset: 1, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "N", Description: "Number of registers to follow for the certificate"},
 				},
 			},
-			{
+			{Name: "repeating",
 				Length: 1,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: Cert, Offset: 0, Type: typelabel.Uint16, Access: "r", Mandatory: true, Label: "Cert", Description: "X.509 Certificate of the device"},
+					{Id: Cert, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Cert", Description: "X.509 Certificate of the device"},
 				},
 			},
 		}})
