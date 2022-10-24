@@ -51,7 +51,8 @@ func init() {
 			{
 				Length: {{.Group.Length}}, {{template "points" (filteredPoints .Group.Points)}}
 			},{{end}}
-			{{range .Group.Groups}}{ {{if gt (len .Name) 0 }}Name: "{{.Name}}",{{end}}
+			{{range .Group.Groups -}}
+			{ {{if gt (len .Name) 0 }}Name: "{{.Name}}",{{end}}
 				Length: {{.Length}}, 
 				Type: "repeating", {{template "points" .Points}}
 			}, {{end}}
