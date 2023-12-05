@@ -1,9 +1,9 @@
 // This package contains a command that allows an input address space to be copied into a
 // similarly shaped output address space.
 //
-// For examople:
+// For example:
 //
-//     sunspecio --in:type=modbus --in:device=/dev/ttyS0 --in:speed=38400 --out:type=xml
+//	sunspecio --in:type=modbus --in:device=/dev/ttyS0 --in:speed=38400 --out:type=xml
 //
 // will read the Sunspec address space in the Modbus device connected to the specified serial port
 // and copy it into an xml document which is written to stdout.
@@ -13,7 +13,6 @@ import (
 	xmlencoding "encoding/xml"
 	"flag"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -29,14 +28,13 @@ import (
 )
 
 func openModbus(device string, config func(handler *modbusapi.RTUClientHandler)) (modbusapi.Client, func(), error) {
-
 	handler := modbusapi.NewRTUClientHandler(device)
 
 	handler.BaudRate = 38400
 	handler.DataBits = 8
 	handler.Parity = "N"
 	handler.StopBits = 1
-	handler.SlaveId = 1
+	handler.SlaveID = 1
 	handler.Timeout = 5 * time.Second
 
 	config(handler)
@@ -78,14 +76,14 @@ func loadModels(smdxDir string) {
 	if !strings.HasSuffix(smdxDir, "/") {
 		smdxDir = smdxDir + "/"
 	}
-	files, err := ioutil.ReadDir(smdxDir)
+	files, err := os.ReadDir(smdxDir)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	for _, file := range files {
 		if strings.HasPrefix(file.Name(), "smdx_") {
-			smdxFile, err := os.OpenFile(smdxDir+file.Name(), os.O_RDONLY, 0644)
+			smdxFile, err := os.OpenFile(smdxDir+file.Name(), os.O_RDONLY, 0o644)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -101,7 +99,7 @@ func loadModels(smdxDir string) {
 				log.Printf("failed to find any models in %s", file.Name())
 				continue
 			} else {
-				for i, _ := range def.Models {
+				for i := range def.Models {
 					smdx.RegisterModel(&def.Models[i])
 				}
 			}
@@ -162,7 +160,7 @@ func main() {
 		var closer func()
 		client, closer, err = openModbus(inDevice, func(handler *modbusapi.RTUClientHandler) {
 			handler.BaudRate = inSpeed
-			handler.SlaveId = byte(inSlave)
+			handler.SlaveID = byte(inSlave)
 		})
 		if err != nil {
 			log.Fatal(err)
@@ -204,7 +202,7 @@ func main() {
 		var closer func()
 		client, closer, err = openModbus(outDevice, func(handler *modbusapi.RTUClientHandler) {
 			handler.BaudRate = outSpeed
-			handler.SlaveId = byte(outSlave)
+			handler.SlaveID = byte(outSlave)
 		})
 		if err != nil {
 			log.Fatal(err)
