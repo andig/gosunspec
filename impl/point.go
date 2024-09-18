@@ -180,6 +180,20 @@ func (p *point) NotImplemented() bool {
 	return notImplemented
 }
 
+// ScaleFactorValue returns the scale factor assigned to the point as integer
+func (p *point) ScaleFactorValue() int16 {
+	sf := sunspec.ScaleFactor(0)
+	if p.scaleFactor != nil {
+		sf = p.scaleFactor.ScaleFactor()
+	} else if p.smdx.ScaleFactor != "" {
+		if v, err := strconv.Atoi(p.smdx.ScaleFactor); err == nil {
+			sf = sunspec.ScaleFactor(v)
+		}
+	}
+
+	return int16(sf)
+}
+
 // Scales the point value with the associated scaling factor,
 // if any, returning a float64 value.
 func (p *point) ScaledValue() float64 {
@@ -215,14 +229,7 @@ func (p *point) ScaledValue() float64 {
 		return math.NaN()
 	}
 
-	sf := sunspec.ScaleFactor(0)
-	if p.scaleFactor != nil {
-		sf = p.scaleFactor.ScaleFactor()
-	} else if p.smdx.ScaleFactor != "" {
-		if v, err := strconv.Atoi(p.smdx.ScaleFactor); err != nil {
-			sf = sunspec.ScaleFactor(v)
-		}
-	}
+	sf := p.ScaleFactorValue()
 
 	// Unimplemented scale factor value
 	if int16(sf) == int16(math.MinInt16) {
@@ -243,7 +250,6 @@ func (p *point) Value() interface{} {
 
 // Set the value of the point, checking its type first.
 func (p *point) SetValue(v interface{}) (result error) {
-
 	defer func() {
 		// use of recover here avoids the need to check
 		// the type twice.
@@ -264,6 +270,11 @@ func (p *point) SetValue(v interface{}) (result error) {
 		}
 		return nil
 	} else {
+		f := 1.0
+		if sf := p.ScaleFactorValue(); int16(sf) != int16(math.MinInt16) {
+			f = math.Pow(10, -float64(sf))
+		}
+
 		switch t := v.(type) {
 		case sunspec.Acc16:
 			p.SetAcc16(t)
@@ -286,11 +297,11 @@ func (p *point) SetValue(v interface{}) (result error) {
 		case float32:
 			p.SetFloat32(t)
 		case int16:
-			p.SetInt16(t)
+			p.SetInt16(int16(f * float64(t)))
 		case int32:
-			p.SetInt32(t)
+			p.SetInt32(int32(f * float64(t)))
 		case int64:
-			p.SetInt64(t)
+			p.SetInt64(int64(f * float64(t)))
 		case sunspec.Ipaddr:
 			p.SetIpaddr(t)
 		case sunspec.Ipv6addr:
@@ -302,11 +313,11 @@ func (p *point) SetValue(v interface{}) (result error) {
 		case sunspec.ScaleFactor:
 			p.SetScaleFactor(t)
 		case uint16:
-			p.SetUint16(t)
+			p.SetUint16(uint16(f * float64(t)))
 		case uint32:
-			p.SetUint32(t)
+			p.SetUint32(uint32(f * float64(t)))
 		case uint64:
-			p.SetUint64(t)
+			p.SetUint64(uint64(f * float64(t)))
 		default:
 			return fmt.Errorf("bad value type for point: %s: %v", p.Id(), v)
 		}
@@ -591,7 +602,7 @@ func (p *point) Unmarshal(bytes []byte) error {
 	case typelabel.Pad:
 		p.SetPad(sunspec.Pad(binary.BigEndian.Uint16(bytes)))
 	case typelabel.String:
-		var b = make([]byte, p.Length(), p.Length())
+		b := make([]byte, p.Length(), p.Length())
 		copy(b[0:], bytes)
 		for i, y := range b {
 			if y == 0 {
