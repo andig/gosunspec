@@ -25,10 +25,10 @@ const (
 )
 
 type Block63002Repeat struct {
-	sunssf_1 sunspec.ScaleFactor `sunspec:"offset=0"`
-	int16_1  int16               `sunspec:"offset=1,sf=sunssf_1,access=rw"`
-	int16_2  int16               `sunspec:"offset=2,sf=sunssf_2"`
-	sunssf_2 sunspec.ScaleFactor `sunspec:"offset=3"`
+	sunssf_1 sunspec.ScaleFactor `sunspec:"offset=0,len=1,access=r"`
+	int16_1  int16               `sunspec:"offset=1,len=1,sf=sunssf_1,access=rw"`
+	int16_2  int16               `sunspec:"offset=2,len=1,sf=sunssf_2,access=r"`
+	sunssf_2 sunspec.ScaleFactor `sunspec:"offset=3,len=1,access=r"`
 }
 
 type Block63002 struct {
@@ -42,17 +42,17 @@ func (block *Block63002) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_63002",
 		Length: 4,
 		Blocks: []smdx.BlockElement{
-			{
+			{Name: "repeating",
 				Length: 4,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: Sunssf_1, Offset: 0, Type: typelabel.ScaleFactor},
-					{Id: Int16_1, Offset: 1, Type: typelabel.Int16, ScaleFactor: "sunssf_1", Access: "rw"},
-					{Id: Int16_2, Offset: 2, Type: typelabel.Int16, ScaleFactor: "sunssf_2"},
-					{Id: Sunssf_2, Offset: 3, Type: typelabel.ScaleFactor},
+					{Id: Sunssf_1, Offset: 0, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: Int16_1, Offset: 1, Type: typelabel.Int16, ScaleFactor: "sunssf_1", Access: "rw", Length: 1},
+					{Id: Int16_2, Offset: 2, Type: typelabel.Int16, ScaleFactor: "sunssf_2", Access: "r", Length: 1},
+					{Id: Sunssf_2, Offset: 3, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
 				},
 			},
 		}})

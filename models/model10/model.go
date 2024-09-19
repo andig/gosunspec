@@ -25,10 +25,10 @@ const (
 )
 
 type Block10 struct {
-	St  sunspec.Enum16 `sunspec:"offset=0"`
-	Ctl uint16         `sunspec:"offset=1,access=rw"`
-	Typ sunspec.Enum16 `sunspec:"offset=2"`
-	Pad sunspec.Pad    `sunspec:"offset=3"`
+	St  sunspec.Enum16 `sunspec:"offset=0,len=1,access=r"`
+	Ctl uint16         `sunspec:"offset=1,len=1,access=rw"`
+	Typ sunspec.Enum16 `sunspec:"offset=2,len=1,access=r"`
+	Pad sunspec.Pad    `sunspec:"offset=3,len=1,access=r"`
 }
 
 func (block *Block10) GetId() sunspec.ModelId {
@@ -38,16 +38,16 @@ func (block *Block10) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_10",
 		Length: 4,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 4,
 				Points: []smdx.PointElement{
-					{Id: St, Offset: 0, Type: typelabel.Enum16, Mandatory: true, Label: "Interface Status", Description: "Overall interface status"},
-					{Id: Ctl, Offset: 1, Type: typelabel.Uint16, Access: "rw", Label: "Interface Control", Description: "Overall interface control (TBD)"},
-					{Id: Typ, Offset: 2, Type: typelabel.Enum16, Label: "Physical Access Type", Description: "Enumerated value.  Type of physical media"},
-					{Id: Pad, Offset: 3, Type: typelabel.Pad},
+					{Id: St, Offset: 0, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Interface Status", Description: "Overall interface status"},
+					{Id: Ctl, Offset: 1, Type: typelabel.Uint16, Access: "rw", Length: 1, Label: "Interface Control", Description: "Overall interface control (TBD)"},
+					{Id: Typ, Offset: 2, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Physical Access Type", Description: "Enumerated value.  Type of physical media"},
+					{Id: Pad, Offset: 3, Type: typelabel.Pad, Access: "r", Length: 1},
 				},
 			},
 		}})

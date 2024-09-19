@@ -44,29 +44,29 @@ const (
 )
 
 type Block64111 struct {
-	Port            uint16              `sunspec:"offset=0"`
-	V_SF            sunspec.ScaleFactor `sunspec:"offset=1"`
-	A_SF            sunspec.ScaleFactor `sunspec:"offset=2"`
-	P_SF            sunspec.ScaleFactor `sunspec:"offset=3"`
-	AH_SF           sunspec.ScaleFactor `sunspec:"offset=4"`
-	KWH_SF          sunspec.ScaleFactor `sunspec:"offset=5"`
-	BattV           uint16              `sunspec:"offset=6,sf=V_SF"`
-	ArrayV          uint16              `sunspec:"offset=7,sf=V_SF"`
-	OutputA         uint16              `sunspec:"offset=8,sf=A_SF"`
-	InputA          uint16              `sunspec:"offset=9,sf=P_SF"`
-	ChargerSt       sunspec.Enum16      `sunspec:"offset=10"`
-	OutputW         uint16              `sunspec:"offset=11,sf=P_SF"`
-	TodayMinBatV    uint16              `sunspec:"offset=12,sf=V_SF"`
-	TodayMaxBatV    uint16              `sunspec:"offset=13,sf=V_SF"`
-	VOCV            uint16              `sunspec:"offset=14,sf=V_SF"`
-	TodayMaxVOC     uint16              `sunspec:"offset=15,sf=V_SF"`
-	TodaykWhOutput  uint16              `sunspec:"offset=16,sf=KWH_SF"`
-	TodayAHOutput   uint16              `sunspec:"offset=17,sf=AH_SF"`
-	LifeTimeKWHOut  uint16              `sunspec:"offset=18,sf=P_SF"`
-	LifeTimeAHOut   uint16              `sunspec:"offset=19,sf=KWH_SF"`
-	LifeTimeMaxOut  uint16              `sunspec:"offset=20,sf=P_SF"`
-	LifeTimeMaxBatt uint16              `sunspec:"offset=21,sf=V_SF"`
-	LifeTimeMaxVOC  uint16              `sunspec:"offset=22,sf=V_SF"`
+	Port            uint16              `sunspec:"offset=0,len=1,access=r"`
+	V_SF            sunspec.ScaleFactor `sunspec:"offset=1,len=1,access=r"`
+	A_SF            sunspec.ScaleFactor `sunspec:"offset=2,len=1,access=r"`
+	P_SF            sunspec.ScaleFactor `sunspec:"offset=3,len=1,access=r"`
+	AH_SF           sunspec.ScaleFactor `sunspec:"offset=4,len=1,access=r"`
+	KWH_SF          sunspec.ScaleFactor `sunspec:"offset=5,len=1,access=r"`
+	BattV           uint16              `sunspec:"offset=6,len=1,sf=V_SF,access=r"`
+	ArrayV          uint16              `sunspec:"offset=7,len=1,sf=V_SF,access=r"`
+	OutputA         uint16              `sunspec:"offset=8,len=1,sf=A_SF,access=r"`
+	InputA          uint16              `sunspec:"offset=9,len=1,sf=P_SF,access=r"`
+	ChargerSt       sunspec.Enum16      `sunspec:"offset=10,len=1,access=r"`
+	OutputW         uint16              `sunspec:"offset=11,len=1,sf=P_SF,access=r"`
+	TodayMinBatV    uint16              `sunspec:"offset=12,len=1,sf=V_SF,access=r"`
+	TodayMaxBatV    uint16              `sunspec:"offset=13,len=1,sf=V_SF,access=r"`
+	VOCV            uint16              `sunspec:"offset=14,len=1,sf=V_SF,access=r"`
+	TodayMaxVOC     uint16              `sunspec:"offset=15,len=1,sf=V_SF,access=r"`
+	TodaykWhOutput  uint16              `sunspec:"offset=16,len=1,sf=KWH_SF,access=r"`
+	TodayAHOutput   uint16              `sunspec:"offset=17,len=1,sf=AH_SF,access=r"`
+	LifeTimeKWHOut  uint16              `sunspec:"offset=18,len=1,sf=P_SF,access=r"`
+	LifeTimeAHOut   uint16              `sunspec:"offset=19,len=1,sf=KWH_SF,access=r"`
+	LifeTimeMaxOut  uint16              `sunspec:"offset=20,len=1,sf=P_SF,access=r"`
+	LifeTimeMaxBatt uint16              `sunspec:"offset=21,len=1,sf=V_SF,access=r"`
+	LifeTimeMaxVOC  uint16              `sunspec:"offset=22,len=1,sf=V_SF,access=r"`
 }
 
 func (block *Block64111) GetId() sunspec.ModelId {
@@ -76,35 +76,35 @@ func (block *Block64111) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_64111",
 		Length: 23,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 23,
 				Points: []smdx.PointElement{
-					{Id: Port, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Port Number", Description: ""},
-					{Id: V_SF, Offset: 1, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: A_SF, Offset: 2, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: P_SF, Offset: 3, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: AH_SF, Offset: 4, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: KWH_SF, Offset: 5, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: BattV, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Battery Voltage", Description: ""},
-					{Id: ArrayV, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Array Voltage", Description: ""},
-					{Id: OutputA, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Output Current", Description: ""},
-					{Id: InputA, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "P_SF", Units: "A", Mandatory: true, Label: "Array Current", Description: ""},
-					{Id: ChargerSt, Offset: 10, Type: typelabel.Enum16, Mandatory: true, Label: "Operating State", Description: ""},
-					{Id: OutputW, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "P_SF", Units: "W", Mandatory: true, Label: "Output Wattage", Description: ""},
-					{Id: TodayMinBatV, Offset: 12, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Today's Minimum Battery Voltage", Description: ""},
-					{Id: TodayMaxBatV, Offset: 13, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Today's Maximum Battery Voltage", Description: ""},
-					{Id: VOCV, Offset: 14, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "VOC", Description: ""},
-					{Id: TodayMaxVOC, Offset: 15, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Today's Maximum VOC", Description: ""},
-					{Id: TodaykWhOutput, Offset: 16, Type: typelabel.Uint16, ScaleFactor: "KWH_SF", Units: "kWh", Mandatory: true, Label: "Today's kWh", Description: ""},
-					{Id: TodayAHOutput, Offset: 17, Type: typelabel.Uint16, ScaleFactor: "AH_SF", Units: "AH", Mandatory: true, Label: "Today's AH", Description: ""},
-					{Id: LifeTimeKWHOut, Offset: 18, Type: typelabel.Uint16, ScaleFactor: "P_SF", Units: "kWh", Mandatory: true, Label: "Lifetime kWh", Description: ""},
-					{Id: LifeTimeAHOut, Offset: 19, Type: typelabel.Uint16, ScaleFactor: "KWH_SF", Units: "kAH", Mandatory: true, Label: "Lifetime kAH", Description: ""},
-					{Id: LifeTimeMaxOut, Offset: 20, Type: typelabel.Uint16, ScaleFactor: "P_SF", Units: "W", Mandatory: true, Label: "Lifetime Maximum Output Wattage", Description: ""},
-					{Id: LifeTimeMaxBatt, Offset: 21, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Lifetime Maximum Battery Voltage", Description: ""},
-					{Id: LifeTimeMaxVOC, Offset: 22, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Lifetime Maximum VOC Voltage", Description: ""},
+					{Id: Port, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Port Number", Description: ""},
+					{Id: V_SF, Offset: 1, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: A_SF, Offset: 2, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: P_SF, Offset: 3, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: AH_SF, Offset: 4, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: KWH_SF, Offset: 5, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: BattV, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Battery Voltage", Description: ""},
+					{Id: ArrayV, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Array Voltage", Description: ""},
+					{Id: OutputA, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Output Current", Description: ""},
+					{Id: InputA, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "P_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Array Current", Description: ""},
+					{Id: ChargerSt, Offset: 10, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Operating State", Description: ""},
+					{Id: OutputW, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "P_SF", Units: "W", Access: "r", Length: 1, Mandatory: true, Label: "Output Wattage", Description: ""},
+					{Id: TodayMinBatV, Offset: 12, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Today's Minimum Battery Voltage", Description: ""},
+					{Id: TodayMaxBatV, Offset: 13, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Today's Maximum Battery Voltage", Description: ""},
+					{Id: VOCV, Offset: 14, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "VOC", Description: ""},
+					{Id: TodayMaxVOC, Offset: 15, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Today's Maximum VOC", Description: ""},
+					{Id: TodaykWhOutput, Offset: 16, Type: typelabel.Uint16, ScaleFactor: "KWH_SF", Units: "kWh", Access: "r", Length: 1, Mandatory: true, Label: "Today's kWh", Description: ""},
+					{Id: TodayAHOutput, Offset: 17, Type: typelabel.Uint16, ScaleFactor: "AH_SF", Units: "AH", Access: "r", Length: 1, Mandatory: true, Label: "Today's AH", Description: ""},
+					{Id: LifeTimeKWHOut, Offset: 18, Type: typelabel.Uint16, ScaleFactor: "P_SF", Units: "kWh", Access: "r", Length: 1, Mandatory: true, Label: "Lifetime kWh", Description: ""},
+					{Id: LifeTimeAHOut, Offset: 19, Type: typelabel.Uint16, ScaleFactor: "KWH_SF", Units: "kAH", Access: "r", Length: 1, Mandatory: true, Label: "Lifetime kAH", Description: ""},
+					{Id: LifeTimeMaxOut, Offset: 20, Type: typelabel.Uint16, ScaleFactor: "P_SF", Units: "W", Access: "r", Length: 1, Mandatory: true, Label: "Lifetime Maximum Output Wattage", Description: ""},
+					{Id: LifeTimeMaxBatt, Offset: 21, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Lifetime Maximum Battery Voltage", Description: ""},
+					{Id: LifeTimeMaxVOC, Offset: 22, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Lifetime Maximum VOC Voltage", Description: ""},
 				},
 			},
 		}})

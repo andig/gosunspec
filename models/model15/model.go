@@ -34,19 +34,19 @@ const (
 )
 
 type Block15 struct {
-	Clr       uint16        `sunspec:"offset=0,access=rw"`
-	InCnt     sunspec.Acc32 `sunspec:"offset=1"`
-	InUcCnt   sunspec.Acc32 `sunspec:"offset=3"`
-	InNUcCnt  sunspec.Acc32 `sunspec:"offset=5"`
-	InDscCnt  sunspec.Acc32 `sunspec:"offset=7"`
-	InErrCnt  sunspec.Acc32 `sunspec:"offset=9"`
-	InUnkCnt  sunspec.Acc32 `sunspec:"offset=11"`
-	OutCnt    sunspec.Acc32 `sunspec:"offset=13"`
-	OutUcCnt  sunspec.Acc32 `sunspec:"offset=15"`
-	OutNUcCnt sunspec.Acc32 `sunspec:"offset=17"`
-	OutDscCnt sunspec.Acc32 `sunspec:"offset=19"`
-	OutErrCnt sunspec.Acc32 `sunspec:"offset=21"`
-	Pad       sunspec.Pad   `sunspec:"offset=23"`
+	Clr       uint16        `sunspec:"offset=0,len=1,access=rw"`
+	InCnt     sunspec.Acc32 `sunspec:"offset=1,len=2,access=r"`
+	InUcCnt   sunspec.Acc32 `sunspec:"offset=3,len=2,access=r"`
+	InNUcCnt  sunspec.Acc32 `sunspec:"offset=5,len=2,access=r"`
+	InDscCnt  sunspec.Acc32 `sunspec:"offset=7,len=2,access=r"`
+	InErrCnt  sunspec.Acc32 `sunspec:"offset=9,len=2,access=r"`
+	InUnkCnt  sunspec.Acc32 `sunspec:"offset=11,len=2,access=r"`
+	OutCnt    sunspec.Acc32 `sunspec:"offset=13,len=2,access=r"`
+	OutUcCnt  sunspec.Acc32 `sunspec:"offset=15,len=2,access=r"`
+	OutNUcCnt sunspec.Acc32 `sunspec:"offset=17,len=2,access=r"`
+	OutDscCnt sunspec.Acc32 `sunspec:"offset=19,len=2,access=r"`
+	OutErrCnt sunspec.Acc32 `sunspec:"offset=21,len=2,access=r"`
+	Pad       sunspec.Pad   `sunspec:"offset=23,len=1,access=r"`
 }
 
 func (block *Block15) GetId() sunspec.ModelId {
@@ -56,25 +56,25 @@ func (block *Block15) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_15",
 		Length: 24,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 24,
 				Points: []smdx.PointElement{
-					{Id: Clr, Offset: 0, Type: typelabel.Uint16, Access: "rw", Label: "Clear", Description: "Write a 1 to clear all counters"},
-					{Id: InCnt, Offset: 1, Type: typelabel.Acc32, Label: "Input Count", Description: "Number of bytes received"},
-					{Id: InUcCnt, Offset: 3, Type: typelabel.Acc32, Label: "Input Unicast Count", Description: "Number of Unicast packets received"},
-					{Id: InNUcCnt, Offset: 5, Type: typelabel.Acc32, Label: "Input Non-Unicast Count", Description: "Number of non-Unicast packets received"},
-					{Id: InDscCnt, Offset: 7, Type: typelabel.Acc32, Label: "Input Discarded Count", Description: "Number of inbound packets received on the interface but discarded"},
-					{Id: InErrCnt, Offset: 9, Type: typelabel.Acc32, Label: "Input Error Count", Description: "Number of inbound packets that contain errors (excluding discards)"},
-					{Id: InUnkCnt, Offset: 11, Type: typelabel.Acc32, Label: "Input Unknown Count", Description: "Number of inbound packets with unknown protocol"},
-					{Id: OutCnt, Offset: 13, Type: typelabel.Acc32, Label: "Output Count", Description: "Total number of bytes transmitted on this interface"},
-					{Id: OutUcCnt, Offset: 15, Type: typelabel.Acc32, Label: "Output Unicast Count", Description: "Number of Unicast packets transmitted"},
-					{Id: OutNUcCnt, Offset: 17, Type: typelabel.Acc32, Label: "Output Non-Unicast Count", Description: "Number of Non-Unicast packets transmitted"},
-					{Id: OutDscCnt, Offset: 19, Type: typelabel.Acc32, Label: "Output Discarded Count", Description: "Number of Discarded output packets"},
-					{Id: OutErrCnt, Offset: 21, Type: typelabel.Acc32, Label: "Output Error Count", Description: "Number of outbound error packets"},
-					{Id: Pad, Offset: 23, Type: typelabel.Pad},
+					{Id: Clr, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Label: "Clear", Description: "Write a '1' to clear all counters"},
+					{Id: InCnt, Offset: 1, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Input Count", Description: "Number of bytes received"},
+					{Id: InUcCnt, Offset: 3, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Input Unicast Count", Description: "Number of Unicast packets received"},
+					{Id: InNUcCnt, Offset: 5, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Input Non-Unicast Count", Description: "Number of non-Unicast packets received"},
+					{Id: InDscCnt, Offset: 7, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Input Discarded Count", Description: "Number of inbound packets received on the interface but discarded"},
+					{Id: InErrCnt, Offset: 9, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Input Error Count", Description: "Number of inbound packets that contain errors (excluding discards)"},
+					{Id: InUnkCnt, Offset: 11, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Input Unknown Count", Description: "Number of inbound packets with unknown protocol"},
+					{Id: OutCnt, Offset: 13, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Output Count", Description: "Total number of bytes transmitted on this interface"},
+					{Id: OutUcCnt, Offset: 15, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Output Unicast Count", Description: "Number of Unicast packets transmitted"},
+					{Id: OutNUcCnt, Offset: 17, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Output Non-Unicast Count", Description: "Number of Non-Unicast packets transmitted"},
+					{Id: OutDscCnt, Offset: 19, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Output Discarded Count", Description: "Number of Discarded output packets"},
+					{Id: OutErrCnt, Offset: 21, Type: typelabel.Acc32, Access: "r", Length: 2, Label: "Output Error Count", Description: "Number of outbound error packets"},
+					{Id: Pad, Offset: 23, Type: typelabel.Pad, Access: "r", Length: 1},
 				},
 			},
 		}})

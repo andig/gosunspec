@@ -42,27 +42,27 @@ const (
 )
 
 type Block502 struct {
-	A_SF     sunspec.ScaleFactor `sunspec:"offset=0"`
-	V_SF     sunspec.ScaleFactor `sunspec:"offset=1"`
-	W_SF     sunspec.ScaleFactor `sunspec:"offset=2"`
-	Wh_SF    sunspec.ScaleFactor `sunspec:"offset=3"`
-	Stat     sunspec.Enum16      `sunspec:"offset=4"`
-	StatVend sunspec.Enum16      `sunspec:"offset=5"`
-	Evt      sunspec.Bitfield32  `sunspec:"offset=6"`
-	EvtVend  sunspec.Bitfield32  `sunspec:"offset=8"`
-	Ctl      sunspec.Enum16      `sunspec:"offset=10,access=rw"`
-	CtlVend  sunspec.Enum32      `sunspec:"offset=11,access=rw"`
-	CtlVal   int32               `sunspec:"offset=13,access=rw"`
-	Tms      uint32              `sunspec:"offset=15"`
-	OutA     int16               `sunspec:"offset=17,sf=A_SF"`
-	OutV     int16               `sunspec:"offset=18,sf=V_SF"`
-	OutWh    sunspec.Acc32       `sunspec:"offset=19,sf=Wh_SF"`
-	OutPw    int16               `sunspec:"offset=21,sf=W_SF"`
-	Tmp      int16               `sunspec:"offset=22"`
-	InA      int16               `sunspec:"offset=23,sf=A_SF"`
-	InV      int16               `sunspec:"offset=24,sf=V_SF"`
-	InWh     sunspec.Acc32       `sunspec:"offset=25,sf=Wh_SF"`
-	InW      int16               `sunspec:"offset=27,sf=W_SF"`
+	A_SF     sunspec.ScaleFactor `sunspec:"offset=0,len=1,access=r"`
+	V_SF     sunspec.ScaleFactor `sunspec:"offset=1,len=1,access=r"`
+	W_SF     sunspec.ScaleFactor `sunspec:"offset=2,len=1,access=r"`
+	Wh_SF    sunspec.ScaleFactor `sunspec:"offset=3,len=1,access=r"`
+	Stat     sunspec.Enum16      `sunspec:"offset=4,len=1,access=r"`
+	StatVend sunspec.Enum16      `sunspec:"offset=5,len=1,access=r"`
+	Evt      sunspec.Bitfield32  `sunspec:"offset=6,len=2,access=r"`
+	EvtVend  sunspec.Bitfield32  `sunspec:"offset=8,len=2,access=r"`
+	Ctl      sunspec.Enum16      `sunspec:"offset=10,len=1,access=rw"`
+	CtlVend  sunspec.Enum32      `sunspec:"offset=11,len=2,access=rw"`
+	CtlVal   int32               `sunspec:"offset=13,len=2,access=rw"`
+	Tms      uint32              `sunspec:"offset=15,len=2,access=r"`
+	OutA     int16               `sunspec:"offset=17,len=1,sf=A_SF,access=r"`
+	OutV     int16               `sunspec:"offset=18,len=1,sf=V_SF,access=r"`
+	OutWh    sunspec.Acc32       `sunspec:"offset=19,len=2,sf=Wh_SF,access=r"`
+	OutPw    int16               `sunspec:"offset=21,len=1,sf=W_SF,access=r"`
+	Tmp      int16               `sunspec:"offset=22,len=1,access=r"`
+	InA      int16               `sunspec:"offset=23,len=1,sf=A_SF,access=r"`
+	InV      int16               `sunspec:"offset=24,len=1,sf=V_SF,access=r"`
+	InWh     sunspec.Acc32       `sunspec:"offset=25,len=2,sf=Wh_SF,access=r"`
+	InW      int16               `sunspec:"offset=27,len=1,sf=W_SF,access=r"`
 }
 
 func (block *Block502) GetId() sunspec.ModelId {
@@ -78,27 +78,27 @@ func init() {
 			{
 				Length: 28,
 				Points: []smdx.PointElement{
-					{Id: A_SF, Offset: 0, Type: typelabel.ScaleFactor},
-					{Id: V_SF, Offset: 1, Type: typelabel.ScaleFactor},
-					{Id: W_SF, Offset: 2, Type: typelabel.ScaleFactor},
-					{Id: Wh_SF, Offset: 3, Type: typelabel.ScaleFactor},
-					{Id: Stat, Offset: 4, Type: typelabel.Enum16, Mandatory: true, Label: "Status", Description: "Enumerated value.  Module Status Code"},
-					{Id: StatVend, Offset: 5, Type: typelabel.Enum16, Label: "Vendor Status", Description: "Module Vendor Status Code"},
-					{Id: Evt, Offset: 6, Type: typelabel.Bitfield32, Mandatory: true, Label: "Events", Description: "Bitmask value.  Module Event Flags"},
-					{Id: EvtVend, Offset: 8, Type: typelabel.Bitfield32, Label: "Vendor Module Event Flags", Description: "Vendor specific flags"},
-					{Id: Ctl, Offset: 10, Type: typelabel.Enum16, Access: "rw", Label: "Control", Description: "Module Control"},
-					{Id: CtlVend, Offset: 11, Type: typelabel.Enum32, Access: "rw", Label: "Vendor Control", Description: "Vendor Module Control"},
-					{Id: CtlVal, Offset: 13, Type: typelabel.Int32, Access: "rw", Label: "Control Value", Description: "Module Control Value"},
-					{Id: Tms, Offset: 15, Type: typelabel.Uint32, Units: "Secs", Label: "Timestamp", Description: "Time in seconds since 2000 epoch"},
-					{Id: OutA, Offset: 17, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Label: "Output Current", Description: "Output Current"},
-					{Id: OutV, Offset: 18, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Label: "Output Voltage", Description: "Output Voltage"},
-					{Id: OutWh, Offset: 19, Type: typelabel.Acc32, ScaleFactor: "Wh_SF", Units: "Wh", Label: "Output Energy", Description: "Output Energy"},
-					{Id: OutPw, Offset: 21, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Label: "Output Power", Description: "Output Power"},
-					{Id: Tmp, Offset: 22, Type: typelabel.Int16, Units: "C", Label: "Temp", Description: "Module Temperature"},
-					{Id: InA, Offset: 23, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Label: "Input Current", Description: "Input Current"},
-					{Id: InV, Offset: 24, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Label: "Input Voltage", Description: "Input Voltage"},
-					{Id: InWh, Offset: 25, Type: typelabel.Acc32, ScaleFactor: "Wh_SF", Units: "Wh", Label: "Input Energy", Description: "Input Energy"},
-					{Id: InW, Offset: 27, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Label: "Input Power", Description: "Input Power"},
+					{Id: A_SF, Offset: 0, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: V_SF, Offset: 1, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: W_SF, Offset: 2, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: Wh_SF, Offset: 3, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: Stat, Offset: 4, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Status", Description: "Enumerated value.  Module Status Code"},
+					{Id: StatVend, Offset: 5, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Vendor Status", Description: "Module Vendor Status Code"},
+					{Id: Evt, Offset: 6, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Events", Description: "Bitmask value.  Module Event Flags"},
+					{Id: EvtVend, Offset: 8, Type: typelabel.Bitfield32, Access: "r", Length: 2, Label: "Vendor Module Event Flags", Description: "Vendor specific flags"},
+					{Id: Ctl, Offset: 10, Type: typelabel.Enum16, Access: "rw", Length: 1, Label: "Control", Description: "Module Control"},
+					{Id: CtlVend, Offset: 11, Type: typelabel.Enum32, Access: "rw", Length: 2, Label: "Vendor Control", Description: "Vendor Module Control"},
+					{Id: CtlVal, Offset: 13, Type: typelabel.Int32, Access: "rw", Length: 2, Label: "Control Value", Description: "Module Control Value"},
+					{Id: Tms, Offset: 15, Type: typelabel.Uint32, Units: "Secs", Access: "r", Length: 2, Label: "Timestamp", Description: "Time in seconds since 2000 epoch"},
+					{Id: OutA, Offset: 17, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Label: "Output Current", Description: "Output Current"},
+					{Id: OutV, Offset: 18, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Output Voltage", Description: "Output Voltage"},
+					{Id: OutWh, Offset: 19, Type: typelabel.Acc32, ScaleFactor: "Wh_SF", Units: "Wh", Access: "r", Length: 2, Label: "Output Energy", Description: "Output Energy"},
+					{Id: OutPw, Offset: 21, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Label: "Output Power", Description: "Output Power"},
+					{Id: Tmp, Offset: 22, Type: typelabel.Int16, Units: "C", Access: "r", Length: 1, Label: "Temp", Description: "Module Temperature"},
+					{Id: InA, Offset: 23, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Label: "Input Current", Description: "Input Current"},
+					{Id: InV, Offset: 24, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Input Voltage", Description: "Input Voltage"},
+					{Id: InWh, Offset: 25, Type: typelabel.Acc32, ScaleFactor: "Wh_SF", Units: "Wh", Access: "r", Length: 2, Label: "Input Energy", Description: "Input Energy"},
+					{Id: InW, Offset: 27, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Label: "Input Power", Description: "Input Power"},
 				},
 			},
 		}})

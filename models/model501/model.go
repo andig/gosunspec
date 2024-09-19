@@ -38,23 +38,23 @@ const (
 )
 
 type Block501 struct {
-	Stat     sunspec.Enum16     `sunspec:"offset=0"`
-	StatVend sunspec.Enum16     `sunspec:"offset=1"`
-	Evt      sunspec.Bitfield32 `sunspec:"offset=2"`
-	EvtVend  sunspec.Bitfield32 `sunspec:"offset=4"`
-	Ctl      sunspec.Enum16     `sunspec:"offset=6,access=rw"`
-	CtlVend  sunspec.Enum32     `sunspec:"offset=7,access=rw"`
-	CtlVal   int32              `sunspec:"offset=9,access=rw"`
-	Tms      uint32             `sunspec:"offset=11"`
-	OutA     float32            `sunspec:"offset=13"`
-	OutV     float32            `sunspec:"offset=15"`
-	OutWh    float32            `sunspec:"offset=17"`
-	OutW     float32            `sunspec:"offset=19"`
-	Tmp      float32            `sunspec:"offset=21"`
-	InA      float32            `sunspec:"offset=23"`
-	InV      float32            `sunspec:"offset=25"`
-	InWh     float32            `sunspec:"offset=27"`
-	InW      float32            `sunspec:"offset=29"`
+	Stat     sunspec.Enum16     `sunspec:"offset=0,len=1,access=r"`
+	StatVend sunspec.Enum16     `sunspec:"offset=1,len=1,access=r"`
+	Evt      sunspec.Bitfield32 `sunspec:"offset=2,len=2,access=r"`
+	EvtVend  sunspec.Bitfield32 `sunspec:"offset=4,len=2,access=r"`
+	Ctl      sunspec.Enum16     `sunspec:"offset=6,len=1,access=rw"`
+	CtlVend  sunspec.Enum32     `sunspec:"offset=7,len=2,access=rw"`
+	CtlVal   int32              `sunspec:"offset=9,len=2,access=rw"`
+	Tms      uint32             `sunspec:"offset=11,len=2,access=r"`
+	OutA     float32            `sunspec:"offset=13,len=2,access=r"`
+	OutV     float32            `sunspec:"offset=15,len=2,access=r"`
+	OutWh    float32            `sunspec:"offset=17,len=2,access=r"`
+	OutW     float32            `sunspec:"offset=19,len=2,access=r"`
+	Tmp      float32            `sunspec:"offset=21,len=2,access=r"`
+	InA      float32            `sunspec:"offset=23,len=2,access=r"`
+	InV      float32            `sunspec:"offset=25,len=2,access=r"`
+	InWh     float32            `sunspec:"offset=27,len=2,access=r"`
+	InW      float32            `sunspec:"offset=29,len=2,access=r"`
 }
 
 func (block *Block501) GetId() sunspec.ModelId {
@@ -70,23 +70,23 @@ func init() {
 			{
 				Length: 31,
 				Points: []smdx.PointElement{
-					{Id: Stat, Offset: 0, Type: typelabel.Enum16, Mandatory: true, Label: "Status", Description: "Enumerated value.  Module Status Code"},
-					{Id: StatVend, Offset: 1, Type: typelabel.Enum16, Label: "Vendor Status", Description: "Module Vendor Status Code"},
-					{Id: Evt, Offset: 2, Type: typelabel.Bitfield32, Mandatory: true, Label: "Events", Description: "Bitmask value.  Module Event Flags"},
-					{Id: EvtVend, Offset: 4, Type: typelabel.Bitfield32, Label: "Vendor Module Event Flags", Description: "Vendor specific flags"},
-					{Id: Ctl, Offset: 6, Type: typelabel.Enum16, Access: "rw", Label: "Control", Description: "Module Control"},
-					{Id: CtlVend, Offset: 7, Type: typelabel.Enum32, Access: "rw", Label: "Vendor Control", Description: "Vendor Module Control"},
-					{Id: CtlVal, Offset: 9, Type: typelabel.Int32, Access: "rw", Label: "Control Value", Description: "Module Control Value"},
-					{Id: Tms, Offset: 11, Type: typelabel.Uint32, Units: "Secs", Label: "Timestamp", Description: "Time in seconds since 2000 epoch"},
-					{Id: OutA, Offset: 13, Type: typelabel.Float32, Units: "A", Label: "Output Current", Description: "Output Current"},
-					{Id: OutV, Offset: 15, Type: typelabel.Float32, Units: "V", Label: "Output Voltage", Description: "Output Voltage"},
-					{Id: OutWh, Offset: 17, Type: typelabel.Float32, Units: "Wh", Label: "Output Energy", Description: "Output Energy"},
-					{Id: OutW, Offset: 19, Type: typelabel.Float32, Units: "W", Label: "Output Power", Description: "Output Power"},
-					{Id: Tmp, Offset: 21, Type: typelabel.Float32, Units: "C", Label: "Temp", Description: "Module Temperature"},
-					{Id: InA, Offset: 23, Type: typelabel.Float32, Units: "A", Label: "Input Current", Description: "Input Current"},
-					{Id: InV, Offset: 25, Type: typelabel.Float32, Units: "V", Label: "Input Voltage", Description: "Input Voltage"},
-					{Id: InWh, Offset: 27, Type: typelabel.Float32, Units: "Wh", Label: "Input Energy", Description: "Input Energy"},
-					{Id: InW, Offset: 29, Type: typelabel.Float32, Units: "W", Label: "Input Power", Description: "Input Power"},
+					{Id: Stat, Offset: 0, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Status", Description: "Enumerated value.  Module Status Code"},
+					{Id: StatVend, Offset: 1, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Vendor Status", Description: "Module Vendor Status Code"},
+					{Id: Evt, Offset: 2, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Events", Description: "Bitmask value.  Module Event Flags"},
+					{Id: EvtVend, Offset: 4, Type: typelabel.Bitfield32, Access: "r", Length: 2, Label: "Vendor Module Event Flags", Description: "Vendor specific flags"},
+					{Id: Ctl, Offset: 6, Type: typelabel.Enum16, Access: "rw", Length: 1, Label: "Control", Description: "Module Control"},
+					{Id: CtlVend, Offset: 7, Type: typelabel.Enum32, Access: "rw", Length: 2, Label: "Vendor Control", Description: "Vendor Module Control"},
+					{Id: CtlVal, Offset: 9, Type: typelabel.Int32, Access: "rw", Length: 2, Label: "Control Value", Description: "Module Control Value"},
+					{Id: Tms, Offset: 11, Type: typelabel.Uint32, Units: "Secs", Access: "r", Length: 2, Label: "Timestamp", Description: "Time in seconds since 2000 epoch"},
+					{Id: OutA, Offset: 13, Type: typelabel.Float32, Units: "A", Access: "r", Length: 2, Label: "Output Current", Description: "Output Current"},
+					{Id: OutV, Offset: 15, Type: typelabel.Float32, Units: "V", Access: "r", Length: 2, Label: "Output Voltage", Description: "Output Voltage"},
+					{Id: OutWh, Offset: 17, Type: typelabel.Float32, Units: "Wh", Access: "r", Length: 2, Label: "Output Energy", Description: "Output Energy"},
+					{Id: OutW, Offset: 19, Type: typelabel.Float32, Units: "W", Access: "r", Length: 2, Label: "Output Power", Description: "Output Power"},
+					{Id: Tmp, Offset: 21, Type: typelabel.Float32, Units: "C", Access: "r", Length: 2, Label: "Temp", Description: "Module Temperature"},
+					{Id: InA, Offset: 23, Type: typelabel.Float32, Units: "A", Access: "r", Length: 2, Label: "Input Current", Description: "Input Current"},
+					{Id: InV, Offset: 25, Type: typelabel.Float32, Units: "V", Access: "r", Length: 2, Label: "Input Voltage", Description: "Input Voltage"},
+					{Id: InWh, Offset: 27, Type: typelabel.Float32, Units: "Wh", Access: "r", Length: 2, Label: "Input Energy", Description: "Input Energy"},
+					{Id: InW, Offset: 29, Type: typelabel.Float32, Units: "W", Access: "r", Length: 2, Label: "Input Power", Description: "Input Power"},
 				},
 			},
 		}})

@@ -1,6 +1,6 @@
 module github.com/andig/gosunspec
 
-go 1.13
+go 1.18
 
 require (
 	github.com/fatih/camelcase v1.0.0

@@ -25,10 +25,10 @@ const (
 )
 
 type Block306 struct {
-	GHI uint16 `sunspec:"offset=0"`
-	A   uint16 `sunspec:"offset=1"`
-	V   uint16 `sunspec:"offset=2"`
-	Tmp uint16 `sunspec:"offset=3"`
+	GHI uint16 `sunspec:"offset=0,len=1,access=r"`
+	A   uint16 `sunspec:"offset=1,len=1,access=r"`
+	V   uint16 `sunspec:"offset=2,len=1,access=r"`
+	Tmp uint16 `sunspec:"offset=3,len=1,access=r"`
 }
 
 func (block *Block306) GetId() sunspec.ModelId {
@@ -44,10 +44,10 @@ func init() {
 			{
 				Length: 4,
 				Points: []smdx.PointElement{
-					{Id: GHI, Offset: 0, Type: typelabel.Uint16, Units: "W/m2", Label: "GHI", Description: "Global Horizontal Irradiance"},
-					{Id: A, Offset: 1, Type: typelabel.Uint16, Units: "W/m2", Label: "Amps", Description: "Current measurement at reference point"},
-					{Id: V, Offset: 2, Type: typelabel.Uint16, Units: "W/m2", Label: "Voltage", Description: "Voltage  measurement at reference point"},
-					{Id: Tmp, Offset: 3, Type: typelabel.Uint16, Units: "W/m2", Label: "Temperature", Description: "Temperature measurement at reference point"},
+					{Id: GHI, Offset: 0, Type: typelabel.Uint16, Units: "W/m2", Access: "r", Length: 1, Label: "GHI", Description: "Global Horizontal Irradiance"},
+					{Id: A, Offset: 1, Type: typelabel.Uint16, Units: "W/m2", Access: "r", Length: 1, Label: "Amps", Description: "Current measurement at reference point"},
+					{Id: V, Offset: 2, Type: typelabel.Uint16, Units: "W/m2", Access: "r", Length: 1, Label: "Voltage", Description: "Voltage  measurement at reference point"},
+					{Id: Tmp, Offset: 3, Type: typelabel.Uint16, Units: "W/m2", Access: "r", Length: 1, Label: "Temperature", Description: "Temperature measurement at reference point"},
 				},
 			},
 		}})

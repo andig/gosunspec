@@ -68,53 +68,53 @@ const (
 )
 
 type Block64110 struct {
-	MajorFWRev        uint16              `sunspec:"offset=0"`
-	MidFWRev          uint16              `sunspec:"offset=1"`
-	MinorFWRev        uint16              `sunspec:"offset=2"`
-	EncrypKey         uint16              `sunspec:"offset=3"`
-	MAC_Address       string              `sunspec:"offset=4,len=7"`
-	WritePassword     string              `sunspec:"offset=11,len=8"`
-	EnableDHCP        sunspec.Enum16      `sunspec:"offset=19"`
-	TCPIP_address     sunspec.Ipaddr      `sunspec:"offset=20"`
-	Gateway_address   sunspec.Ipaddr      `sunspec:"offset=22"`
-	TCPIP_Netmask     sunspec.Ipaddr      `sunspec:"offset=24"`
-	DNS1_address      sunspec.Ipaddr      `sunspec:"offset=26"`
-	DNS2_address      sunspec.Ipaddr      `sunspec:"offset=28"`
-	Modbus_port       uint16              `sunspec:"offset=30"`
-	SMTP_server_nm    string              `sunspec:"offset=31,len=20"`
-	SMTP_account_nm   string              `sunspec:"offset=51,len=16"`
-	SMTP_enable_SSL   sunspec.Enum16      `sunspec:"offset=67"`
-	SMTP_password     string              `sunspec:"offset=68,len=8"`
-	SMTP_user_nm      string              `sunspec:"offset=76,len=20"`
-	Stat_email_int    uint16              `sunspec:"offset=96"`
-	Stat_start_HR     uint16              `sunspec:"offset=97"`
-	Stat_email_sub    string              `sunspec:"offset=98,len=25"`
-	Stat_email_addr1  string              `sunspec:"offset=123,len=20"`
-	Stat_email_addr2  string              `sunspec:"offset=143,len=20"`
-	Alarm_email_en    sunspec.Enum16      `sunspec:"offset=163"`
-	Alarm_email_sub   string              `sunspec:"offset=164,len=25"`
-	Alarm_email_addr1 string              `sunspec:"offset=189,len=20"`
-	Alarm_email_addr2 string              `sunspec:"offset=209,len=20"`
-	FTP_password      string              `sunspec:"offset=229,len=8"`
-	TELNET_password   string              `sunspec:"offset=237,len=8"`
-	Log_write_int     uint16              `sunspec:"offset=245"`
-	Log_retain        uint16              `sunspec:"offset=246"`
-	Log_mode          sunspec.Enum16      `sunspec:"offset=247"`
-	NTP_server_nm     string              `sunspec:"offset=248,len=20"`
-	NTP_enable        sunspec.Enum16      `sunspec:"offset=268"`
-	TimeZone          int16               `sunspec:"offset=269"`
-	Date_year         uint16              `sunspec:"offset=270"`
-	Date_month        uint16              `sunspec:"offset=271"`
-	Date_Day          uint16              `sunspec:"offset=272"`
-	Time_hour         uint16              `sunspec:"offset=273"`
-	Time_minute       uint16              `sunspec:"offset=274"`
-	Time_second       uint16              `sunspec:"offset=275"`
-	Battery_temp      int16               `sunspec:"offset=276,sf=Temp_SF"`
-	Ambient_temp      int16               `sunspec:"offset=277,sf=Temp_SF"`
-	Temp_SF           sunspec.ScaleFactor `sunspec:"offset=278"`
-	AXS_Error         sunspec.Bitfield16  `sunspec:"offset=279"`
-	AXS_Status        sunspec.Bitfield16  `sunspec:"offset=280"`
-	AXS_Spare         uint16              `sunspec:"offset=281"`
+	MajorFWRev        uint16              `sunspec:"offset=0,len=1,access=r"`
+	MidFWRev          uint16              `sunspec:"offset=1,len=1,access=r"`
+	MinorFWRev        uint16              `sunspec:"offset=2,len=1,access=r"`
+	EncrypKey         uint16              `sunspec:"offset=3,len=1,access=r"`
+	MAC_Address       string              `sunspec:"offset=4,len=7,access=r"`
+	WritePassword     string              `sunspec:"offset=11,len=8,access=r"`
+	EnableDHCP        sunspec.Enum16      `sunspec:"offset=19,len=1,access=r"`
+	TCPIP_address     sunspec.Ipaddr      `sunspec:"offset=20,len=2,access=r"`
+	Gateway_address   sunspec.Ipaddr      `sunspec:"offset=22,len=2,access=r"`
+	TCPIP_Netmask     sunspec.Ipaddr      `sunspec:"offset=24,len=2,access=r"`
+	DNS1_address      sunspec.Ipaddr      `sunspec:"offset=26,len=2,access=r"`
+	DNS2_address      sunspec.Ipaddr      `sunspec:"offset=28,len=2,access=r"`
+	Modbus_port       uint16              `sunspec:"offset=30,len=1,access=r"`
+	SMTP_server_nm    string              `sunspec:"offset=31,len=20,access=r"`
+	SMTP_account_nm   string              `sunspec:"offset=51,len=16,access=r"`
+	SMTP_enable_SSL   sunspec.Enum16      `sunspec:"offset=67,len=1,access=r"`
+	SMTP_password     string              `sunspec:"offset=68,len=8,access=r"`
+	SMTP_user_nm      string              `sunspec:"offset=76,len=20,access=r"`
+	Stat_email_int    uint16              `sunspec:"offset=96,len=1,access=r"`
+	Stat_start_HR     uint16              `sunspec:"offset=97,len=1,access=r"`
+	Stat_email_sub    string              `sunspec:"offset=98,len=25,access=r"`
+	Stat_email_addr1  string              `sunspec:"offset=123,len=20,access=r"`
+	Stat_email_addr2  string              `sunspec:"offset=143,len=20,access=r"`
+	Alarm_email_en    sunspec.Enum16      `sunspec:"offset=163,len=1,access=r"`
+	Alarm_email_sub   string              `sunspec:"offset=164,len=25,access=r"`
+	Alarm_email_addr1 string              `sunspec:"offset=189,len=20,access=r"`
+	Alarm_email_addr2 string              `sunspec:"offset=209,len=20,access=r"`
+	FTP_password      string              `sunspec:"offset=229,len=8,access=r"`
+	TELNET_password   string              `sunspec:"offset=237,len=8,access=r"`
+	Log_write_int     uint16              `sunspec:"offset=245,len=1,access=r"`
+	Log_retain        uint16              `sunspec:"offset=246,len=1,access=r"`
+	Log_mode          sunspec.Enum16      `sunspec:"offset=247,len=1,access=r"`
+	NTP_server_nm     string              `sunspec:"offset=248,len=20,access=r"`
+	NTP_enable        sunspec.Enum16      `sunspec:"offset=268,len=1,access=r"`
+	TimeZone          int16               `sunspec:"offset=269,len=1,access=r"`
+	Date_year         uint16              `sunspec:"offset=270,len=1,access=r"`
+	Date_month        uint16              `sunspec:"offset=271,len=1,access=r"`
+	Date_Day          uint16              `sunspec:"offset=272,len=1,access=r"`
+	Time_hour         uint16              `sunspec:"offset=273,len=1,access=r"`
+	Time_minute       uint16              `sunspec:"offset=274,len=1,access=r"`
+	Time_second       uint16              `sunspec:"offset=275,len=1,access=r"`
+	Battery_temp      int16               `sunspec:"offset=276,len=1,sf=Temp_SF,access=r"`
+	Ambient_temp      int16               `sunspec:"offset=277,len=1,sf=Temp_SF,access=r"`
+	Temp_SF           sunspec.ScaleFactor `sunspec:"offset=278,len=1,access=r"`
+	AXS_Error         sunspec.Bitfield16  `sunspec:"offset=279,len=1,access=r"`
+	AXS_Status        sunspec.Bitfield16  `sunspec:"offset=280,len=1,access=r"`
+	AXS_Spare         uint16              `sunspec:"offset=281,len=1,access=r"`
 }
 
 func (block *Block64110) GetId() sunspec.ModelId {
@@ -124,59 +124,59 @@ func (block *Block64110) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_64110",
 		Length: 282,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 282,
 				Points: []smdx.PointElement{
-					{Id: MajorFWRev, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "AXS Major Firmware Number", Description: ""},
-					{Id: MidFWRev, Offset: 1, Type: typelabel.Uint16, Mandatory: true, Label: "AXS Mid Firmware Number", Description: ""},
-					{Id: MinorFWRev, Offset: 2, Type: typelabel.Uint16, Mandatory: true, Label: "AXS Minor Firmware Number", Description: ""},
-					{Id: EncrypKey, Offset: 3, Type: typelabel.Uint16, Mandatory: true, Label: "Encryption Key", Description: ""},
-					{Id: MAC_Address, Offset: 4, Type: typelabel.String, Length: 7, Mandatory: true, Label: "MAC Address", Description: ""},
-					{Id: WritePassword, Offset: 11, Type: typelabel.String, Length: 8, Mandatory: true, Label: "Write Password", Description: ""},
-					{Id: EnableDHCP, Offset: 19, Type: typelabel.Enum16, Mandatory: true, Label: "Enable DHCP", Description: ""},
-					{Id: TCPIP_address, Offset: 20, Type: typelabel.Ipaddr, Mandatory: true, Label: "TCPIP Address", Description: ""},
-					{Id: Gateway_address, Offset: 22, Type: typelabel.Ipaddr, Mandatory: true, Label: "TCPIP Gateway", Description: ""},
-					{Id: TCPIP_Netmask, Offset: 24, Type: typelabel.Ipaddr, Mandatory: true, Label: "TCPIP Netmask", Description: ""},
-					{Id: DNS1_address, Offset: 26, Type: typelabel.Ipaddr, Mandatory: true, Label: "TCPIP DNS1", Description: ""},
-					{Id: DNS2_address, Offset: 28, Type: typelabel.Ipaddr, Mandatory: true, Label: "TCPIP DNS2", Description: ""},
-					{Id: Modbus_port, Offset: 30, Type: typelabel.Uint16, Mandatory: true, Label: "ModBus Port", Description: ""},
-					{Id: SMTP_server_nm, Offset: 31, Type: typelabel.String, Length: 20, Mandatory: true, Label: "SMTP Server Name", Description: ""},
-					{Id: SMTP_account_nm, Offset: 51, Type: typelabel.String, Length: 16, Mandatory: true, Label: "SMTP Account Name", Description: ""},
-					{Id: SMTP_enable_SSL, Offset: 67, Type: typelabel.Enum16, Mandatory: true, Label: "Enable SMTP SSL", Description: ""},
-					{Id: SMTP_password, Offset: 68, Type: typelabel.String, Length: 8, Mandatory: true, Label: "SMTP Password", Description: ""},
-					{Id: SMTP_user_nm, Offset: 76, Type: typelabel.String, Length: 20, Mandatory: true, Label: "SMTP User Name", Description: ""},
-					{Id: Stat_email_int, Offset: 96, Type: typelabel.Uint16, Mandatory: true, Label: "Status Email Interval", Description: ""},
-					{Id: Stat_start_HR, Offset: 97, Type: typelabel.Uint16, Mandatory: true, Label: "Status Email Start Hour", Description: ""},
-					{Id: Stat_email_sub, Offset: 98, Type: typelabel.String, Length: 25, Mandatory: true, Label: "Status Email Subject", Description: ""},
-					{Id: Stat_email_addr1, Offset: 123, Type: typelabel.String, Length: 20, Mandatory: true, Label: "Status Email to Address 1", Description: ""},
-					{Id: Stat_email_addr2, Offset: 143, Type: typelabel.String, Length: 20, Mandatory: true, Label: "Status Email to Address 2", Description: ""},
-					{Id: Alarm_email_en, Offset: 163, Type: typelabel.Enum16, Mandatory: true, Label: "Enable Alarm Email", Description: ""},
-					{Id: Alarm_email_sub, Offset: 164, Type: typelabel.String, Length: 25, Mandatory: true, Label: "Alarm Email Subject", Description: ""},
-					{Id: Alarm_email_addr1, Offset: 189, Type: typelabel.String, Length: 20, Mandatory: true, Label: "Alarm Email to Address 1", Description: ""},
-					{Id: Alarm_email_addr2, Offset: 209, Type: typelabel.String, Length: 20, Mandatory: true, Label: "Alarm Email to Address 2", Description: ""},
-					{Id: FTP_password, Offset: 229, Type: typelabel.String, Length: 8, Mandatory: true, Label: "FTP Password", Description: ""},
-					{Id: TELNET_password, Offset: 237, Type: typelabel.String, Length: 8, Mandatory: true, Label: "Telnet Password", Description: ""},
-					{Id: Log_write_int, Offset: 245, Type: typelabel.Uint16, Units: "Tms", Mandatory: true, Label: "SD-Card Datalog Write Interval", Description: ""},
-					{Id: Log_retain, Offset: 246, Type: typelabel.Uint16, Units: "Tmd", Mandatory: true, Label: "SD-Card Datalog Retain", Description: ""},
-					{Id: Log_mode, Offset: 247, Type: typelabel.Enum16, Mandatory: true, Label: "SD-Card Datalog Mode", Description: ""},
-					{Id: NTP_server_nm, Offset: 248, Type: typelabel.String, Length: 20, Mandatory: true, Label: "NTP Timer Server Name", Description: ""},
-					{Id: NTP_enable, Offset: 268, Type: typelabel.Enum16, Mandatory: true, Label: "Enable Network Time", Description: ""},
-					{Id: TimeZone, Offset: 269, Type: typelabel.Int16, Units: "Tmh", Mandatory: true, Label: "Time Zone", Description: ""},
-					{Id: Date_year, Offset: 270, Type: typelabel.Uint16, Mandatory: true, Label: "Year", Description: ""},
-					{Id: Date_month, Offset: 271, Type: typelabel.Uint16, Mandatory: true, Label: "Month", Description: ""},
-					{Id: Date_Day, Offset: 272, Type: typelabel.Uint16, Mandatory: true, Label: "Day", Description: ""},
-					{Id: Time_hour, Offset: 273, Type: typelabel.Uint16, Mandatory: true, Label: "Hour", Description: ""},
-					{Id: Time_minute, Offset: 274, Type: typelabel.Uint16, Mandatory: true, Label: "Minute", Description: ""},
-					{Id: Time_second, Offset: 275, Type: typelabel.Uint16, Mandatory: true, Label: "Second", Description: ""},
-					{Id: Battery_temp, Offset: 276, Type: typelabel.Int16, ScaleFactor: "Temp_SF", Units: "C", Mandatory: true, Label: "Battery Temperature", Description: ""},
-					{Id: Ambient_temp, Offset: 277, Type: typelabel.Int16, ScaleFactor: "Temp_SF", Units: "C", Mandatory: true, Label: "Ambient Temperature", Description: ""},
-					{Id: Temp_SF, Offset: 278, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: AXS_Error, Offset: 279, Type: typelabel.Bitfield16, Mandatory: true, Label: "AXS Error", Description: ""},
-					{Id: AXS_Status, Offset: 280, Type: typelabel.Bitfield16, Mandatory: true, Label: "AXS Status", Description: ""},
-					{Id: AXS_Spare, Offset: 281, Type: typelabel.Uint16, Mandatory: true, Label: "Spare", Description: ""},
+					{Id: MajorFWRev, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "AXS Major Firmware Number", Description: ""},
+					{Id: MidFWRev, Offset: 1, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "AXS Mid Firmware Number", Description: ""},
+					{Id: MinorFWRev, Offset: 2, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "AXS Minor Firmware Number", Description: ""},
+					{Id: EncrypKey, Offset: 3, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Encryption Key", Description: ""},
+					{Id: MAC_Address, Offset: 4, Type: typelabel.String, Access: "r", Length: 7, Mandatory: true, Label: "MAC Address", Description: ""},
+					{Id: WritePassword, Offset: 11, Type: typelabel.String, Access: "r", Length: 8, Mandatory: true, Label: "Write Password", Description: ""},
+					{Id: EnableDHCP, Offset: 19, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Enable DHCP", Description: ""},
+					{Id: TCPIP_address, Offset: 20, Type: typelabel.Ipaddr, Access: "r", Length: 2, Mandatory: true, Label: "TCPIP Address", Description: ""},
+					{Id: Gateway_address, Offset: 22, Type: typelabel.Ipaddr, Access: "r", Length: 2, Mandatory: true, Label: "TCPIP Gateway", Description: ""},
+					{Id: TCPIP_Netmask, Offset: 24, Type: typelabel.Ipaddr, Access: "r", Length: 2, Mandatory: true, Label: "TCPIP Netmask", Description: ""},
+					{Id: DNS1_address, Offset: 26, Type: typelabel.Ipaddr, Access: "r", Length: 2, Mandatory: true, Label: "TCPIP DNS1", Description: ""},
+					{Id: DNS2_address, Offset: 28, Type: typelabel.Ipaddr, Access: "r", Length: 2, Mandatory: true, Label: "TCPIP DNS2", Description: ""},
+					{Id: Modbus_port, Offset: 30, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "ModBus Port", Description: ""},
+					{Id: SMTP_server_nm, Offset: 31, Type: typelabel.String, Access: "r", Length: 20, Mandatory: true, Label: "SMTP Server Name", Description: ""},
+					{Id: SMTP_account_nm, Offset: 51, Type: typelabel.String, Access: "r", Length: 16, Mandatory: true, Label: "SMTP Account Name", Description: ""},
+					{Id: SMTP_enable_SSL, Offset: 67, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Enable SMTP SSL", Description: ""},
+					{Id: SMTP_password, Offset: 68, Type: typelabel.String, Access: "r", Length: 8, Mandatory: true, Label: "SMTP Password", Description: ""},
+					{Id: SMTP_user_nm, Offset: 76, Type: typelabel.String, Access: "r", Length: 20, Mandatory: true, Label: "SMTP User Name", Description: ""},
+					{Id: Stat_email_int, Offset: 96, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Status Email Interval", Description: ""},
+					{Id: Stat_start_HR, Offset: 97, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Status Email Start Hour", Description: ""},
+					{Id: Stat_email_sub, Offset: 98, Type: typelabel.String, Access: "r", Length: 25, Mandatory: true, Label: "Status Email Subject", Description: ""},
+					{Id: Stat_email_addr1, Offset: 123, Type: typelabel.String, Access: "r", Length: 20, Mandatory: true, Label: "Status Email to Address 1", Description: ""},
+					{Id: Stat_email_addr2, Offset: 143, Type: typelabel.String, Access: "r", Length: 20, Mandatory: true, Label: "Status Email to Address 2", Description: ""},
+					{Id: Alarm_email_en, Offset: 163, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Enable Alarm Email", Description: ""},
+					{Id: Alarm_email_sub, Offset: 164, Type: typelabel.String, Access: "r", Length: 25, Mandatory: true, Label: "Alarm Email Subject", Description: ""},
+					{Id: Alarm_email_addr1, Offset: 189, Type: typelabel.String, Access: "r", Length: 20, Mandatory: true, Label: "Alarm Email to Address 1", Description: ""},
+					{Id: Alarm_email_addr2, Offset: 209, Type: typelabel.String, Access: "r", Length: 20, Mandatory: true, Label: "Alarm Email to Address 2", Description: ""},
+					{Id: FTP_password, Offset: 229, Type: typelabel.String, Access: "r", Length: 8, Mandatory: true, Label: "FTP Password", Description: ""},
+					{Id: TELNET_password, Offset: 237, Type: typelabel.String, Access: "r", Length: 8, Mandatory: true, Label: "Telnet Password", Description: ""},
+					{Id: Log_write_int, Offset: 245, Type: typelabel.Uint16, Units: "Tms", Access: "r", Length: 1, Mandatory: true, Label: "SD-Card Datalog Write Interval", Description: ""},
+					{Id: Log_retain, Offset: 246, Type: typelabel.Uint16, Units: "Tmd", Access: "r", Length: 1, Mandatory: true, Label: "SD-Card Datalog Retain", Description: ""},
+					{Id: Log_mode, Offset: 247, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "SD-Card Datalog Mode", Description: ""},
+					{Id: NTP_server_nm, Offset: 248, Type: typelabel.String, Access: "r", Length: 20, Mandatory: true, Label: "NTP Timer Server Name", Description: ""},
+					{Id: NTP_enable, Offset: 268, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Enable Network Time", Description: ""},
+					{Id: TimeZone, Offset: 269, Type: typelabel.Int16, Units: "Tmh", Access: "r", Length: 1, Mandatory: true, Label: "Time Zone", Description: ""},
+					{Id: Date_year, Offset: 270, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Year", Description: ""},
+					{Id: Date_month, Offset: 271, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Month", Description: ""},
+					{Id: Date_Day, Offset: 272, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Day", Description: ""},
+					{Id: Time_hour, Offset: 273, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Hour", Description: ""},
+					{Id: Time_minute, Offset: 274, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Minute", Description: ""},
+					{Id: Time_second, Offset: 275, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Second", Description: ""},
+					{Id: Battery_temp, Offset: 276, Type: typelabel.Int16, ScaleFactor: "Temp_SF", Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Battery Temperature", Description: ""},
+					{Id: Ambient_temp, Offset: 277, Type: typelabel.Int16, ScaleFactor: "Temp_SF", Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Ambient Temperature", Description: ""},
+					{Id: Temp_SF, Offset: 278, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: AXS_Error, Offset: 279, Type: typelabel.Bitfield16, Access: "r", Length: 1, Mandatory: true, Label: "AXS Error", Description: ""},
+					{Id: AXS_Status, Offset: 280, Type: typelabel.Bitfield16, Access: "r", Length: 1, Mandatory: true, Label: "AXS Status", Description: ""},
+					{Id: AXS_Spare, Offset: 281, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Spare", Description: ""},
 				},
 			},
 		}})

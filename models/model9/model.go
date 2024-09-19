@@ -113,101 +113,101 @@ const (
 )
 
 type Block9Repeat struct {
-	Cert uint16 `sunspec:"offset=0,access=rw"`
+	Cert uint16 `sunspec:"offset=0,len=1,access=rw"`
 }
 
 type Block9 struct {
-	CertUID  uint16         `sunspec:"offset=0,access=rw"`
-	CertRole uint16         `sunspec:"offset=1,access=rw"`
-	Fmt      sunspec.Enum16 `sunspec:"offset=2,access=rw"`
-	Typ      sunspec.Enum16 `sunspec:"offset=3,access=rw"`
-	TotLn    uint16         `sunspec:"offset=4,access=rw"`
-	FrgLn    uint16         `sunspec:"offset=5,access=rw"`
-	Frg1     uint16         `sunspec:"offset=6,access=rw"`
-	Frg2     uint16         `sunspec:"offset=7,access=rw"`
-	Frg3     uint16         `sunspec:"offset=8,access=rw"`
-	Frg4     uint16         `sunspec:"offset=9,access=rw"`
-	Frg5     uint16         `sunspec:"offset=10,access=rw"`
-	Frg6     uint16         `sunspec:"offset=11,access=rw"`
-	Frg7     uint16         `sunspec:"offset=12,access=rw"`
-	Frg8     uint16         `sunspec:"offset=13,access=rw"`
-	Frg9     uint16         `sunspec:"offset=14,access=rw"`
-	Frg10    uint16         `sunspec:"offset=15,access=rw"`
-	Frg11    uint16         `sunspec:"offset=16,access=rw"`
-	Frg12    uint16         `sunspec:"offset=17,access=rw"`
-	Frg13    uint16         `sunspec:"offset=18,access=rw"`
-	Frg14    uint16         `sunspec:"offset=19,access=rw"`
-	Frg15    uint16         `sunspec:"offset=20,access=rw"`
-	Frg16    uint16         `sunspec:"offset=21,access=rw"`
-	Frg17    uint16         `sunspec:"offset=22,access=rw"`
-	Frg18    uint16         `sunspec:"offset=23,access=rw"`
-	Frg19    uint16         `sunspec:"offset=24,access=rw"`
-	Frg20    uint16         `sunspec:"offset=25,access=rw"`
-	Frg21    uint16         `sunspec:"offset=26,access=rw"`
-	Frg22    uint16         `sunspec:"offset=27,access=rw"`
-	Frg23    uint16         `sunspec:"offset=28,access=rw"`
-	Frg24    uint16         `sunspec:"offset=29,access=rw"`
-	Frg25    uint16         `sunspec:"offset=30,access=rw"`
-	Frg26    uint16         `sunspec:"offset=31,access=rw"`
-	Frg27    uint16         `sunspec:"offset=32,access=rw"`
-	Frg28    uint16         `sunspec:"offset=33,access=rw"`
-	Frg29    uint16         `sunspec:"offset=34,access=rw"`
-	Frg30    uint16         `sunspec:"offset=35,access=rw"`
-	Frg31    uint16         `sunspec:"offset=36,access=rw"`
-	Frg32    uint16         `sunspec:"offset=37,access=rw"`
-	Frg33    uint16         `sunspec:"offset=38,access=rw"`
-	Frg34    uint16         `sunspec:"offset=39,access=rw"`
-	Frg35    uint16         `sunspec:"offset=40,access=rw"`
-	Frg36    uint16         `sunspec:"offset=41,access=rw"`
-	Frg37    uint16         `sunspec:"offset=42,access=rw"`
-	Frg38    uint16         `sunspec:"offset=43,access=rw"`
-	Frg39    uint16         `sunspec:"offset=44,access=rw"`
-	Frg40    uint16         `sunspec:"offset=45,access=rw"`
-	Frg41    uint16         `sunspec:"offset=46,access=rw"`
-	Frg42    uint16         `sunspec:"offset=47,access=rw"`
-	Frg43    uint16         `sunspec:"offset=48,access=rw"`
-	Frg44    uint16         `sunspec:"offset=49,access=rw"`
-	Frg45    uint16         `sunspec:"offset=50,access=rw"`
-	Frg46    uint16         `sunspec:"offset=51,access=rw"`
-	Frg47    uint16         `sunspec:"offset=52,access=rw"`
-	Frg48    uint16         `sunspec:"offset=53,access=rw"`
-	Frg49    uint16         `sunspec:"offset=54,access=rw"`
-	Frg50    uint16         `sunspec:"offset=55,access=rw"`
-	Frg51    uint16         `sunspec:"offset=56,access=rw"`
-	Frg52    uint16         `sunspec:"offset=57,access=rw"`
-	Frg53    uint16         `sunspec:"offset=58,access=rw"`
-	Frg54    uint16         `sunspec:"offset=59,access=rw"`
-	Frg55    uint16         `sunspec:"offset=60,access=rw"`
-	Frg56    uint16         `sunspec:"offset=61,access=rw"`
-	Frg57    uint16         `sunspec:"offset=62,access=rw"`
-	Frg58    uint16         `sunspec:"offset=63,access=rw"`
-	Frg59    uint16         `sunspec:"offset=64,access=rw"`
-	Frg60    uint16         `sunspec:"offset=65,access=rw"`
-	Frg61    uint16         `sunspec:"offset=66,access=rw"`
-	Frg62    uint16         `sunspec:"offset=67,access=rw"`
-	Frg63    uint16         `sunspec:"offset=68,access=rw"`
-	Frg64    uint16         `sunspec:"offset=69,access=rw"`
-	Frg65    uint16         `sunspec:"offset=70,access=rw"`
-	Frg66    uint16         `sunspec:"offset=71,access=rw"`
-	Frg67    uint16         `sunspec:"offset=72,access=rw"`
-	Frg68    uint16         `sunspec:"offset=73,access=rw"`
-	Frg69    uint16         `sunspec:"offset=74,access=rw"`
-	Frg70    uint16         `sunspec:"offset=75,access=rw"`
-	Frg71    uint16         `sunspec:"offset=76,access=rw"`
-	Frg72    uint16         `sunspec:"offset=77,access=rw"`
-	Frg73    uint16         `sunspec:"offset=78,access=rw"`
-	Frg74    uint16         `sunspec:"offset=79,access=rw"`
-	Frg75    uint16         `sunspec:"offset=80,access=rw"`
-	Frg78    uint16         `sunspec:"offset=81,access=rw"`
-	Frg79    uint16         `sunspec:"offset=82,access=rw"`
-	Frg80    uint16         `sunspec:"offset=83,access=rw"`
-	Ts       uint32         `sunspec:"offset=84,access=rw"`
-	Ms       uint16         `sunspec:"offset=86,access=rw"`
-	Seq      uint16         `sunspec:"offset=87,access=rw"`
-	UID      uint16         `sunspec:"offset=88,access=rw"`
-	Role     uint16         `sunspec:"offset=89,access=rw"`
-	Alg      sunspec.Enum16 `sunspec:"offset=90,access=rw"`
-	N        uint16         `sunspec:"offset=91,access=rw"`
+	CertUID  uint16         `sunspec:"offset=0,len=1,access=rw"`
+	CertRole uint16         `sunspec:"offset=1,len=1,access=rw"`
+	Fmt      sunspec.Enum16 `sunspec:"offset=2,len=1,access=rw"`
+	Typ      sunspec.Enum16 `sunspec:"offset=3,len=1,access=rw"`
+	TotLn    uint16         `sunspec:"offset=4,len=1,access=rw"`
+	FrgLn    uint16         `sunspec:"offset=5,len=1,access=rw"`
+	Frg1     uint16         `sunspec:"offset=6,len=1,access=rw"`
+	Frg2     uint16         `sunspec:"offset=7,len=1,access=rw"`
+	Frg3     uint16         `sunspec:"offset=8,len=1,access=rw"`
+	Frg4     uint16         `sunspec:"offset=9,len=1,access=rw"`
+	Frg5     uint16         `sunspec:"offset=10,len=1,access=rw"`
+	Frg6     uint16         `sunspec:"offset=11,len=1,access=rw"`
+	Frg7     uint16         `sunspec:"offset=12,len=1,access=rw"`
+	Frg8     uint16         `sunspec:"offset=13,len=1,access=rw"`
+	Frg9     uint16         `sunspec:"offset=14,len=1,access=rw"`
+	Frg10    uint16         `sunspec:"offset=15,len=1,access=rw"`
+	Frg11    uint16         `sunspec:"offset=16,len=1,access=rw"`
+	Frg12    uint16         `sunspec:"offset=17,len=1,access=rw"`
+	Frg13    uint16         `sunspec:"offset=18,len=1,access=rw"`
+	Frg14    uint16         `sunspec:"offset=19,len=1,access=rw"`
+	Frg15    uint16         `sunspec:"offset=20,len=1,access=rw"`
+	Frg16    uint16         `sunspec:"offset=21,len=1,access=rw"`
+	Frg17    uint16         `sunspec:"offset=22,len=1,access=rw"`
+	Frg18    uint16         `sunspec:"offset=23,len=1,access=rw"`
+	Frg19    uint16         `sunspec:"offset=24,len=1,access=rw"`
+	Frg20    uint16         `sunspec:"offset=25,len=1,access=rw"`
+	Frg21    uint16         `sunspec:"offset=26,len=1,access=rw"`
+	Frg22    uint16         `sunspec:"offset=27,len=1,access=rw"`
+	Frg23    uint16         `sunspec:"offset=28,len=1,access=rw"`
+	Frg24    uint16         `sunspec:"offset=29,len=1,access=rw"`
+	Frg25    uint16         `sunspec:"offset=30,len=1,access=rw"`
+	Frg26    uint16         `sunspec:"offset=31,len=1,access=rw"`
+	Frg27    uint16         `sunspec:"offset=32,len=1,access=rw"`
+	Frg28    uint16         `sunspec:"offset=33,len=1,access=rw"`
+	Frg29    uint16         `sunspec:"offset=34,len=1,access=rw"`
+	Frg30    uint16         `sunspec:"offset=35,len=1,access=rw"`
+	Frg31    uint16         `sunspec:"offset=36,len=1,access=rw"`
+	Frg32    uint16         `sunspec:"offset=37,len=1,access=rw"`
+	Frg33    uint16         `sunspec:"offset=38,len=1,access=rw"`
+	Frg34    uint16         `sunspec:"offset=39,len=1,access=rw"`
+	Frg35    uint16         `sunspec:"offset=40,len=1,access=rw"`
+	Frg36    uint16         `sunspec:"offset=41,len=1,access=rw"`
+	Frg37    uint16         `sunspec:"offset=42,len=1,access=rw"`
+	Frg38    uint16         `sunspec:"offset=43,len=1,access=rw"`
+	Frg39    uint16         `sunspec:"offset=44,len=1,access=rw"`
+	Frg40    uint16         `sunspec:"offset=45,len=1,access=rw"`
+	Frg41    uint16         `sunspec:"offset=46,len=1,access=rw"`
+	Frg42    uint16         `sunspec:"offset=47,len=1,access=rw"`
+	Frg43    uint16         `sunspec:"offset=48,len=1,access=rw"`
+	Frg44    uint16         `sunspec:"offset=49,len=1,access=rw"`
+	Frg45    uint16         `sunspec:"offset=50,len=1,access=rw"`
+	Frg46    uint16         `sunspec:"offset=51,len=1,access=rw"`
+	Frg47    uint16         `sunspec:"offset=52,len=1,access=rw"`
+	Frg48    uint16         `sunspec:"offset=53,len=1,access=rw"`
+	Frg49    uint16         `sunspec:"offset=54,len=1,access=rw"`
+	Frg50    uint16         `sunspec:"offset=55,len=1,access=rw"`
+	Frg51    uint16         `sunspec:"offset=56,len=1,access=rw"`
+	Frg52    uint16         `sunspec:"offset=57,len=1,access=rw"`
+	Frg53    uint16         `sunspec:"offset=58,len=1,access=rw"`
+	Frg54    uint16         `sunspec:"offset=59,len=1,access=rw"`
+	Frg55    uint16         `sunspec:"offset=60,len=1,access=rw"`
+	Frg56    uint16         `sunspec:"offset=61,len=1,access=rw"`
+	Frg57    uint16         `sunspec:"offset=62,len=1,access=rw"`
+	Frg58    uint16         `sunspec:"offset=63,len=1,access=rw"`
+	Frg59    uint16         `sunspec:"offset=64,len=1,access=rw"`
+	Frg60    uint16         `sunspec:"offset=65,len=1,access=rw"`
+	Frg61    uint16         `sunspec:"offset=66,len=1,access=rw"`
+	Frg62    uint16         `sunspec:"offset=67,len=1,access=rw"`
+	Frg63    uint16         `sunspec:"offset=68,len=1,access=rw"`
+	Frg64    uint16         `sunspec:"offset=69,len=1,access=rw"`
+	Frg65    uint16         `sunspec:"offset=70,len=1,access=rw"`
+	Frg66    uint16         `sunspec:"offset=71,len=1,access=rw"`
+	Frg67    uint16         `sunspec:"offset=72,len=1,access=rw"`
+	Frg68    uint16         `sunspec:"offset=73,len=1,access=rw"`
+	Frg69    uint16         `sunspec:"offset=74,len=1,access=rw"`
+	Frg70    uint16         `sunspec:"offset=75,len=1,access=rw"`
+	Frg71    uint16         `sunspec:"offset=76,len=1,access=rw"`
+	Frg72    uint16         `sunspec:"offset=77,len=1,access=rw"`
+	Frg73    uint16         `sunspec:"offset=78,len=1,access=rw"`
+	Frg74    uint16         `sunspec:"offset=79,len=1,access=rw"`
+	Frg75    uint16         `sunspec:"offset=80,len=1,access=rw"`
+	Frg78    uint16         `sunspec:"offset=81,len=1,access=rw"`
+	Frg79    uint16         `sunspec:"offset=82,len=1,access=rw"`
+	Frg80    uint16         `sunspec:"offset=83,len=1,access=rw"`
+	Ts       uint32         `sunspec:"offset=84,len=2,access=rw"`
+	Ms       uint16         `sunspec:"offset=86,len=1,access=rw"`
+	Seq      uint16         `sunspec:"offset=87,len=1,access=rw"`
+	UID      uint16         `sunspec:"offset=88,len=1,access=rw"`
+	Role     uint16         `sunspec:"offset=89,len=1,access=rw"`
+	Alg      sunspec.Enum16 `sunspec:"offset=90,len=1,access=rw"`
+	N        uint16         `sunspec:"offset=91,len=1,access=rw"`
 
 	Repeats []Block9Repeat
 }
@@ -219,110 +219,110 @@ func (block *Block9) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_9",
 		Length: 93,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 92,
 				Points: []smdx.PointElement{
-					{Id: CertUID, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Cert_UID", Description: "User ID for this certificate"},
-					{Id: CertRole, Offset: 1, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Cert_Role", Description: "Role for this certificate"},
-					{Id: Fmt, Offset: 2, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Format", Description: "X.509 format of the certificate. DER or PEM."},
-					{Id: Typ, Offset: 3, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Type", Description: "Type of this certificate"},
-					{Id: TotLn, Offset: 4, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Total Length", Description: "Total Length of the Certificate"},
-					{Id: FrgLn, Offset: 5, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Fragment length", Description: "Length of this fragment"},
-					{Id: Frg1, Offset: 6, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Frag1", Description: "First word of this fragment"},
-					{Id: Frg2, Offset: 7, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg3, Offset: 8, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg4, Offset: 9, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg5, Offset: 10, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg6, Offset: 11, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg7, Offset: 12, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg8, Offset: 13, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg9, Offset: 14, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg10, Offset: 15, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg11, Offset: 16, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg12, Offset: 17, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg13, Offset: 18, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg14, Offset: 19, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg15, Offset: 20, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg16, Offset: 21, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg17, Offset: 22, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg18, Offset: 23, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg19, Offset: 24, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg20, Offset: 25, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg21, Offset: 26, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg22, Offset: 27, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg23, Offset: 28, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg24, Offset: 29, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg25, Offset: 30, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg26, Offset: 31, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg27, Offset: 32, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg28, Offset: 33, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg29, Offset: 34, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg30, Offset: 35, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg31, Offset: 36, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg32, Offset: 37, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg33, Offset: 38, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg34, Offset: 39, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg35, Offset: 40, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg36, Offset: 41, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg37, Offset: 42, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg38, Offset: 43, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg39, Offset: 44, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg40, Offset: 45, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg41, Offset: 46, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg42, Offset: 47, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg43, Offset: 48, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg44, Offset: 49, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg45, Offset: 50, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg46, Offset: 51, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg47, Offset: 52, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg48, Offset: 53, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg49, Offset: 54, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg50, Offset: 55, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg51, Offset: 56, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg52, Offset: 57, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg53, Offset: 58, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg54, Offset: 59, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg55, Offset: 60, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg56, Offset: 61, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg57, Offset: 62, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg58, Offset: 63, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg59, Offset: 64, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg60, Offset: 65, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg61, Offset: 66, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg62, Offset: 67, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg63, Offset: 68, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg64, Offset: 69, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg65, Offset: 70, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg66, Offset: 71, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg67, Offset: 72, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg68, Offset: 73, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg69, Offset: 74, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg70, Offset: 75, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg71, Offset: 76, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg72, Offset: 77, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg73, Offset: 78, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg74, Offset: 79, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg75, Offset: 80, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg78, Offset: 81, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg79, Offset: 82, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
-					{Id: Frg80, Offset: 83, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Frag80", Description: "Last word of this fragment"},
-					{Id: Ts, Offset: 84, Type: typelabel.Uint32, Access: "rw", Mandatory: true, Label: "Timestamp", Description: "Timestamp value is the number of seconds since January 1, 2000"},
-					{Id: Ms, Offset: 86, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Milliseconds", Description: "Millisecond counter 0-999"},
-					{Id: Seq, Offset: 87, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Sequence", Description: "Sequence number of request"},
-					{Id: UID, Offset: 88, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "UID", Description: "User ID for the request signature"},
-					{Id: Role, Offset: 89, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Role", Description: "Signing key used 0-5"},
-					{Id: Alg, Offset: 90, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Algorithm", Description: "Algorithm used to compute the digital signature"},
-					{Id: N, Offset: 91, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "N", Description: "Number of registers to follow for the certificate"},
+					{Id: CertUID, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Cert_UID", Description: "User ID for this certificate"},
+					{Id: CertRole, Offset: 1, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Cert_Role", Description: "Role for this certificate"},
+					{Id: Fmt, Offset: 2, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Format", Description: "Format of this certificate"},
+					{Id: Typ, Offset: 3, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Type", Description: "Type of this certificate"},
+					{Id: TotLn, Offset: 4, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Total Length", Description: "Total Length of the Certificate"},
+					{Id: FrgLn, Offset: 5, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Fragment length", Description: "Length of this fragment"},
+					{Id: Frg1, Offset: 6, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Frag1", Description: "First word of this fragment"},
+					{Id: Frg2, Offset: 7, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg3, Offset: 8, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg4, Offset: 9, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg5, Offset: 10, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg6, Offset: 11, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg7, Offset: 12, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg8, Offset: 13, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg9, Offset: 14, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg10, Offset: 15, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg11, Offset: 16, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg12, Offset: 17, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg13, Offset: 18, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg14, Offset: 19, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg15, Offset: 20, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg16, Offset: 21, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg17, Offset: 22, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg18, Offset: 23, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg19, Offset: 24, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg20, Offset: 25, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg21, Offset: 26, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg22, Offset: 27, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg23, Offset: 28, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg24, Offset: 29, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg25, Offset: 30, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg26, Offset: 31, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg27, Offset: 32, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg28, Offset: 33, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg29, Offset: 34, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg30, Offset: 35, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg31, Offset: 36, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg32, Offset: 37, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg33, Offset: 38, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg34, Offset: 39, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg35, Offset: 40, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg36, Offset: 41, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg37, Offset: 42, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg38, Offset: 43, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg39, Offset: 44, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg40, Offset: 45, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg41, Offset: 46, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg42, Offset: 47, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg43, Offset: 48, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg44, Offset: 49, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg45, Offset: 50, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg46, Offset: 51, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg47, Offset: 52, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg48, Offset: 53, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg49, Offset: 54, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg50, Offset: 55, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg51, Offset: 56, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg52, Offset: 57, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg53, Offset: 58, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg54, Offset: 59, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg55, Offset: 60, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg56, Offset: 61, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg57, Offset: 62, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg58, Offset: 63, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg59, Offset: 64, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg60, Offset: 65, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg61, Offset: 66, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg62, Offset: 67, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg63, Offset: 68, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg64, Offset: 69, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg65, Offset: 70, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg66, Offset: 71, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg67, Offset: 72, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg68, Offset: 73, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg69, Offset: 74, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg70, Offset: 75, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg71, Offset: 76, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg72, Offset: 77, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg73, Offset: 78, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg74, Offset: 79, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg75, Offset: 80, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg78, Offset: 81, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg79, Offset: 82, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
+					{Id: Frg80, Offset: 83, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Frag80", Description: "Last word of this fragment"},
+					{Id: Ts, Offset: 84, Type: typelabel.Uint32, Access: "rw", Length: 2, Mandatory: true, Label: "Timestamp", Description: "Timestamp value is the number of seconds since January 1, 2000"},
+					{Id: Ms, Offset: 86, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Milliseconds", Description: "Millisecond counter 0-999"},
+					{Id: Seq, Offset: 87, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Sequence", Description: "Sequence number of request"},
+					{Id: UID, Offset: 88, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "UID", Description: "User ID for the request signature"},
+					{Id: Role, Offset: 89, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Role", Description: "Signing key used 0-5"},
+					{Id: Alg, Offset: 90, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Algorithm", Description: "Algorithm used to compute the digital signature"},
+					{Id: N, Offset: 91, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "N", Description: "Number of registers to follow for the certificate"},
 				},
 			},
-			{
+			{Name: "repeating",
 				Length: 1,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: Cert, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true},
+					{Id: Cert, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true},
 				},
 			},
 		}})

@@ -30,13 +30,13 @@ const (
 
 type Block17 struct {
 	Nam  string         `sunspec:"offset=0,len=4,access=rw"`
-	Rte  uint32         `sunspec:"offset=4,access=rw"`
-	Bits uint16         `sunspec:"offset=6,access=rw"`
-	Pty  sunspec.Enum16 `sunspec:"offset=7,access=rw"`
-	Dup  sunspec.Enum16 `sunspec:"offset=8,access=rw"`
-	Flw  sunspec.Enum16 `sunspec:"offset=9,access=rw"`
-	Typ  sunspec.Enum16 `sunspec:"offset=10"`
-	Pcol sunspec.Enum16 `sunspec:"offset=11"`
+	Rte  uint32         `sunspec:"offset=4,len=2,access=rw"`
+	Bits uint16         `sunspec:"offset=6,len=1,access=rw"`
+	Pty  sunspec.Enum16 `sunspec:"offset=7,len=1,access=rw"`
+	Dup  sunspec.Enum16 `sunspec:"offset=8,len=1,access=rw"`
+	Flw  sunspec.Enum16 `sunspec:"offset=9,len=1,access=rw"`
+	Typ  sunspec.Enum16 `sunspec:"offset=10,len=1,access=r"`
+	Pcol sunspec.Enum16 `sunspec:"offset=11,len=1,access=r"`
 }
 
 func (block *Block17) GetId() sunspec.ModelId {
@@ -46,20 +46,20 @@ func (block *Block17) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_17",
 		Length: 12,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 12,
 				Points: []smdx.PointElement{
 					{Id: Nam, Offset: 0, Type: typelabel.String, Access: "rw", Length: 4, Label: "Name", Description: "Interface name (8 chars)"},
-					{Id: Rte, Offset: 4, Type: typelabel.Uint32, Units: "bps", Access: "rw", Mandatory: true, Label: "Rate", Description: "Interface baud rate in bits per second"},
-					{Id: Bits, Offset: 6, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Bits", Description: "Number of data bits per character"},
-					{Id: Pty, Offset: 7, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Parity", Description: "Bitmask value.  Parity setting"},
-					{Id: Dup, Offset: 8, Type: typelabel.Enum16, Access: "rw", Label: "Duplex", Description: "Enumerated value.  Duplex mode"},
-					{Id: Flw, Offset: 9, Type: typelabel.Enum16, Access: "rw", Label: "Flow Control", Description: "Flow Control Method"},
-					{Id: Typ, Offset: 10, Type: typelabel.Enum16, Label: "Interface Type", Description: "Enumerated value.  Interface type"},
-					{Id: Pcol, Offset: 11, Type: typelabel.Enum16, Label: "Protocol", Description: "Enumerated value. Serial protocol selection"},
+					{Id: Rte, Offset: 4, Type: typelabel.Uint32, Units: "bps", Access: "rw", Length: 2, Mandatory: true, Label: "Rate", Description: "Interface baud rate in bits per second"},
+					{Id: Bits, Offset: 6, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Bits", Description: "Number of data bits per character"},
+					{Id: Pty, Offset: 7, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Parity", Description: "Bitmask value.  Parity setting"},
+					{Id: Dup, Offset: 8, Type: typelabel.Enum16, Access: "rw", Length: 1, Label: "Duplex", Description: "Enumerated value.  Duplex mode"},
+					{Id: Flw, Offset: 9, Type: typelabel.Enum16, Access: "rw", Length: 1, Label: "Flow Control", Description: "Flow Control Method"},
+					{Id: Typ, Offset: 10, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Interface Type", Description: "Enumerated value.  Interface type"},
+					{Id: Pcol, Offset: 11, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Protocol", Description: "Enumerated value. Serial protocol selection"},
 				},
 			},
 		}})

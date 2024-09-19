@@ -25,10 +25,10 @@ const (
 )
 
 type Block308 struct {
-	GHI    uint16 `sunspec:"offset=0"`
-	TmpBOM int16  `sunspec:"offset=1,sf=-1"`
-	TmpAmb int16  `sunspec:"offset=2,sf=-1"`
-	WndSpd uint16 `sunspec:"offset=3"`
+	GHI    uint16 `sunspec:"offset=0,len=1,access=r"`
+	TmpBOM int16  `sunspec:"offset=1,len=1,sf=-1,access=r"`
+	TmpAmb int16  `sunspec:"offset=2,len=1,sf=-1,access=r"`
+	WndSpd uint16 `sunspec:"offset=3,len=1,access=r"`
 }
 
 func (block *Block308) GetId() sunspec.ModelId {
@@ -44,10 +44,10 @@ func init() {
 			{
 				Length: 4,
 				Points: []smdx.PointElement{
-					{Id: GHI, Offset: 0, Type: typelabel.Uint16, Units: "W/m2", Label: "GHI", Description: "Global Horizontal Irradiance"},
-					{Id: TmpBOM, Offset: 1, Type: typelabel.Int16, ScaleFactor: "-1", Units: "C", Label: "Temp", Description: "Back of module temperature measurement"},
-					{Id: TmpAmb, Offset: 2, Type: typelabel.Int16, ScaleFactor: "-1", Units: "C", Label: "Ambient Temperature", Description: ""},
-					{Id: WndSpd, Offset: 3, Type: typelabel.Uint16, Units: "m/s", Label: "Wind Speed", Description: ""},
+					{Id: GHI, Offset: 0, Type: typelabel.Uint16, Units: "W/m2", Access: "r", Length: 1, Label: "GHI", Description: "Global Horizontal Irradiance"},
+					{Id: TmpBOM, Offset: 1, Type: typelabel.Int16, ScaleFactor: "-1", Units: "C", Access: "r", Length: 1, Label: "Temp", Description: "Back of module temperature measurement"},
+					{Id: TmpAmb, Offset: 2, Type: typelabel.Int16, ScaleFactor: "-1", Units: "C", Access: "r", Length: 1, Label: "Ambient Temperature", Description: ""},
+					{Id: WndSpd, Offset: 3, Type: typelabel.Uint16, Units: "m/s", Access: "r", Length: 1, Label: "Wind Speed", Description: ""},
 				},
 			},
 		}})

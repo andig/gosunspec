@@ -77,62 +77,62 @@ const (
 )
 
 type Block802 struct {
-	AHRtg            uint16              `sunspec:"offset=0,sf=AHRtg_SF"`
-	WHRtg            uint16              `sunspec:"offset=1,sf=WHRtg_SF"`
-	WChaRteMax       uint16              `sunspec:"offset=2,sf=WChaDisChaMax_SF"`
-	WDisChaRteMax    uint16              `sunspec:"offset=3,sf=WChaDisChaMax_SF"`
-	DisChaRte        uint16              `sunspec:"offset=4,sf=DisChaRte_SF"`
-	SoCMax           uint16              `sunspec:"offset=5,sf=SoC_SF"`
-	SoCMin           uint16              `sunspec:"offset=6,sf=SoC_SF"`
-	SocRsvMax        uint16              `sunspec:"offset=7,sf=SoC_SF,access=rw"`
-	SoCRsvMin        uint16              `sunspec:"offset=8,sf=SoC_SF,access=rw"`
-	SoC              uint16              `sunspec:"offset=9,sf=SoC_SF"`
-	DoD              uint16              `sunspec:"offset=10,sf=DoD_SF"`
-	SoH              uint16              `sunspec:"offset=11,sf=SoH_SF"`
-	NCyc             uint32              `sunspec:"offset=12"`
-	ChaSt            sunspec.Enum16      `sunspec:"offset=14"`
-	LocRemCtl        sunspec.Enum16      `sunspec:"offset=15"`
-	Hb               uint16              `sunspec:"offset=16"`
-	CtrlHb           uint16              `sunspec:"offset=17,access=rw"`
-	AlmRst           uint16              `sunspec:"offset=18,access=rw"`
-	Typ              sunspec.Enum16      `sunspec:"offset=19"`
-	State            sunspec.Enum16      `sunspec:"offset=20"`
-	StateVnd         sunspec.Enum16      `sunspec:"offset=21"`
-	WarrDt           uint32              `sunspec:"offset=22"`
-	Evt1             sunspec.Bitfield32  `sunspec:"offset=24"`
-	Evt2             sunspec.Bitfield32  `sunspec:"offset=26"`
-	EvtVnd1          sunspec.Bitfield32  `sunspec:"offset=28"`
-	EvtVnd2          sunspec.Bitfield32  `sunspec:"offset=30"`
-	V                uint16              `sunspec:"offset=32,sf=V_SF"`
-	VMax             uint16              `sunspec:"offset=33,sf=V_SF"`
-	VMin             uint16              `sunspec:"offset=34,sf=V_SF"`
-	CellVMax         uint16              `sunspec:"offset=35,sf=CellV_SF"`
-	CellVMaxStr      uint16              `sunspec:"offset=36"`
-	CellVMaxMod      uint16              `sunspec:"offset=37"`
-	CellVMin         uint16              `sunspec:"offset=38,sf=CellV_SF"`
-	CellVMinStr      uint16              `sunspec:"offset=39"`
-	CellVMinMod      uint16              `sunspec:"offset=40"`
-	CellVAvg         uint16              `sunspec:"offset=41,sf=CellV_SF"`
-	A                int16               `sunspec:"offset=42,sf=A_SF"`
-	AChaMax          uint16              `sunspec:"offset=43,sf=AMax_SF"`
-	ADisChaMax       uint16              `sunspec:"offset=44,sf=AMax_SF"`
-	W                int16               `sunspec:"offset=45,sf=W_SF"`
-	ReqInvState      sunspec.Enum16      `sunspec:"offset=46"`
-	ReqW             int16               `sunspec:"offset=47,sf=W_SF"`
-	SetOp            sunspec.Enum16      `sunspec:"offset=48,access=rw"`
-	SetInvState      sunspec.Enum16      `sunspec:"offset=49,access=rw"`
-	AHRtg_SF         sunspec.ScaleFactor `sunspec:"offset=50"`
-	WHRtg_SF         sunspec.ScaleFactor `sunspec:"offset=51"`
-	WChaDisChaMax_SF sunspec.ScaleFactor `sunspec:"offset=52"`
-	DisChaRte_SF     sunspec.ScaleFactor `sunspec:"offset=53"`
-	SoC_SF           sunspec.ScaleFactor `sunspec:"offset=54"`
-	DoD_SF           sunspec.ScaleFactor `sunspec:"offset=55"`
-	SoH_SF           sunspec.ScaleFactor `sunspec:"offset=56"`
-	V_SF             sunspec.ScaleFactor `sunspec:"offset=57"`
-	CellV_SF         sunspec.ScaleFactor `sunspec:"offset=58"`
-	A_SF             sunspec.ScaleFactor `sunspec:"offset=59"`
-	AMax_SF          sunspec.ScaleFactor `sunspec:"offset=60"`
-	W_SF             sunspec.ScaleFactor `sunspec:"offset=61"`
+	AHRtg            uint16              `sunspec:"offset=0,len=1,sf=AHRtg_SF,access=r"`
+	WHRtg            uint16              `sunspec:"offset=1,len=1,sf=WHRtg_SF,access=r"`
+	WChaRteMax       uint16              `sunspec:"offset=2,len=1,sf=WChaDisChaMax_SF,access=r"`
+	WDisChaRteMax    uint16              `sunspec:"offset=3,len=1,sf=WChaDisChaMax_SF,access=r"`
+	DisChaRte        uint16              `sunspec:"offset=4,len=1,sf=DisChaRte_SF,access=r"`
+	SoCMax           uint16              `sunspec:"offset=5,len=1,sf=SoC_SF,access=r"`
+	SoCMin           uint16              `sunspec:"offset=6,len=1,sf=SoC_SF,access=r"`
+	SocRsvMax        uint16              `sunspec:"offset=7,len=1,sf=SoC_SF,access=rw"`
+	SoCRsvMin        uint16              `sunspec:"offset=8,len=1,sf=SoC_SF,access=rw"`
+	SoC              uint16              `sunspec:"offset=9,len=1,sf=SoC_SF,access=r"`
+	DoD              uint16              `sunspec:"offset=10,len=1,sf=DoD_SF,access=r"`
+	SoH              uint16              `sunspec:"offset=11,len=1,sf=SoH_SF,access=r"`
+	NCyc             uint32              `sunspec:"offset=12,len=2,access=r"`
+	ChaSt            sunspec.Enum16      `sunspec:"offset=14,len=1,access=r"`
+	LocRemCtl        sunspec.Enum16      `sunspec:"offset=15,len=1,access=r"`
+	Hb               uint16              `sunspec:"offset=16,len=1,access=r"`
+	CtrlHb           uint16              `sunspec:"offset=17,len=1,access=rw"`
+	AlmRst           uint16              `sunspec:"offset=18,len=1,access=rw"`
+	Typ              sunspec.Enum16      `sunspec:"offset=19,len=1,access=r"`
+	State            sunspec.Enum16      `sunspec:"offset=20,len=1,access=r"`
+	StateVnd         sunspec.Enum16      `sunspec:"offset=21,len=1,access=r"`
+	WarrDt           uint32              `sunspec:"offset=22,len=2,access=r"`
+	Evt1             sunspec.Bitfield32  `sunspec:"offset=24,len=2,access=r"`
+	Evt2             sunspec.Bitfield32  `sunspec:"offset=26,len=2,access=r"`
+	EvtVnd1          sunspec.Bitfield32  `sunspec:"offset=28,len=2,access=r"`
+	EvtVnd2          sunspec.Bitfield32  `sunspec:"offset=30,len=2,access=r"`
+	V                uint16              `sunspec:"offset=32,len=1,sf=V_SF,access=r"`
+	VMax             uint16              `sunspec:"offset=33,len=1,sf=V_SF,access=r"`
+	VMin             uint16              `sunspec:"offset=34,len=1,sf=V_SF,access=r"`
+	CellVMax         uint16              `sunspec:"offset=35,len=1,sf=CellV_SF,access=r"`
+	CellVMaxStr      uint16              `sunspec:"offset=36,len=1,access=r"`
+	CellVMaxMod      uint16              `sunspec:"offset=37,len=1,access=r"`
+	CellVMin         uint16              `sunspec:"offset=38,len=1,sf=CellV_SF,access=r"`
+	CellVMinStr      uint16              `sunspec:"offset=39,len=1,access=r"`
+	CellVMinMod      uint16              `sunspec:"offset=40,len=1,access=r"`
+	CellVAvg         uint16              `sunspec:"offset=41,len=1,sf=CellV_SF,access=r"`
+	A                int16               `sunspec:"offset=42,len=1,sf=A_SF,access=r"`
+	AChaMax          uint16              `sunspec:"offset=43,len=1,sf=AMax_SF,access=r"`
+	ADisChaMax       uint16              `sunspec:"offset=44,len=1,sf=AMax_SF,access=r"`
+	W                int16               `sunspec:"offset=45,len=1,sf=W_SF,access=r"`
+	ReqInvState      sunspec.Enum16      `sunspec:"offset=46,len=1,access=r"`
+	ReqW             int16               `sunspec:"offset=47,len=1,sf=W_SF,access=r"`
+	SetOp            sunspec.Enum16      `sunspec:"offset=48,len=1,access=rw"`
+	SetInvState      sunspec.Enum16      `sunspec:"offset=49,len=1,access=rw"`
+	AHRtg_SF         sunspec.ScaleFactor `sunspec:"offset=50,len=1,access=r"`
+	WHRtg_SF         sunspec.ScaleFactor `sunspec:"offset=51,len=1,access=r"`
+	WChaDisChaMax_SF sunspec.ScaleFactor `sunspec:"offset=52,len=1,access=r"`
+	DisChaRte_SF     sunspec.ScaleFactor `sunspec:"offset=53,len=1,access=r"`
+	SoC_SF           sunspec.ScaleFactor `sunspec:"offset=54,len=1,access=r"`
+	DoD_SF           sunspec.ScaleFactor `sunspec:"offset=55,len=1,access=r"`
+	SoH_SF           sunspec.ScaleFactor `sunspec:"offset=56,len=1,access=r"`
+	V_SF             sunspec.ScaleFactor `sunspec:"offset=57,len=1,access=r"`
+	CellV_SF         sunspec.ScaleFactor `sunspec:"offset=58,len=1,access=r"`
+	A_SF             sunspec.ScaleFactor `sunspec:"offset=59,len=1,access=r"`
+	AMax_SF          sunspec.ScaleFactor `sunspec:"offset=60,len=1,access=r"`
+	W_SF             sunspec.ScaleFactor `sunspec:"offset=61,len=1,access=r"`
 }
 
 func (block *Block802) GetId() sunspec.ModelId {
@@ -148,62 +148,62 @@ func init() {
 			{
 				Length: 62,
 				Points: []smdx.PointElement{
-					{Id: AHRtg, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "AHRtg_SF", Units: "Ah", Mandatory: true, Label: "Nameplate Charge Capacity", Description: "Nameplate charge capacity in amp-hours."},
-					{Id: WHRtg, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "WHRtg_SF", Units: "Wh", Mandatory: true, Label: "Nameplate Energy Capacity", Description: "Nameplate energy capacity in DC watt-hours."},
-					{Id: WChaRteMax, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaMax_SF", Units: "W", Mandatory: true, Label: "Nameplate Max Charge Rate", Description: "Maximum rate of energy transfer into the storage device in DC watts."},
-					{Id: WDisChaRteMax, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaMax_SF", Units: "W", Mandatory: true, Label: "Nameplate Max Discharge Rate", Description: "Maximum rate of energy transfer out of the storage device in DC watts."},
-					{Id: DisChaRte, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "DisChaRte_SF", Units: "%WHRtg", Label: "Self Discharge Rate", Description: "Self discharge rate.  Percentage of capacity (WHRtg) discharged per day."},
-					{Id: SoCMax, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Label: "Nameplate Max SoC", Description: "Manufacturer maximum state of charge, expressed as a percentage."},
-					{Id: SoCMin, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Label: "Nameplate Min SoC", Description: "Manufacturer minimum state of charge, expressed as a percentage."},
-					{Id: SocRsvMax, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Access: "rw", Label: "Max Reserve Percent", Description: "Setpoint for maximum reserve for storage as a percentage of the nominal maximum storage."},
-					{Id: SoCRsvMin, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Access: "rw", Label: "Min Reserve Percent", Description: "Setpoint for maximum reserve for storage as a percentage of the nominal maximum storage."},
-					{Id: SoC, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Mandatory: true, Label: "State of Charge", Description: "State of charge, expressed as a percentage."},
-					{Id: DoD, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "DoD_SF", Units: "%", Label: "Depth of Discharge", Description: "Depth of discharge, expressed as a percentage."},
-					{Id: SoH, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "SoH_SF", Units: "%", Label: "State of Health", Description: "Percentage of battery life remaining."},
-					{Id: NCyc, Offset: 12, Type: typelabel.Uint32, Label: "Cycle Count", Description: "Number of cycles executed in the battery."},
-					{Id: ChaSt, Offset: 14, Type: typelabel.Enum16, Label: "Charge Status", Description: "Charge status of storage device. Enumeration."},
-					{Id: LocRemCtl, Offset: 15, Type: typelabel.Enum16, Mandatory: true, Label: "Control Mode", Description: "Battery control mode. Enumeration."},
-					{Id: Hb, Offset: 16, Type: typelabel.Uint16, Label: "Battery Heartbeat", Description: "Value is incremented every second with periodic resets to zero."},
-					{Id: CtrlHb, Offset: 17, Type: typelabel.Uint16, Access: "rw", Label: "Controller Heartbeat", Description: "Value is incremented every second with periodic resets to zero."},
-					{Id: AlmRst, Offset: 18, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Alarm Reset", Description: "Used to reset any latched alarms.  1 = Reset."},
-					{Id: Typ, Offset: 19, Type: typelabel.Enum16, Mandatory: true, Label: "Battery Type", Description: "Type of battery. Enumeration."},
-					{Id: State, Offset: 20, Type: typelabel.Enum16, Mandatory: true, Label: "State of the Battery Bank", Description: "State of the battery bank.  Enumeration."},
-					{Id: StateVnd, Offset: 21, Type: typelabel.Enum16, Label: "Vendor Battery Bank State", Description: "Vendor specific battery bank state.  Enumeration."},
-					{Id: WarrDt, Offset: 22, Type: typelabel.Uint32, Label: "Warranty Date", Description: "Date the device warranty expires."},
-					{Id: Evt1, Offset: 24, Type: typelabel.Bitfield32, Mandatory: true, Label: "Battery Event 1 Bitfield", Description: "Alarms and warnings.  Bit flags."},
-					{Id: Evt2, Offset: 26, Type: typelabel.Bitfield32, Mandatory: true, Label: "Battery Event 2 Bitfield", Description: "Alarms and warnings.  Bit flags."},
-					{Id: EvtVnd1, Offset: 28, Type: typelabel.Bitfield32, Mandatory: true, Label: "Vendor Event Bitfield 1", Description: "Vendor defined events."},
-					{Id: EvtVnd2, Offset: 30, Type: typelabel.Bitfield32, Mandatory: true, Label: "Vendor Event Bitfield 2", Description: "Vendor defined events."},
-					{Id: V, Offset: 32, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "External Battery Voltage", Description: "DC Bus Voltage."},
-					{Id: VMax, Offset: 33, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Label: "Max Battery Voltage", Description: "Instantaneous maximum battery voltage."},
-					{Id: VMin, Offset: 34, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Label: "Min Battery Voltage", Description: "Instantaneous minimum battery voltage."},
-					{Id: CellVMax, Offset: 35, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Label: "Max Cell Voltage", Description: "Maximum voltage for all cells in the bank."},
-					{Id: CellVMaxStr, Offset: 36, Type: typelabel.Uint16, Label: "Max Cell Voltage String", Description: "String containing the cell with maximum voltage."},
-					{Id: CellVMaxMod, Offset: 37, Type: typelabel.Uint16, Label: "Max Cell Voltage Module", Description: "Module containing the cell with maximum voltage."},
-					{Id: CellVMin, Offset: 38, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Label: "Min Cell Voltage", Description: "Minimum voltage for all cells in the bank."},
-					{Id: CellVMinStr, Offset: 39, Type: typelabel.Uint16, Label: "Min Cell Voltage String", Description: "String containing the cell with minimum voltage."},
-					{Id: CellVMinMod, Offset: 40, Type: typelabel.Uint16, Label: "Min Cell Voltage Module", Description: "Module containing the cell with minimum voltage."},
-					{Id: CellVAvg, Offset: 41, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Label: "Average Cell Voltage", Description: "Average cell voltage for all cells in the bank."},
-					{Id: A, Offset: 42, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Total DC Current", Description: "Total DC current flowing to/from the battery bank."},
-					{Id: AChaMax, Offset: 43, Type: typelabel.Uint16, ScaleFactor: "AMax_SF", Units: "A", Label: "Max Charge Current", Description: "Instantaneous maximum DC charge current."},
-					{Id: ADisChaMax, Offset: 44, Type: typelabel.Uint16, ScaleFactor: "AMax_SF", Units: "A", Label: "Max Discharge Current", Description: "Instantaneous maximum DC discharge current."},
-					{Id: W, Offset: 45, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Mandatory: true, Label: "Total Power", Description: "Total power flowing to/from the battery bank."},
-					{Id: ReqInvState, Offset: 46, Type: typelabel.Enum16, Label: "Inverter State Request", Description: "Request from battery to start or stop the inverter.  Enumeration."},
-					{Id: ReqW, Offset: 47, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Label: "Battery Power Request", Description: "AC Power requested by battery."},
-					{Id: SetOp, Offset: 48, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Set Operation", Description: "Instruct the battery bank to perform an operation such as connecting.  Enumeration."},
-					{Id: SetInvState, Offset: 49, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Set Inverter State", Description: "Set the current state of the inverter."},
-					{Id: AHRtg_SF, Offset: 50, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: WHRtg_SF, Offset: 51, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: WChaDisChaMax_SF, Offset: 52, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: DisChaRte_SF, Offset: 53, Type: typelabel.ScaleFactor},
-					{Id: SoC_SF, Offset: 54, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: DoD_SF, Offset: 55, Type: typelabel.ScaleFactor},
-					{Id: SoH_SF, Offset: 56, Type: typelabel.ScaleFactor},
-					{Id: V_SF, Offset: 57, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: CellV_SF, Offset: 58, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: A_SF, Offset: 59, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: AMax_SF, Offset: 60, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: W_SF, Offset: 61, Type: typelabel.ScaleFactor},
+					{Id: AHRtg, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "AHRtg_SF", Units: "Ah", Access: "r", Length: 1, Mandatory: true, Label: "Nameplate Charge Capacity", Description: "Nameplate charge capacity in amp-hours."},
+					{Id: WHRtg, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "WHRtg_SF", Units: "Wh", Access: "r", Length: 1, Mandatory: true, Label: "Nameplate Energy Capacity", Description: "Nameplate energy capacity in DC watt-hours."},
+					{Id: WChaRteMax, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaMax_SF", Units: "W", Access: "r", Length: 1, Mandatory: true, Label: "Nameplate Max Charge Rate", Description: "Maximum rate of energy transfer into the storage device in DC watts."},
+					{Id: WDisChaRteMax, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaMax_SF", Units: "W", Access: "r", Length: 1, Mandatory: true, Label: "Nameplate Max Discharge Rate", Description: "Maximum rate of energy transfer out of the storage device in DC watts."},
+					{Id: DisChaRte, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "DisChaRte_SF", Units: "%WHRtg", Access: "r", Length: 1, Label: "Self Discharge Rate", Description: "Self discharge rate.  Percentage of capacity (WHRtg) discharged per day."},
+					{Id: SoCMax, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Access: "r", Length: 1, Label: "Nameplate Max SoC", Description: "Manufacturer maximum state of charge, expressed as a percentage."},
+					{Id: SoCMin, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Access: "r", Length: 1, Label: "Nameplate Min SoC", Description: "Manufacturer minimum state of charge, expressed as a percentage."},
+					{Id: SocRsvMax, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Access: "rw", Length: 1, Label: "Max Reserve Percent", Description: "Setpoint for maximum reserve for storage as a percentage of the nominal maximum storage."},
+					{Id: SoCRsvMin, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Access: "rw", Length: 1, Label: "Min Reserve Percent", Description: "Setpoint for maximum reserve for storage as a percentage of the nominal maximum storage."},
+					{Id: SoC, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%WHRtg", Access: "r", Length: 1, Mandatory: true, Label: "State of Charge", Description: "State of charge, expressed as a percentage."},
+					{Id: DoD, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "DoD_SF", Units: "%", Access: "r", Length: 1, Label: "Depth of Discharge", Description: "Depth of discharge, expressed as a percentage."},
+					{Id: SoH, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "SoH_SF", Units: "%", Access: "r", Length: 1, Label: "State of Health", Description: "Percentage of battery life remaining."},
+					{Id: NCyc, Offset: 12, Type: typelabel.Uint32, Access: "r", Length: 2, Label: "Cycle Count", Description: "Number of cycles executed in the battery."},
+					{Id: ChaSt, Offset: 14, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Charge Status", Description: "Charge status of storage device. Enumeration."},
+					{Id: LocRemCtl, Offset: 15, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Control Mode", Description: "Battery control mode. Enumeration."},
+					{Id: Hb, Offset: 16, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Battery Heartbeat", Description: "Value is incremented every second with periodic resets to zero."},
+					{Id: CtrlHb, Offset: 17, Type: typelabel.Uint16, Access: "rw", Length: 1, Label: "Controller Heartbeat", Description: "Value is incremented every second with periodic resets to zero."},
+					{Id: AlmRst, Offset: 18, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Alarm Reset", Description: "Used to reset any latched alarms.  1 = Reset."},
+					{Id: Typ, Offset: 19, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Battery Type", Description: "Type of battery. Enumeration."},
+					{Id: State, Offset: 20, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "State of the Battery Bank", Description: "State of the battery bank.  Enumeration."},
+					{Id: StateVnd, Offset: 21, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Vendor Battery Bank State", Description: "Vendor specific battery bank state.  Enumeration."},
+					{Id: WarrDt, Offset: 22, Type: typelabel.Uint32, Access: "r", Length: 2, Label: "Warranty Date", Description: "Date the device warranty expires."},
+					{Id: Evt1, Offset: 24, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Battery Event 1 Bitfield", Description: "Alarms and warnings.  Bit flags."},
+					{Id: Evt2, Offset: 26, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Battery Event 2 Bitfield", Description: "Alarms and warnings.  Bit flags."},
+					{Id: EvtVnd1, Offset: 28, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Vendor Event Bitfield 1", Description: "Vendor defined events."},
+					{Id: EvtVnd2, Offset: 30, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Vendor Event Bitfield 2", Description: "Vendor defined events."},
+					{Id: V, Offset: 32, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "External Battery Voltage", Description: "DC Bus Voltage."},
+					{Id: VMax, Offset: 33, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Max Battery Voltage", Description: "Instantaneous maximum battery voltage."},
+					{Id: VMin, Offset: 34, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Min Battery Voltage", Description: "Instantaneous minimum battery voltage."},
+					{Id: CellVMax, Offset: 35, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Access: "r", Length: 1, Label: "Max Cell Voltage", Description: "Maximum voltage for all cells in the bank."},
+					{Id: CellVMaxStr, Offset: 36, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Max Cell Voltage String", Description: "String containing the cell with maximum voltage."},
+					{Id: CellVMaxMod, Offset: 37, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Max Cell Voltage Module", Description: "Module containing the cell with maximum voltage."},
+					{Id: CellVMin, Offset: 38, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Access: "r", Length: 1, Label: "Min Cell Voltage", Description: "Minimum voltage for all cells in the bank."},
+					{Id: CellVMinStr, Offset: 39, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Min Cell Voltage String", Description: "String containing the cell with minimum voltage."},
+					{Id: CellVMinMod, Offset: 40, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Min Cell Voltage Module", Description: "Module containing the cell with minimum voltage."},
+					{Id: CellVAvg, Offset: 41, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Access: "r", Length: 1, Label: "Average Cell Voltage", Description: "Average cell voltage for all cells in the bank."},
+					{Id: A, Offset: 42, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Total DC Current", Description: "Total DC current flowing to/from the battery bank."},
+					{Id: AChaMax, Offset: 43, Type: typelabel.Uint16, ScaleFactor: "AMax_SF", Units: "A", Access: "r", Length: 1, Label: "Max Charge Current", Description: "Instantaneous maximum DC charge current."},
+					{Id: ADisChaMax, Offset: 44, Type: typelabel.Uint16, ScaleFactor: "AMax_SF", Units: "A", Access: "r", Length: 1, Label: "Max Discharge Current", Description: "Instantaneous maximum DC discharge current."},
+					{Id: W, Offset: 45, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Mandatory: true, Label: "Total Power", Description: "Total power flowing to/from the battery bank."},
+					{Id: ReqInvState, Offset: 46, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Inverter State Request", Description: "Request from battery to start or stop the inverter.  Enumeration."},
+					{Id: ReqW, Offset: 47, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Label: "Battery Power Request", Description: "AC Power requested by battery."},
+					{Id: SetOp, Offset: 48, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Set Operation", Description: "Instruct the battery bank to perform an operation such as connecting.  Enumeration."},
+					{Id: SetInvState, Offset: 49, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Set Inverter State", Description: "Set the current state of the inverter."},
+					{Id: AHRtg_SF, Offset: 50, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: WHRtg_SF, Offset: 51, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: WChaDisChaMax_SF, Offset: 52, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: DisChaRte_SF, Offset: 53, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: SoC_SF, Offset: 54, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: DoD_SF, Offset: 55, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: SoH_SF, Offset: 56, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: V_SF, Offset: 57, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: CellV_SF, Offset: 58, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: A_SF, Offset: 59, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: AMax_SF, Offset: 60, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: W_SF, Offset: 61, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
 				},
 			},
 		}})

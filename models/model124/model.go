@@ -83,7 +83,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 24,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: WChaMax, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "WChaMax_SF", Units: "W", Access: "rw", Length: 1, Mandatory: true, Label: "WChaMax", Description: "Setpoint for maximum charge."},
 					{Id: WChaGra, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaGra_SF", Units: "% WChaMax/sec", Access: "rw", Length: 1, Mandatory: true, Label: "WChaGra", Description: "Setpoint for maximum charging rate. Default is MaxChaRte."},

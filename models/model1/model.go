@@ -28,13 +28,13 @@ const (
 )
 
 type Block1 struct {
-	Mn  string      `sunspec:"offset=0,len=16"`
-	Md  string      `sunspec:"offset=16,len=16"`
-	Opt string      `sunspec:"offset=32,len=8"`
-	Vr  string      `sunspec:"offset=40,len=8"`
-	SN  string      `sunspec:"offset=48,len=16"`
-	DA  uint16      `sunspec:"offset=64,access=rw"`
-	Pad sunspec.Pad `sunspec:"offset=65,access=r"`
+	Mn  string      `sunspec:"offset=0,len=16,access=r"`
+	Md  string      `sunspec:"offset=16,len=16,access=r"`
+	Opt string      `sunspec:"offset=32,len=8,access=r"`
+	Vr  string      `sunspec:"offset=40,len=8,access=r"`
+	SN  string      `sunspec:"offset=48,len=16,access=r"`
+	DA  uint16      `sunspec:"offset=64,len=1,access=rw"`
+	Pad sunspec.Pad `sunspec:"offset=65,len=1,access=r"`
 }
 
 func (block *Block1) GetId() sunspec.ModelId {
@@ -50,13 +50,13 @@ func init() {
 			{
 				Length: 66,
 				Points: []smdx.PointElement{
-					{Id: Mn, Offset: 0, Type: typelabel.String, Length: 16, Mandatory: true, Label: "Manufacturer", Description: "Well known value registered with SunSpec for compliance"},
-					{Id: Md, Offset: 16, Type: typelabel.String, Length: 16, Mandatory: true, Label: "Model", Description: "Manufacturer specific value (32 chars)"},
-					{Id: Opt, Offset: 32, Type: typelabel.String, Length: 8, Label: "Options", Description: "Manufacturer specific value (16 chars)"},
-					{Id: Vr, Offset: 40, Type: typelabel.String, Length: 8, Label: "Version", Description: "Manufacturer specific value (16 chars)"},
-					{Id: SN, Offset: 48, Type: typelabel.String, Length: 16, Mandatory: true, Label: "Serial Number", Description: "Manufacturer specific value (32 chars)"},
-					{Id: DA, Offset: 64, Type: typelabel.Uint16, Access: "rw", Label: "Device Address", Description: "Modbus device address"},
-					{Id: Pad, Offset: 65, Type: typelabel.Pad, Access: "r"},
+					{Id: Mn, Offset: 0, Type: typelabel.String, Access: "r", Length: 16, Mandatory: true, Label: "Manufacturer", Description: "Well known value registered with SunSpec for compliance"},
+					{Id: Md, Offset: 16, Type: typelabel.String, Access: "r", Length: 16, Mandatory: true, Label: "Model", Description: "Manufacturer specific value (32 chars)"},
+					{Id: Opt, Offset: 32, Type: typelabel.String, Access: "r", Length: 8, Label: "Options", Description: "Manufacturer specific value (16 chars)"},
+					{Id: Vr, Offset: 40, Type: typelabel.String, Access: "r", Length: 8, Label: "Version", Description: "Manufacturer specific value (16 chars)"},
+					{Id: SN, Offset: 48, Type: typelabel.String, Access: "r", Length: 16, Mandatory: true, Label: "Serial Number", Description: "Manufacturer specific value (32 chars)"},
+					{Id: DA, Offset: 64, Type: typelabel.Uint16, Access: "rw", Length: 1, Label: "Device Address", Description: "Modbus device address"},
+					{Id: Pad, Offset: 65, Type: typelabel.Pad, Access: "r", Length: 1},
 				},
 			},
 		}})

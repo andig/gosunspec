@@ -22,7 +22,7 @@ const (
 )
 
 type Block801 struct {
-	DEPRECATED sunspec.Enum16 `sunspec:"offset=0"`
+	DEPRECATED sunspec.Enum16 `sunspec:"offset=0,len=1,access=r"`
 }
 
 func (block *Block801) GetId() sunspec.ModelId {
@@ -38,7 +38,7 @@ func init() {
 			{
 				Length: 1,
 				Points: []smdx.PointElement{
-					{Id: DEPRECATED, Offset: 0, Type: typelabel.Enum16, Mandatory: true, Label: "Deprecated Model", Description: "This model has been deprecated."},
+					{Id: DEPRECATED, Offset: 0, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Deprecated Model", Description: "This model has been deprecated."},
 				},
 			},
 		}})

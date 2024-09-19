@@ -30,11 +30,11 @@ const (
 
 type Block14 struct {
 	Nam  string             `sunspec:"offset=0,len=4,access=rw"`
-	Cap  sunspec.Bitfield16 `sunspec:"offset=4,access=rw"`
-	Cfg  sunspec.Enum16     `sunspec:"offset=5,access=rw"`
-	Typ  sunspec.Bitfield16 `sunspec:"offset=6,access=rw"`
+	Cap  sunspec.Bitfield16 `sunspec:"offset=4,len=1,access=rw"`
+	Cfg  sunspec.Enum16     `sunspec:"offset=5,len=1,access=rw"`
+	Typ  sunspec.Bitfield16 `sunspec:"offset=6,len=1,access=rw"`
 	Addr string             `sunspec:"offset=7,len=20,access=rw"`
-	Port uint16             `sunspec:"offset=27,access=rw"`
+	Port uint16             `sunspec:"offset=27,len=1,access=rw"`
 	User string             `sunspec:"offset=28,len=12,access=rw"`
 	Pw   string             `sunspec:"offset=40,len=12,access=rw"`
 }
@@ -46,18 +46,18 @@ func (block *Block14) GetId() sunspec.ModelId {
 func init() {
 	smdx.RegisterModel(&smdx.ModelElement{
 		Id:     ModelID,
-		Name:   "",
+		Name:   "model_14",
 		Length: 52,
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 52,
 				Points: []smdx.PointElement{
 					{Id: Nam, Offset: 0, Type: typelabel.String, Access: "rw", Length: 4, Label: "name", Description: "Interface name (8 chars)"},
-					{Id: Cap, Offset: 4, Type: typelabel.Bitfield16, Access: "rw", Mandatory: true, Label: "Capabilities", Description: "Bitmask value.  Proxy configuration capabilities"},
-					{Id: Cfg, Offset: 5, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Config", Description: "Enumerated value.  Set proxy address type"},
-					{Id: Typ, Offset: 6, Type: typelabel.Bitfield16, Access: "rw", Mandatory: true, Label: "Type", Description: "Enumerate value.  Proxy server type"},
+					{Id: Cap, Offset: 4, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "Capabilities", Description: "Bitmask value.  Proxy configuration capabilities"},
+					{Id: Cfg, Offset: 5, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Config", Description: "Enumerated value.  Set proxy address type"},
+					{Id: Typ, Offset: 6, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "Type", Description: "Enumerate value.  Proxy server type"},
 					{Id: Addr, Offset: 7, Type: typelabel.String, Access: "rw", Length: 20, Mandatory: true, Label: "Address", Description: "IPv4 or IPv6 proxy hostname or dotted address (40 chars)"},
-					{Id: Port, Offset: 27, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "Port", Description: "Proxy port number"},
+					{Id: Port, Offset: 27, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "Port", Description: "Proxy port number"},
 					{Id: User, Offset: 28, Type: typelabel.String, Access: "rw", Length: 12, Label: "Username", Description: "Proxy user name"},
 					{Id: Pw, Offset: 40, Type: typelabel.String, Access: "rw", Length: 12, Label: "Password", Description: "Proxy password"},
 				},

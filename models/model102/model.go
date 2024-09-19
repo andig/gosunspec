@@ -64,49 +64,49 @@ const (
 )
 
 type Block102 struct {
-	A       uint16              `sunspec:"offset=0,sf=A_SF"`
-	AphA    uint16              `sunspec:"offset=1,sf=A_SF"`
-	AphB    uint16              `sunspec:"offset=2,sf=A_SF"`
-	AphC    uint16              `sunspec:"offset=3,sf=A_SF"`
-	A_SF    sunspec.ScaleFactor `sunspec:"offset=4"`
-	PPVphAB uint16              `sunspec:"offset=5,sf=V_SF"`
-	PPVphBC uint16              `sunspec:"offset=6,sf=V_SF"`
-	PPVphCA uint16              `sunspec:"offset=7,sf=V_SF"`
-	PhVphA  uint16              `sunspec:"offset=8,sf=V_SF"`
-	PhVphB  uint16              `sunspec:"offset=9,sf=V_SF"`
-	PhVphC  uint16              `sunspec:"offset=10,sf=V_SF"`
-	V_SF    sunspec.ScaleFactor `sunspec:"offset=11"`
-	W       int16               `sunspec:"offset=12,sf=W_SF"`
-	W_SF    sunspec.ScaleFactor `sunspec:"offset=13"`
-	Hz      uint16              `sunspec:"offset=14,sf=Hz_SF"`
-	Hz_SF   sunspec.ScaleFactor `sunspec:"offset=15"`
-	VA      int16               `sunspec:"offset=16,sf=VA_SF"`
-	VA_SF   sunspec.ScaleFactor `sunspec:"offset=17"`
-	VAr     int16               `sunspec:"offset=18,sf=VAr_SF"`
-	VAr_SF  sunspec.ScaleFactor `sunspec:"offset=19"`
-	PF      int16               `sunspec:"offset=20,sf=PF_SF"`
-	PF_SF   sunspec.ScaleFactor `sunspec:"offset=21"`
-	WH      sunspec.Acc32       `sunspec:"offset=22,sf=WH_SF"`
-	WH_SF   sunspec.ScaleFactor `sunspec:"offset=24"`
-	DCA     uint16              `sunspec:"offset=25,sf=DCA_SF"`
-	DCA_SF  sunspec.ScaleFactor `sunspec:"offset=26"`
-	DCV     uint16              `sunspec:"offset=27,sf=DCV_SF"`
-	DCV_SF  sunspec.ScaleFactor `sunspec:"offset=28"`
-	DCW     int16               `sunspec:"offset=29,sf=DCW_SF"`
-	DCW_SF  sunspec.ScaleFactor `sunspec:"offset=30"`
-	TmpCab  int16               `sunspec:"offset=31,sf=Tmp_SF"`
-	TmpSnk  int16               `sunspec:"offset=32,sf=Tmp_SF"`
-	TmpTrns int16               `sunspec:"offset=33,sf=Tmp_SF"`
-	TmpOt   int16               `sunspec:"offset=34,sf=Tmp_SF"`
-	Tmp_SF  sunspec.ScaleFactor `sunspec:"offset=35"`
-	St      sunspec.Enum16      `sunspec:"offset=36"`
-	StVnd   sunspec.Enum16      `sunspec:"offset=37"`
-	Evt1    sunspec.Bitfield32  `sunspec:"offset=38"`
-	Evt2    sunspec.Bitfield32  `sunspec:"offset=40"`
-	EvtVnd1 sunspec.Bitfield32  `sunspec:"offset=42"`
-	EvtVnd2 sunspec.Bitfield32  `sunspec:"offset=44"`
-	EvtVnd3 sunspec.Bitfield32  `sunspec:"offset=46"`
-	EvtVnd4 sunspec.Bitfield32  `sunspec:"offset=48"`
+	A       uint16              `sunspec:"offset=0,len=1,sf=A_SF,access=r"`
+	AphA    uint16              `sunspec:"offset=1,len=1,sf=A_SF,access=r"`
+	AphB    uint16              `sunspec:"offset=2,len=1,sf=A_SF,access=r"`
+	AphC    uint16              `sunspec:"offset=3,len=1,sf=A_SF,access=r"`
+	A_SF    sunspec.ScaleFactor `sunspec:"offset=4,len=1,access=r"`
+	PPVphAB uint16              `sunspec:"offset=5,len=1,sf=V_SF,access=r"`
+	PPVphBC uint16              `sunspec:"offset=6,len=1,sf=V_SF,access=r"`
+	PPVphCA uint16              `sunspec:"offset=7,len=1,sf=V_SF,access=r"`
+	PhVphA  uint16              `sunspec:"offset=8,len=1,sf=V_SF,access=r"`
+	PhVphB  uint16              `sunspec:"offset=9,len=1,sf=V_SF,access=r"`
+	PhVphC  uint16              `sunspec:"offset=10,len=1,sf=V_SF,access=r"`
+	V_SF    sunspec.ScaleFactor `sunspec:"offset=11,len=1,access=r"`
+	W       int16               `sunspec:"offset=12,len=1,sf=W_SF,access=r"`
+	W_SF    sunspec.ScaleFactor `sunspec:"offset=13,len=1,access=r"`
+	Hz      uint16              `sunspec:"offset=14,len=1,sf=Hz_SF,access=r"`
+	Hz_SF   sunspec.ScaleFactor `sunspec:"offset=15,len=1,access=r"`
+	VA      int16               `sunspec:"offset=16,len=1,sf=VA_SF,access=r"`
+	VA_SF   sunspec.ScaleFactor `sunspec:"offset=17,len=1,access=r"`
+	VAr     int16               `sunspec:"offset=18,len=1,sf=VAr_SF,access=r"`
+	VAr_SF  sunspec.ScaleFactor `sunspec:"offset=19,len=1,access=r"`
+	PF      int16               `sunspec:"offset=20,len=1,sf=PF_SF,access=r"`
+	PF_SF   sunspec.ScaleFactor `sunspec:"offset=21,len=1,access=r"`
+	WH      sunspec.Acc32       `sunspec:"offset=22,len=2,sf=WH_SF,access=r"`
+	WH_SF   sunspec.ScaleFactor `sunspec:"offset=24,len=1,access=r"`
+	DCA     uint16              `sunspec:"offset=25,len=1,sf=DCA_SF,access=r"`
+	DCA_SF  sunspec.ScaleFactor `sunspec:"offset=26,len=1,access=r"`
+	DCV     uint16              `sunspec:"offset=27,len=1,sf=DCV_SF,access=r"`
+	DCV_SF  sunspec.ScaleFactor `sunspec:"offset=28,len=1,access=r"`
+	DCW     int16               `sunspec:"offset=29,len=1,sf=DCW_SF,access=r"`
+	DCW_SF  sunspec.ScaleFactor `sunspec:"offset=30,len=1,access=r"`
+	TmpCab  int16               `sunspec:"offset=31,len=1,sf=Tmp_SF,access=r"`
+	TmpSnk  int16               `sunspec:"offset=32,len=1,sf=Tmp_SF,access=r"`
+	TmpTrns int16               `sunspec:"offset=33,len=1,sf=Tmp_SF,access=r"`
+	TmpOt   int16               `sunspec:"offset=34,len=1,sf=Tmp_SF,access=r"`
+	Tmp_SF  sunspec.ScaleFactor `sunspec:"offset=35,len=1,access=r"`
+	St      sunspec.Enum16      `sunspec:"offset=36,len=1,access=r"`
+	StVnd   sunspec.Enum16      `sunspec:"offset=37,len=1,access=r"`
+	Evt1    sunspec.Bitfield32  `sunspec:"offset=38,len=2,access=r"`
+	Evt2    sunspec.Bitfield32  `sunspec:"offset=40,len=2,access=r"`
+	EvtVnd1 sunspec.Bitfield32  `sunspec:"offset=42,len=2,access=r"`
+	EvtVnd2 sunspec.Bitfield32  `sunspec:"offset=44,len=2,access=r"`
+	EvtVnd3 sunspec.Bitfield32  `sunspec:"offset=46,len=2,access=r"`
+	EvtVnd4 sunspec.Bitfield32  `sunspec:"offset=48,len=2,access=r"`
 }
 
 func (block *Block102) GetId() sunspec.ModelId {
@@ -122,49 +122,49 @@ func init() {
 			{
 				Length: 50,
 				Points: []smdx.PointElement{
-					{Id: A, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Amps", Description: "AC Current"},
-					{Id: AphA, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Amps PhaseA", Description: "Phase A Current"},
-					{Id: AphB, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Amps PhaseB", Description: "Phase B Current"},
-					{Id: AphC, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Label: "Amps PhaseC", Description: "Phase C Current"},
-					{Id: A_SF, Offset: 4, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: PPVphAB, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Label: "Phase Voltage AB", Description: "Phase Voltage AB"},
-					{Id: PPVphBC, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Label: "Phase Voltage BC", Description: "Phase Voltage BC"},
-					{Id: PPVphCA, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Label: "Phase Voltage CA", Description: "Phase Voltage CA"},
-					{Id: PhVphA, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Phase Voltage AN", Description: "Phase Voltage AN"},
-					{Id: PhVphB, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Phase Voltage BN", Description: "Phase Voltage BN"},
-					{Id: PhVphC, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Label: "Phase Voltage CN", Description: "Phase Voltage CN"},
-					{Id: V_SF, Offset: 11, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: W, Offset: 12, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Mandatory: true, Label: "Watts", Description: "AC Power"},
-					{Id: W_SF, Offset: 13, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: Hz, Offset: 14, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Mandatory: true, Label: "Hz", Description: "Line Frequency"},
-					{Id: Hz_SF, Offset: 15, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: VA, Offset: 16, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Label: "VA", Description: "AC Apparent Power"},
-					{Id: VA_SF, Offset: 17, Type: typelabel.ScaleFactor},
-					{Id: VAr, Offset: 18, Type: typelabel.Int16, ScaleFactor: "VAr_SF", Units: "var", Label: "VAr", Description: "AC Reactive Power"},
-					{Id: VAr_SF, Offset: 19, Type: typelabel.ScaleFactor},
-					{Id: PF, Offset: 20, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Label: "PF", Description: "AC Power Factor"},
-					{Id: PF_SF, Offset: 21, Type: typelabel.ScaleFactor},
-					{Id: WH, Offset: 22, Type: typelabel.Acc32, ScaleFactor: "WH_SF", Units: "Wh", Mandatory: true, Label: "WattHours", Description: "AC Energy"},
-					{Id: WH_SF, Offset: 24, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: DCA, Offset: 25, Type: typelabel.Uint16, ScaleFactor: "DCA_SF", Units: "A", Label: "DC Amps", Description: "DC Current"},
-					{Id: DCA_SF, Offset: 26, Type: typelabel.ScaleFactor},
-					{Id: DCV, Offset: 27, Type: typelabel.Uint16, ScaleFactor: "DCV_SF", Units: "V", Label: "DC Voltage", Description: "DC Voltage"},
-					{Id: DCV_SF, Offset: 28, Type: typelabel.ScaleFactor},
-					{Id: DCW, Offset: 29, Type: typelabel.Int16, ScaleFactor: "DCW_SF", Units: "W", Label: "DC Watts", Description: "DC Power"},
-					{Id: DCW_SF, Offset: 30, Type: typelabel.ScaleFactor},
-					{Id: TmpCab, Offset: 31, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Mandatory: true, Label: "Cabinet Temperature", Description: "Cabinet Temperature"},
-					{Id: TmpSnk, Offset: 32, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Label: "Heat Sink Temperature", Description: "Heat Sink Temperature"},
-					{Id: TmpTrns, Offset: 33, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Label: "Transformer Temperature", Description: "Transformer Temperature"},
-					{Id: TmpOt, Offset: 34, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Label: "Other Temperature", Description: "Other Temperature"},
-					{Id: Tmp_SF, Offset: 35, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: St, Offset: 36, Type: typelabel.Enum16, Mandatory: true, Label: "Operating State", Description: "Enumerated value.  Operating state"},
-					{Id: StVnd, Offset: 37, Type: typelabel.Enum16, Label: "Vendor Operating State", Description: "Vendor specific operating state code"},
-					{Id: Evt1, Offset: 38, Type: typelabel.Bitfield32, Mandatory: true, Label: "Event1", Description: "Bitmask value. Event fields"},
-					{Id: Evt2, Offset: 40, Type: typelabel.Bitfield32, Mandatory: true, Label: "Event Bitfield 2", Description: "Reserved for future use"},
-					{Id: EvtVnd1, Offset: 42, Type: typelabel.Bitfield32, Label: "Vendor Event Bitfield 1", Description: "Vendor defined events"},
-					{Id: EvtVnd2, Offset: 44, Type: typelabel.Bitfield32, Label: "Vendor Event Bitfield 2", Description: "Vendor defined events"},
-					{Id: EvtVnd3, Offset: 46, Type: typelabel.Bitfield32, Label: "Vendor Event Bitfield 3", Description: "Vendor defined events"},
-					{Id: EvtVnd4, Offset: 48, Type: typelabel.Bitfield32, Label: "Vendor Event Bitfield 4", Description: "Vendor defined events"},
+					{Id: A, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Amps", Description: "AC Current"},
+					{Id: AphA, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Amps PhaseA", Description: "Phase A Current"},
+					{Id: AphB, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Amps PhaseB", Description: "Phase B Current"},
+					{Id: AphC, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Label: "Amps PhaseC", Description: "Phase C Current"},
+					{Id: A_SF, Offset: 4, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: PPVphAB, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Phase Voltage AB", Description: "Phase Voltage AB"},
+					{Id: PPVphBC, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Phase Voltage BC", Description: "Phase Voltage BC"},
+					{Id: PPVphCA, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Phase Voltage CA", Description: "Phase Voltage CA"},
+					{Id: PhVphA, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Phase Voltage AN", Description: "Phase Voltage AN"},
+					{Id: PhVphB, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Phase Voltage BN", Description: "Phase Voltage BN"},
+					{Id: PhVphC, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Phase Voltage CN", Description: "Phase Voltage CN"},
+					{Id: V_SF, Offset: 11, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: W, Offset: 12, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Mandatory: true, Label: "Watts", Description: "AC Power"},
+					{Id: W_SF, Offset: 13, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: Hz, Offset: 14, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "r", Length: 1, Mandatory: true, Label: "Hz", Description: "Line Frequency"},
+					{Id: Hz_SF, Offset: 15, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: VA, Offset: 16, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Access: "r", Length: 1, Label: "VA", Description: "AC Apparent Power"},
+					{Id: VA_SF, Offset: 17, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: VAr, Offset: 18, Type: typelabel.Int16, ScaleFactor: "VAr_SF", Units: "var", Access: "r", Length: 1, Label: "VAr", Description: "AC Reactive Power"},
+					{Id: VAr_SF, Offset: 19, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: PF, Offset: 20, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Access: "r", Length: 1, Label: "PF", Description: "AC Power Factor"},
+					{Id: PF_SF, Offset: 21, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: WH, Offset: 22, Type: typelabel.Acc32, ScaleFactor: "WH_SF", Units: "Wh", Access: "r", Length: 2, Mandatory: true, Label: "WattHours", Description: "AC Energy"},
+					{Id: WH_SF, Offset: 24, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: DCA, Offset: 25, Type: typelabel.Uint16, ScaleFactor: "DCA_SF", Units: "A", Access: "r", Length: 1, Label: "DC Amps", Description: "DC Current"},
+					{Id: DCA_SF, Offset: 26, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: DCV, Offset: 27, Type: typelabel.Uint16, ScaleFactor: "DCV_SF", Units: "V", Access: "r", Length: 1, Label: "DC Voltage", Description: "DC Voltage"},
+					{Id: DCV_SF, Offset: 28, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: DCW, Offset: 29, Type: typelabel.Int16, ScaleFactor: "DCW_SF", Units: "W", Access: "r", Length: 1, Label: "DC Watts", Description: "DC Power"},
+					{Id: DCW_SF, Offset: 30, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: TmpCab, Offset: 31, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Cabinet Temperature", Description: "Cabinet Temperature"},
+					{Id: TmpSnk, Offset: 32, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Access: "r", Length: 1, Label: "Heat Sink Temperature", Description: "Heat Sink Temperature"},
+					{Id: TmpTrns, Offset: 33, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Access: "r", Length: 1, Label: "Transformer Temperature", Description: "Transformer Temperature"},
+					{Id: TmpOt, Offset: 34, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Access: "r", Length: 1, Label: "Other Temperature", Description: "Other Temperature"},
+					{Id: Tmp_SF, Offset: 35, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: St, Offset: 36, Type: typelabel.Enum16, Access: "r", Length: 1, Mandatory: true, Label: "Operating State", Description: "Enumerated value.  Operating state"},
+					{Id: StVnd, Offset: 37, Type: typelabel.Enum16, Access: "r", Length: 1, Label: "Vendor Operating State", Description: "Vendor specific operating state code"},
+					{Id: Evt1, Offset: 38, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Event1", Description: "Bitmask value. Event fields"},
+					{Id: Evt2, Offset: 40, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Event Bitfield 2", Description: "Reserved for future use"},
+					{Id: EvtVnd1, Offset: 42, Type: typelabel.Bitfield32, Access: "r", Length: 2, Label: "Vendor Event Bitfield 1", Description: "Vendor defined events"},
+					{Id: EvtVnd2, Offset: 44, Type: typelabel.Bitfield32, Access: "r", Length: 2, Label: "Vendor Event Bitfield 2", Description: "Vendor defined events"},
+					{Id: EvtVnd3, Offset: 46, Type: typelabel.Bitfield32, Access: "r", Length: 2, Label: "Vendor Event Bitfield 3", Description: "Vendor defined events"},
+					{Id: EvtVnd4, Offset: 48, Type: typelabel.Bitfield32, Access: "r", Length: 2, Label: "Vendor Event Bitfield 4", Description: "Vendor defined events"},
 				},
 			},
 		}})

@@ -93,78 +93,78 @@ const (
 )
 
 type Block204 struct {
-	A               int16               `sunspec:"offset=0,sf=A_SF"`
-	AphA            int16               `sunspec:"offset=1,sf=A_SF"`
-	AphB            int16               `sunspec:"offset=2,sf=A_SF"`
-	AphC            int16               `sunspec:"offset=3,sf=A_SF"`
-	A_SF            sunspec.ScaleFactor `sunspec:"offset=4"`
-	PhV             int16               `sunspec:"offset=5,sf=V_SF"`
-	PhVphA          int16               `sunspec:"offset=6,sf=V_SF"`
-	PhVphB          int16               `sunspec:"offset=7,sf=V_SF"`
-	PhVphC          int16               `sunspec:"offset=8,sf=V_SF"`
-	PPV             int16               `sunspec:"offset=9,sf=V_SF"`
-	PhVphAB         int16               `sunspec:"offset=10,sf=V_SF"`
-	PhVphBC         int16               `sunspec:"offset=11,sf=V_SF"`
-	PhVphCA         int16               `sunspec:"offset=12,sf=V_SF"`
-	V_SF            sunspec.ScaleFactor `sunspec:"offset=13"`
-	Hz              int16               `sunspec:"offset=14,sf=Hz_SF"`
-	Hz_SF           sunspec.ScaleFactor `sunspec:"offset=15"`
-	W               int16               `sunspec:"offset=16,sf=W_SF"`
-	WphA            int16               `sunspec:"offset=17,sf=W_SF"`
-	WphB            int16               `sunspec:"offset=18,sf=W_SF"`
-	WphC            int16               `sunspec:"offset=19,sf=W_SF"`
-	W_SF            sunspec.ScaleFactor `sunspec:"offset=20"`
-	VA              int16               `sunspec:"offset=21,sf=VA_SF"`
-	VAphA           int16               `sunspec:"offset=22,sf=VA_SF"`
-	VAphB           int16               `sunspec:"offset=23,sf=VA_SF"`
-	VAphC           int16               `sunspec:"offset=24,sf=VA_SF"`
-	VA_SF           sunspec.ScaleFactor `sunspec:"offset=25"`
-	VAR             int16               `sunspec:"offset=26,sf=VAR_SF"`
-	VARphA          int16               `sunspec:"offset=27,sf=VAR_SF"`
-	VARphB          int16               `sunspec:"offset=28,sf=VAR_SF"`
-	VARphC          int16               `sunspec:"offset=29,sf=VAR_SF"`
-	VAR_SF          sunspec.ScaleFactor `sunspec:"offset=30"`
-	PF              int16               `sunspec:"offset=31,sf=PF_SF"`
-	PFphA           int16               `sunspec:"offset=32,sf=PF_SF"`
-	PFphB           int16               `sunspec:"offset=33,sf=PF_SF"`
-	PFphC           int16               `sunspec:"offset=34,sf=PF_SF"`
-	PF_SF           sunspec.ScaleFactor `sunspec:"offset=35"`
-	TotWhExp        sunspec.Acc32       `sunspec:"offset=36,sf=TotWh_SF"`
-	TotWhExpPhA     sunspec.Acc32       `sunspec:"offset=38,sf=TotWh_SF"`
-	TotWhExpPhB     sunspec.Acc32       `sunspec:"offset=40,sf=TotWh_SF"`
-	TotWhExpPhC     sunspec.Acc32       `sunspec:"offset=42,sf=TotWh_SF"`
-	TotWhImp        sunspec.Acc32       `sunspec:"offset=44,sf=TotWh_SF"`
-	TotWhImpPhA     sunspec.Acc32       `sunspec:"offset=46,sf=TotWh_SF"`
-	TotWhImpPhB     sunspec.Acc32       `sunspec:"offset=48,sf=TotWh_SF"`
-	TotWhImpPhC     sunspec.Acc32       `sunspec:"offset=50,sf=TotWh_SF"`
-	TotWh_SF        sunspec.ScaleFactor `sunspec:"offset=52"`
-	TotVAhExp       sunspec.Acc32       `sunspec:"offset=53,sf=TotVAh_SF"`
-	TotVAhExpPhA    sunspec.Acc32       `sunspec:"offset=55,sf=TotVAh_SF"`
-	TotVAhExpPhB    sunspec.Acc32       `sunspec:"offset=57,sf=TotVAh_SF"`
-	TotVAhExpPhC    sunspec.Acc32       `sunspec:"offset=59,sf=TotVAh_SF"`
-	TotVAhImp       sunspec.Acc32       `sunspec:"offset=61,sf=TotVAh_SF"`
-	TotVAhImpPhA    sunspec.Acc32       `sunspec:"offset=63,sf=TotVAh_SF"`
-	TotVAhImpPhB    sunspec.Acc32       `sunspec:"offset=65,sf=TotVAh_SF"`
-	TotVAhImpPhC    sunspec.Acc32       `sunspec:"offset=67,sf=TotVAh_SF"`
-	TotVAh_SF       sunspec.ScaleFactor `sunspec:"offset=69"`
-	TotVArhImpQ1    sunspec.Acc32       `sunspec:"offset=70,sf=TotVArh_SF"`
-	TotVArhImpQ1PhA sunspec.Acc32       `sunspec:"offset=72,sf=TotVArh_SF"`
-	TotVArhImpQ1PhB sunspec.Acc32       `sunspec:"offset=74,sf=TotVArh_SF"`
-	TotVArhImpQ1PhC sunspec.Acc32       `sunspec:"offset=76,sf=TotVArh_SF"`
-	TotVArhImpQ2    sunspec.Acc32       `sunspec:"offset=78,sf=TotVArh_SF"`
-	TotVArhImpQ2PhA sunspec.Acc32       `sunspec:"offset=80,sf=TotVArh_SF"`
-	TotVArhImpQ2PhB sunspec.Acc32       `sunspec:"offset=82,sf=TotVArh_SF"`
-	TotVArhImpQ2PhC sunspec.Acc32       `sunspec:"offset=84,sf=TotVArh_SF"`
-	TotVArhExpQ3    sunspec.Acc32       `sunspec:"offset=86,sf=TotVArh_SF"`
-	TotVArhExpQ3PhA sunspec.Acc32       `sunspec:"offset=88,sf=TotVArh_SF"`
-	TotVArhExpQ3PhB sunspec.Acc32       `sunspec:"offset=90,sf=TotVArh_SF"`
-	TotVArhExpQ3PhC sunspec.Acc32       `sunspec:"offset=92,sf=TotVArh_SF"`
-	TotVArhExpQ4    sunspec.Acc32       `sunspec:"offset=94,sf=TotVArh_SF"`
-	TotVArhExpQ4PhA sunspec.Acc32       `sunspec:"offset=96,sf=TotVArh_SF"`
-	TotVArhExpQ4PhB sunspec.Acc32       `sunspec:"offset=98,sf=TotVArh_SF"`
-	TotVArhExpQ4PhC sunspec.Acc32       `sunspec:"offset=100,sf=TotVArh_SF"`
-	TotVArh_SF      sunspec.ScaleFactor `sunspec:"offset=102"`
-	Evt             sunspec.Bitfield32  `sunspec:"offset=103"`
+	A               int16               `sunspec:"offset=0,len=1,sf=A_SF,access=r"`
+	AphA            int16               `sunspec:"offset=1,len=1,sf=A_SF,access=r"`
+	AphB            int16               `sunspec:"offset=2,len=1,sf=A_SF,access=r"`
+	AphC            int16               `sunspec:"offset=3,len=1,sf=A_SF,access=r"`
+	A_SF            sunspec.ScaleFactor `sunspec:"offset=4,len=1,access=r"`
+	PhV             int16               `sunspec:"offset=5,len=1,sf=V_SF,access=r"`
+	PhVphA          int16               `sunspec:"offset=6,len=1,sf=V_SF,access=r"`
+	PhVphB          int16               `sunspec:"offset=7,len=1,sf=V_SF,access=r"`
+	PhVphC          int16               `sunspec:"offset=8,len=1,sf=V_SF,access=r"`
+	PPV             int16               `sunspec:"offset=9,len=1,sf=V_SF,access=r"`
+	PhVphAB         int16               `sunspec:"offset=10,len=1,sf=V_SF,access=r"`
+	PhVphBC         int16               `sunspec:"offset=11,len=1,sf=V_SF,access=r"`
+	PhVphCA         int16               `sunspec:"offset=12,len=1,sf=V_SF,access=r"`
+	V_SF            sunspec.ScaleFactor `sunspec:"offset=13,len=1,access=r"`
+	Hz              int16               `sunspec:"offset=14,len=1,sf=Hz_SF,access=r"`
+	Hz_SF           sunspec.ScaleFactor `sunspec:"offset=15,len=1,access=r"`
+	W               int16               `sunspec:"offset=16,len=1,sf=W_SF,access=r"`
+	WphA            int16               `sunspec:"offset=17,len=1,sf=W_SF,access=r"`
+	WphB            int16               `sunspec:"offset=18,len=1,sf=W_SF,access=r"`
+	WphC            int16               `sunspec:"offset=19,len=1,sf=W_SF,access=r"`
+	W_SF            sunspec.ScaleFactor `sunspec:"offset=20,len=1,access=r"`
+	VA              int16               `sunspec:"offset=21,len=1,sf=VA_SF,access=r"`
+	VAphA           int16               `sunspec:"offset=22,len=1,sf=VA_SF,access=r"`
+	VAphB           int16               `sunspec:"offset=23,len=1,sf=VA_SF,access=r"`
+	VAphC           int16               `sunspec:"offset=24,len=1,sf=VA_SF,access=r"`
+	VA_SF           sunspec.ScaleFactor `sunspec:"offset=25,len=1,access=r"`
+	VAR             int16               `sunspec:"offset=26,len=1,sf=VAR_SF,access=r"`
+	VARphA          int16               `sunspec:"offset=27,len=1,sf=VAR_SF,access=r"`
+	VARphB          int16               `sunspec:"offset=28,len=1,sf=VAR_SF,access=r"`
+	VARphC          int16               `sunspec:"offset=29,len=1,sf=VAR_SF,access=r"`
+	VAR_SF          sunspec.ScaleFactor `sunspec:"offset=30,len=1,access=r"`
+	PF              int16               `sunspec:"offset=31,len=1,sf=PF_SF,access=r"`
+	PFphA           int16               `sunspec:"offset=32,len=1,sf=PF_SF,access=r"`
+	PFphB           int16               `sunspec:"offset=33,len=1,sf=PF_SF,access=r"`
+	PFphC           int16               `sunspec:"offset=34,len=1,sf=PF_SF,access=r"`
+	PF_SF           sunspec.ScaleFactor `sunspec:"offset=35,len=1,access=r"`
+	TotWhExp        sunspec.Acc32       `sunspec:"offset=36,len=2,sf=TotWh_SF,access=r"`
+	TotWhExpPhA     sunspec.Acc32       `sunspec:"offset=38,len=2,sf=TotWh_SF,access=r"`
+	TotWhExpPhB     sunspec.Acc32       `sunspec:"offset=40,len=2,sf=TotWh_SF,access=r"`
+	TotWhExpPhC     sunspec.Acc32       `sunspec:"offset=42,len=2,sf=TotWh_SF,access=r"`
+	TotWhImp        sunspec.Acc32       `sunspec:"offset=44,len=2,sf=TotWh_SF,access=r"`
+	TotWhImpPhA     sunspec.Acc32       `sunspec:"offset=46,len=2,sf=TotWh_SF,access=r"`
+	TotWhImpPhB     sunspec.Acc32       `sunspec:"offset=48,len=2,sf=TotWh_SF,access=r"`
+	TotWhImpPhC     sunspec.Acc32       `sunspec:"offset=50,len=2,sf=TotWh_SF,access=r"`
+	TotWh_SF        sunspec.ScaleFactor `sunspec:"offset=52,len=1,access=r"`
+	TotVAhExp       sunspec.Acc32       `sunspec:"offset=53,len=2,sf=TotVAh_SF,access=r"`
+	TotVAhExpPhA    sunspec.Acc32       `sunspec:"offset=55,len=2,sf=TotVAh_SF,access=r"`
+	TotVAhExpPhB    sunspec.Acc32       `sunspec:"offset=57,len=2,sf=TotVAh_SF,access=r"`
+	TotVAhExpPhC    sunspec.Acc32       `sunspec:"offset=59,len=2,sf=TotVAh_SF,access=r"`
+	TotVAhImp       sunspec.Acc32       `sunspec:"offset=61,len=2,sf=TotVAh_SF,access=r"`
+	TotVAhImpPhA    sunspec.Acc32       `sunspec:"offset=63,len=2,sf=TotVAh_SF,access=r"`
+	TotVAhImpPhB    sunspec.Acc32       `sunspec:"offset=65,len=2,sf=TotVAh_SF,access=r"`
+	TotVAhImpPhC    sunspec.Acc32       `sunspec:"offset=67,len=2,sf=TotVAh_SF,access=r"`
+	TotVAh_SF       sunspec.ScaleFactor `sunspec:"offset=69,len=1,access=r"`
+	TotVArhImpQ1    sunspec.Acc32       `sunspec:"offset=70,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhImpQ1PhA sunspec.Acc32       `sunspec:"offset=72,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhImpQ1PhB sunspec.Acc32       `sunspec:"offset=74,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhImpQ1PhC sunspec.Acc32       `sunspec:"offset=76,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhImpQ2    sunspec.Acc32       `sunspec:"offset=78,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhImpQ2PhA sunspec.Acc32       `sunspec:"offset=80,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhImpQ2PhB sunspec.Acc32       `sunspec:"offset=82,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhImpQ2PhC sunspec.Acc32       `sunspec:"offset=84,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhExpQ3    sunspec.Acc32       `sunspec:"offset=86,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhExpQ3PhA sunspec.Acc32       `sunspec:"offset=88,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhExpQ3PhB sunspec.Acc32       `sunspec:"offset=90,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhExpQ3PhC sunspec.Acc32       `sunspec:"offset=92,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhExpQ4    sunspec.Acc32       `sunspec:"offset=94,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhExpQ4PhA sunspec.Acc32       `sunspec:"offset=96,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhExpQ4PhB sunspec.Acc32       `sunspec:"offset=98,len=2,sf=TotVArh_SF,access=r"`
+	TotVArhExpQ4PhC sunspec.Acc32       `sunspec:"offset=100,len=2,sf=TotVArh_SF,access=r"`
+	TotVArh_SF      sunspec.ScaleFactor `sunspec:"offset=102,len=1,access=r"`
+	Evt             sunspec.Bitfield32  `sunspec:"offset=103,len=2,access=r"`
 }
 
 func (block *Block204) GetId() sunspec.ModelId {
@@ -180,78 +180,78 @@ func init() {
 			{
 				Length: 105,
 				Points: []smdx.PointElement{
-					{Id: A, Offset: 0, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Amps", Description: "Total AC Current"},
-					{Id: AphA, Offset: 1, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Amps PhaseA", Description: "Phase A Current"},
-					{Id: AphB, Offset: 2, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Amps PhaseB", Description: "Phase B Current"},
-					{Id: AphC, Offset: 3, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Mandatory: true, Label: "Amps PhaseC", Description: "Phase C Current"},
-					{Id: A_SF, Offset: 4, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: PhV, Offset: 5, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Label: "Voltage LN", Description: "Line to Neutral AC Voltage (average of active phases)"},
-					{Id: PhVphA, Offset: 6, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Label: "Phase Voltage AN", Description: "Phase Voltage AN"},
-					{Id: PhVphB, Offset: 7, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Label: "Phase Voltage BN", Description: "Phase Voltage BN"},
-					{Id: PhVphC, Offset: 8, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Label: "Phase Voltage CN", Description: "Phase Voltage CN"},
-					{Id: PPV, Offset: 9, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Voltage LL", Description: "Line to Line AC Voltage (average of active phases)"},
-					{Id: PhVphAB, Offset: 10, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Phase Voltage AB", Description: "Phase Voltage AB"},
-					{Id: PhVphBC, Offset: 11, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Phase Voltage BC", Description: "Phase Voltage BC"},
-					{Id: PhVphCA, Offset: 12, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Phase Voltage CA", Description: "Phase Voltage CA"},
-					{Id: V_SF, Offset: 13, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: Hz, Offset: 14, Type: typelabel.Int16, ScaleFactor: "Hz_SF", Units: "Hz", Mandatory: true, Label: "Hz", Description: "Frequency"},
-					{Id: Hz_SF, Offset: 15, Type: typelabel.ScaleFactor},
-					{Id: W, Offset: 16, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Mandatory: true, Label: "Watts", Description: "Total Real Power"},
-					{Id: WphA, Offset: 17, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Label: "Watts phase A", Description: ""},
-					{Id: WphB, Offset: 18, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Label: "Watts phase B", Description: ""},
-					{Id: WphC, Offset: 19, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Label: "Watts phase C", Description: ""},
-					{Id: W_SF, Offset: 20, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: VA, Offset: 21, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Label: "VA", Description: "AC Apparent Power"},
-					{Id: VAphA, Offset: 22, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Label: "VA phase A", Description: ""},
-					{Id: VAphB, Offset: 23, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Label: "VA phase B", Description: ""},
-					{Id: VAphC, Offset: 24, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Label: "VA phase C", Description: ""},
-					{Id: VA_SF, Offset: 25, Type: typelabel.ScaleFactor},
-					{Id: VAR, Offset: 26, Type: typelabel.Int16, ScaleFactor: "VAR_SF", Units: "var", Label: "VAR", Description: "Reactive Power"},
-					{Id: VARphA, Offset: 27, Type: typelabel.Int16, ScaleFactor: "VAR_SF", Units: "var", Label: "VAR phase A", Description: ""},
-					{Id: VARphB, Offset: 28, Type: typelabel.Int16, ScaleFactor: "VAR_SF", Units: "var", Label: "VAR phase B", Description: ""},
-					{Id: VARphC, Offset: 29, Type: typelabel.Int16, ScaleFactor: "VAR_SF", Units: "var", Label: "VAR phase C", Description: ""},
-					{Id: VAR_SF, Offset: 30, Type: typelabel.ScaleFactor},
-					{Id: PF, Offset: 31, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Label: "PF", Description: "Power Factor"},
-					{Id: PFphA, Offset: 32, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Label: "PF phase A", Description: ""},
-					{Id: PFphB, Offset: 33, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Label: "PF phase B", Description: ""},
-					{Id: PFphC, Offset: 34, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Label: "PF phase C", Description: ""},
-					{Id: PF_SF, Offset: 35, Type: typelabel.ScaleFactor},
-					{Id: TotWhExp, Offset: 36, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Mandatory: true, Label: "Total Watt-hours Exported", Description: "Total Real Energy Exported"},
-					{Id: TotWhExpPhA, Offset: 38, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Label: "Total Watt-hours Exported phase A", Description: ""},
-					{Id: TotWhExpPhB, Offset: 40, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Label: "Total Watt-hours Exported phase B", Description: ""},
-					{Id: TotWhExpPhC, Offset: 42, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Label: "Total Watt-hours Exported phase C", Description: ""},
-					{Id: TotWhImp, Offset: 44, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Mandatory: true, Label: "Total Watt-hours Imported", Description: "Total Real Energy Imported"},
-					{Id: TotWhImpPhA, Offset: 46, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Label: "Total Watt-hours Imported phase A", Description: ""},
-					{Id: TotWhImpPhB, Offset: 48, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Label: "Total Watt-hours Imported phase B", Description: ""},
-					{Id: TotWhImpPhC, Offset: 50, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Label: "Total Watt-hours Imported phase C", Description: ""},
-					{Id: TotWh_SF, Offset: 52, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: TotVAhExp, Offset: 53, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Label: "Total VA-hours Exported", Description: "Total Apparent Energy Exported"},
-					{Id: TotVAhExpPhA, Offset: 55, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Label: "Total VA-hours Exported phase A", Description: ""},
-					{Id: TotVAhExpPhB, Offset: 57, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Label: "Total VA-hours Exported phase B", Description: ""},
-					{Id: TotVAhExpPhC, Offset: 59, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Label: "Total VA-hours Exported phase C", Description: ""},
-					{Id: TotVAhImp, Offset: 61, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Label: "Total VA-hours Imported", Description: "Total Apparent Energy Imported"},
-					{Id: TotVAhImpPhA, Offset: 63, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Label: "Total VA-hours Imported phase A", Description: ""},
-					{Id: TotVAhImpPhB, Offset: 65, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Label: "Total VA-hours Imported phase B", Description: ""},
-					{Id: TotVAhImpPhC, Offset: 67, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Label: "Total VA-hours Imported phase C", Description: ""},
-					{Id: TotVAh_SF, Offset: 69, Type: typelabel.ScaleFactor},
-					{Id: TotVArhImpQ1, Offset: 70, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAR-hours Imported Q1", Description: "Total Reactive Energy Imported Quadrant 1"},
-					{Id: TotVArhImpQ1PhA, Offset: 72, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Imported Q1 phase A", Description: ""},
-					{Id: TotVArhImpQ1PhB, Offset: 74, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Imported Q1 phase B", Description: ""},
-					{Id: TotVArhImpQ1PhC, Offset: 76, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Imported Q1 phase C", Description: ""},
-					{Id: TotVArhImpQ2, Offset: 78, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Imported Q2", Description: "Total Reactive Power Imported Quadrant 2"},
-					{Id: TotVArhImpQ2PhA, Offset: 80, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Imported Q2 phase A", Description: ""},
-					{Id: TotVArhImpQ2PhB, Offset: 82, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Imported Q2 phase B", Description: ""},
-					{Id: TotVArhImpQ2PhC, Offset: 84, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Imported Q2 phase C", Description: ""},
-					{Id: TotVArhExpQ3, Offset: 86, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Exported Q3", Description: "Total Reactive Power Exported Quadrant 3"},
-					{Id: TotVArhExpQ3PhA, Offset: 88, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Exported Q3 phase A", Description: ""},
-					{Id: TotVArhExpQ3PhB, Offset: 90, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Exported Q3 phase B", Description: ""},
-					{Id: TotVArhExpQ3PhC, Offset: 92, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Exported Q3 phase C", Description: ""},
-					{Id: TotVArhExpQ4, Offset: 94, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Exported Q4", Description: "Total Reactive Power Exported Quadrant 4"},
-					{Id: TotVArhExpQ4PhA, Offset: 96, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Exported Q4 Imported phase A", Description: ""},
-					{Id: TotVArhExpQ4PhB, Offset: 98, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Exported Q4 Imported phase B", Description: ""},
-					{Id: TotVArhExpQ4PhC, Offset: 100, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Label: "Total VAr-hours Exported Q4 Imported phase C", Description: ""},
-					{Id: TotVArh_SF, Offset: 102, Type: typelabel.ScaleFactor},
-					{Id: Evt, Offset: 103, Type: typelabel.Bitfield32, Mandatory: true, Label: "Events", Description: "Meter Event Flags"},
+					{Id: A, Offset: 0, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Amps", Description: "Total AC Current"},
+					{Id: AphA, Offset: 1, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Amps PhaseA", Description: "Phase A Current"},
+					{Id: AphB, Offset: 2, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Amps PhaseB", Description: "Phase B Current"},
+					{Id: AphC, Offset: 3, Type: typelabel.Int16, ScaleFactor: "A_SF", Units: "A", Access: "r", Length: 1, Mandatory: true, Label: "Amps PhaseC", Description: "Phase C Current"},
+					{Id: A_SF, Offset: 4, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: PhV, Offset: 5, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Voltage LN", Description: "Line to Neutral AC Voltage (average of active phases)"},
+					{Id: PhVphA, Offset: 6, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Phase Voltage AN", Description: "Phase Voltage AN"},
+					{Id: PhVphB, Offset: 7, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Phase Voltage BN", Description: "Phase Voltage BN"},
+					{Id: PhVphC, Offset: 8, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Label: "Phase Voltage CN", Description: "Phase Voltage CN"},
+					{Id: PPV, Offset: 9, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Voltage LL", Description: "Line to Line AC Voltage (average of active phases)"},
+					{Id: PhVphAB, Offset: 10, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Phase Voltage AB", Description: "Phase Voltage AB"},
+					{Id: PhVphBC, Offset: 11, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Phase Voltage BC", Description: "Phase Voltage BC"},
+					{Id: PhVphCA, Offset: 12, Type: typelabel.Int16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Phase Voltage CA", Description: "Phase Voltage CA"},
+					{Id: V_SF, Offset: 13, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: Hz, Offset: 14, Type: typelabel.Int16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "r", Length: 1, Mandatory: true, Label: "Hz", Description: "Frequency"},
+					{Id: Hz_SF, Offset: 15, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: W, Offset: 16, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Mandatory: true, Label: "Watts", Description: "Total Real Power"},
+					{Id: WphA, Offset: 17, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Label: "Watts phase A", Description: ""},
+					{Id: WphB, Offset: 18, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Label: "Watts phase B", Description: ""},
+					{Id: WphC, Offset: 19, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "W", Access: "r", Length: 1, Label: "Watts phase C", Description: ""},
+					{Id: W_SF, Offset: 20, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: VA, Offset: 21, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Access: "r", Length: 1, Label: "VA", Description: "AC Apparent Power"},
+					{Id: VAphA, Offset: 22, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Access: "r", Length: 1, Label: "VA phase A", Description: ""},
+					{Id: VAphB, Offset: 23, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Access: "r", Length: 1, Label: "VA phase B", Description: ""},
+					{Id: VAphC, Offset: 24, Type: typelabel.Int16, ScaleFactor: "VA_SF", Units: "VA", Access: "r", Length: 1, Label: "VA phase C", Description: ""},
+					{Id: VA_SF, Offset: 25, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: VAR, Offset: 26, Type: typelabel.Int16, ScaleFactor: "VAR_SF", Units: "var", Access: "r", Length: 1, Label: "VAR", Description: "Reactive Power"},
+					{Id: VARphA, Offset: 27, Type: typelabel.Int16, ScaleFactor: "VAR_SF", Units: "var", Access: "r", Length: 1, Label: "VAR phase A", Description: ""},
+					{Id: VARphB, Offset: 28, Type: typelabel.Int16, ScaleFactor: "VAR_SF", Units: "var", Access: "r", Length: 1, Label: "VAR phase B", Description: ""},
+					{Id: VARphC, Offset: 29, Type: typelabel.Int16, ScaleFactor: "VAR_SF", Units: "var", Access: "r", Length: 1, Label: "VAR phase C", Description: ""},
+					{Id: VAR_SF, Offset: 30, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: PF, Offset: 31, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Access: "r", Length: 1, Label: "PF", Description: "Power Factor"},
+					{Id: PFphA, Offset: 32, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Access: "r", Length: 1, Label: "PF phase A", Description: ""},
+					{Id: PFphB, Offset: 33, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Access: "r", Length: 1, Label: "PF phase B", Description: ""},
+					{Id: PFphC, Offset: 34, Type: typelabel.Int16, ScaleFactor: "PF_SF", Units: "Pct", Access: "r", Length: 1, Label: "PF phase C", Description: ""},
+					{Id: PF_SF, Offset: 35, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: TotWhExp, Offset: 36, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Access: "r", Length: 2, Mandatory: true, Label: "Total Watt-hours Exported", Description: "Total Real Energy Exported"},
+					{Id: TotWhExpPhA, Offset: 38, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Access: "r", Length: 2, Label: "Total Watt-hours Exported phase A", Description: ""},
+					{Id: TotWhExpPhB, Offset: 40, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Access: "r", Length: 2, Label: "Total Watt-hours Exported phase B", Description: ""},
+					{Id: TotWhExpPhC, Offset: 42, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Access: "r", Length: 2, Label: "Total Watt-hours Exported phase C", Description: ""},
+					{Id: TotWhImp, Offset: 44, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Access: "r", Length: 2, Mandatory: true, Label: "Total Watt-hours Imported", Description: "Total Real Energy Imported"},
+					{Id: TotWhImpPhA, Offset: 46, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Access: "r", Length: 2, Label: "Total Watt-hours Imported phase A", Description: ""},
+					{Id: TotWhImpPhB, Offset: 48, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Access: "r", Length: 2, Label: "Total Watt-hours Imported phase B", Description: ""},
+					{Id: TotWhImpPhC, Offset: 50, Type: typelabel.Acc32, ScaleFactor: "TotWh_SF", Units: "Wh", Access: "r", Length: 2, Label: "Total Watt-hours Imported phase C", Description: ""},
+					{Id: TotWh_SF, Offset: 52, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: TotVAhExp, Offset: 53, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Access: "r", Length: 2, Label: "Total VA-hours Exported", Description: "Total Apparent Energy Exported"},
+					{Id: TotVAhExpPhA, Offset: 55, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Access: "r", Length: 2, Label: "Total VA-hours Exported phase A", Description: ""},
+					{Id: TotVAhExpPhB, Offset: 57, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Access: "r", Length: 2, Label: "Total VA-hours Exported phase B", Description: ""},
+					{Id: TotVAhExpPhC, Offset: 59, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Access: "r", Length: 2, Label: "Total VA-hours Exported phase C", Description: ""},
+					{Id: TotVAhImp, Offset: 61, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Access: "r", Length: 2, Label: "Total VA-hours Imported", Description: "Total Apparent Energy Imported"},
+					{Id: TotVAhImpPhA, Offset: 63, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Access: "r", Length: 2, Label: "Total VA-hours Imported phase A", Description: ""},
+					{Id: TotVAhImpPhB, Offset: 65, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Access: "r", Length: 2, Label: "Total VA-hours Imported phase B", Description: ""},
+					{Id: TotVAhImpPhC, Offset: 67, Type: typelabel.Acc32, ScaleFactor: "TotVAh_SF", Units: "VAh", Access: "r", Length: 2, Label: "Total VA-hours Imported phase C", Description: ""},
+					{Id: TotVAh_SF, Offset: 69, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: TotVArhImpQ1, Offset: 70, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAR-hours Imported Q1", Description: "Total Reactive Energy Imported Quadrant 1"},
+					{Id: TotVArhImpQ1PhA, Offset: 72, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Imported Q1 phase A", Description: ""},
+					{Id: TotVArhImpQ1PhB, Offset: 74, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Imported Q1 phase B", Description: ""},
+					{Id: TotVArhImpQ1PhC, Offset: 76, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Imported Q1 phase C", Description: ""},
+					{Id: TotVArhImpQ2, Offset: 78, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Imported Q2", Description: "Total Reactive Power Imported Quadrant 2"},
+					{Id: TotVArhImpQ2PhA, Offset: 80, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Imported Q2 phase A", Description: ""},
+					{Id: TotVArhImpQ2PhB, Offset: 82, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Imported Q2 phase B", Description: ""},
+					{Id: TotVArhImpQ2PhC, Offset: 84, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Imported Q2 phase C", Description: ""},
+					{Id: TotVArhExpQ3, Offset: 86, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Exported Q3", Description: "Total Reactive Power Exported Quadrant 3"},
+					{Id: TotVArhExpQ3PhA, Offset: 88, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Exported Q3 phase A", Description: ""},
+					{Id: TotVArhExpQ3PhB, Offset: 90, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Exported Q3 phase B", Description: ""},
+					{Id: TotVArhExpQ3PhC, Offset: 92, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Exported Q3 phase C", Description: ""},
+					{Id: TotVArhExpQ4, Offset: 94, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Exported Q4", Description: "Total Reactive Power Exported Quadrant 4"},
+					{Id: TotVArhExpQ4PhA, Offset: 96, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Exported Q4 Imported phase A", Description: ""},
+					{Id: TotVArhExpQ4PhB, Offset: 98, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Exported Q4 Imported phase B", Description: ""},
+					{Id: TotVArhExpQ4PhC, Offset: 100, Type: typelabel.Acc32, ScaleFactor: "TotVArh_SF", Units: "varh", Access: "r", Length: 2, Label: "Total VAr-hours Exported Q4 Imported phase C", Description: ""},
+					{Id: TotVArh_SF, Offset: 102, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: Evt, Offset: 103, Type: typelabel.Bitfield32, Access: "r", Length: 2, Mandatory: true, Label: "Events", Description: "Meter Event Flags"},
 				},
 			},
 		}})

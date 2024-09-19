@@ -83,7 +83,6 @@ func init() {
 		Blocks: []smdx.BlockElement{
 			{
 				Length: 24,
-				Type:   "fixed",
 				Points: []smdx.PointElement{
 					{Id: Conn_WinTms, Offset: 0, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "Conn_WinTms", Description: "Time window for connect/disconnect."},
 					{Id: Conn_RvrtTms, Offset: 1, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "Conn_RvrtTms", Description: "Timeout period for connect/disconnect."},

@@ -50,38 +50,38 @@ const (
 )
 
 type Block805Repeat struct {
-	CellV   uint16             `sunspec:"offset=0,sf=CellV_SF"`
-	CellTmp int16              `sunspec:"offset=1,sf=Tmp_SF"`
-	CellSt  sunspec.Bitfield32 `sunspec:"offset=2"`
+	CellV   uint16             `sunspec:"offset=0,len=1,sf=CellV_SF,access=r"`
+	CellTmp int16              `sunspec:"offset=1,len=1,sf=Tmp_SF,access=r"`
+	CellSt  sunspec.Bitfield32 `sunspec:"offset=2,len=2,access=r"`
 }
 
 type Block805 struct {
-	StrIdx         uint16              `sunspec:"offset=0"`
-	ModIdx         uint16              `sunspec:"offset=1"`
-	NCell          uint16              `sunspec:"offset=2"`
-	SoC            uint16              `sunspec:"offset=3,sf=SoC_SF"`
-	DoD            uint16              `sunspec:"offset=4,sf=DoD_SF"`
-	SoH            uint16              `sunspec:"offset=5,sf=SoH_SF"`
-	NCyc           uint32              `sunspec:"offset=6"`
-	V              uint16              `sunspec:"offset=8,sf=V_SF"`
-	CellVMax       uint16              `sunspec:"offset=9,sf=CellV_SF"`
-	CellVMaxCell   uint16              `sunspec:"offset=10"`
-	CellVMin       uint16              `sunspec:"offset=11,sf=CellV_SF"`
-	CellVMinCell   uint16              `sunspec:"offset=12"`
-	CellVAvg       uint16              `sunspec:"offset=13,sf=CellV_SF"`
-	CellTmpMax     int16               `sunspec:"offset=14,sf=Tmp_SF"`
-	CellTmpMaxCell uint16              `sunspec:"offset=15"`
-	CellTmpMin     int16               `sunspec:"offset=16,sf=Tmp_SF"`
-	CellTmpMinCell uint16              `sunspec:"offset=17"`
-	CellTmpAvg     int16               `sunspec:"offset=18,sf=Tmp_SF"`
-	NCellBal       uint16              `sunspec:"offset=19"`
-	SN             string              `sunspec:"offset=20,len=16"`
-	SoC_SF         sunspec.ScaleFactor `sunspec:"offset=36"`
-	SoH_SF         sunspec.ScaleFactor `sunspec:"offset=37"`
-	DoD_SF         sunspec.ScaleFactor `sunspec:"offset=38"`
-	V_SF           sunspec.ScaleFactor `sunspec:"offset=39"`
-	CellV_SF       sunspec.ScaleFactor `sunspec:"offset=40"`
-	Tmp_SF         sunspec.ScaleFactor `sunspec:"offset=41"`
+	StrIdx         uint16              `sunspec:"offset=0,len=1,access=r"`
+	ModIdx         uint16              `sunspec:"offset=1,len=1,access=r"`
+	NCell          uint16              `sunspec:"offset=2,len=1,access=r"`
+	SoC            uint16              `sunspec:"offset=3,len=1,sf=SoC_SF,access=r"`
+	DoD            uint16              `sunspec:"offset=4,len=1,sf=DoD_SF,access=r"`
+	SoH            uint16              `sunspec:"offset=5,len=1,sf=SoH_SF,access=r"`
+	NCyc           uint32              `sunspec:"offset=6,len=2,access=r"`
+	V              uint16              `sunspec:"offset=8,len=1,sf=V_SF,access=r"`
+	CellVMax       uint16              `sunspec:"offset=9,len=1,sf=CellV_SF,access=r"`
+	CellVMaxCell   uint16              `sunspec:"offset=10,len=1,access=r"`
+	CellVMin       uint16              `sunspec:"offset=11,len=1,sf=CellV_SF,access=r"`
+	CellVMinCell   uint16              `sunspec:"offset=12,len=1,access=r"`
+	CellVAvg       uint16              `sunspec:"offset=13,len=1,sf=CellV_SF,access=r"`
+	CellTmpMax     int16               `sunspec:"offset=14,len=1,sf=Tmp_SF,access=r"`
+	CellTmpMaxCell uint16              `sunspec:"offset=15,len=1,access=r"`
+	CellTmpMin     int16               `sunspec:"offset=16,len=1,sf=Tmp_SF,access=r"`
+	CellTmpMinCell uint16              `sunspec:"offset=17,len=1,access=r"`
+	CellTmpAvg     int16               `sunspec:"offset=18,len=1,sf=Tmp_SF,access=r"`
+	NCellBal       uint16              `sunspec:"offset=19,len=1,access=r"`
+	SN             string              `sunspec:"offset=20,len=16,access=r"`
+	SoC_SF         sunspec.ScaleFactor `sunspec:"offset=36,len=1,access=r"`
+	SoH_SF         sunspec.ScaleFactor `sunspec:"offset=37,len=1,access=r"`
+	DoD_SF         sunspec.ScaleFactor `sunspec:"offset=38,len=1,access=r"`
+	V_SF           sunspec.ScaleFactor `sunspec:"offset=39,len=1,access=r"`
+	CellV_SF       sunspec.ScaleFactor `sunspec:"offset=40,len=1,access=r"`
+	Tmp_SF         sunspec.ScaleFactor `sunspec:"offset=41,len=1,access=r"`
 
 	Repeats []Block805Repeat
 }
@@ -99,41 +99,41 @@ func init() {
 			{
 				Length: 42,
 				Points: []smdx.PointElement{
-					{Id: StrIdx, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "String Index", Description: "Index of the string containing the module."},
-					{Id: ModIdx, Offset: 1, Type: typelabel.Uint16, Mandatory: true, Label: "Module Index", Description: "Index of the module within the string."},
-					{Id: NCell, Offset: 2, Type: typelabel.Uint16, Mandatory: true, Label: "Module Cell Count", Description: "Count of all cells in the module."},
-					{Id: SoC, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%", Label: "Module SoC", Description: "Module state of charge, expressed as a percentage."},
-					{Id: DoD, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "DoD_SF", Units: "%", Label: "Depth of Discharge", Description: "Depth of discharge for the module."},
-					{Id: SoH, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "SoH_SF", Units: "%", Label: "Module SoH", Description: "Module state of health, expressed as a percentage."},
-					{Id: NCyc, Offset: 6, Type: typelabel.Uint32, Label: "Cycle Count", Description: "Count of cycles executed."},
-					{Id: V, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Mandatory: true, Label: "Module Voltage", Description: "Voltage of the module."},
-					{Id: CellVMax, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Mandatory: true, Label: "Max Cell Voltage", Description: "Maximum voltage for all cells in the module."},
-					{Id: CellVMaxCell, Offset: 10, Type: typelabel.Uint16, Label: "Max Cell Voltage Cell", Description: "Cell with the maximum voltage."},
-					{Id: CellVMin, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Mandatory: true, Label: "Min Cell Voltage", Description: "Minimum voltage for all cells in the module."},
-					{Id: CellVMinCell, Offset: 12, Type: typelabel.Uint16, Label: "Min Cell Voltage Cell", Description: "Cell with the minimum voltage."},
-					{Id: CellVAvg, Offset: 13, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Mandatory: true, Label: "Average Cell Voltage", Description: "Average voltage for all cells in the module."},
-					{Id: CellTmpMax, Offset: 14, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Mandatory: true, Label: "Max Cell Temperature", Description: "Maximum temperature for all cells in the module."},
-					{Id: CellTmpMaxCell, Offset: 15, Type: typelabel.Uint16, Label: "Max Cell Temperature Cell", Description: "Cell with the maximum cell temperature."},
-					{Id: CellTmpMin, Offset: 16, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Mandatory: true, Label: "Min Cell Temperature", Description: "Minimum temperature for all cells in the module."},
-					{Id: CellTmpMinCell, Offset: 17, Type: typelabel.Uint16, Label: "Min Cell Temperature Cell", Description: "Cell with the minimum cell temperature."},
-					{Id: CellTmpAvg, Offset: 18, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Mandatory: true, Label: "Average Cell Temperature", Description: "Average temperature for all cells in the module."},
-					{Id: NCellBal, Offset: 19, Type: typelabel.Uint16, Label: "Balanced Cell Count", Description: "Number of cells currently being balanced in the module."},
-					{Id: SN, Offset: 20, Type: typelabel.String, Length: 16, Label: "Serial Number", Description: "Serial number for the module."},
-					{Id: SoC_SF, Offset: 36, Type: typelabel.ScaleFactor},
-					{Id: SoH_SF, Offset: 37, Type: typelabel.ScaleFactor},
-					{Id: DoD_SF, Offset: 38, Type: typelabel.ScaleFactor},
-					{Id: V_SF, Offset: 39, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: CellV_SF, Offset: 40, Type: typelabel.ScaleFactor, Mandatory: true},
-					{Id: Tmp_SF, Offset: 41, Type: typelabel.ScaleFactor, Mandatory: true},
+					{Id: StrIdx, Offset: 0, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "String Index", Description: "Index of the string containing the module."},
+					{Id: ModIdx, Offset: 1, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Module Index", Description: "Index of the module within the string."},
+					{Id: NCell, Offset: 2, Type: typelabel.Uint16, Access: "r", Length: 1, Mandatory: true, Label: "Module Cell Count", Description: "Count of all cells in the module."},
+					{Id: SoC, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "SoC_SF", Units: "%", Access: "r", Length: 1, Label: "Module SoC", Description: "Module state of charge, expressed as a percentage."},
+					{Id: DoD, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "DoD_SF", Units: "%", Access: "r", Length: 1, Label: "Depth of Discharge", Description: "Depth of discharge for the module."},
+					{Id: SoH, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "SoH_SF", Units: "%", Access: "r", Length: 1, Label: "Module SoH", Description: "Module state of health, expressed as a percentage."},
+					{Id: NCyc, Offset: 6, Type: typelabel.Uint32, Access: "r", Length: 2, Label: "Cycle Count", Description: "Count of cycles executed."},
+					{Id: V, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Module Voltage", Description: "Voltage of the module."},
+					{Id: CellVMax, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Max Cell Voltage", Description: "Maximum voltage for all cells in the module."},
+					{Id: CellVMaxCell, Offset: 10, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Max Cell Voltage Cell", Description: "Cell with the maximum voltage."},
+					{Id: CellVMin, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Min Cell Voltage", Description: "Minimum voltage for all cells in the module."},
+					{Id: CellVMinCell, Offset: 12, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Min Cell Voltage Cell", Description: "Cell with the minimum voltage."},
+					{Id: CellVAvg, Offset: 13, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Average Cell Voltage", Description: "Average voltage for all cells in the module."},
+					{Id: CellTmpMax, Offset: 14, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Max Cell Temperature", Description: "Maximum temperature for all cells in the module."},
+					{Id: CellTmpMaxCell, Offset: 15, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Max Cell Temperature Cell", Description: "Cell with the maximum cell temperature."},
+					{Id: CellTmpMin, Offset: 16, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Min Cell Temperature", Description: "Minimum temperature for all cells in the module."},
+					{Id: CellTmpMinCell, Offset: 17, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Min Cell Temperature Cell", Description: "Cell with the minimum cell temperature."},
+					{Id: CellTmpAvg, Offset: 18, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Average Cell Temperature", Description: "Average temperature for all cells in the module."},
+					{Id: NCellBal, Offset: 19, Type: typelabel.Uint16, Access: "r", Length: 1, Label: "Balanced Cell Count", Description: "Number of cells currently being balanced in the module."},
+					{Id: SN, Offset: 20, Type: typelabel.String, Access: "r", Length: 16, Label: "Serial Number", Description: "Serial number for the module."},
+					{Id: SoC_SF, Offset: 36, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: SoH_SF, Offset: 37, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: DoD_SF, Offset: 38, Type: typelabel.ScaleFactor, Access: "r", Length: 1},
+					{Id: V_SF, Offset: 39, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: CellV_SF, Offset: 40, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
+					{Id: Tmp_SF, Offset: 41, Type: typelabel.ScaleFactor, Access: "r", Length: 1, Mandatory: true},
 				},
 			},
 			{Name: "lithium-ion-module-cell",
 				Length: 4,
 				Type:   "repeating",
 				Points: []smdx.PointElement{
-					{Id: CellV, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Mandatory: true, Label: "Cell Voltage", Description: "Cell terminal voltage."},
-					{Id: CellTmp, Offset: 1, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Mandatory: true, Label: "Cell Temperature", Description: "Cell temperature."},
-					{Id: CellSt, Offset: 2, Type: typelabel.Bitfield32, Label: "Cell Status", Description: "Status of the cell."},
+					{Id: CellV, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "CellV_SF", Units: "V", Access: "r", Length: 1, Mandatory: true, Label: "Cell Voltage", Description: "Cell terminal voltage."},
+					{Id: CellTmp, Offset: 1, Type: typelabel.Int16, ScaleFactor: "Tmp_SF", Units: "C", Access: "r", Length: 1, Mandatory: true, Label: "Cell Temperature", Description: "Cell temperature."},
+					{Id: CellSt, Offset: 2, Type: typelabel.Bitfield32, Access: "r", Length: 2, Label: "Cell Status", Description: "Status of the cell."},
 				},
 			},
 		}})
