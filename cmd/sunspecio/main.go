@@ -22,7 +22,8 @@ import (
 	"github.com/andig/gosunspec/layout"
 	"github.com/andig/gosunspec/modbus"
 	_ "github.com/andig/gosunspec/models"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
+	specxml "github.com/andig/gosunspec/types/xml"
 	"github.com/andig/gosunspec/xml"
 	modbusapi "github.com/grid-x/modbus"
 )
@@ -88,21 +89,17 @@ func loadModels(smdxDir string) {
 				log.Fatal(err)
 			}
 
-			def, err := smdx.FromXML(smdxFile)
+			m, err := specxml.Decode(smdxFile)
+			smdxFile.Close()
 			if err != nil {
-				smdxFile.Close()
 				log.Fatal(err)
 			}
-			smdxFile.Close()
 
-			if len(def.Models) < 1 {
+			if m == nil {
 				log.Printf("failed to find any models in %s", file.Name())
 				continue
-			} else {
-				for i := range def.Models {
-					smdx.RegisterModel(&def.Models[i])
-				}
 			}
+			types.RegisterModel(m)
 		}
 	}
 }

@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	_ "github.com/andig/gosunspec/models"
-	"github.com/andig/gosunspec/smdx"
-	"github.com/andig/gosunspec/typelabel"
-	"github.com/andig/gosunspec/typelen"
 	"log"
 	"os"
+
+	_ "github.com/andig/gosunspec/models"
+	"github.com/andig/gosunspec/typelabel"
+	"github.com/andig/gosunspec/typelen"
+	"github.com/andig/gosunspec/types"
 )
 
 type Type struct {
@@ -15,40 +16,40 @@ type Type struct {
 	Length int
 }
 
-var types = []Type{
-	Type{typelabel.Acc16, typelen.Acc16},
-	Type{typelabel.Acc32, typelen.Acc32},
-	Type{typelabel.Acc64, typelen.Acc64},
-	Type{typelabel.Bitfield16, typelen.Bitfield16},
-	Type{typelabel.Bitfield32, typelen.Bitfield32},
-	Type{typelabel.Count, typelen.Count},
-	Type{typelabel.Enum16, typelen.Enum16},
-	Type{typelabel.Enum32, typelen.Enum32},
-	Type{typelabel.Eui48, typelen.Eui48},
-	Type{typelabel.Float32, typelen.Float32},
-	Type{typelabel.Int16, typelen.Int16},
-	Type{typelabel.Int32, typelen.Int32},
-	Type{typelabel.Int64, typelen.Int64},
-	Type{typelabel.Ipaddr, typelen.Ipaddr},
-	Type{typelabel.Ipv6addr, typelen.Ipv6addr},
-	Type{typelabel.Pad, typelen.Pad},
-	Type{typelabel.String, typelen.String},
-	Type{typelabel.ScaleFactor, typelen.ScaleFactor},
-	Type{typelabel.Uint16, typelen.Uint16},
-	Type{typelabel.Uint32, typelen.Uint32},
-	Type{typelabel.Uint64, typelen.Uint64},
+var typeList = []Type{
+	{typelabel.Acc16, typelen.Acc16},
+	{typelabel.Acc32, typelen.Acc32},
+	{typelabel.Acc64, typelen.Acc64},
+	{typelabel.Bitfield16, typelen.Bitfield16},
+	{typelabel.Bitfield32, typelen.Bitfield32},
+	{typelabel.Count, typelen.Count},
+	{typelabel.Enum16, typelen.Enum16},
+	{typelabel.Enum32, typelen.Enum32},
+	{typelabel.Eui48, typelen.Eui48},
+	{typelabel.Float32, typelen.Float32},
+	{typelabel.Int16, typelen.Int16},
+	{typelabel.Int32, typelen.Int32},
+	{typelabel.Int64, typelen.Int64},
+	{typelabel.Ipaddr, typelen.Ipaddr},
+	{typelabel.Ipv6addr, typelen.Ipv6addr},
+	{typelabel.Pad, typelen.Pad},
+	{typelabel.String, typelen.String},
+	{typelabel.ScaleFactor, typelen.ScaleFactor},
+	{typelabel.Uint16, typelen.Uint16},
+	{typelabel.Uint32, typelen.Uint32},
+	{typelabel.Uint64, typelen.Uint64},
 }
 
 var typeMap = map[string]Type{}
 
 func init() {
-	for _, v := range types {
+	for _, v := range typeList {
 		typeMap[v.Name] = v
 	}
 }
 
 func main() {
-	if err := smdx.DoModels(func(m *smdx.ModelElement) error {
+	if err := types.DoModels(func(m *types.Model) error {
 		if len(m.Blocks) < 1 {
 			fmt.Fprintf(os.Stderr, "%d: not enough blocks\n", m.Id)
 		} else if len(m.Blocks) > 2 {

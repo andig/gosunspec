@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	sunspec "github.com/andig/gosunspec"
-	"github.com/andig/gosunspec/smdx"
 	"github.com/andig/gosunspec/spi"
 	"github.com/andig/gosunspec/typelabel"
+	"github.com/andig/gosunspec/types"
 )
 
 func TestCompletePointInterface(t *testing.T) {
@@ -80,7 +80,7 @@ func TestNotImplemented(t *testing.T) {
 func TestMarshalEui48(t *testing.T) {
 	p := point{
 		err: nil,
-		smdx: &smdx.PointElement{
+		def: &types.Point{
 			Type: typelabel.Eui48,
 		},
 	}

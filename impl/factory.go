@@ -4,7 +4,7 @@ import (
 	"log"
 
 	sunspec "github.com/andig/gosunspec"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/spi"
 	"github.com/andig/gosunspec/typelabel"
 )
@@ -23,16 +23,16 @@ func NewDevice() spi.DeviceSPI {
 
 // Answer a new model that can be mapped to a contiguous range of bytes. The size
 // (or bound) of that range determines the number of repeats.
-func NewContiguousModel(me *smdx.ModelElement, bound uint16, phys spi.Driver) spi.ModelSPI {
-	block0len := int(me.Blocks[0].Length) // specified length of the first block
+func NewContiguousModel(md *types.Model, bound uint16, phys spi.Driver) spi.ModelSPI {
+	block0len := int(md.Blocks[0].Length) // specified length of the first block
 	excess := int(bound) - block0len      // number of words for additional blocks
 	nr := 0                               // number of repeat blocks
 	rlen := block0len                     // repeat block length
 
 	// reset the repeat block length if there is a repeat block
 
-	if len(me.Blocks) > 1 {
-		rlen = int(me.Blocks[1].Length)
+	if len(md.Blocks) > 1 {
+		rlen = int(md.Blocks[1].Length)
 	}
 
 	// calculate the repeats and normalize negative numbers to zero
@@ -44,11 +44,11 @@ func NewContiguousModel(me *smdx.ModelElement, bound uint16, phys spi.Driver) sp
 
 	// build a model with the specified geometry
 
-	m := NewModel(me, nr, phys)
+	m := NewModel(md, nr, phys)
 
 	// handle a specification special case &/or report length inconsistenes.
 
-	if len(me.Blocks) == 1 && excess < 0 {
+	if len(md.Blocks) == 1 && excess < 0 {
 		// Models with fixed-blocks only are allowed to truncate the
 		// fixed block to a smaller model length because of a special
 		// case for the Common Model allowed for by the SunSpec Information Model.
@@ -83,11 +83,11 @@ func NewContiguousModel(me *smdx.ModelElement, bound uint16, phys spi.Driver) sp
 
 // Answer a new model with nr repeats of the repating block, if any. The caller
 // determines the number of repeats.
-func NewModel(me *smdx.ModelElement, nr int, driver spi.Driver) spi.ModelSPI {
-	blocks := []*block{newBlock(&me.Blocks[0], driver, nil)}
+func NewModel(md *types.Model, nr int, driver spi.Driver) spi.ModelSPI {
+	blocks := []*block{newBlock(&md.Blocks[0], driver, nil)}
 
 	m := &model{
-		smdx:   me,
+		def:    md,
 		driver: driver,
 		blocks: blocks,
 	}
@@ -103,21 +103,21 @@ func NewModel(me *smdx.ModelElement, nr int, driver spi.Driver) spi.ModelSPI {
 // Answer a new block.
 // The fixedBlock param is used to find scale factors that are
 // outside of a repeating block.
-func newBlock(blockSmdx *smdx.BlockElement, driver spi.Driver, fixedBlock *block) *block {
+func newBlock(blockDef *types.Block, driver spi.Driver, fixedBlock *block) *block {
 	b := &block{
-		smdx:   blockSmdx,
+		def:    blockDef,
 		points: map[string]*point{},
 		driver: driver,
 	}
 
-	p := []*smdx.PointElement{}
-	q := []*smdx.PointElement{}
+	p := []*types.Point{}
+	q := []*types.Point{}
 
-	for x, pe := range blockSmdx.Points {
+	for x, pe := range blockDef.Points {
 		if pe.Type == typelabel.ScaleFactor {
-			p = append(p, &blockSmdx.Points[x])
+			p = append(p, &blockDef.Points[x])
 		} else {
-			q = append(q, &blockSmdx.Points[x])
+			q = append(q, &blockDef.Points[x])
 		}
 	}
 
@@ -147,9 +147,9 @@ func newBlock(blockSmdx *smdx.BlockElement, driver spi.Driver, fixedBlock *block
 }
 
 // Answer a new point.
-func newPoint(smdx *smdx.PointElement, scaleFactor sunspec.Point, b *block) *point {
+func newPoint(pd *types.Point, scaleFactor sunspec.Point, b *block) *point {
 	return &point{
-		smdx:        smdx,
+		def:         pd,
 		scaleFactor: scaleFactor,
 		block:       b,
 		err:         errNotInitialized,

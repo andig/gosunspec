@@ -2,19 +2,19 @@ package impl
 
 import (
 	sunspec "github.com/andig/gosunspec"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/spi"
 )
 
 type model struct {
 	anchored
 	driver spi.Driver
-	smdx   *smdx.ModelElement
+	def    *types.Model
 	blocks []*block
 }
 
 func (m *model) Id() sunspec.ModelId {
-	return sunspec.ModelId(m.smdx.Id)
+	return sunspec.ModelId(m.def.Id)
 }
 
 func (m *model) Blocks() int {
@@ -45,7 +45,7 @@ func (m *model) Do(f func(b sunspec.Block)) {
 
 func (m *model) AddRepeat() error {
 	fixed := m.blocks[0]
-	repeat := &m.smdx.Blocks[len(m.smdx.Blocks)-1]
+	repeat := &m.def.Blocks[len(m.def.Blocks)-1]
 	m.blocks = append(m.blocks, newBlock(repeat, m.driver, fixed))
 	return nil
 }
