@@ -10,7 +10,7 @@ import (
 	"github.com/andig/gosunspec/impl"
 	"github.com/andig/gosunspec/layout"
 	"github.com/andig/gosunspec/models/model1"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/spi"
 )
 
@@ -179,7 +179,7 @@ func (b *builder) record(err error) {
 
 // Add the specified model to the device
 func (b *builder) AddModel(id sunspec.ModelId) SlabBuilder {
-	me := smdx.GetModel(uint16(id))
+	me := types.GetModel(uint16(id))
 	if me != nil {
 		m := impl.NewModel(me, 0, nil)
 		if id == model1.ModelID && b.shortModel1 {

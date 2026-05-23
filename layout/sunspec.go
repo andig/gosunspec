@@ -7,7 +7,7 @@ import (
 
 	"github.com/andig/gosunspec/impl"
 	"github.com/andig/gosunspec/models/model1"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/spi"
 )
 
@@ -65,7 +65,7 @@ func (s *SunSpecLayout) Open(a AddressSpaceDriver) (spi.ArraySPI, error) {
 				break
 			}
 
-			me := smdx.GetModel(modelId)
+			me := types.GetModel(modelId)
 			if me != nil {
 
 				if modelId == uint16(model1.ModelID) {

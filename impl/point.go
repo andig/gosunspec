@@ -9,7 +9,7 @@ import (
 	"strconv"
 
 	sunspec "github.com/andig/gosunspec"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/spi"
 	"github.com/andig/gosunspec/typelabel"
 	"github.com/andig/gosunspec/typelen"
@@ -24,7 +24,7 @@ var (
 
 type point struct {
 	anchored
-	smdx        *smdx.PointElement
+	def         *types.Point
 	scaleFactor sunspec.Point
 	block       *block
 	err         error
@@ -41,8 +41,8 @@ func (p *point) checkerror() interface{} {
 
 // Checks that the receiver has the specified typed
 func (p *point) checktype(t string, v interface{}) {
-	if p.smdx.Type != t {
-		panic(fmt.Errorf("type mismatch: point=%s, actual=%s, expected=%s", p.smdx.Id, t, p.smdx.Type))
+	if p.def.Type != t {
+		panic(fmt.Errorf("type mismatch: point=%s, actual=%s, expected=%s", p.def.Id, t, p.def.Type))
 	}
 	p.err = nil
 	p.value = v
@@ -50,7 +50,7 @@ func (p *point) checktype(t string, v interface{}) {
 
 // The identifier of the point (relative to the block)
 func (p *point) Id() string {
-	return p.smdx.Id
+	return p.def.Id
 }
 
 // Answers an error if either the point itself or the
@@ -76,18 +76,18 @@ func (p *point) SetError(err error) {
 
 // The type name of the point.
 func (p *point) Type() string {
-	return p.smdx.Type
+	return p.def.Type
 }
 
 func (p *point) Offset() uint16 {
-	return p.smdx.Offset
+	return p.def.Offset
 }
 
 func (p *point) Length() uint16 {
-	if p.smdx.Length != 0 {
-		return p.smdx.Length
+	if p.def.Length != 0 {
+		return p.def.Length
 	} else {
-		return typelen.Length(p.smdx.Type)
+		return typelen.Length(p.def.Type)
 	}
 }
 
@@ -185,8 +185,8 @@ func (p *point) ScaleFactorValue() int16 {
 	sf := sunspec.ScaleFactor(0)
 	if p.scaleFactor != nil {
 		sf = p.scaleFactor.ScaleFactor()
-	} else if p.smdx.ScaleFactor != "" {
-		if v, err := strconv.Atoi(p.smdx.ScaleFactor); err == nil {
+	} else if p.def.ScaleFactor != "" {
+		if v, err := strconv.Atoi(p.def.ScaleFactor); err == nil {
 			sf = sunspec.ScaleFactor(v)
 		}
 	}

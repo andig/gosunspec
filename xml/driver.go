@@ -5,7 +5,7 @@ import (
 	"github.com/andig/gosunspec"
 	"github.com/andig/gosunspec/impl"
 	"github.com/andig/gosunspec/models/model1"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/spi"
 	"github.com/andig/gosunspec/typelabel"
 	_ "log"
@@ -92,8 +92,8 @@ func OpenDevice(dx *DeviceElement) (sunspec.Device, error) {
 	// iterate through the model elements, creating one new model for each
 	// then create a block for each index and add points for each point element
 	for _, mx := range models {
-		smdx := smdx.GetModel(uint16(mx.Id))
-		if smdx == nil {
+		md := types.GetModel(uint16(mx.Id))
+		if md == nil {
 			continue
 		}
 		max := uint32(0)
@@ -103,16 +103,16 @@ func OpenDevice(dx *DeviceElement) (sunspec.Device, error) {
 			}
 		}
 		repeats := int(max)
-		if len(smdx.Blocks) == 1 {
+		if len(md.Blocks) == 1 {
 			repeats -= 1
 		}
-		m := impl.NewModel(smdx, repeats, xp)
+		m := impl.NewModel(md, repeats, xp)
 		if err := d.AddModel(m); err != nil {
 			return nil, err
 		} else {
 			for pi, px := range mx.Points {
 				bi := int(px.Index)
-				if bi > 0 && len(smdx.Blocks) == 1 {
+				if bi > 0 && len(md.Blocks) == 1 {
 					bi = bi - 1
 				}
 				b := m.MustBlock(bi)
@@ -206,10 +206,10 @@ func CopyDevice(d sunspec.Device) (sunspec.Device, *DeviceElement) {
 	}
 
 	d.Do(func(m sunspec.Model) {
-		smdx := smdx.GetModel(uint16(m.Id()))
+		md := types.GetModel(uint16(m.Id()))
 
-		repeatOnly := m.Blocks() > 1 && len(smdx.Blocks) == 1
-		mc := impl.NewModel(smdx, m.Blocks()-1, xp)
+		repeatOnly := m.Blocks() > 1 && len(md.Blocks) == 1
+		mc := impl.NewModel(md, m.Blocks()-1, xp)
 		mx := newModelElement(m.Id())
 
 		dx.Models = append(dx.Models, mx)

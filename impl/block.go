@@ -4,7 +4,7 @@ import (
 	"sort"
 
 	sunspec "github.com/andig/gosunspec"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/spi"
 	"github.com/andig/gosunspec/typelabel"
 )
@@ -12,7 +12,7 @@ import (
 type block struct {
 	anchored
 	driver spi.Driver
-	smdx   *smdx.BlockElement
+	def    *types.Block
 	points map[string]*point
 	length uint16
 }
@@ -34,21 +34,21 @@ func (b *block) MustPoint(id string) sunspec.Point {
 }
 
 func (b *block) Do(f func(p sunspec.Point)) {
-	for _, pe := range b.smdx.Points {
+	for _, pe := range b.def.Points {
 		f(b.points[pe.Id])
 	}
 }
 
 func (b *block) DoScaleFactorsFirst(f func(p sunspec.Point)) {
-	once := func(filter func(pe smdx.PointElement) bool) {
-		for _, pe := range b.smdx.Points {
+	once := func(filter func(pe types.Point) bool) {
+		for _, pe := range b.def.Points {
 			if filter(pe) {
 				f(b.points[pe.Id])
 			}
 		}
 	}
-	once(func(pe smdx.PointElement) bool { return pe.Type == typelabel.ScaleFactor })
-	once(func(pe smdx.PointElement) bool { return pe.Type != typelabel.ScaleFactor })
+	once(func(pe types.Point) bool { return pe.Type == typelabel.ScaleFactor })
+	once(func(pe types.Point) bool { return pe.Type != typelabel.ScaleFactor })
 }
 
 func (b *block) Read(pointIds ...string) error {
@@ -63,7 +63,7 @@ func (b *block) Length() uint16 {
 	if b.length > 0 {
 		return b.length
 	} else {
-		return b.smdx.Length
+		return b.def.Length
 	}
 }
 

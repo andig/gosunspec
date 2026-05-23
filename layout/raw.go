@@ -5,7 +5,7 @@ import (
 	"errors"
 	"github.com/andig/gosunspec"
 	"github.com/andig/gosunspec/impl"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/spi"
 	"io"
 	"log"
@@ -62,7 +62,7 @@ func (s *RawLayout) Open(driver AddressSpaceDriver) (spi.ArraySPI, error) {
 	for _, d := range s.Devices {
 		for _, m := range d.Models {
 
-			me := smdx.GetModel(uint16(m.ModelId))
+			me := types.GetModel(uint16(m.ModelId))
 			if me != nil {
 
 				modelLength := me.Blocks[0].Length
