@@ -24,12 +24,12 @@ const (
 )
 
 type Block8Repeat struct {
-	Cert uint16 `sunspec:"offset=0,len=1"`
+	Cert uint16 `sunspec:"offset=0"`
 }
 
 type Block8 struct {
-	Fmt sunspec.Enum16 `sunspec:"offset=0,len=1"`
-	N   uint16         `sunspec:"offset=1,len=1"`
+	Fmt sunspec.Enum16 `sunspec:"offset=0"`
+	N   uint16         `sunspec:"offset=1"`
 
 	Repeats []Block8Repeat
 }
@@ -50,15 +50,15 @@ func init() {
 				Length: 2,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: Fmt, Offset: 0, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "Format", Description: "X.509 format of the certificate. DER or PEM."},
-					{Id: N, Offset: 1, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "N", Description: "Number of registers to follow for the certificate"},
+					{Id: Fmt, Offset: 0, Type: typelabel.Enum16, Mandatory: true, Label: "Format", Description: "X.509 format of the certificate. DER or PEM."},
+					{Id: N, Offset: 1, Type: typelabel.Uint16, Mandatory: true, Label: "N", Description: "Number of registers to follow for the certificate"},
 				},
 			},
 			{
 				Length: 1,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: Cert, Offset: 0, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Cert", Description: "X.509 Certificate of the device"},
+					{Id: Cert, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Cert", Description: "X.509 Certificate of the device"},
 				},
 			},
 		}})

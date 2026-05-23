@@ -30,9 +30,9 @@ type Block305 struct {
 	Tm   string `sunspec:"offset=0,len=6"`
 	Date string `sunspec:"offset=6,len=4"`
 	Loc  string `sunspec:"offset=10,len=20"`
-	Lat  int32  `sunspec:"offset=30,len=2,sf=-7"`
-	Long int32  `sunspec:"offset=32,len=2,sf=-7"`
-	Alt  int32  `sunspec:"offset=34,len=2"`
+	Lat  int32  `sunspec:"offset=30,sf=-7"`
+	Long int32  `sunspec:"offset=32,sf=-7"`
+	Alt  int32  `sunspec:"offset=34"`
 }
 
 func (block *Block305) GetId() sunspec.ModelId {
@@ -54,9 +54,9 @@ func init() {
 					{Id: Tm, Offset: 0, Type: typelabel.String, Units: "hhmmss.sssZ", Length: 6, Label: "Tm", Description: "UTC 24 hour time stamp to millisecond hhmmss.sssZ format"},
 					{Id: Date, Offset: 6, Type: typelabel.String, Units: "YYYYMMDD", Length: 4, Label: "Date", Description: "UTC Date string YYYYMMDD format"},
 					{Id: Loc, Offset: 10, Type: typelabel.String, Units: "text", Length: 20, Label: "Location", Description: "Location string (40 chars max)"},
-					{Id: Lat, Offset: 30, Type: typelabel.Int32, ScaleFactor: "-7", Units: "Degrees", Length: 2, Label: "Lat", Description: "Latitude with seven degrees of precision"},
-					{Id: Long, Offset: 32, Type: typelabel.Int32, ScaleFactor: "-7", Units: "Degrees", Length: 2, Label: "Long", Description: "Longitude with seven degrees of precision"},
-					{Id: Alt, Offset: 34, Type: typelabel.Int32, Units: "meters", Length: 2, Label: "Altitude", Description: "Altitude measurement in meters"},
+					{Id: Lat, Offset: 30, Type: typelabel.Int32, ScaleFactor: "-7", Units: "Degrees", Label: "Lat", Description: "Latitude with seven degrees of precision"},
+					{Id: Long, Offset: 32, Type: typelabel.Int32, ScaleFactor: "-7", Units: "Degrees", Label: "Long", Description: "Longitude with seven degrees of precision"},
+					{Id: Alt, Offset: 34, Type: typelabel.Int32, Units: "meters", Label: "Altitude", Description: "Altitude measurement in meters"},
 				},
 			},
 		}})

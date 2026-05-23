@@ -33,8 +33,8 @@ type Block1 struct {
 	Opt string      `sunspec:"offset=32,len=8"`
 	Vr  string      `sunspec:"offset=40,len=8"`
 	SN  string      `sunspec:"offset=48,len=16"`
-	DA  uint16      `sunspec:"offset=64,len=1,access=rw"`
-	Pad sunspec.Pad `sunspec:"offset=65,len=1"`
+	DA  uint16      `sunspec:"offset=64,access=rw"`
+	Pad sunspec.Pad `sunspec:"offset=65"`
 }
 
 func (block *Block1) GetId() sunspec.ModelId {
@@ -58,8 +58,8 @@ func init() {
 					{Id: Opt, Offset: 32, Type: typelabel.String, Length: 8, Label: "Options", Description: "Manufacturer specific value (16 chars)"},
 					{Id: Vr, Offset: 40, Type: typelabel.String, Length: 8, Label: "Version", Description: "Manufacturer specific value (16 chars)"},
 					{Id: SN, Offset: 48, Type: typelabel.String, Length: 16, Mandatory: true, Label: "Serial Number", Description: "Manufacturer specific value (32 chars)"},
-					{Id: DA, Offset: 64, Type: typelabel.Uint16, Access: "rw", Length: 1, Label: "Device Address", Description: "Modbus device address"},
-					{Id: Pad, Offset: 65, Type: typelabel.Pad, Length: 1},
+					{Id: DA, Offset: 64, Type: typelabel.Uint16, Access: "rw", Label: "Device Address", Description: "Modbus device address"},
+					{Id: Pad, Offset: 65, Type: typelabel.Pad},
 				},
 			},
 		}})

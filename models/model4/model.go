@@ -81,69 +81,69 @@ const (
 )
 
 type Block4Repeat struct {
-	DS uint16 `sunspec:"offset=0,len=1"`
+	DS uint16 `sunspec:"offset=0"`
 }
 
 type Block4 struct {
-	RqSeq uint16         `sunspec:"offset=0,len=1"`
-	Sts   sunspec.Enum16 `sunspec:"offset=1,len=1"`
-	X     uint16         `sunspec:"offset=2,len=1"`
-	Val1  uint16         `sunspec:"offset=3,len=1"`
-	Val2  uint16         `sunspec:"offset=4,len=1"`
-	Val3  uint16         `sunspec:"offset=5,len=1"`
-	Val4  uint16         `sunspec:"offset=6,len=1"`
-	Val5  uint16         `sunspec:"offset=7,len=1"`
-	Val6  uint16         `sunspec:"offset=8,len=1"`
-	Val7  uint16         `sunspec:"offset=9,len=1"`
-	Val8  uint16         `sunspec:"offset=10,len=1"`
-	Val9  uint16         `sunspec:"offset=11,len=1"`
-	Val10 uint16         `sunspec:"offset=12,len=1"`
-	Val11 uint16         `sunspec:"offset=13,len=1"`
-	Val12 uint16         `sunspec:"offset=14,len=1"`
-	Val13 uint16         `sunspec:"offset=15,len=1"`
-	Val14 uint16         `sunspec:"offset=16,len=1"`
-	Val15 uint16         `sunspec:"offset=17,len=1"`
-	Val16 uint16         `sunspec:"offset=18,len=1"`
-	Val17 uint16         `sunspec:"offset=19,len=1"`
-	Val18 uint16         `sunspec:"offset=20,len=1"`
-	Val19 uint16         `sunspec:"offset=21,len=1"`
-	Val20 uint16         `sunspec:"offset=22,len=1"`
-	Val21 uint16         `sunspec:"offset=23,len=1"`
-	Val22 uint16         `sunspec:"offset=24,len=1"`
-	Val23 uint16         `sunspec:"offset=25,len=1"`
-	Val24 uint16         `sunspec:"offset=26,len=1"`
-	Val25 uint16         `sunspec:"offset=27,len=1"`
-	Val26 uint16         `sunspec:"offset=28,len=1"`
-	Val27 uint16         `sunspec:"offset=29,len=1"`
-	Val28 uint16         `sunspec:"offset=30,len=1"`
-	Val29 uint16         `sunspec:"offset=31,len=1"`
-	Val30 uint16         `sunspec:"offset=32,len=1"`
-	Val31 uint16         `sunspec:"offset=33,len=1"`
-	Val32 uint16         `sunspec:"offset=34,len=1"`
-	Val33 uint16         `sunspec:"offset=35,len=1"`
-	Val34 uint16         `sunspec:"offset=36,len=1"`
-	Val35 uint16         `sunspec:"offset=37,len=1"`
-	Val36 uint16         `sunspec:"offset=38,len=1"`
-	Val37 uint16         `sunspec:"offset=39,len=1"`
-	Val38 uint16         `sunspec:"offset=40,len=1"`
-	Val39 uint16         `sunspec:"offset=41,len=1"`
-	Val40 uint16         `sunspec:"offset=42,len=1"`
-	Val41 uint16         `sunspec:"offset=43,len=1"`
-	Val42 uint16         `sunspec:"offset=44,len=1"`
-	Val43 uint16         `sunspec:"offset=45,len=1"`
-	Val44 uint16         `sunspec:"offset=46,len=1"`
-	Val45 uint16         `sunspec:"offset=47,len=1"`
-	Val46 uint16         `sunspec:"offset=48,len=1"`
-	Val47 uint16         `sunspec:"offset=49,len=1"`
-	Val48 uint16         `sunspec:"offset=50,len=1"`
-	Val49 uint16         `sunspec:"offset=51,len=1"`
-	Val50 uint16         `sunspec:"offset=52,len=1"`
-	Ts    uint32         `sunspec:"offset=53,len=2"`
-	Ms    uint16         `sunspec:"offset=55,len=1"`
-	Seq   uint16         `sunspec:"offset=56,len=1"`
-	Alm   sunspec.Enum16 `sunspec:"offset=57,len=1"`
-	Alg   sunspec.Enum16 `sunspec:"offset=58,len=1"`
-	N     uint16         `sunspec:"offset=59,len=1"`
+	RqSeq uint16         `sunspec:"offset=0"`
+	Sts   sunspec.Enum16 `sunspec:"offset=1"`
+	X     uint16         `sunspec:"offset=2"`
+	Val1  uint16         `sunspec:"offset=3"`
+	Val2  uint16         `sunspec:"offset=4"`
+	Val3  uint16         `sunspec:"offset=5"`
+	Val4  uint16         `sunspec:"offset=6"`
+	Val5  uint16         `sunspec:"offset=7"`
+	Val6  uint16         `sunspec:"offset=8"`
+	Val7  uint16         `sunspec:"offset=9"`
+	Val8  uint16         `sunspec:"offset=10"`
+	Val9  uint16         `sunspec:"offset=11"`
+	Val10 uint16         `sunspec:"offset=12"`
+	Val11 uint16         `sunspec:"offset=13"`
+	Val12 uint16         `sunspec:"offset=14"`
+	Val13 uint16         `sunspec:"offset=15"`
+	Val14 uint16         `sunspec:"offset=16"`
+	Val15 uint16         `sunspec:"offset=17"`
+	Val16 uint16         `sunspec:"offset=18"`
+	Val17 uint16         `sunspec:"offset=19"`
+	Val18 uint16         `sunspec:"offset=20"`
+	Val19 uint16         `sunspec:"offset=21"`
+	Val20 uint16         `sunspec:"offset=22"`
+	Val21 uint16         `sunspec:"offset=23"`
+	Val22 uint16         `sunspec:"offset=24"`
+	Val23 uint16         `sunspec:"offset=25"`
+	Val24 uint16         `sunspec:"offset=26"`
+	Val25 uint16         `sunspec:"offset=27"`
+	Val26 uint16         `sunspec:"offset=28"`
+	Val27 uint16         `sunspec:"offset=29"`
+	Val28 uint16         `sunspec:"offset=30"`
+	Val29 uint16         `sunspec:"offset=31"`
+	Val30 uint16         `sunspec:"offset=32"`
+	Val31 uint16         `sunspec:"offset=33"`
+	Val32 uint16         `sunspec:"offset=34"`
+	Val33 uint16         `sunspec:"offset=35"`
+	Val34 uint16         `sunspec:"offset=36"`
+	Val35 uint16         `sunspec:"offset=37"`
+	Val36 uint16         `sunspec:"offset=38"`
+	Val37 uint16         `sunspec:"offset=39"`
+	Val38 uint16         `sunspec:"offset=40"`
+	Val39 uint16         `sunspec:"offset=41"`
+	Val40 uint16         `sunspec:"offset=42"`
+	Val41 uint16         `sunspec:"offset=43"`
+	Val42 uint16         `sunspec:"offset=44"`
+	Val43 uint16         `sunspec:"offset=45"`
+	Val44 uint16         `sunspec:"offset=46"`
+	Val45 uint16         `sunspec:"offset=47"`
+	Val46 uint16         `sunspec:"offset=48"`
+	Val47 uint16         `sunspec:"offset=49"`
+	Val48 uint16         `sunspec:"offset=50"`
+	Val49 uint16         `sunspec:"offset=51"`
+	Val50 uint16         `sunspec:"offset=52"`
+	Ts    uint32         `sunspec:"offset=53"`
+	Ms    uint16         `sunspec:"offset=55"`
+	Seq   uint16         `sunspec:"offset=56"`
+	Alm   sunspec.Enum16 `sunspec:"offset=57"`
+	Alg   sunspec.Enum16 `sunspec:"offset=58"`
+	N     uint16         `sunspec:"offset=59"`
 
 	Repeats []Block4Repeat
 }
@@ -164,72 +164,72 @@ func init() {
 				Length: 60,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: RqSeq, Offset: 0, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Request Sequence", Description: "Sequence number from the request"},
-					{Id: Sts, Offset: 1, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "Status", Description: "Status of last read operation"},
-					{Id: X, Offset: 2, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "X", Description: "Number of values from the request"},
-					{Id: Val1, Offset: 3, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Value1", Description: "Copy of value from register Off1."},
-					{Id: Val2, Offset: 4, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val3, Offset: 5, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val4, Offset: 6, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val5, Offset: 7, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val6, Offset: 8, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val7, Offset: 9, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val8, Offset: 10, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val9, Offset: 11, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val10, Offset: 12, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val11, Offset: 13, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val12, Offset: 14, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val13, Offset: 15, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val14, Offset: 16, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val15, Offset: 17, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val16, Offset: 18, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val17, Offset: 19, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val18, Offset: 20, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val19, Offset: 21, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val20, Offset: 22, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val21, Offset: 23, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val22, Offset: 24, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val23, Offset: 25, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val24, Offset: 26, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val25, Offset: 27, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val26, Offset: 28, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val27, Offset: 29, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val28, Offset: 30, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val29, Offset: 31, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val30, Offset: 32, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val31, Offset: 33, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val32, Offset: 34, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val33, Offset: 35, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val34, Offset: 36, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val35, Offset: 37, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val36, Offset: 38, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val37, Offset: 39, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val38, Offset: 40, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val39, Offset: 41, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val40, Offset: 42, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val41, Offset: 43, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val42, Offset: 44, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val43, Offset: 45, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val44, Offset: 46, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val45, Offset: 47, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val46, Offset: 48, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val47, Offset: 49, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val48, Offset: 50, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val49, Offset: 51, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Val50, Offset: 52, Type: typelabel.Uint16, Length: 1, Mandatory: true},
-					{Id: Ts, Offset: 53, Type: typelabel.Uint32, Length: 2, Mandatory: true, Label: "Timestamp", Description: "Timestamp value is the number of seconds since January 1, 2000"},
-					{Id: Ms, Offset: 55, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Milliseconds", Description: "Millisecond counter 0-999"},
-					{Id: Seq, Offset: 56, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Sequence", Description: "Sequence number of response"},
-					{Id: Alm, Offset: 57, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "Alarm", Description: "Bitmask alarm code"},
-					{Id: Alg, Offset: 58, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "Algorithm", Description: "Algorithm used to compute the digital signature"},
-					{Id: N, Offset: 59, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "N", Description: "Number of registers comprising the digital signature."},
+					{Id: RqSeq, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Request Sequence", Description: "Sequence number from the request"},
+					{Id: Sts, Offset: 1, Type: typelabel.Enum16, Mandatory: true, Label: "Status", Description: "Status of last read operation"},
+					{Id: X, Offset: 2, Type: typelabel.Uint16, Mandatory: true, Label: "X", Description: "Number of values from the request"},
+					{Id: Val1, Offset: 3, Type: typelabel.Uint16, Mandatory: true, Label: "Value1", Description: "Copy of value from register Off1."},
+					{Id: Val2, Offset: 4, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val3, Offset: 5, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val4, Offset: 6, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val5, Offset: 7, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val6, Offset: 8, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val7, Offset: 9, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val8, Offset: 10, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val9, Offset: 11, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val10, Offset: 12, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val11, Offset: 13, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val12, Offset: 14, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val13, Offset: 15, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val14, Offset: 16, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val15, Offset: 17, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val16, Offset: 18, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val17, Offset: 19, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val18, Offset: 20, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val19, Offset: 21, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val20, Offset: 22, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val21, Offset: 23, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val22, Offset: 24, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val23, Offset: 25, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val24, Offset: 26, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val25, Offset: 27, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val26, Offset: 28, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val27, Offset: 29, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val28, Offset: 30, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val29, Offset: 31, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val30, Offset: 32, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val31, Offset: 33, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val32, Offset: 34, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val33, Offset: 35, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val34, Offset: 36, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val35, Offset: 37, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val36, Offset: 38, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val37, Offset: 39, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val38, Offset: 40, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val39, Offset: 41, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val40, Offset: 42, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val41, Offset: 43, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val42, Offset: 44, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val43, Offset: 45, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val44, Offset: 46, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val45, Offset: 47, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val46, Offset: 48, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val47, Offset: 49, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val48, Offset: 50, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val49, Offset: 51, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Val50, Offset: 52, Type: typelabel.Uint16, Mandatory: true},
+					{Id: Ts, Offset: 53, Type: typelabel.Uint32, Mandatory: true, Label: "Timestamp", Description: "Timestamp value is the number of seconds since January 1, 2000"},
+					{Id: Ms, Offset: 55, Type: typelabel.Uint16, Mandatory: true, Label: "Milliseconds", Description: "Millisecond counter 0-999"},
+					{Id: Seq, Offset: 56, Type: typelabel.Uint16, Mandatory: true, Label: "Sequence", Description: "Sequence number of response"},
+					{Id: Alm, Offset: 57, Type: typelabel.Enum16, Mandatory: true, Label: "Alarm", Description: "Bitmask alarm code"},
+					{Id: Alg, Offset: 58, Type: typelabel.Enum16, Mandatory: true, Label: "Algorithm", Description: "Algorithm used to compute the digital signature"},
+					{Id: N, Offset: 59, Type: typelabel.Uint16, Mandatory: true, Label: "N", Description: "Number of registers comprising the digital signature."},
 				},
 			},
 			{
 				Length: 1,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: DS, Offset: 0, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "DS", Description: "Digital Signature"},
+					{Id: DS, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "DS", Description: "Digital Signature"},
 				},
 			},
 		}})

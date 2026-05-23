@@ -45,30 +45,30 @@ const (
 )
 
 type Block123 struct {
-	Conn_WinTms        uint16              `sunspec:"offset=0,len=1,access=rw"`
-	Conn_RvrtTms       uint16              `sunspec:"offset=1,len=1,access=rw"`
-	Conn               sunspec.Enum16      `sunspec:"offset=2,len=1,access=rw"`
-	WMaxLimPct         uint16              `sunspec:"offset=3,len=1,sf=WMaxLimPct_SF,access=rw"`
-	WMaxLimPct_WinTms  uint16              `sunspec:"offset=4,len=1,access=rw"`
-	WMaxLimPct_RvrtTms uint16              `sunspec:"offset=5,len=1,access=rw"`
-	WMaxLimPct_RmpTms  uint16              `sunspec:"offset=6,len=1,access=rw"`
-	WMaxLim_Ena        sunspec.Enum16      `sunspec:"offset=7,len=1,access=rw"`
-	OutPFSet           int16               `sunspec:"offset=8,len=1,sf=OutPFSet_SF,access=rw"`
-	OutPFSet_WinTms    uint16              `sunspec:"offset=9,len=1,access=rw"`
-	OutPFSet_RvrtTms   uint16              `sunspec:"offset=10,len=1,access=rw"`
-	OutPFSet_RmpTms    uint16              `sunspec:"offset=11,len=1,access=rw"`
-	OutPFSet_Ena       sunspec.Enum16      `sunspec:"offset=12,len=1,access=rw"`
-	VArWMaxPct         int16               `sunspec:"offset=13,len=1,sf=VArPct_SF,access=rw"`
-	VArMaxPct          int16               `sunspec:"offset=14,len=1,sf=VArPct_SF,access=rw"`
-	VArAvalPct         int16               `sunspec:"offset=15,len=1,sf=VArPct_SF,access=rw"`
-	VArPct_WinTms      uint16              `sunspec:"offset=16,len=1,access=rw"`
-	VArPct_RvrtTms     uint16              `sunspec:"offset=17,len=1,access=rw"`
-	VArPct_RmpTms      uint16              `sunspec:"offset=18,len=1,access=rw"`
-	VArPct_Mod         sunspec.Enum16      `sunspec:"offset=19,len=1,access=rw"`
-	VArPct_Ena         sunspec.Enum16      `sunspec:"offset=20,len=1,access=rw"`
-	WMaxLimPct_SF      sunspec.ScaleFactor `sunspec:"offset=21,len=1"`
-	OutPFSet_SF        sunspec.ScaleFactor `sunspec:"offset=22,len=1"`
-	VArPct_SF          sunspec.ScaleFactor `sunspec:"offset=23,len=1"`
+	Conn_WinTms        uint16              `sunspec:"offset=0,access=rw"`
+	Conn_RvrtTms       uint16              `sunspec:"offset=1,access=rw"`
+	Conn               sunspec.Enum16      `sunspec:"offset=2,access=rw"`
+	WMaxLimPct         uint16              `sunspec:"offset=3,sf=WMaxLimPct_SF,access=rw"`
+	WMaxLimPct_WinTms  uint16              `sunspec:"offset=4,access=rw"`
+	WMaxLimPct_RvrtTms uint16              `sunspec:"offset=5,access=rw"`
+	WMaxLimPct_RmpTms  uint16              `sunspec:"offset=6,access=rw"`
+	WMaxLim_Ena        sunspec.Enum16      `sunspec:"offset=7,access=rw"`
+	OutPFSet           int16               `sunspec:"offset=8,sf=OutPFSet_SF,access=rw"`
+	OutPFSet_WinTms    uint16              `sunspec:"offset=9,access=rw"`
+	OutPFSet_RvrtTms   uint16              `sunspec:"offset=10,access=rw"`
+	OutPFSet_RmpTms    uint16              `sunspec:"offset=11,access=rw"`
+	OutPFSet_Ena       sunspec.Enum16      `sunspec:"offset=12,access=rw"`
+	VArWMaxPct         int16               `sunspec:"offset=13,sf=VArPct_SF,access=rw"`
+	VArMaxPct          int16               `sunspec:"offset=14,sf=VArPct_SF,access=rw"`
+	VArAvalPct         int16               `sunspec:"offset=15,sf=VArPct_SF,access=rw"`
+	VArPct_WinTms      uint16              `sunspec:"offset=16,access=rw"`
+	VArPct_RvrtTms     uint16              `sunspec:"offset=17,access=rw"`
+	VArPct_RmpTms      uint16              `sunspec:"offset=18,access=rw"`
+	VArPct_Mod         sunspec.Enum16      `sunspec:"offset=19,access=rw"`
+	VArPct_Ena         sunspec.Enum16      `sunspec:"offset=20,access=rw"`
+	WMaxLimPct_SF      sunspec.ScaleFactor `sunspec:"offset=21"`
+	OutPFSet_SF        sunspec.ScaleFactor `sunspec:"offset=22"`
+	VArPct_SF          sunspec.ScaleFactor `sunspec:"offset=23"`
 }
 
 func (block *Block123) GetId() sunspec.ModelId {
@@ -87,30 +87,30 @@ func init() {
 				Length: 24,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: Conn_WinTms, Offset: 0, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "Conn_WinTms", Description: "Time window for connect/disconnect."},
-					{Id: Conn_RvrtTms, Offset: 1, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "Conn_RvrtTms", Description: "Timeout period for connect/disconnect."},
-					{Id: Conn, Offset: 2, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "Conn", Description: "Enumerated valued.  Connection control."},
-					{Id: WMaxLimPct, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "WMaxLimPct_SF", Units: "% WMax", Access: "rw", Length: 1, Mandatory: true, Label: "WMaxLimPct", Description: "Set power output to specified level."},
-					{Id: WMaxLimPct_WinTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "WMaxLimPct_WinTms", Description: "Time window for power limit change."},
-					{Id: WMaxLimPct_RvrtTms, Offset: 5, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "WMaxLimPct_RvrtTms", Description: "Timeout period for power limit."},
-					{Id: WMaxLimPct_RmpTms, Offset: 6, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "WMaxLimPct_RmpTms", Description: "Ramp time for moving from current setpoint to new setpoint."},
-					{Id: WMaxLim_Ena, Offset: 7, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "WMaxLim_Ena", Description: "Enumerated valued.  Throttle enable/disable control."},
-					{Id: OutPFSet, Offset: 8, Type: typelabel.Int16, ScaleFactor: "OutPFSet_SF", Units: "cos()", Access: "rw", Length: 1, Mandatory: true, Label: "OutPFSet", Description: "Set power factor to specific value - cosine of angle."},
-					{Id: OutPFSet_WinTms, Offset: 9, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "OutPFSet_WinTms", Description: "Time window for power factor change."},
-					{Id: OutPFSet_RvrtTms, Offset: 10, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "OutPFSet_RvrtTms", Description: "Timeout period for power factor."},
-					{Id: OutPFSet_RmpTms, Offset: 11, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "OutPFSet_RmpTms", Description: "Ramp time for moving from current setpoint to new setpoint."},
-					{Id: OutPFSet_Ena, Offset: 12, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "OutPFSet_Ena", Description: "Enumerated valued.  Fixed power factor enable/disable control."},
-					{Id: VArWMaxPct, Offset: 13, Type: typelabel.Int16, ScaleFactor: "VArPct_SF", Units: "% WMax", Access: "rw", Length: 1, Label: "VArWMaxPct", Description: "Reactive power in percent of WMax."},
-					{Id: VArMaxPct, Offset: 14, Type: typelabel.Int16, ScaleFactor: "VArPct_SF", Units: "% VArMax", Access: "rw", Length: 1, Label: "VArMaxPct", Description: "Reactive power in percent of VArMax."},
-					{Id: VArAvalPct, Offset: 15, Type: typelabel.Int16, ScaleFactor: "VArPct_SF", Units: "% VArAval", Access: "rw", Length: 1, Label: "VArAvalPct", Description: "Reactive power in percent of VArAval."},
-					{Id: VArPct_WinTms, Offset: 16, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "VArPct_WinTms", Description: "Time window for VAR limit change."},
-					{Id: VArPct_RvrtTms, Offset: 17, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "VArPct_RvrtTms", Description: "Timeout period for VAR limit."},
-					{Id: VArPct_RmpTms, Offset: 18, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "VArPct_RmpTms", Description: "Ramp time for moving from current setpoint to new setpoint."},
-					{Id: VArPct_Mod, Offset: 19, Type: typelabel.Enum16, Access: "rw", Length: 1, Label: "VArPct_Mod", Description: "Enumerated value. VAR percent limit mode."},
-					{Id: VArPct_Ena, Offset: 20, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "VArPct_Ena", Description: "Enumerated valued.  Percent limit VAr enable/disable control."},
-					{Id: WMaxLimPct_SF, Offset: 21, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "WMaxLimPct_SF", Description: "Scale factor for power output percent."},
-					{Id: OutPFSet_SF, Offset: 22, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "OutPFSet_SF", Description: "Scale factor for power factor."},
-					{Id: VArPct_SF, Offset: 23, Type: typelabel.ScaleFactor, Length: 1, Label: "VArPct_SF", Description: "Scale factor for reactive power percent."},
+					{Id: Conn_WinTms, Offset: 0, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "Conn_WinTms", Description: "Time window for connect/disconnect."},
+					{Id: Conn_RvrtTms, Offset: 1, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "Conn_RvrtTms", Description: "Timeout period for connect/disconnect."},
+					{Id: Conn, Offset: 2, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "Conn", Description: "Enumerated valued.  Connection control."},
+					{Id: WMaxLimPct, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "WMaxLimPct_SF", Units: "% WMax", Access: "rw", Mandatory: true, Label: "WMaxLimPct", Description: "Set power output to specified level."},
+					{Id: WMaxLimPct_WinTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "WMaxLimPct_WinTms", Description: "Time window for power limit change."},
+					{Id: WMaxLimPct_RvrtTms, Offset: 5, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "WMaxLimPct_RvrtTms", Description: "Timeout period for power limit."},
+					{Id: WMaxLimPct_RmpTms, Offset: 6, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "WMaxLimPct_RmpTms", Description: "Ramp time for moving from current setpoint to new setpoint."},
+					{Id: WMaxLim_Ena, Offset: 7, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "WMaxLim_Ena", Description: "Enumerated valued.  Throttle enable/disable control."},
+					{Id: OutPFSet, Offset: 8, Type: typelabel.Int16, ScaleFactor: "OutPFSet_SF", Units: "cos()", Access: "rw", Mandatory: true, Label: "OutPFSet", Description: "Set power factor to specific value - cosine of angle."},
+					{Id: OutPFSet_WinTms, Offset: 9, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "OutPFSet_WinTms", Description: "Time window for power factor change."},
+					{Id: OutPFSet_RvrtTms, Offset: 10, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "OutPFSet_RvrtTms", Description: "Timeout period for power factor."},
+					{Id: OutPFSet_RmpTms, Offset: 11, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "OutPFSet_RmpTms", Description: "Ramp time for moving from current setpoint to new setpoint."},
+					{Id: OutPFSet_Ena, Offset: 12, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "OutPFSet_Ena", Description: "Enumerated valued.  Fixed power factor enable/disable control."},
+					{Id: VArWMaxPct, Offset: 13, Type: typelabel.Int16, ScaleFactor: "VArPct_SF", Units: "% WMax", Access: "rw", Label: "VArWMaxPct", Description: "Reactive power in percent of WMax."},
+					{Id: VArMaxPct, Offset: 14, Type: typelabel.Int16, ScaleFactor: "VArPct_SF", Units: "% VArMax", Access: "rw", Label: "VArMaxPct", Description: "Reactive power in percent of VArMax."},
+					{Id: VArAvalPct, Offset: 15, Type: typelabel.Int16, ScaleFactor: "VArPct_SF", Units: "% VArAval", Access: "rw", Label: "VArAvalPct", Description: "Reactive power in percent of VArAval."},
+					{Id: VArPct_WinTms, Offset: 16, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "VArPct_WinTms", Description: "Time window for VAR limit change."},
+					{Id: VArPct_RvrtTms, Offset: 17, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "VArPct_RvrtTms", Description: "Timeout period for VAR limit."},
+					{Id: VArPct_RmpTms, Offset: 18, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "VArPct_RmpTms", Description: "Ramp time for moving from current setpoint to new setpoint."},
+					{Id: VArPct_Mod, Offset: 19, Type: typelabel.Enum16, Access: "rw", Label: "VArPct_Mod", Description: "Enumerated value. VAR percent limit mode."},
+					{Id: VArPct_Ena, Offset: 20, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "VArPct_Ena", Description: "Enumerated valued.  Percent limit VAr enable/disable control."},
+					{Id: WMaxLimPct_SF, Offset: 21, Type: typelabel.ScaleFactor, Mandatory: true, Label: "WMaxLimPct_SF", Description: "Scale factor for power output percent."},
+					{Id: OutPFSet_SF, Offset: 22, Type: typelabel.ScaleFactor, Mandatory: true, Label: "OutPFSet_SF", Description: "Scale factor for power factor."},
+					{Id: VArPct_SF, Offset: 23, Type: typelabel.ScaleFactor, Label: "VArPct_SF", Description: "Scale factor for reactive power percent."},
 				},
 			},
 		}})

@@ -82,70 +82,70 @@ const (
 )
 
 type Block134Repeat struct {
-	ActPt      uint16             `sunspec:"offset=0,len=1,access=rw"`
-	Hz1        uint16             `sunspec:"offset=1,len=1,sf=Hz_SF,access=rw"`
-	W1         int16              `sunspec:"offset=2,len=1,sf=W_SF,access=rw"`
-	Hz2        uint16             `sunspec:"offset=3,len=1,sf=Hz_SF,access=rw"`
-	W2         int16              `sunspec:"offset=4,len=1,sf=W_SF,access=rw"`
-	Hz3        uint16             `sunspec:"offset=5,len=1,sf=Hz_SF,access=rw"`
-	W3         int16              `sunspec:"offset=6,len=1,sf=W_SF,access=rw"`
-	Hz4        uint16             `sunspec:"offset=7,len=1,sf=Hz_SF,access=rw"`
-	W4         int16              `sunspec:"offset=8,len=1,sf=W_SF,access=rw"`
-	Hz5        uint16             `sunspec:"offset=9,len=1,sf=Hz_SF,access=rw"`
-	W5         int16              `sunspec:"offset=10,len=1,sf=W_SF,access=rw"`
-	Hz6        uint16             `sunspec:"offset=11,len=1,sf=Hz_SF,access=rw"`
-	W6         int16              `sunspec:"offset=12,len=1,sf=W_SF,access=rw"`
-	Hz7        uint16             `sunspec:"offset=13,len=1,sf=Hz_SF,access=rw"`
-	W7         int16              `sunspec:"offset=14,len=1,sf=W_SF,access=rw"`
-	Hz8        uint16             `sunspec:"offset=15,len=1,sf=Hz_SF,access=rw"`
-	W8         int16              `sunspec:"offset=16,len=1,sf=W_SF,access=rw"`
-	Hz9        uint16             `sunspec:"offset=17,len=1,sf=Hz_SF,access=rw"`
-	W9         int16              `sunspec:"offset=18,len=1,sf=W_SF,access=rw"`
-	Hz10       uint16             `sunspec:"offset=19,len=1,sf=Hz_SF,access=rw"`
-	W10        int16              `sunspec:"offset=20,len=1,sf=W_SF,access=rw"`
-	Hz11       uint16             `sunspec:"offset=21,len=1,sf=Hz_SF,access=rw"`
-	W11        int16              `sunspec:"offset=22,len=1,sf=W_SF,access=rw"`
-	Hz12       uint16             `sunspec:"offset=23,len=1,sf=Hz_SF,access=rw"`
-	W12        int16              `sunspec:"offset=24,len=1,sf=W_SF,access=rw"`
-	Hz13       uint16             `sunspec:"offset=25,len=1,sf=Hz_SF,access=rw"`
-	W13        int16              `sunspec:"offset=26,len=1,sf=W_SF,access=rw"`
-	Hz14       uint16             `sunspec:"offset=27,len=1,sf=Hz_SF,access=rw"`
-	W14        int16              `sunspec:"offset=28,len=1,sf=W_SF,access=rw"`
-	Hz15       uint16             `sunspec:"offset=29,len=1,sf=Hz_SF,access=rw"`
-	W15        int16              `sunspec:"offset=30,len=1,sf=W_SF,access=rw"`
-	Hz16       uint16             `sunspec:"offset=31,len=1,sf=Hz_SF,access=rw"`
-	W16        int16              `sunspec:"offset=32,len=1,sf=W_SF,access=rw"`
-	Hz17       uint16             `sunspec:"offset=33,len=1,sf=Hz_SF,access=rw"`
-	W17        int16              `sunspec:"offset=34,len=1,sf=W_SF,access=rw"`
-	Hz18       uint16             `sunspec:"offset=35,len=1,sf=Hz_SF,access=rw"`
-	W18        int16              `sunspec:"offset=36,len=1,sf=W_SF,access=rw"`
-	Hz19       uint16             `sunspec:"offset=37,len=1,sf=Hz_SF,access=rw"`
-	W19        int16              `sunspec:"offset=38,len=1,sf=W_SF,access=rw"`
-	Hz20       uint16             `sunspec:"offset=39,len=1,sf=Hz_SF,access=rw"`
-	W20        int16              `sunspec:"offset=40,len=1,sf=W_SF,access=rw"`
+	ActPt      uint16             `sunspec:"offset=0,access=rw"`
+	Hz1        uint16             `sunspec:"offset=1,sf=Hz_SF,access=rw"`
+	W1         int16              `sunspec:"offset=2,sf=W_SF,access=rw"`
+	Hz2        uint16             `sunspec:"offset=3,sf=Hz_SF,access=rw"`
+	W2         int16              `sunspec:"offset=4,sf=W_SF,access=rw"`
+	Hz3        uint16             `sunspec:"offset=5,sf=Hz_SF,access=rw"`
+	W3         int16              `sunspec:"offset=6,sf=W_SF,access=rw"`
+	Hz4        uint16             `sunspec:"offset=7,sf=Hz_SF,access=rw"`
+	W4         int16              `sunspec:"offset=8,sf=W_SF,access=rw"`
+	Hz5        uint16             `sunspec:"offset=9,sf=Hz_SF,access=rw"`
+	W5         int16              `sunspec:"offset=10,sf=W_SF,access=rw"`
+	Hz6        uint16             `sunspec:"offset=11,sf=Hz_SF,access=rw"`
+	W6         int16              `sunspec:"offset=12,sf=W_SF,access=rw"`
+	Hz7        uint16             `sunspec:"offset=13,sf=Hz_SF,access=rw"`
+	W7         int16              `sunspec:"offset=14,sf=W_SF,access=rw"`
+	Hz8        uint16             `sunspec:"offset=15,sf=Hz_SF,access=rw"`
+	W8         int16              `sunspec:"offset=16,sf=W_SF,access=rw"`
+	Hz9        uint16             `sunspec:"offset=17,sf=Hz_SF,access=rw"`
+	W9         int16              `sunspec:"offset=18,sf=W_SF,access=rw"`
+	Hz10       uint16             `sunspec:"offset=19,sf=Hz_SF,access=rw"`
+	W10        int16              `sunspec:"offset=20,sf=W_SF,access=rw"`
+	Hz11       uint16             `sunspec:"offset=21,sf=Hz_SF,access=rw"`
+	W11        int16              `sunspec:"offset=22,sf=W_SF,access=rw"`
+	Hz12       uint16             `sunspec:"offset=23,sf=Hz_SF,access=rw"`
+	W12        int16              `sunspec:"offset=24,sf=W_SF,access=rw"`
+	Hz13       uint16             `sunspec:"offset=25,sf=Hz_SF,access=rw"`
+	W13        int16              `sunspec:"offset=26,sf=W_SF,access=rw"`
+	Hz14       uint16             `sunspec:"offset=27,sf=Hz_SF,access=rw"`
+	W14        int16              `sunspec:"offset=28,sf=W_SF,access=rw"`
+	Hz15       uint16             `sunspec:"offset=29,sf=Hz_SF,access=rw"`
+	W15        int16              `sunspec:"offset=30,sf=W_SF,access=rw"`
+	Hz16       uint16             `sunspec:"offset=31,sf=Hz_SF,access=rw"`
+	W16        int16              `sunspec:"offset=32,sf=W_SF,access=rw"`
+	Hz17       uint16             `sunspec:"offset=33,sf=Hz_SF,access=rw"`
+	W17        int16              `sunspec:"offset=34,sf=W_SF,access=rw"`
+	Hz18       uint16             `sunspec:"offset=35,sf=Hz_SF,access=rw"`
+	W18        int16              `sunspec:"offset=36,sf=W_SF,access=rw"`
+	Hz19       uint16             `sunspec:"offset=37,sf=Hz_SF,access=rw"`
+	W19        int16              `sunspec:"offset=38,sf=W_SF,access=rw"`
+	Hz20       uint16             `sunspec:"offset=39,sf=Hz_SF,access=rw"`
+	W20        int16              `sunspec:"offset=40,sf=W_SF,access=rw"`
 	CrvNam     string             `sunspec:"offset=41,len=8,access=rw"`
-	RmpPT1Tms  uint16             `sunspec:"offset=49,len=1,access=rw"`
-	RmpDecTmm  uint16             `sunspec:"offset=50,len=1,sf=RmpIncDec_SF,access=rw"`
-	RmpIncTmm  uint16             `sunspec:"offset=51,len=1,sf=RmpIncDec_SF,access=rw"`
-	RmpRsUp    uint16             `sunspec:"offset=52,len=1,sf=RmpIncDec_SF,access=rw"`
-	SnptW      sunspec.Bitfield16 `sunspec:"offset=53,len=1,access=rw"`
-	WRef       uint16             `sunspec:"offset=54,len=1,sf=W_SF,access=rw"`
-	WRefStrHz  uint16             `sunspec:"offset=55,len=1,sf=Hz_SF,access=rw"`
-	WRefStopHz uint16             `sunspec:"offset=56,len=1,sf=Hz_SF,access=rw"`
-	ReadOnly   sunspec.Enum16     `sunspec:"offset=57,len=1"`
+	RmpPT1Tms  uint16             `sunspec:"offset=49,access=rw"`
+	RmpDecTmm  uint16             `sunspec:"offset=50,sf=RmpIncDec_SF,access=rw"`
+	RmpIncTmm  uint16             `sunspec:"offset=51,sf=RmpIncDec_SF,access=rw"`
+	RmpRsUp    uint16             `sunspec:"offset=52,sf=RmpIncDec_SF,access=rw"`
+	SnptW      sunspec.Bitfield16 `sunspec:"offset=53,access=rw"`
+	WRef       uint16             `sunspec:"offset=54,sf=W_SF,access=rw"`
+	WRefStrHz  uint16             `sunspec:"offset=55,sf=Hz_SF,access=rw"`
+	WRefStopHz uint16             `sunspec:"offset=56,sf=Hz_SF,access=rw"`
+	ReadOnly   sunspec.Enum16     `sunspec:"offset=57"`
 }
 
 type Block134 struct {
-	ActCrv       uint16              `sunspec:"offset=0,len=1,access=rw"`
-	ModEna       sunspec.Bitfield16  `sunspec:"offset=1,len=1,access=rw"`
-	WinTms       uint16              `sunspec:"offset=2,len=1,access=rw"`
-	RvrtTms      uint16              `sunspec:"offset=3,len=1,access=rw"`
-	RmpTms       uint16              `sunspec:"offset=4,len=1,access=rw"`
-	NCrv         uint16              `sunspec:"offset=5,len=1"`
-	NPt          uint16              `sunspec:"offset=6,len=1"`
-	Hz_SF        sunspec.ScaleFactor `sunspec:"offset=7,len=1"`
-	W_SF         sunspec.ScaleFactor `sunspec:"offset=8,len=1"`
-	RmpIncDec_SF sunspec.ScaleFactor `sunspec:"offset=9,len=1"`
+	ActCrv       uint16              `sunspec:"offset=0,access=rw"`
+	ModEna       sunspec.Bitfield16  `sunspec:"offset=1,access=rw"`
+	WinTms       uint16              `sunspec:"offset=2,access=rw"`
+	RvrtTms      uint16              `sunspec:"offset=3,access=rw"`
+	RmpTms       uint16              `sunspec:"offset=4,access=rw"`
+	NCrv         uint16              `sunspec:"offset=5"`
+	NPt          uint16              `sunspec:"offset=6"`
+	Hz_SF        sunspec.ScaleFactor `sunspec:"offset=7"`
+	W_SF         sunspec.ScaleFactor `sunspec:"offset=8"`
+	RmpIncDec_SF sunspec.ScaleFactor `sunspec:"offset=9"`
 
 	Repeats []Block134Repeat
 }
@@ -166,73 +166,73 @@ func init() {
 				Length: 10,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
-					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "Is curve-based Frequency-Watt control active."},
-					{Id: WinTms, Offset: 2, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "WinTms", Description: "Time window for freq-watt change."},
-					{Id: RvrtTms, Offset: 3, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RvrtTms", Description: "Timeout period for freq-watt curve selection."},
-					{Id: RmpTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "Ramp time for moving from current mode to new mode."},
-					{Id: NCrv, Offset: 5, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "NCrv", Description: "Number of curves supported (recommend min. 4)."},
-					{Id: NPt, Offset: 6, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "NPt", Description: "Number of curve points supported (maximum of 20)."},
-					{Id: Hz_SF, Offset: 7, Type: typelabel.ScaleFactor, Units: "SF", Length: 1, Mandatory: true, Label: "Hz_SF", Description: "Scale factor for frequency."},
-					{Id: W_SF, Offset: 8, Type: typelabel.ScaleFactor, Units: "SF", Length: 1, Mandatory: true, Label: "W_SF", Description: "Scale factor for percent WRef."},
-					{Id: RmpIncDec_SF, Offset: 9, Type: typelabel.ScaleFactor, Units: "SF", Length: 1, Label: "RmpIncDec_SF", Description: "Scale factor for increment and decrement ramps."},
+					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
+					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Mandatory: true, Label: "ModEna", Description: "Is curve-based Frequency-Watt control active."},
+					{Id: WinTms, Offset: 2, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "WinTms", Description: "Time window for freq-watt change."},
+					{Id: RvrtTms, Offset: 3, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RvrtTms", Description: "Timeout period for freq-watt curve selection."},
+					{Id: RmpTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RmpTms", Description: "Ramp time for moving from current mode to new mode."},
+					{Id: NCrv, Offset: 5, Type: typelabel.Uint16, Mandatory: true, Label: "NCrv", Description: "Number of curves supported (recommend min. 4)."},
+					{Id: NPt, Offset: 6, Type: typelabel.Uint16, Mandatory: true, Label: "NPt", Description: "Number of curve points supported (maximum of 20)."},
+					{Id: Hz_SF, Offset: 7, Type: typelabel.ScaleFactor, Units: "SF", Mandatory: true, Label: "Hz_SF", Description: "Scale factor for frequency."},
+					{Id: W_SF, Offset: 8, Type: typelabel.ScaleFactor, Units: "SF", Mandatory: true, Label: "W_SF", Description: "Scale factor for percent WRef."},
+					{Id: RmpIncDec_SF, Offset: 9, Type: typelabel.ScaleFactor, Units: "SF", Label: "RmpIncDec_SF", Description: "Scale factor for increment and decrement ramps."},
 				},
 			},
 			{Name: "curve",
 				Length: 58,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: ActPt, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActPt", Description: "Number of active points in array."},
-					{Id: Hz1, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Mandatory: true, Label: "Hz1", Description: "Point 1 Hertz."},
-					{Id: W1, Offset: 2, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Mandatory: true, Label: "W1", Description: "Point 1 Watts."},
-					{Id: Hz2, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz2", Description: "Point 2 Hertz."},
-					{Id: W2, Offset: 4, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W2", Description: "Point 2 Watts."},
-					{Id: Hz3, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz3", Description: "Point 3 Hertz."},
-					{Id: W3, Offset: 6, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W3", Description: "Point 3 Watts."},
-					{Id: Hz4, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz4", Description: "Point 4 Hertz."},
-					{Id: W4, Offset: 8, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W4", Description: "Point 4 Watts."},
-					{Id: Hz5, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz5", Description: "Point 5 Hertz."},
-					{Id: W5, Offset: 10, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W5", Description: "Point 5 Watts."},
-					{Id: Hz6, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz6", Description: "Point 6 Hertz."},
-					{Id: W6, Offset: 12, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W6", Description: "Point 6 Watts."},
-					{Id: Hz7, Offset: 13, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz7", Description: "Point 7 Hertz."},
-					{Id: W7, Offset: 14, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W7", Description: "Point 7 Watts."},
-					{Id: Hz8, Offset: 15, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz8", Description: "Point 8 Hertz."},
-					{Id: W8, Offset: 16, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W8", Description: "Point 8 Watts."},
-					{Id: Hz9, Offset: 17, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz9", Description: "Point 9 Hertz."},
-					{Id: W9, Offset: 18, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W9", Description: "Point 9 Watts."},
-					{Id: Hz10, Offset: 19, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz10", Description: "Point 10 Hertz."},
-					{Id: W10, Offset: 20, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W10", Description: "Point 10 Watts."},
-					{Id: Hz11, Offset: 21, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz11", Description: "Point 11 Hertz."},
-					{Id: W11, Offset: 22, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W11", Description: "Point 11 Watts."},
-					{Id: Hz12, Offset: 23, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz12", Description: "Point 12 Hertz."},
-					{Id: W12, Offset: 24, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W12", Description: "Point 12 Watts."},
-					{Id: Hz13, Offset: 25, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz13", Description: "Point 13 Hertz."},
-					{Id: W13, Offset: 26, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W13", Description: "Point 13 Watts."},
-					{Id: Hz14, Offset: 27, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz14", Description: "Point 14 Hertz."},
-					{Id: W14, Offset: 28, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W14", Description: "Point 14 Watts."},
-					{Id: Hz15, Offset: 29, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz15", Description: "Point 15 Hertz."},
-					{Id: W15, Offset: 30, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W15", Description: "Point 15 Watts."},
-					{Id: Hz16, Offset: 31, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz16", Description: "Point 16 Hertz."},
-					{Id: W16, Offset: 32, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W16", Description: "Point 16 Watts."},
-					{Id: Hz17, Offset: 33, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz17", Description: "Point 17 Hertz."},
-					{Id: W17, Offset: 34, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W17", Description: "Point 17 Watts."},
-					{Id: Hz18, Offset: 35, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz18", Description: "Point 18 Hertz."},
-					{Id: W18, Offset: 36, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W18", Description: "Point 18 Watts."},
-					{Id: Hz19, Offset: 37, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz19", Description: "Point 19 Hertz."},
-					{Id: W19, Offset: 38, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W19", Description: "Point 19 Watts."},
-					{Id: Hz20, Offset: 39, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "Hz20", Description: "Point 20 Hertz."},
-					{Id: W20, Offset: 40, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Length: 1, Label: "W20", Description: "Point 20 Watts."},
+					{Id: ActPt, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "ActPt", Description: "Number of active points in array."},
+					{Id: Hz1, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Mandatory: true, Label: "Hz1", Description: "Point 1 Hertz."},
+					{Id: W1, Offset: 2, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Mandatory: true, Label: "W1", Description: "Point 1 Watts."},
+					{Id: Hz2, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz2", Description: "Point 2 Hertz."},
+					{Id: W2, Offset: 4, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W2", Description: "Point 2 Watts."},
+					{Id: Hz3, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz3", Description: "Point 3 Hertz."},
+					{Id: W3, Offset: 6, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W3", Description: "Point 3 Watts."},
+					{Id: Hz4, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz4", Description: "Point 4 Hertz."},
+					{Id: W4, Offset: 8, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W4", Description: "Point 4 Watts."},
+					{Id: Hz5, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz5", Description: "Point 5 Hertz."},
+					{Id: W5, Offset: 10, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W5", Description: "Point 5 Watts."},
+					{Id: Hz6, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz6", Description: "Point 6 Hertz."},
+					{Id: W6, Offset: 12, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W6", Description: "Point 6 Watts."},
+					{Id: Hz7, Offset: 13, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz7", Description: "Point 7 Hertz."},
+					{Id: W7, Offset: 14, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W7", Description: "Point 7 Watts."},
+					{Id: Hz8, Offset: 15, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz8", Description: "Point 8 Hertz."},
+					{Id: W8, Offset: 16, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W8", Description: "Point 8 Watts."},
+					{Id: Hz9, Offset: 17, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz9", Description: "Point 9 Hertz."},
+					{Id: W9, Offset: 18, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W9", Description: "Point 9 Watts."},
+					{Id: Hz10, Offset: 19, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz10", Description: "Point 10 Hertz."},
+					{Id: W10, Offset: 20, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W10", Description: "Point 10 Watts."},
+					{Id: Hz11, Offset: 21, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz11", Description: "Point 11 Hertz."},
+					{Id: W11, Offset: 22, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W11", Description: "Point 11 Watts."},
+					{Id: Hz12, Offset: 23, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz12", Description: "Point 12 Hertz."},
+					{Id: W12, Offset: 24, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W12", Description: "Point 12 Watts."},
+					{Id: Hz13, Offset: 25, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz13", Description: "Point 13 Hertz."},
+					{Id: W13, Offset: 26, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W13", Description: "Point 13 Watts."},
+					{Id: Hz14, Offset: 27, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz14", Description: "Point 14 Hertz."},
+					{Id: W14, Offset: 28, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W14", Description: "Point 14 Watts."},
+					{Id: Hz15, Offset: 29, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz15", Description: "Point 15 Hertz."},
+					{Id: W15, Offset: 30, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W15", Description: "Point 15 Watts."},
+					{Id: Hz16, Offset: 31, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz16", Description: "Point 16 Hertz."},
+					{Id: W16, Offset: 32, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W16", Description: "Point 16 Watts."},
+					{Id: Hz17, Offset: 33, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz17", Description: "Point 17 Hertz."},
+					{Id: W17, Offset: 34, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W17", Description: "Point 17 Watts."},
+					{Id: Hz18, Offset: 35, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz18", Description: "Point 18 Hertz."},
+					{Id: W18, Offset: 36, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W18", Description: "Point 18 Watts."},
+					{Id: Hz19, Offset: 37, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz19", Description: "Point 19 Hertz."},
+					{Id: W19, Offset: 38, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W19", Description: "Point 19 Watts."},
+					{Id: Hz20, Offset: 39, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "Hz20", Description: "Point 20 Hertz."},
+					{Id: W20, Offset: 40, Type: typelabel.Int16, ScaleFactor: "W_SF", Units: "% WRef", Access: "rw", Label: "W20", Description: "Point 20 Watts."},
 					{Id: CrvNam, Offset: 41, Type: typelabel.String, Access: "rw", Length: 8, Label: "CrvNam", Description: "Optional description for curve. (Max 16 chars)"},
-					{Id: RmpPT1Tms, Offset: 49, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpPT1Tms", Description: "The time of the PT1 in seconds (time to accomplish a change of 95%)."},
-					{Id: RmpDecTmm, Offset: 50, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% WMax/min", Access: "rw", Length: 1, Label: "RmpDecTmm", Description: "The maximum rate at which the power value may be reduced in response to changes in the frequency value."},
-					{Id: RmpIncTmm, Offset: 51, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% WMax/min", Access: "rw", Length: 1, Label: "RmpIncTmm", Description: "The maximum rate at which the power value may be increased in response to changes in the frequency value."},
-					{Id: RmpRsUp, Offset: 52, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% WMax/min", Access: "rw", Length: 1, Label: "RmpRsUp", Description: "The maximum rate at which the power may be increased after releasing the frozen value of snap shot function. "},
-					{Id: SnptW, Offset: 53, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "SnptW", Description: "1=enable snapshot/capture mode"},
-					{Id: WRef, Offset: 54, Type: typelabel.Uint16, ScaleFactor: "W_SF", Units: "W", Access: "rw", Length: 1, Label: "WRef", Description: "Reference active power (default = WMax)."},
-					{Id: WRefStrHz, Offset: 55, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "WRefStrHz", Description: "Frequency deviation from nominal frequency at the time of the snapshot to start constraining power output."},
-					{Id: WRefStopHz, Offset: 56, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Length: 1, Label: "WRefStopHz", Description: "Frequency deviation from nominal frequency at which to release the power output."},
-					{Id: ReadOnly, Offset: 57, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "ReadOnly", Description: "Enumerated value indicates if curve is read-only or can be modified."},
+					{Id: RmpPT1Tms, Offset: 49, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RmpPT1Tms", Description: "The time of the PT1 in seconds (time to accomplish a change of 95%)."},
+					{Id: RmpDecTmm, Offset: 50, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% WMax/min", Access: "rw", Label: "RmpDecTmm", Description: "The maximum rate at which the power value may be reduced in response to changes in the frequency value."},
+					{Id: RmpIncTmm, Offset: 51, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% WMax/min", Access: "rw", Label: "RmpIncTmm", Description: "The maximum rate at which the power value may be increased in response to changes in the frequency value."},
+					{Id: RmpRsUp, Offset: 52, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% WMax/min", Access: "rw", Label: "RmpRsUp", Description: "The maximum rate at which the power may be increased after releasing the frozen value of snap shot function. "},
+					{Id: SnptW, Offset: 53, Type: typelabel.Bitfield16, Access: "rw", Mandatory: true, Label: "SnptW", Description: "1=enable snapshot/capture mode"},
+					{Id: WRef, Offset: 54, Type: typelabel.Uint16, ScaleFactor: "W_SF", Units: "W", Access: "rw", Label: "WRef", Description: "Reference active power (default = WMax)."},
+					{Id: WRefStrHz, Offset: 55, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "WRefStrHz", Description: "Frequency deviation from nominal frequency at the time of the snapshot to start constraining power output."},
+					{Id: WRefStopHz, Offset: 56, Type: typelabel.Uint16, ScaleFactor: "Hz_SF", Units: "Hz", Access: "rw", Label: "WRefStopHz", Description: "Frequency deviation from nominal frequency at which to release the power output."},
+					{Id: ReadOnly, Offset: 57, Type: typelabel.Enum16, Mandatory: true, Label: "ReadOnly", Description: "Enumerated value indicates if curve is read-only or can be modified."},
 				},
 			},
 		}})

@@ -47,32 +47,32 @@ const (
 )
 
 type Block120 struct {
-	DERTyp          sunspec.Enum16      `sunspec:"offset=0,len=1"`
-	WRtg            uint16              `sunspec:"offset=1,len=1,sf=WRtg_SF"`
-	WRtg_SF         sunspec.ScaleFactor `sunspec:"offset=2,len=1"`
-	VARtg           uint16              `sunspec:"offset=3,len=1,sf=VARtg_SF"`
-	VARtg_SF        sunspec.ScaleFactor `sunspec:"offset=4,len=1"`
-	VArRtgQ1        int16               `sunspec:"offset=5,len=1,sf=VArRtg_SF"`
-	VArRtgQ2        int16               `sunspec:"offset=6,len=1,sf=VArRtg_SF"`
-	VArRtgQ3        int16               `sunspec:"offset=7,len=1,sf=VArRtg_SF"`
-	VArRtgQ4        int16               `sunspec:"offset=8,len=1,sf=VArRtg_SF"`
-	VArRtg_SF       sunspec.ScaleFactor `sunspec:"offset=9,len=1"`
-	ARtg            uint16              `sunspec:"offset=10,len=1,sf=ARtg_SF"`
-	ARtg_SF         sunspec.ScaleFactor `sunspec:"offset=11,len=1"`
-	PFRtgQ1         int16               `sunspec:"offset=12,len=1,sf=PFRtg_SF"`
-	PFRtgQ2         int16               `sunspec:"offset=13,len=1,sf=PFRtg_SF"`
-	PFRtgQ3         int16               `sunspec:"offset=14,len=1,sf=PFRtg_SF"`
-	PFRtgQ4         int16               `sunspec:"offset=15,len=1,sf=PFRtg_SF"`
-	PFRtg_SF        sunspec.ScaleFactor `sunspec:"offset=16,len=1"`
-	WHRtg           uint16              `sunspec:"offset=17,len=1,sf=WHRtg_SF"`
-	WHRtg_SF        sunspec.ScaleFactor `sunspec:"offset=18,len=1"`
-	AhrRtg          uint16              `sunspec:"offset=19,len=1,sf=AhrRtg_SF"`
-	AhrRtg_SF       sunspec.ScaleFactor `sunspec:"offset=20,len=1"`
-	MaxChaRte       uint16              `sunspec:"offset=21,len=1,sf=MaxChaRte_SF"`
-	MaxChaRte_SF    sunspec.ScaleFactor `sunspec:"offset=22,len=1"`
-	MaxDisChaRte    uint16              `sunspec:"offset=23,len=1,sf=MaxDisChaRte_SF"`
-	MaxDisChaRte_SF sunspec.ScaleFactor `sunspec:"offset=24,len=1"`
-	Pad             sunspec.Pad         `sunspec:"offset=25,len=1"`
+	DERTyp          sunspec.Enum16      `sunspec:"offset=0"`
+	WRtg            uint16              `sunspec:"offset=1,sf=WRtg_SF"`
+	WRtg_SF         sunspec.ScaleFactor `sunspec:"offset=2"`
+	VARtg           uint16              `sunspec:"offset=3,sf=VARtg_SF"`
+	VARtg_SF        sunspec.ScaleFactor `sunspec:"offset=4"`
+	VArRtgQ1        int16               `sunspec:"offset=5,sf=VArRtg_SF"`
+	VArRtgQ2        int16               `sunspec:"offset=6,sf=VArRtg_SF"`
+	VArRtgQ3        int16               `sunspec:"offset=7,sf=VArRtg_SF"`
+	VArRtgQ4        int16               `sunspec:"offset=8,sf=VArRtg_SF"`
+	VArRtg_SF       sunspec.ScaleFactor `sunspec:"offset=9"`
+	ARtg            uint16              `sunspec:"offset=10,sf=ARtg_SF"`
+	ARtg_SF         sunspec.ScaleFactor `sunspec:"offset=11"`
+	PFRtgQ1         int16               `sunspec:"offset=12,sf=PFRtg_SF"`
+	PFRtgQ2         int16               `sunspec:"offset=13,sf=PFRtg_SF"`
+	PFRtgQ3         int16               `sunspec:"offset=14,sf=PFRtg_SF"`
+	PFRtgQ4         int16               `sunspec:"offset=15,sf=PFRtg_SF"`
+	PFRtg_SF        sunspec.ScaleFactor `sunspec:"offset=16"`
+	WHRtg           uint16              `sunspec:"offset=17,sf=WHRtg_SF"`
+	WHRtg_SF        sunspec.ScaleFactor `sunspec:"offset=18"`
+	AhrRtg          uint16              `sunspec:"offset=19,sf=AhrRtg_SF"`
+	AhrRtg_SF       sunspec.ScaleFactor `sunspec:"offset=20"`
+	MaxChaRte       uint16              `sunspec:"offset=21,sf=MaxChaRte_SF"`
+	MaxChaRte_SF    sunspec.ScaleFactor `sunspec:"offset=22"`
+	MaxDisChaRte    uint16              `sunspec:"offset=23,sf=MaxDisChaRte_SF"`
+	MaxDisChaRte_SF sunspec.ScaleFactor `sunspec:"offset=24"`
+	Pad             sunspec.Pad         `sunspec:"offset=25"`
 }
 
 func (block *Block120) GetId() sunspec.ModelId {
@@ -91,32 +91,32 @@ func init() {
 				Length: 26,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: DERTyp, Offset: 0, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "DERTyp", Description: "Type of DER device. Default value is 4 to indicate PV device."},
-					{Id: WRtg, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "WRtg_SF", Units: "W", Length: 1, Mandatory: true, Label: "WRtg", Description: "Continuous power output capability of the inverter."},
-					{Id: WRtg_SF, Offset: 2, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "WRtg_SF", Description: "Scale factor"},
-					{Id: VARtg, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "VARtg_SF", Units: "VA", Length: 1, Mandatory: true, Label: "VARtg", Description: "Continuous Volt-Ampere capability of the inverter."},
-					{Id: VARtg_SF, Offset: 4, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "VARtg_SF", Description: "Scale factor"},
-					{Id: VArRtgQ1, Offset: 5, Type: typelabel.Int16, ScaleFactor: "VArRtg_SF", Units: "var", Length: 1, Mandatory: true, Label: "VArRtgQ1", Description: "Continuous VAR capability of the inverter in quadrant 1."},
-					{Id: VArRtgQ2, Offset: 6, Type: typelabel.Int16, ScaleFactor: "VArRtg_SF", Units: "var", Length: 1, Mandatory: true, Label: "VArRtgQ2", Description: "Continuous VAR capability of the inverter in quadrant 2."},
-					{Id: VArRtgQ3, Offset: 7, Type: typelabel.Int16, ScaleFactor: "VArRtg_SF", Units: "var", Length: 1, Mandatory: true, Label: "VArRtgQ3", Description: "Continuous VAR capability of the inverter in quadrant 3."},
-					{Id: VArRtgQ4, Offset: 8, Type: typelabel.Int16, ScaleFactor: "VArRtg_SF", Units: "var", Length: 1, Mandatory: true, Label: "VArRtgQ4", Description: "Continuous VAR capability of the inverter in quadrant 4."},
-					{Id: VArRtg_SF, Offset: 9, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "VArRtg_SF", Description: "Scale factor"},
-					{Id: ARtg, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "ARtg_SF", Units: "A", Length: 1, Mandatory: true, Label: "ARtg", Description: "Maximum RMS AC current level capability of the inverter."},
-					{Id: ARtg_SF, Offset: 11, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "ARtg_SF", Description: "Scale factor"},
-					{Id: PFRtgQ1, Offset: 12, Type: typelabel.Int16, ScaleFactor: "PFRtg_SF", Units: "cos()", Length: 1, Mandatory: true, Label: "PFRtgQ1", Description: "Minimum power factor capability of the inverter in quadrant 1."},
-					{Id: PFRtgQ2, Offset: 13, Type: typelabel.Int16, ScaleFactor: "PFRtg_SF", Units: "cos()", Length: 1, Mandatory: true, Label: "PFRtgQ2", Description: "Minimum power factor capability of the inverter in quadrant 2."},
-					{Id: PFRtgQ3, Offset: 14, Type: typelabel.Int16, ScaleFactor: "PFRtg_SF", Units: "cos()", Length: 1, Mandatory: true, Label: "PFRtgQ3", Description: "Minimum power factor capability of the inverter in quadrant 3."},
-					{Id: PFRtgQ4, Offset: 15, Type: typelabel.Int16, ScaleFactor: "PFRtg_SF", Units: "cos()", Length: 1, Mandatory: true, Label: "PFRtgQ4", Description: "Minimum power factor capability of the inverter in quadrant 4."},
-					{Id: PFRtg_SF, Offset: 16, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "PFRtg_SF", Description: "Scale factor"},
-					{Id: WHRtg, Offset: 17, Type: typelabel.Uint16, ScaleFactor: "WHRtg_SF", Units: "Wh", Length: 1, Label: "WHRtg", Description: "Nominal energy rating of storage device."},
-					{Id: WHRtg_SF, Offset: 18, Type: typelabel.ScaleFactor, Length: 1, Label: "WHRtg_SF", Description: "Scale factor"},
-					{Id: AhrRtg, Offset: 19, Type: typelabel.Uint16, ScaleFactor: "AhrRtg_SF", Units: "AH", Length: 1, Label: "AhrRtg", Description: "The usable capacity of the battery.  Maximum charge minus minimum charge from a technology capability perspective (Amp-hour capacity rating)."},
-					{Id: AhrRtg_SF, Offset: 20, Type: typelabel.ScaleFactor, Length: 1, Label: "AhrRtg_SF", Description: "Scale factor for amp-hour rating."},
-					{Id: MaxChaRte, Offset: 21, Type: typelabel.Uint16, ScaleFactor: "MaxChaRte_SF", Units: "W", Length: 1, Label: "MaxChaRte", Description: "Maximum rate of energy transfer into the storage device."},
-					{Id: MaxChaRte_SF, Offset: 22, Type: typelabel.ScaleFactor, Length: 1, Label: "MaxChaRte_SF", Description: "Scale factor"},
-					{Id: MaxDisChaRte, Offset: 23, Type: typelabel.Uint16, ScaleFactor: "MaxDisChaRte_SF", Units: "W", Length: 1, Label: "MaxDisChaRte", Description: "Maximum rate of energy transfer out of the storage device."},
-					{Id: MaxDisChaRte_SF, Offset: 24, Type: typelabel.ScaleFactor, Length: 1, Label: "MaxDisChaRte_SF", Description: "Scale factor"},
-					{Id: Pad, Offset: 25, Type: typelabel.Pad, Length: 1, Label: "Pad", Description: "Pad register."},
+					{Id: DERTyp, Offset: 0, Type: typelabel.Enum16, Mandatory: true, Label: "DERTyp", Description: "Type of DER device. Default value is 4 to indicate PV device."},
+					{Id: WRtg, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "WRtg_SF", Units: "W", Mandatory: true, Label: "WRtg", Description: "Continuous power output capability of the inverter."},
+					{Id: WRtg_SF, Offset: 2, Type: typelabel.ScaleFactor, Mandatory: true, Label: "WRtg_SF", Description: "Scale factor"},
+					{Id: VARtg, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "VARtg_SF", Units: "VA", Mandatory: true, Label: "VARtg", Description: "Continuous Volt-Ampere capability of the inverter."},
+					{Id: VARtg_SF, Offset: 4, Type: typelabel.ScaleFactor, Mandatory: true, Label: "VARtg_SF", Description: "Scale factor"},
+					{Id: VArRtgQ1, Offset: 5, Type: typelabel.Int16, ScaleFactor: "VArRtg_SF", Units: "var", Mandatory: true, Label: "VArRtgQ1", Description: "Continuous VAR capability of the inverter in quadrant 1."},
+					{Id: VArRtgQ2, Offset: 6, Type: typelabel.Int16, ScaleFactor: "VArRtg_SF", Units: "var", Mandatory: true, Label: "VArRtgQ2", Description: "Continuous VAR capability of the inverter in quadrant 2."},
+					{Id: VArRtgQ3, Offset: 7, Type: typelabel.Int16, ScaleFactor: "VArRtg_SF", Units: "var", Mandatory: true, Label: "VArRtgQ3", Description: "Continuous VAR capability of the inverter in quadrant 3."},
+					{Id: VArRtgQ4, Offset: 8, Type: typelabel.Int16, ScaleFactor: "VArRtg_SF", Units: "var", Mandatory: true, Label: "VArRtgQ4", Description: "Continuous VAR capability of the inverter in quadrant 4."},
+					{Id: VArRtg_SF, Offset: 9, Type: typelabel.ScaleFactor, Mandatory: true, Label: "VArRtg_SF", Description: "Scale factor"},
+					{Id: ARtg, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "ARtg_SF", Units: "A", Mandatory: true, Label: "ARtg", Description: "Maximum RMS AC current level capability of the inverter."},
+					{Id: ARtg_SF, Offset: 11, Type: typelabel.ScaleFactor, Mandatory: true, Label: "ARtg_SF", Description: "Scale factor"},
+					{Id: PFRtgQ1, Offset: 12, Type: typelabel.Int16, ScaleFactor: "PFRtg_SF", Units: "cos()", Mandatory: true, Label: "PFRtgQ1", Description: "Minimum power factor capability of the inverter in quadrant 1."},
+					{Id: PFRtgQ2, Offset: 13, Type: typelabel.Int16, ScaleFactor: "PFRtg_SF", Units: "cos()", Mandatory: true, Label: "PFRtgQ2", Description: "Minimum power factor capability of the inverter in quadrant 2."},
+					{Id: PFRtgQ3, Offset: 14, Type: typelabel.Int16, ScaleFactor: "PFRtg_SF", Units: "cos()", Mandatory: true, Label: "PFRtgQ3", Description: "Minimum power factor capability of the inverter in quadrant 3."},
+					{Id: PFRtgQ4, Offset: 15, Type: typelabel.Int16, ScaleFactor: "PFRtg_SF", Units: "cos()", Mandatory: true, Label: "PFRtgQ4", Description: "Minimum power factor capability of the inverter in quadrant 4."},
+					{Id: PFRtg_SF, Offset: 16, Type: typelabel.ScaleFactor, Mandatory: true, Label: "PFRtg_SF", Description: "Scale factor"},
+					{Id: WHRtg, Offset: 17, Type: typelabel.Uint16, ScaleFactor: "WHRtg_SF", Units: "Wh", Label: "WHRtg", Description: "Nominal energy rating of storage device."},
+					{Id: WHRtg_SF, Offset: 18, Type: typelabel.ScaleFactor, Label: "WHRtg_SF", Description: "Scale factor"},
+					{Id: AhrRtg, Offset: 19, Type: typelabel.Uint16, ScaleFactor: "AhrRtg_SF", Units: "AH", Label: "AhrRtg", Description: "The usable capacity of the battery.  Maximum charge minus minimum charge from a technology capability perspective (Amp-hour capacity rating)."},
+					{Id: AhrRtg_SF, Offset: 20, Type: typelabel.ScaleFactor, Label: "AhrRtg_SF", Description: "Scale factor for amp-hour rating."},
+					{Id: MaxChaRte, Offset: 21, Type: typelabel.Uint16, ScaleFactor: "MaxChaRte_SF", Units: "W", Label: "MaxChaRte", Description: "Maximum rate of energy transfer into the storage device."},
+					{Id: MaxChaRte_SF, Offset: 22, Type: typelabel.ScaleFactor, Label: "MaxChaRte_SF", Description: "Scale factor"},
+					{Id: MaxDisChaRte, Offset: 23, Type: typelabel.Uint16, ScaleFactor: "MaxDisChaRte_SF", Units: "W", Label: "MaxDisChaRte", Description: "Maximum rate of energy transfer out of the storage device."},
+					{Id: MaxDisChaRte_SF, Offset: 24, Type: typelabel.ScaleFactor, Label: "MaxDisChaRte_SF", Description: "Scale factor"},
+					{Id: Pad, Offset: 25, Type: typelabel.Pad, Label: "Pad", Description: "Pad register."},
 				},
 			},
 		}})

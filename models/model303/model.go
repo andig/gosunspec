@@ -22,7 +22,7 @@ const (
 )
 
 type Block303Repeat struct {
-	TmpBOM int16 `sunspec:"offset=0,len=1,sf=-1"`
+	TmpBOM int16 `sunspec:"offset=0,sf=-1"`
 }
 
 type Block303 struct {
@@ -45,7 +45,7 @@ func init() {
 				Length: 1,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: TmpBOM, Offset: 0, Type: typelabel.Int16, ScaleFactor: "-1", Units: "C", Length: 1, Mandatory: true, Label: "Temp", Description: "Back of module temperature measurement"},
+					{Id: TmpBOM, Offset: 0, Type: typelabel.Int16, ScaleFactor: "-1", Units: "C", Mandatory: true, Label: "Temp", Description: "Back of module temperature measurement"},
 				},
 			},
 		}})

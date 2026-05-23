@@ -23,11 +23,11 @@ const (
 )
 
 type Block809Repeat struct {
-	CellTBD uint16 `sunspec:"offset=0,len=1"`
+	CellTBD uint16 `sunspec:"offset=0"`
 }
 
 type Block809 struct {
-	StackTBD uint16 `sunspec:"offset=0,len=1"`
+	StackTBD uint16 `sunspec:"offset=0"`
 
 	Repeats []Block809Repeat
 }
@@ -48,14 +48,14 @@ func init() {
 				Length: 1,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: StackTBD, Offset: 0, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Stack Points To Be Determined", Description: ""},
+					{Id: StackTBD, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Stack Points To Be Determined", Description: ""},
 				},
 			},
 			{Name: "cell",
 				Length: 1,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: CellTBD, Offset: 0, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Cell Points To Be Determined", Description: ""},
+					{Id: CellTBD, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Cell Points To Be Determined", Description: ""},
 				},
 			},
 		}})

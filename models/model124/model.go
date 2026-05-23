@@ -45,30 +45,30 @@ const (
 )
 
 type Block124 struct {
-	WChaMax           uint16              `sunspec:"offset=0,len=1,sf=WChaMax_SF,access=rw"`
-	WChaGra           uint16              `sunspec:"offset=1,len=1,sf=WChaDisChaGra_SF,access=rw"`
-	WDisChaGra        uint16              `sunspec:"offset=2,len=1,sf=WChaDisChaGra_SF,access=rw"`
-	StorCtl_Mod       sunspec.Bitfield16  `sunspec:"offset=3,len=1,access=rw"`
-	VAChaMax          uint16              `sunspec:"offset=4,len=1,sf=VAChaMax_SF,access=rw"`
-	MinRsvPct         uint16              `sunspec:"offset=5,len=1,sf=MinRsvPct_SF,access=rw"`
-	ChaState          uint16              `sunspec:"offset=6,len=1,sf=ChaState_SF"`
-	StorAval          uint16              `sunspec:"offset=7,len=1,sf=StorAval_SF"`
-	InBatV            uint16              `sunspec:"offset=8,len=1,sf=InBatV_SF"`
-	ChaSt             sunspec.Enum16      `sunspec:"offset=9,len=1"`
-	OutWRte           int16               `sunspec:"offset=10,len=1,sf=InOutWRte_SF,access=rw"`
-	InWRte            int16               `sunspec:"offset=11,len=1,sf=InOutWRte_SF,access=rw"`
-	InOutWRte_WinTms  uint16              `sunspec:"offset=12,len=1,access=rw"`
-	InOutWRte_RvrtTms uint16              `sunspec:"offset=13,len=1,access=rw"`
-	InOutWRte_RmpTms  uint16              `sunspec:"offset=14,len=1,access=rw"`
-	ChaGriSet         sunspec.Enum16      `sunspec:"offset=15,len=1,access=rw"`
-	WChaMax_SF        sunspec.ScaleFactor `sunspec:"offset=16,len=1"`
-	WChaDisChaGra_SF  sunspec.ScaleFactor `sunspec:"offset=17,len=1"`
-	VAChaMax_SF       sunspec.ScaleFactor `sunspec:"offset=18,len=1"`
-	MinRsvPct_SF      sunspec.ScaleFactor `sunspec:"offset=19,len=1"`
-	ChaState_SF       sunspec.ScaleFactor `sunspec:"offset=20,len=1"`
-	StorAval_SF       sunspec.ScaleFactor `sunspec:"offset=21,len=1"`
-	InBatV_SF         sunspec.ScaleFactor `sunspec:"offset=22,len=1"`
-	InOutWRte_SF      sunspec.ScaleFactor `sunspec:"offset=23,len=1"`
+	WChaMax           uint16              `sunspec:"offset=0,sf=WChaMax_SF,access=rw"`
+	WChaGra           uint16              `sunspec:"offset=1,sf=WChaDisChaGra_SF,access=rw"`
+	WDisChaGra        uint16              `sunspec:"offset=2,sf=WChaDisChaGra_SF,access=rw"`
+	StorCtl_Mod       sunspec.Bitfield16  `sunspec:"offset=3,access=rw"`
+	VAChaMax          uint16              `sunspec:"offset=4,sf=VAChaMax_SF,access=rw"`
+	MinRsvPct         uint16              `sunspec:"offset=5,sf=MinRsvPct_SF,access=rw"`
+	ChaState          uint16              `sunspec:"offset=6,sf=ChaState_SF"`
+	StorAval          uint16              `sunspec:"offset=7,sf=StorAval_SF"`
+	InBatV            uint16              `sunspec:"offset=8,sf=InBatV_SF"`
+	ChaSt             sunspec.Enum16      `sunspec:"offset=9"`
+	OutWRte           int16               `sunspec:"offset=10,sf=InOutWRte_SF,access=rw"`
+	InWRte            int16               `sunspec:"offset=11,sf=InOutWRte_SF,access=rw"`
+	InOutWRte_WinTms  uint16              `sunspec:"offset=12,access=rw"`
+	InOutWRte_RvrtTms uint16              `sunspec:"offset=13,access=rw"`
+	InOutWRte_RmpTms  uint16              `sunspec:"offset=14,access=rw"`
+	ChaGriSet         sunspec.Enum16      `sunspec:"offset=15,access=rw"`
+	WChaMax_SF        sunspec.ScaleFactor `sunspec:"offset=16"`
+	WChaDisChaGra_SF  sunspec.ScaleFactor `sunspec:"offset=17"`
+	VAChaMax_SF       sunspec.ScaleFactor `sunspec:"offset=18"`
+	MinRsvPct_SF      sunspec.ScaleFactor `sunspec:"offset=19"`
+	ChaState_SF       sunspec.ScaleFactor `sunspec:"offset=20"`
+	StorAval_SF       sunspec.ScaleFactor `sunspec:"offset=21"`
+	InBatV_SF         sunspec.ScaleFactor `sunspec:"offset=22"`
+	InOutWRte_SF      sunspec.ScaleFactor `sunspec:"offset=23"`
 }
 
 func (block *Block124) GetId() sunspec.ModelId {
@@ -87,30 +87,30 @@ func init() {
 				Length: 24,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: WChaMax, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "WChaMax_SF", Units: "W", Access: "rw", Length: 1, Mandatory: true, Label: "WChaMax", Description: "Setpoint for maximum charge."},
-					{Id: WChaGra, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaGra_SF", Units: "% WChaMax/sec", Access: "rw", Length: 1, Mandatory: true, Label: "WChaGra", Description: "Setpoint for maximum charging rate. Default is MaxChaRte."},
-					{Id: WDisChaGra, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaGra_SF", Units: "% WChaMax/sec", Access: "rw", Length: 1, Mandatory: true, Label: "WDisChaGra", Description: "Setpoint for maximum discharge rate. Default is MaxDisChaRte."},
-					{Id: StorCtl_Mod, Offset: 3, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "StorCtl_Mod", Description: "Activate hold/discharge/charge storage control mode. Bitfield value."},
-					{Id: VAChaMax, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "VAChaMax_SF", Units: "VA", Access: "rw", Length: 1, Label: "VAChaMax", Description: "Setpoint for maximum charging VA."},
-					{Id: MinRsvPct, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "MinRsvPct_SF", Units: "% WChaMax", Access: "rw", Length: 1, Label: "MinRsvPct", Description: "Setpoint for minimum reserve for storage as a percentage of the nominal maximum storage."},
-					{Id: ChaState, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "ChaState_SF", Units: "% AhrRtg", Length: 1, Label: "ChaState", Description: "Currently available energy as a percent of the capacity rating."},
-					{Id: StorAval, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "StorAval_SF", Units: "AH", Length: 1, Label: "StorAval", Description: "State of charge (ChaState) minus storage reserve (MinRsvPct) times capacity rating (AhrRtg)."},
-					{Id: InBatV, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "InBatV_SF", Units: "V", Length: 1, Label: "InBatV", Description: "Internal battery voltage."},
-					{Id: ChaSt, Offset: 9, Type: typelabel.Enum16, Length: 1, Label: "ChaSt", Description: "Charge status of storage device. Enumerated value."},
-					{Id: OutWRte, Offset: 10, Type: typelabel.Int16, ScaleFactor: "InOutWRte_SF", Units: "% WDisChaMax", Access: "rw", Length: 1, Label: "OutWRte", Description: "Percent of max discharge rate."},
-					{Id: InWRte, Offset: 11, Type: typelabel.Int16, ScaleFactor: "InOutWRte_SF", Units: " % WChaMax", Access: "rw", Length: 1, Label: "InWRte", Description: "Percent of max charging rate."},
-					{Id: InOutWRte_WinTms, Offset: 12, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "InOutWRte_WinTms", Description: "Time window for charge/discharge rate change."},
-					{Id: InOutWRte_RvrtTms, Offset: 13, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "InOutWRte_RvrtTms", Description: "Timeout period for charge/discharge rate."},
-					{Id: InOutWRte_RmpTms, Offset: 14, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "InOutWRte_RmpTms", Description: "Ramp time for moving from current setpoint to new setpoint."},
-					{Id: ChaGriSet, Offset: 15, Type: typelabel.Enum16, Access: "rw", Length: 1},
-					{Id: WChaMax_SF, Offset: 16, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "WChaMax_SF", Description: "Scale factor for maximum charge."},
-					{Id: WChaDisChaGra_SF, Offset: 17, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "WChaDisChaGra_SF", Description: "Scale factor for maximum charge and discharge rate."},
-					{Id: VAChaMax_SF, Offset: 18, Type: typelabel.ScaleFactor, Length: 1, Label: "VAChaMax_SF", Description: "Scale factor for maximum charging VA."},
-					{Id: MinRsvPct_SF, Offset: 19, Type: typelabel.ScaleFactor, Length: 1, Label: "MinRsvPct_SF", Description: "Scale factor for minimum reserve percentage."},
-					{Id: ChaState_SF, Offset: 20, Type: typelabel.ScaleFactor, Length: 1, Label: "ChaState_SF", Description: "Scale factor for available energy percent."},
-					{Id: StorAval_SF, Offset: 21, Type: typelabel.ScaleFactor, Length: 1, Label: "StorAval_SF", Description: "Scale factor for state of charge."},
-					{Id: InBatV_SF, Offset: 22, Type: typelabel.ScaleFactor, Length: 1, Label: "InBatV_SF", Description: "Scale factor for battery voltage."},
-					{Id: InOutWRte_SF, Offset: 23, Type: typelabel.ScaleFactor, Length: 1, Label: "InOutWRte_SF", Description: "Scale factor for percent charge/discharge rate."},
+					{Id: WChaMax, Offset: 0, Type: typelabel.Uint16, ScaleFactor: "WChaMax_SF", Units: "W", Access: "rw", Mandatory: true, Label: "WChaMax", Description: "Setpoint for maximum charge."},
+					{Id: WChaGra, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaGra_SF", Units: "% WChaMax/sec", Access: "rw", Mandatory: true, Label: "WChaGra", Description: "Setpoint for maximum charging rate. Default is MaxChaRte."},
+					{Id: WDisChaGra, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "WChaDisChaGra_SF", Units: "% WChaMax/sec", Access: "rw", Mandatory: true, Label: "WDisChaGra", Description: "Setpoint for maximum discharge rate. Default is MaxDisChaRte."},
+					{Id: StorCtl_Mod, Offset: 3, Type: typelabel.Bitfield16, Access: "rw", Mandatory: true, Label: "StorCtl_Mod", Description: "Activate hold/discharge/charge storage control mode. Bitfield value."},
+					{Id: VAChaMax, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "VAChaMax_SF", Units: "VA", Access: "rw", Label: "VAChaMax", Description: "Setpoint for maximum charging VA."},
+					{Id: MinRsvPct, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "MinRsvPct_SF", Units: "% WChaMax", Access: "rw", Label: "MinRsvPct", Description: "Setpoint for minimum reserve for storage as a percentage of the nominal maximum storage."},
+					{Id: ChaState, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "ChaState_SF", Units: "% AhrRtg", Label: "ChaState", Description: "Currently available energy as a percent of the capacity rating."},
+					{Id: StorAval, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "StorAval_SF", Units: "AH", Label: "StorAval", Description: "State of charge (ChaState) minus storage reserve (MinRsvPct) times capacity rating (AhrRtg)."},
+					{Id: InBatV, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "InBatV_SF", Units: "V", Label: "InBatV", Description: "Internal battery voltage."},
+					{Id: ChaSt, Offset: 9, Type: typelabel.Enum16, Label: "ChaSt", Description: "Charge status of storage device. Enumerated value."},
+					{Id: OutWRte, Offset: 10, Type: typelabel.Int16, ScaleFactor: "InOutWRte_SF", Units: "% WDisChaMax", Access: "rw", Label: "OutWRte", Description: "Percent of max discharge rate."},
+					{Id: InWRte, Offset: 11, Type: typelabel.Int16, ScaleFactor: "InOutWRte_SF", Units: " % WChaMax", Access: "rw", Label: "InWRte", Description: "Percent of max charging rate."},
+					{Id: InOutWRte_WinTms, Offset: 12, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "InOutWRte_WinTms", Description: "Time window for charge/discharge rate change."},
+					{Id: InOutWRte_RvrtTms, Offset: 13, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "InOutWRte_RvrtTms", Description: "Timeout period for charge/discharge rate."},
+					{Id: InOutWRte_RmpTms, Offset: 14, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "InOutWRte_RmpTms", Description: "Ramp time for moving from current setpoint to new setpoint."},
+					{Id: ChaGriSet, Offset: 15, Type: typelabel.Enum16, Access: "rw"},
+					{Id: WChaMax_SF, Offset: 16, Type: typelabel.ScaleFactor, Mandatory: true, Label: "WChaMax_SF", Description: "Scale factor for maximum charge."},
+					{Id: WChaDisChaGra_SF, Offset: 17, Type: typelabel.ScaleFactor, Mandatory: true, Label: "WChaDisChaGra_SF", Description: "Scale factor for maximum charge and discharge rate."},
+					{Id: VAChaMax_SF, Offset: 18, Type: typelabel.ScaleFactor, Label: "VAChaMax_SF", Description: "Scale factor for maximum charging VA."},
+					{Id: MinRsvPct_SF, Offset: 19, Type: typelabel.ScaleFactor, Label: "MinRsvPct_SF", Description: "Scale factor for minimum reserve percentage."},
+					{Id: ChaState_SF, Offset: 20, Type: typelabel.ScaleFactor, Label: "ChaState_SF", Description: "Scale factor for available energy percent."},
+					{Id: StorAval_SF, Offset: 21, Type: typelabel.ScaleFactor, Label: "StorAval_SF", Description: "Scale factor for state of charge."},
+					{Id: InBatV_SF, Offset: 22, Type: typelabel.ScaleFactor, Label: "InBatV_SF", Description: "Scale factor for battery voltage."},
+					{Id: InOutWRte_SF, Offset: 23, Type: typelabel.ScaleFactor, Label: "InOutWRte_SF", Description: "Scale factor for percent charge/discharge rate."},
 				},
 			},
 		}})

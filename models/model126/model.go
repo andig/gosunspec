@@ -77,66 +77,66 @@ const (
 )
 
 type Block126Repeat struct {
-	ActPt     uint16         `sunspec:"offset=0,len=1,access=rw"`
-	DeptRef   sunspec.Enum16 `sunspec:"offset=1,len=1,access=rw"`
-	V1        uint16         `sunspec:"offset=2,len=1,sf=V_SF,access=rw"`
-	VAr1      int16          `sunspec:"offset=3,len=1,sf=DeptRef_SF,access=rw"`
-	V2        uint16         `sunspec:"offset=4,len=1,sf=V_SF,access=rw"`
-	VAr2      int16          `sunspec:"offset=5,len=1,sf=DeptRef_SF,access=rw"`
-	V3        uint16         `sunspec:"offset=6,len=1,sf=V_SF,access=rw"`
-	VAr3      int16          `sunspec:"offset=7,len=1,sf=DeptRef_SF,access=rw"`
-	V4        uint16         `sunspec:"offset=8,len=1,sf=V_SF,access=rw"`
-	VAr4      int16          `sunspec:"offset=9,len=1,sf=DeptRef_SF,access=rw"`
-	V5        uint16         `sunspec:"offset=10,len=1,sf=V_SF,access=rw"`
-	VAr5      int16          `sunspec:"offset=11,len=1,sf=DeptRef_SF,access=rw"`
-	V6        uint16         `sunspec:"offset=12,len=1,sf=V_SF,access=rw"`
-	VAr6      int16          `sunspec:"offset=13,len=1,sf=DeptRef_SF,access=rw"`
-	V7        uint16         `sunspec:"offset=14,len=1,sf=V_SF,access=rw"`
-	VAr7      int16          `sunspec:"offset=15,len=1,sf=DeptRef_SF,access=rw"`
-	V8        uint16         `sunspec:"offset=16,len=1,sf=V_SF,access=rw"`
-	VAr8      int16          `sunspec:"offset=17,len=1,sf=DeptRef_SF,access=rw"`
-	V9        uint16         `sunspec:"offset=18,len=1,sf=V_SF,access=rw"`
-	VAr9      int16          `sunspec:"offset=19,len=1,sf=DeptRef_SF,access=rw"`
-	V10       uint16         `sunspec:"offset=20,len=1,sf=V_SF,access=rw"`
-	VAr10     int16          `sunspec:"offset=21,len=1,sf=DeptRef_SF,access=rw"`
-	V11       uint16         `sunspec:"offset=22,len=1,sf=V_SF,access=rw"`
-	VAr11     int16          `sunspec:"offset=23,len=1,sf=DeptRef_SF,access=rw"`
-	V12       uint16         `sunspec:"offset=24,len=1,sf=V_SF,access=rw"`
-	VAr12     int16          `sunspec:"offset=25,len=1,sf=DeptRef_SF,access=rw"`
-	V13       uint16         `sunspec:"offset=26,len=1,sf=V_SF,access=rw"`
-	VAr13     int16          `sunspec:"offset=27,len=1,sf=DeptRef_SF,access=rw"`
-	V14       uint16         `sunspec:"offset=28,len=1,sf=V_SF,access=rw"`
-	VAr14     int16          `sunspec:"offset=29,len=1,sf=DeptRef_SF,access=rw"`
-	V15       uint16         `sunspec:"offset=30,len=1,sf=V_SF,access=rw"`
-	VAr15     int16          `sunspec:"offset=31,len=1,sf=DeptRef_SF,access=rw"`
-	V16       uint16         `sunspec:"offset=32,len=1,sf=V_SF,access=rw"`
-	VAr16     int16          `sunspec:"offset=33,len=1,sf=DeptRef_SF,access=rw"`
-	V17       uint16         `sunspec:"offset=34,len=1,sf=V_SF,access=rw"`
-	VAr17     int16          `sunspec:"offset=35,len=1,sf=DeptRef_SF,access=rw"`
-	V18       uint16         `sunspec:"offset=36,len=1,sf=V_SF,access=rw"`
-	VAr18     int16          `sunspec:"offset=37,len=1,sf=DeptRef_SF,access=rw"`
-	V19       uint16         `sunspec:"offset=38,len=1,sf=V_SF,access=rw"`
-	VAr19     int16          `sunspec:"offset=39,len=1,sf=DeptRef_SF,access=rw"`
-	V20       uint16         `sunspec:"offset=40,len=1,sf=V_SF,access=rw"`
-	VAr20     int16          `sunspec:"offset=41,len=1,sf=DeptRef_SF,access=rw"`
+	ActPt     uint16         `sunspec:"offset=0,access=rw"`
+	DeptRef   sunspec.Enum16 `sunspec:"offset=1,access=rw"`
+	V1        uint16         `sunspec:"offset=2,sf=V_SF,access=rw"`
+	VAr1      int16          `sunspec:"offset=3,sf=DeptRef_SF,access=rw"`
+	V2        uint16         `sunspec:"offset=4,sf=V_SF,access=rw"`
+	VAr2      int16          `sunspec:"offset=5,sf=DeptRef_SF,access=rw"`
+	V3        uint16         `sunspec:"offset=6,sf=V_SF,access=rw"`
+	VAr3      int16          `sunspec:"offset=7,sf=DeptRef_SF,access=rw"`
+	V4        uint16         `sunspec:"offset=8,sf=V_SF,access=rw"`
+	VAr4      int16          `sunspec:"offset=9,sf=DeptRef_SF,access=rw"`
+	V5        uint16         `sunspec:"offset=10,sf=V_SF,access=rw"`
+	VAr5      int16          `sunspec:"offset=11,sf=DeptRef_SF,access=rw"`
+	V6        uint16         `sunspec:"offset=12,sf=V_SF,access=rw"`
+	VAr6      int16          `sunspec:"offset=13,sf=DeptRef_SF,access=rw"`
+	V7        uint16         `sunspec:"offset=14,sf=V_SF,access=rw"`
+	VAr7      int16          `sunspec:"offset=15,sf=DeptRef_SF,access=rw"`
+	V8        uint16         `sunspec:"offset=16,sf=V_SF,access=rw"`
+	VAr8      int16          `sunspec:"offset=17,sf=DeptRef_SF,access=rw"`
+	V9        uint16         `sunspec:"offset=18,sf=V_SF,access=rw"`
+	VAr9      int16          `sunspec:"offset=19,sf=DeptRef_SF,access=rw"`
+	V10       uint16         `sunspec:"offset=20,sf=V_SF,access=rw"`
+	VAr10     int16          `sunspec:"offset=21,sf=DeptRef_SF,access=rw"`
+	V11       uint16         `sunspec:"offset=22,sf=V_SF,access=rw"`
+	VAr11     int16          `sunspec:"offset=23,sf=DeptRef_SF,access=rw"`
+	V12       uint16         `sunspec:"offset=24,sf=V_SF,access=rw"`
+	VAr12     int16          `sunspec:"offset=25,sf=DeptRef_SF,access=rw"`
+	V13       uint16         `sunspec:"offset=26,sf=V_SF,access=rw"`
+	VAr13     int16          `sunspec:"offset=27,sf=DeptRef_SF,access=rw"`
+	V14       uint16         `sunspec:"offset=28,sf=V_SF,access=rw"`
+	VAr14     int16          `sunspec:"offset=29,sf=DeptRef_SF,access=rw"`
+	V15       uint16         `sunspec:"offset=30,sf=V_SF,access=rw"`
+	VAr15     int16          `sunspec:"offset=31,sf=DeptRef_SF,access=rw"`
+	V16       uint16         `sunspec:"offset=32,sf=V_SF,access=rw"`
+	VAr16     int16          `sunspec:"offset=33,sf=DeptRef_SF,access=rw"`
+	V17       uint16         `sunspec:"offset=34,sf=V_SF,access=rw"`
+	VAr17     int16          `sunspec:"offset=35,sf=DeptRef_SF,access=rw"`
+	V18       uint16         `sunspec:"offset=36,sf=V_SF,access=rw"`
+	VAr18     int16          `sunspec:"offset=37,sf=DeptRef_SF,access=rw"`
+	V19       uint16         `sunspec:"offset=38,sf=V_SF,access=rw"`
+	VAr19     int16          `sunspec:"offset=39,sf=DeptRef_SF,access=rw"`
+	V20       uint16         `sunspec:"offset=40,sf=V_SF,access=rw"`
+	VAr20     int16          `sunspec:"offset=41,sf=DeptRef_SF,access=rw"`
 	CrvNam    string         `sunspec:"offset=42,len=8,access=rw"`
-	RmpTms    uint16         `sunspec:"offset=50,len=1,access=rw"`
-	RmpDecTmm uint16         `sunspec:"offset=51,len=1,sf=RmpIncDec_SF,access=rw"`
-	RmpIncTmm uint16         `sunspec:"offset=52,len=1,sf=RmpIncDec_SF,access=rw"`
-	ReadOnly  sunspec.Enum16 `sunspec:"offset=53,len=1"`
+	RmpTms    uint16         `sunspec:"offset=50,access=rw"`
+	RmpDecTmm uint16         `sunspec:"offset=51,sf=RmpIncDec_SF,access=rw"`
+	RmpIncTmm uint16         `sunspec:"offset=52,sf=RmpIncDec_SF,access=rw"`
+	ReadOnly  sunspec.Enum16 `sunspec:"offset=53"`
 }
 
 type Block126 struct {
-	ActCrv       uint16              `sunspec:"offset=0,len=1,access=rw"`
-	ModEna       sunspec.Bitfield16  `sunspec:"offset=1,len=1,access=rw"`
-	WinTms       uint16              `sunspec:"offset=2,len=1,access=rw"`
-	RvrtTms      uint16              `sunspec:"offset=3,len=1,access=rw"`
-	RmpTms       uint16              `sunspec:"offset=4,len=1,access=rw"`
-	NCrv         uint16              `sunspec:"offset=5,len=1"`
-	NPt          uint16              `sunspec:"offset=6,len=1"`
-	V_SF         sunspec.ScaleFactor `sunspec:"offset=7,len=1"`
-	DeptRef_SF   sunspec.ScaleFactor `sunspec:"offset=8,len=1"`
-	RmpIncDec_SF sunspec.ScaleFactor `sunspec:"offset=9,len=1"`
+	ActCrv       uint16              `sunspec:"offset=0,access=rw"`
+	ModEna       sunspec.Bitfield16  `sunspec:"offset=1,access=rw"`
+	WinTms       uint16              `sunspec:"offset=2,access=rw"`
+	RvrtTms      uint16              `sunspec:"offset=3,access=rw"`
+	RmpTms       uint16              `sunspec:"offset=4,access=rw"`
+	NCrv         uint16              `sunspec:"offset=5"`
+	NPt          uint16              `sunspec:"offset=6"`
+	V_SF         sunspec.ScaleFactor `sunspec:"offset=7"`
+	DeptRef_SF   sunspec.ScaleFactor `sunspec:"offset=8"`
+	RmpIncDec_SF sunspec.ScaleFactor `sunspec:"offset=9"`
 
 	Repeats []Block126Repeat
 }
@@ -157,69 +157,69 @@ func init() {
 				Length: 10,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
-					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "Is Volt-VAR control active."},
-					{Id: WinTms, Offset: 2, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "WinTms", Description: "Time window for volt-VAR change."},
-					{Id: RvrtTms, Offset: 3, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RvrtTms", Description: "Timeout period for volt-VAR curve selection."},
-					{Id: RmpTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "The time of the PT1 in seconds (time to accomplish a change of 95%)."},
-					{Id: NCrv, Offset: 5, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "NCrv", Description: "Number of curves supported (recommend 4)."},
-					{Id: NPt, Offset: 6, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "NPt", Description: "Number of curve points supported (maximum of 20)."},
-					{Id: V_SF, Offset: 7, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "V_SF", Description: "Scale factor for percent VRef."},
-					{Id: DeptRef_SF, Offset: 8, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "DeptRef_SF", Description: "scale factor for dependent variable."},
-					{Id: RmpIncDec_SF, Offset: 9, Type: typelabel.ScaleFactor, Length: 1},
+					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
+					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Mandatory: true, Label: "ModEna", Description: "Is Volt-VAR control active."},
+					{Id: WinTms, Offset: 2, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "WinTms", Description: "Time window for volt-VAR change."},
+					{Id: RvrtTms, Offset: 3, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RvrtTms", Description: "Timeout period for volt-VAR curve selection."},
+					{Id: RmpTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RmpTms", Description: "The time of the PT1 in seconds (time to accomplish a change of 95%)."},
+					{Id: NCrv, Offset: 5, Type: typelabel.Uint16, Mandatory: true, Label: "NCrv", Description: "Number of curves supported (recommend 4)."},
+					{Id: NPt, Offset: 6, Type: typelabel.Uint16, Mandatory: true, Label: "NPt", Description: "Number of curve points supported (maximum of 20)."},
+					{Id: V_SF, Offset: 7, Type: typelabel.ScaleFactor, Mandatory: true, Label: "V_SF", Description: "Scale factor for percent VRef."},
+					{Id: DeptRef_SF, Offset: 8, Type: typelabel.ScaleFactor, Mandatory: true, Label: "DeptRef_SF", Description: "scale factor for dependent variable."},
+					{Id: RmpIncDec_SF, Offset: 9, Type: typelabel.ScaleFactor},
 				},
 			},
 			{Name: "curve",
 				Length: 54,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: ActPt, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActPt", Description: "Number of active points in array."},
-					{Id: DeptRef, Offset: 1, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "DeptRef", Description: "Meaning of dependent variable: 1=%WMax 2=%VArMax 3=%VArAval."},
-					{Id: V1, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Mandatory: true, Label: "V1", Description: "Point 1 Volts."},
-					{Id: VAr1, Offset: 3, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Mandatory: true, Label: "VAr1", Description: "Point 1 VARs."},
-					{Id: V2, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V2", Description: "Point 2 Volts."},
-					{Id: VAr2, Offset: 5, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr2", Description: "Point 2 VARs."},
-					{Id: V3, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V3", Description: "Point 2 Volts."},
-					{Id: VAr3, Offset: 7, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr3", Description: "Point 3 VARs."},
-					{Id: V4, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V4", Description: "Point 4 Volts."},
-					{Id: VAr4, Offset: 9, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr4", Description: "Point 4 VARs."},
-					{Id: V5, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V5", Description: "Point 5 Volts."},
-					{Id: VAr5, Offset: 11, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr5", Description: "Point 5 VARs."},
-					{Id: V6, Offset: 12, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V6", Description: "Point 6 Volts."},
-					{Id: VAr6, Offset: 13, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr6", Description: "Point 6 VARs."},
-					{Id: V7, Offset: 14, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V7", Description: "Point 7 Volts."},
-					{Id: VAr7, Offset: 15, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr7", Description: "Point 7 VARs."},
-					{Id: V8, Offset: 16, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V8", Description: "Point 8 Volts."},
-					{Id: VAr8, Offset: 17, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr8", Description: "Point 8 VARs."},
-					{Id: V9, Offset: 18, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V9", Description: "Point 9 Volts."},
-					{Id: VAr9, Offset: 19, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr9", Description: "Point 9 VARs."},
-					{Id: V10, Offset: 20, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V10", Description: "Point 10 Volts."},
-					{Id: VAr10, Offset: 21, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr10", Description: "Point 10 VARs."},
-					{Id: V11, Offset: 22, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V11", Description: "Point 11 Volts."},
-					{Id: VAr11, Offset: 23, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr11", Description: "Point 11 VARs."},
-					{Id: V12, Offset: 24, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V12", Description: "Point 12 Volts."},
-					{Id: VAr12, Offset: 25, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr12", Description: "Point 12 VARs."},
-					{Id: V13, Offset: 26, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V13", Description: "Point 13 Volts."},
-					{Id: VAr13, Offset: 27, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr13", Description: "Point 13 VARs."},
-					{Id: V14, Offset: 28, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V14", Description: "Point 14 Volts."},
-					{Id: VAr14, Offset: 29, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr14", Description: "Point 14 VARs."},
-					{Id: V15, Offset: 30, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V15", Description: "Point 15 Volts."},
-					{Id: VAr15, Offset: 31, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr15", Description: "Point 15 VARs."},
-					{Id: V16, Offset: 32, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V16", Description: "Point 16 Volts."},
-					{Id: VAr16, Offset: 33, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr16", Description: "Point 16 VARs."},
-					{Id: V17, Offset: 34, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V17", Description: "Point 17 Volts."},
-					{Id: VAr17, Offset: 35, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr17", Description: "Point 17 VARs."},
-					{Id: V18, Offset: 36, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V18", Description: "Point 18 Volts."},
-					{Id: VAr18, Offset: 37, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr18", Description: "Point 18 VARs."},
-					{Id: V19, Offset: 38, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V19", Description: "Point 19 Volts."},
-					{Id: VAr19, Offset: 39, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr19", Description: "Point 19 VARs."},
-					{Id: V20, Offset: 40, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V20", Description: "Point 20 Volts."},
-					{Id: VAr20, Offset: 41, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Length: 1, Label: "VAr20", Description: "Point 20 VARs."},
+					{Id: ActPt, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "ActPt", Description: "Number of active points in array."},
+					{Id: DeptRef, Offset: 1, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "DeptRef", Description: "Meaning of dependent variable: 1=%WMax 2=%VArMax 3=%VArAval."},
+					{Id: V1, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Mandatory: true, Label: "V1", Description: "Point 1 Volts."},
+					{Id: VAr1, Offset: 3, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Mandatory: true, Label: "VAr1", Description: "Point 1 VARs."},
+					{Id: V2, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V2", Description: "Point 2 Volts."},
+					{Id: VAr2, Offset: 5, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr2", Description: "Point 2 VARs."},
+					{Id: V3, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V3", Description: "Point 2 Volts."},
+					{Id: VAr3, Offset: 7, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr3", Description: "Point 3 VARs."},
+					{Id: V4, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V4", Description: "Point 4 Volts."},
+					{Id: VAr4, Offset: 9, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr4", Description: "Point 4 VARs."},
+					{Id: V5, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V5", Description: "Point 5 Volts."},
+					{Id: VAr5, Offset: 11, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr5", Description: "Point 5 VARs."},
+					{Id: V6, Offset: 12, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V6", Description: "Point 6 Volts."},
+					{Id: VAr6, Offset: 13, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr6", Description: "Point 6 VARs."},
+					{Id: V7, Offset: 14, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V7", Description: "Point 7 Volts."},
+					{Id: VAr7, Offset: 15, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr7", Description: "Point 7 VARs."},
+					{Id: V8, Offset: 16, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V8", Description: "Point 8 Volts."},
+					{Id: VAr8, Offset: 17, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr8", Description: "Point 8 VARs."},
+					{Id: V9, Offset: 18, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V9", Description: "Point 9 Volts."},
+					{Id: VAr9, Offset: 19, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr9", Description: "Point 9 VARs."},
+					{Id: V10, Offset: 20, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V10", Description: "Point 10 Volts."},
+					{Id: VAr10, Offset: 21, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr10", Description: "Point 10 VARs."},
+					{Id: V11, Offset: 22, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V11", Description: "Point 11 Volts."},
+					{Id: VAr11, Offset: 23, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr11", Description: "Point 11 VARs."},
+					{Id: V12, Offset: 24, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V12", Description: "Point 12 Volts."},
+					{Id: VAr12, Offset: 25, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr12", Description: "Point 12 VARs."},
+					{Id: V13, Offset: 26, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V13", Description: "Point 13 Volts."},
+					{Id: VAr13, Offset: 27, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr13", Description: "Point 13 VARs."},
+					{Id: V14, Offset: 28, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V14", Description: "Point 14 Volts."},
+					{Id: VAr14, Offset: 29, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr14", Description: "Point 14 VARs."},
+					{Id: V15, Offset: 30, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V15", Description: "Point 15 Volts."},
+					{Id: VAr15, Offset: 31, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr15", Description: "Point 15 VARs."},
+					{Id: V16, Offset: 32, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V16", Description: "Point 16 Volts."},
+					{Id: VAr16, Offset: 33, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr16", Description: "Point 16 VARs."},
+					{Id: V17, Offset: 34, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V17", Description: "Point 17 Volts."},
+					{Id: VAr17, Offset: 35, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr17", Description: "Point 17 VARs."},
+					{Id: V18, Offset: 36, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V18", Description: "Point 18 Volts."},
+					{Id: VAr18, Offset: 37, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr18", Description: "Point 18 VARs."},
+					{Id: V19, Offset: 38, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V19", Description: "Point 19 Volts."},
+					{Id: VAr19, Offset: 39, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr19", Description: "Point 19 VARs."},
+					{Id: V20, Offset: 40, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V20", Description: "Point 20 Volts."},
+					{Id: VAr20, Offset: 41, Type: typelabel.Int16, ScaleFactor: "DeptRef_SF", Access: "rw", Label: "VAr20", Description: "Point 20 VARs."},
 					{Id: CrvNam, Offset: 42, Type: typelabel.String, Access: "rw", Length: 8, Label: "CrvNam", Description: "Optional description for curve. (Max 16 chars)"},
-					{Id: RmpTms, Offset: 50, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "The time of the PT1 in seconds (time to accomplish a change of 95%)."},
-					{Id: RmpDecTmm, Offset: 51, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% ref_value/min", Access: "rw", Length: 1, Label: "RmpDecTmm", Description: "The maximum rate at which the VAR value may be reduced in response to changes in the voltage value. %refVal is %WMax %VArMax or %VArAval depending on value of DeptRef."},
-					{Id: RmpIncTmm, Offset: 52, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% ref_value/min", Access: "rw", Length: 1, Label: "RmpIncTmm", Description: "The maximum rate at which the VAR value may be increased in response to changes in the voltage value. %refVal is %WMax %VArMax or %VArAval depending on value of DeptRef."},
-					{Id: ReadOnly, Offset: 53, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "ReadOnly", Description: "Boolean flag indicates if curve is read-only or can be modified."},
+					{Id: RmpTms, Offset: 50, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RmpTms", Description: "The time of the PT1 in seconds (time to accomplish a change of 95%)."},
+					{Id: RmpDecTmm, Offset: 51, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% ref_value/min", Access: "rw", Label: "RmpDecTmm", Description: "The maximum rate at which the VAR value may be reduced in response to changes in the voltage value. %refVal is %WMax %VArMax or %VArAval depending on value of DeptRef."},
+					{Id: RmpIncTmm, Offset: 52, Type: typelabel.Uint16, ScaleFactor: "RmpIncDec_SF", Units: "% ref_value/min", Access: "rw", Label: "RmpIncTmm", Description: "The maximum rate at which the VAR value may be increased in response to changes in the voltage value. %refVal is %WMax %VArMax or %VArAval depending on value of DeptRef."},
+					{Id: ReadOnly, Offset: 53, Type: typelabel.Enum16, Mandatory: true, Label: "ReadOnly", Description: "Boolean flag indicates if curve is read-only or can be modified."},
 				},
 			},
 		}})

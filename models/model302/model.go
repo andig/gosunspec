@@ -26,11 +26,11 @@ const (
 )
 
 type Block302Repeat struct {
-	GHI  uint16 `sunspec:"offset=0,len=1"`
-	POAI uint16 `sunspec:"offset=1,len=1"`
-	DFI  uint16 `sunspec:"offset=2,len=1"`
-	DNI  uint16 `sunspec:"offset=3,len=1"`
-	OTI  uint16 `sunspec:"offset=4,len=1"`
+	GHI  uint16 `sunspec:"offset=0"`
+	POAI uint16 `sunspec:"offset=1"`
+	DFI  uint16 `sunspec:"offset=2"`
+	DNI  uint16 `sunspec:"offset=3"`
+	OTI  uint16 `sunspec:"offset=4"`
 }
 
 type Block302 struct {
@@ -53,11 +53,11 @@ func init() {
 				Length: 5,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: GHI, Offset: 0, Type: typelabel.Uint16, Units: "W/m2", Length: 1, Label: "GHI", Description: "Global Horizontal Irradiance"},
-					{Id: POAI, Offset: 1, Type: typelabel.Uint16, Units: "W/m2", Length: 1, Label: "POAI", Description: "Plane-of-Array Irradiance"},
-					{Id: DFI, Offset: 2, Type: typelabel.Uint16, Units: "W/m2", Length: 1, Label: "DFI", Description: "Diffuse Irradiance"},
-					{Id: DNI, Offset: 3, Type: typelabel.Uint16, Units: "W/m2", Length: 1, Label: "DNI", Description: "Direct Normal Irradiance"},
-					{Id: OTI, Offset: 4, Type: typelabel.Uint16, Units: "W/m2", Length: 1, Label: "OTI", Description: "Other Irradiance"},
+					{Id: GHI, Offset: 0, Type: typelabel.Uint16, Units: "W/m2", Label: "GHI", Description: "Global Horizontal Irradiance"},
+					{Id: POAI, Offset: 1, Type: typelabel.Uint16, Units: "W/m2", Label: "POAI", Description: "Plane-of-Array Irradiance"},
+					{Id: DFI, Offset: 2, Type: typelabel.Uint16, Units: "W/m2", Label: "DFI", Description: "Diffuse Irradiance"},
+					{Id: DNI, Offset: 3, Type: typelabel.Uint16, Units: "W/m2", Label: "DNI", Description: "Direct Normal Irradiance"},
+					{Id: OTI, Offset: 4, Type: typelabel.Uint16, Units: "W/m2", Label: "OTI", Description: "Other Irradiance"},
 				},
 			},
 		}})
