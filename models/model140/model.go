@@ -74,62 +74,62 @@ const (
 )
 
 type Block140Repeat struct {
-	ActPt    uint16         `sunspec:"offset=0,len=1,access=rw"`
-	Tms1     uint16         `sunspec:"offset=1,len=1,sf=Tms_SF,access=rw"`
-	V1       uint16         `sunspec:"offset=2,len=1,sf=V_SF,access=rw"`
-	Tms2     uint16         `sunspec:"offset=3,len=1,sf=Tms_SF,access=rw"`
-	V2       uint16         `sunspec:"offset=4,len=1,sf=V_SF,access=rw"`
-	Tms3     uint16         `sunspec:"offset=5,len=1,sf=Tms_SF,access=rw"`
-	V3       uint16         `sunspec:"offset=6,len=1,sf=V_SF,access=rw"`
-	Tms4     uint16         `sunspec:"offset=7,len=1,sf=Tms_SF,access=rw"`
-	V4       uint16         `sunspec:"offset=8,len=1,sf=V_SF,access=rw"`
-	Tms5     uint16         `sunspec:"offset=9,len=1,sf=Tms_SF,access=rw"`
-	V5       uint16         `sunspec:"offset=10,len=1,sf=V_SF,access=rw"`
-	Tms6     uint16         `sunspec:"offset=11,len=1,sf=Tms_SF,access=rw"`
-	V6       uint16         `sunspec:"offset=12,len=1,sf=V_SF,access=rw"`
-	Tms7     uint16         `sunspec:"offset=13,len=1,sf=Tms_SF,access=rw"`
-	V7       uint16         `sunspec:"offset=14,len=1,sf=V_SF,access=rw"`
-	Tms8     uint16         `sunspec:"offset=15,len=1,sf=Tms_SF,access=rw"`
-	V8       uint16         `sunspec:"offset=16,len=1,sf=V_SF,access=rw"`
-	Tms9     uint16         `sunspec:"offset=17,len=1,sf=Tms_SF,access=rw"`
-	V9       uint16         `sunspec:"offset=18,len=1,sf=V_SF,access=rw"`
-	Tms10    uint16         `sunspec:"offset=19,len=1,sf=Tms_SF,access=rw"`
-	V10      uint16         `sunspec:"offset=20,len=1,sf=V_SF,access=rw"`
-	Tms11    uint16         `sunspec:"offset=21,len=1,sf=Tms_SF,access=rw"`
-	V11      uint16         `sunspec:"offset=22,len=1,sf=V_SF,access=rw"`
-	Tms12    uint16         `sunspec:"offset=23,len=1,sf=Tms_SF,access=rw"`
-	V12      uint16         `sunspec:"offset=24,len=1,sf=V_SF,access=rw"`
-	Tms13    uint16         `sunspec:"offset=25,len=1,sf=Tms_SF,access=rw"`
-	V13      uint16         `sunspec:"offset=26,len=1,sf=V_SF,access=rw"`
-	Tms14    uint16         `sunspec:"offset=27,len=1,sf=Tms_SF,access=rw"`
-	V14      uint16         `sunspec:"offset=28,len=1,sf=V_SF,access=rw"`
-	Tms15    uint16         `sunspec:"offset=29,len=1,sf=Tms_SF,access=rw"`
-	V15      uint16         `sunspec:"offset=30,len=1,sf=V_SF,access=rw"`
-	Tms16    uint16         `sunspec:"offset=31,len=1,sf=Tms_SF,access=rw"`
-	V16      uint16         `sunspec:"offset=32,len=1,sf=V_SF,access=rw"`
-	Tms17    uint16         `sunspec:"offset=33,len=1,sf=Tms_SF,access=rw"`
-	V17      uint16         `sunspec:"offset=34,len=1,sf=V_SF,access=rw"`
-	Tms18    uint16         `sunspec:"offset=35,len=1,sf=Tms_SF,access=rw"`
-	V18      uint16         `sunspec:"offset=36,len=1,sf=V_SF,access=rw"`
-	Tms19    uint16         `sunspec:"offset=37,len=1,sf=Tms_SF,access=rw"`
-	V19      uint16         `sunspec:"offset=38,len=1,sf=V_SF,access=rw"`
-	Tms20    uint16         `sunspec:"offset=39,len=1,sf=Tms_SF,access=rw"`
-	V20      uint16         `sunspec:"offset=40,len=1,sf=V_SF,access=rw"`
+	ActPt    uint16         `sunspec:"offset=0,access=rw"`
+	Tms1     uint16         `sunspec:"offset=1,sf=Tms_SF,access=rw"`
+	V1       uint16         `sunspec:"offset=2,sf=V_SF,access=rw"`
+	Tms2     uint16         `sunspec:"offset=3,sf=Tms_SF,access=rw"`
+	V2       uint16         `sunspec:"offset=4,sf=V_SF,access=rw"`
+	Tms3     uint16         `sunspec:"offset=5,sf=Tms_SF,access=rw"`
+	V3       uint16         `sunspec:"offset=6,sf=V_SF,access=rw"`
+	Tms4     uint16         `sunspec:"offset=7,sf=Tms_SF,access=rw"`
+	V4       uint16         `sunspec:"offset=8,sf=V_SF,access=rw"`
+	Tms5     uint16         `sunspec:"offset=9,sf=Tms_SF,access=rw"`
+	V5       uint16         `sunspec:"offset=10,sf=V_SF,access=rw"`
+	Tms6     uint16         `sunspec:"offset=11,sf=Tms_SF,access=rw"`
+	V6       uint16         `sunspec:"offset=12,sf=V_SF,access=rw"`
+	Tms7     uint16         `sunspec:"offset=13,sf=Tms_SF,access=rw"`
+	V7       uint16         `sunspec:"offset=14,sf=V_SF,access=rw"`
+	Tms8     uint16         `sunspec:"offset=15,sf=Tms_SF,access=rw"`
+	V8       uint16         `sunspec:"offset=16,sf=V_SF,access=rw"`
+	Tms9     uint16         `sunspec:"offset=17,sf=Tms_SF,access=rw"`
+	V9       uint16         `sunspec:"offset=18,sf=V_SF,access=rw"`
+	Tms10    uint16         `sunspec:"offset=19,sf=Tms_SF,access=rw"`
+	V10      uint16         `sunspec:"offset=20,sf=V_SF,access=rw"`
+	Tms11    uint16         `sunspec:"offset=21,sf=Tms_SF,access=rw"`
+	V11      uint16         `sunspec:"offset=22,sf=V_SF,access=rw"`
+	Tms12    uint16         `sunspec:"offset=23,sf=Tms_SF,access=rw"`
+	V12      uint16         `sunspec:"offset=24,sf=V_SF,access=rw"`
+	Tms13    uint16         `sunspec:"offset=25,sf=Tms_SF,access=rw"`
+	V13      uint16         `sunspec:"offset=26,sf=V_SF,access=rw"`
+	Tms14    uint16         `sunspec:"offset=27,sf=Tms_SF,access=rw"`
+	V14      uint16         `sunspec:"offset=28,sf=V_SF,access=rw"`
+	Tms15    uint16         `sunspec:"offset=29,sf=Tms_SF,access=rw"`
+	V15      uint16         `sunspec:"offset=30,sf=V_SF,access=rw"`
+	Tms16    uint16         `sunspec:"offset=31,sf=Tms_SF,access=rw"`
+	V16      uint16         `sunspec:"offset=32,sf=V_SF,access=rw"`
+	Tms17    uint16         `sunspec:"offset=33,sf=Tms_SF,access=rw"`
+	V17      uint16         `sunspec:"offset=34,sf=V_SF,access=rw"`
+	Tms18    uint16         `sunspec:"offset=35,sf=Tms_SF,access=rw"`
+	V18      uint16         `sunspec:"offset=36,sf=V_SF,access=rw"`
+	Tms19    uint16         `sunspec:"offset=37,sf=Tms_SF,access=rw"`
+	V19      uint16         `sunspec:"offset=38,sf=V_SF,access=rw"`
+	Tms20    uint16         `sunspec:"offset=39,sf=Tms_SF,access=rw"`
+	V20      uint16         `sunspec:"offset=40,sf=V_SF,access=rw"`
 	CrvNam   string         `sunspec:"offset=41,len=8,access=rw"`
-	ReadOnly sunspec.Enum16 `sunspec:"offset=49,len=1"`
+	ReadOnly sunspec.Enum16 `sunspec:"offset=49"`
 }
 
 type Block140 struct {
-	ActCrv  uint16              `sunspec:"offset=0,len=1,access=rw"`
-	ModEna  sunspec.Bitfield16  `sunspec:"offset=1,len=1,access=rw"`
-	WinTms  uint16              `sunspec:"offset=2,len=1,access=rw"`
-	RvrtTms uint16              `sunspec:"offset=3,len=1,access=rw"`
-	RmpTms  uint16              `sunspec:"offset=4,len=1,access=rw"`
-	NCrv    uint16              `sunspec:"offset=5,len=1"`
-	NPt     uint16              `sunspec:"offset=6,len=1"`
-	Tms_SF  sunspec.ScaleFactor `sunspec:"offset=7,len=1"`
-	V_SF    sunspec.ScaleFactor `sunspec:"offset=8,len=1"`
-	CrvType sunspec.Enum16      `sunspec:"offset=9,len=1"`
+	ActCrv  uint16              `sunspec:"offset=0,access=rw"`
+	ModEna  sunspec.Bitfield16  `sunspec:"offset=1,access=rw"`
+	WinTms  uint16              `sunspec:"offset=2,access=rw"`
+	RvrtTms uint16              `sunspec:"offset=3,access=rw"`
+	RmpTms  uint16              `sunspec:"offset=4,access=rw"`
+	NCrv    uint16              `sunspec:"offset=5"`
+	NPt     uint16              `sunspec:"offset=6"`
+	Tms_SF  sunspec.ScaleFactor `sunspec:"offset=7"`
+	V_SF    sunspec.ScaleFactor `sunspec:"offset=8"`
+	CrvType sunspec.Enum16      `sunspec:"offset=9"`
 
 	Repeats []Block140Repeat
 }
@@ -150,65 +150,65 @@ func init() {
 				Length: 10,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
-					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "LVRT control mode. Enable active curve.  Bitfield value."},
-					{Id: WinTms, Offset: 2, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "WinTms", Description: "Time window for LVRT change."},
-					{Id: RvrtTms, Offset: 3, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RvrtTms", Description: "Timeout period for LVRT curve selection."},
-					{Id: RmpTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "Ramp time for moving from current mode to new mode."},
-					{Id: NCrv, Offset: 5, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "NCrv", Description: "Number of curves supported (recommend 4)."},
-					{Id: NPt, Offset: 6, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "NPt", Description: "Number of curve points supported (maximum of 20)."},
-					{Id: Tms_SF, Offset: 7, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "Tms_SF", Description: "Scale factor for duration."},
-					{Id: V_SF, Offset: 8, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true, Label: "V_SF", Description: "Scale factor for percent VRef."},
-					{Id: CrvType, Offset: 9, Type: typelabel.Enum16, Length: 1, Mandatory: true},
+					{Id: ActCrv, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "ActCrv", Description: "Index of active curve. 0=no active curve."},
+					{Id: ModEna, Offset: 1, Type: typelabel.Bitfield16, Access: "rw", Mandatory: true, Label: "ModEna", Description: "LVRT control mode. Enable active curve.  Bitfield value."},
+					{Id: WinTms, Offset: 2, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "WinTms", Description: "Time window for LVRT change."},
+					{Id: RvrtTms, Offset: 3, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RvrtTms", Description: "Timeout period for LVRT curve selection."},
+					{Id: RmpTms, Offset: 4, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RmpTms", Description: "Ramp time for moving from current mode to new mode."},
+					{Id: NCrv, Offset: 5, Type: typelabel.Uint16, Mandatory: true, Label: "NCrv", Description: "Number of curves supported (recommend 4)."},
+					{Id: NPt, Offset: 6, Type: typelabel.Uint16, Mandatory: true, Label: "NPt", Description: "Number of curve points supported (maximum of 20)."},
+					{Id: Tms_SF, Offset: 7, Type: typelabel.ScaleFactor, Mandatory: true, Label: "Tms_SF", Description: "Scale factor for duration."},
+					{Id: V_SF, Offset: 8, Type: typelabel.ScaleFactor, Mandatory: true, Label: "V_SF", Description: "Scale factor for percent VRef."},
+					{Id: CrvType, Offset: 9, Type: typelabel.Enum16, Mandatory: true},
 				},
 			},
 			{Name: "curve",
 				Length: 50,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: ActPt, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActPt", Description: "Number of active points in array."},
-					{Id: Tms1, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Mandatory: true, Label: "Tms1", Description: "Point 1 duration."},
-					{Id: V1, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Mandatory: true, Label: "V1", Description: "Point 1 voltage."},
-					{Id: Tms2, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms2", Description: "Point 2 duration."},
-					{Id: V2, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V2", Description: "Point 2 voltage."},
-					{Id: Tms3, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms3", Description: "Point 3 duration."},
-					{Id: V3, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V3", Description: "Point 3 voltage."},
-					{Id: Tms4, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms4", Description: "Point 4 duration."},
-					{Id: V4, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V4", Description: "Point 4 voltage."},
-					{Id: Tms5, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms5", Description: "Point 5 duration."},
-					{Id: V5, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V5", Description: "Point 5 voltage."},
-					{Id: Tms6, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms6", Description: "Point 6 duration."},
-					{Id: V6, Offset: 12, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V6", Description: "Point 6 voltage."},
-					{Id: Tms7, Offset: 13, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms7", Description: "Point 7 duration."},
-					{Id: V7, Offset: 14, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V7", Description: "Point 7 voltage."},
-					{Id: Tms8, Offset: 15, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms8", Description: "Point 8 duration."},
-					{Id: V8, Offset: 16, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V8", Description: "Point 8 voltage."},
-					{Id: Tms9, Offset: 17, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms9", Description: "Point 9 duration."},
-					{Id: V9, Offset: 18, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V9", Description: "Point 9 voltage."},
-					{Id: Tms10, Offset: 19, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms10", Description: "Point 10 duration."},
-					{Id: V10, Offset: 20, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V10", Description: "Point 10 voltage."},
-					{Id: Tms11, Offset: 21, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms11", Description: "Point 11 duration."},
-					{Id: V11, Offset: 22, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V11", Description: "Point 11 voltage."},
-					{Id: Tms12, Offset: 23, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms12", Description: "Point 12 duration."},
-					{Id: V12, Offset: 24, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V12", Description: "Point 12 voltage."},
-					{Id: Tms13, Offset: 25, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms13", Description: "Point 13 duration."},
-					{Id: V13, Offset: 26, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V13", Description: "Point 13 voltage."},
-					{Id: Tms14, Offset: 27, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms14", Description: "Point 14 duration."},
-					{Id: V14, Offset: 28, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V14", Description: "Point 14 voltage."},
-					{Id: Tms15, Offset: 29, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms15", Description: "Point 15 duration."},
-					{Id: V15, Offset: 30, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V15", Description: "Point 15 voltage."},
-					{Id: Tms16, Offset: 31, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms16", Description: "Point 16 duration."},
-					{Id: V16, Offset: 32, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V16", Description: "Point 16 voltage."},
-					{Id: Tms17, Offset: 33, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms17", Description: "Point 17 duration."},
-					{Id: V17, Offset: 34, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V17", Description: "Point 17 voltage."},
-					{Id: Tms18, Offset: 35, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms18", Description: "Point 18 duration."},
-					{Id: V18, Offset: 36, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V18", Description: "Point 18 voltage."},
-					{Id: Tms19, Offset: 37, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms19", Description: "Point 19 duration."},
-					{Id: V19, Offset: 38, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V19", Description: "Point 19 voltage."},
-					{Id: Tms20, Offset: 39, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Length: 1, Label: "Tms20", Description: "Point 20 duration."},
-					{Id: V20, Offset: 40, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Length: 1, Label: "V20", Description: "Point 20 voltage."},
+					{Id: ActPt, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "ActPt", Description: "Number of active points in array."},
+					{Id: Tms1, Offset: 1, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Mandatory: true, Label: "Tms1", Description: "Point 1 duration."},
+					{Id: V1, Offset: 2, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Mandatory: true, Label: "V1", Description: "Point 1 voltage."},
+					{Id: Tms2, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms2", Description: "Point 2 duration."},
+					{Id: V2, Offset: 4, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V2", Description: "Point 2 voltage."},
+					{Id: Tms3, Offset: 5, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms3", Description: "Point 3 duration."},
+					{Id: V3, Offset: 6, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V3", Description: "Point 3 voltage."},
+					{Id: Tms4, Offset: 7, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms4", Description: "Point 4 duration."},
+					{Id: V4, Offset: 8, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V4", Description: "Point 4 voltage."},
+					{Id: Tms5, Offset: 9, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms5", Description: "Point 5 duration."},
+					{Id: V5, Offset: 10, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V5", Description: "Point 5 voltage."},
+					{Id: Tms6, Offset: 11, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms6", Description: "Point 6 duration."},
+					{Id: V6, Offset: 12, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V6", Description: "Point 6 voltage."},
+					{Id: Tms7, Offset: 13, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms7", Description: "Point 7 duration."},
+					{Id: V7, Offset: 14, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V7", Description: "Point 7 voltage."},
+					{Id: Tms8, Offset: 15, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms8", Description: "Point 8 duration."},
+					{Id: V8, Offset: 16, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V8", Description: "Point 8 voltage."},
+					{Id: Tms9, Offset: 17, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms9", Description: "Point 9 duration."},
+					{Id: V9, Offset: 18, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V9", Description: "Point 9 voltage."},
+					{Id: Tms10, Offset: 19, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms10", Description: "Point 10 duration."},
+					{Id: V10, Offset: 20, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V10", Description: "Point 10 voltage."},
+					{Id: Tms11, Offset: 21, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms11", Description: "Point 11 duration."},
+					{Id: V11, Offset: 22, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V11", Description: "Point 11 voltage."},
+					{Id: Tms12, Offset: 23, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms12", Description: "Point 12 duration."},
+					{Id: V12, Offset: 24, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V12", Description: "Point 12 voltage."},
+					{Id: Tms13, Offset: 25, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms13", Description: "Point 13 duration."},
+					{Id: V13, Offset: 26, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V13", Description: "Point 13 voltage."},
+					{Id: Tms14, Offset: 27, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms14", Description: "Point 14 duration."},
+					{Id: V14, Offset: 28, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V14", Description: "Point 14 voltage."},
+					{Id: Tms15, Offset: 29, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms15", Description: "Point 15 duration."},
+					{Id: V15, Offset: 30, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V15", Description: "Point 15 voltage."},
+					{Id: Tms16, Offset: 31, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms16", Description: "Point 16 duration."},
+					{Id: V16, Offset: 32, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V16", Description: "Point 16 voltage."},
+					{Id: Tms17, Offset: 33, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms17", Description: "Point 17 duration."},
+					{Id: V17, Offset: 34, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V17", Description: "Point 17 voltage."},
+					{Id: Tms18, Offset: 35, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms18", Description: "Point 18 duration."},
+					{Id: V18, Offset: 36, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V18", Description: "Point 18 voltage."},
+					{Id: Tms19, Offset: 37, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms19", Description: "Point 19 duration."},
+					{Id: V19, Offset: 38, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V19", Description: "Point 19 voltage."},
+					{Id: Tms20, Offset: 39, Type: typelabel.Uint16, ScaleFactor: "Tms_SF", Units: "Secs", Access: "rw", Label: "Tms20", Description: "Point 20 duration."},
+					{Id: V20, Offset: 40, Type: typelabel.Uint16, ScaleFactor: "V_SF", Units: "% VRef", Access: "rw", Label: "V20", Description: "Point 20 voltage."},
 					{Id: CrvNam, Offset: 41, Type: typelabel.String, Access: "rw", Length: 8, Label: "CrvNam", Description: "Optional description for curve."},
-					{Id: ReadOnly, Offset: 49, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "ReadOnly", Description: "Enumerated value indicates if curve is read-only or can be modified."},
+					{Id: ReadOnly, Offset: 49, Type: typelabel.Enum16, Mandatory: true, Label: "ReadOnly", Description: "Enumerated value indicates if curve is read-only or can be modified."},
 				},
 			},
 		}})

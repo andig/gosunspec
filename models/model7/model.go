@@ -31,19 +31,19 @@ const (
 )
 
 type Block7Repeat struct {
-	DS uint16 `sunspec:"offset=0,len=1,access=rw"`
+	DS uint16 `sunspec:"offset=0,access=rw"`
 }
 
 type Block7 struct {
-	RqSeq uint16         `sunspec:"offset=0,len=1"`
-	Sts   sunspec.Enum16 `sunspec:"offset=1,len=1"`
-	Ts    uint32         `sunspec:"offset=2,len=2"`
-	Ms    uint16         `sunspec:"offset=4,len=1"`
-	Seq   uint16         `sunspec:"offset=5,len=1"`
-	Alm   sunspec.Enum16 `sunspec:"offset=6,len=1"`
-	Rsrvd sunspec.Pad    `sunspec:"offset=7,len=1"`
-	Alg   sunspec.Enum16 `sunspec:"offset=8,len=1"`
-	N     uint16         `sunspec:"offset=9,len=1,access=rw"`
+	RqSeq uint16         `sunspec:"offset=0"`
+	Sts   sunspec.Enum16 `sunspec:"offset=1"`
+	Ts    uint32         `sunspec:"offset=2"`
+	Ms    uint16         `sunspec:"offset=4"`
+	Seq   uint16         `sunspec:"offset=5"`
+	Alm   sunspec.Enum16 `sunspec:"offset=6"`
+	Rsrvd sunspec.Pad    `sunspec:"offset=7"`
+	Alg   sunspec.Enum16 `sunspec:"offset=8"`
+	N     uint16         `sunspec:"offset=9,access=rw"`
 
 	Repeats []Block7Repeat
 }
@@ -64,22 +64,22 @@ func init() {
 				Length: 10,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: RqSeq, Offset: 0, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Request Sequence", Description: "Sequence number from the request"},
-					{Id: Sts, Offset: 1, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "Status", Description: "Status of last write operation"},
-					{Id: Ts, Offset: 2, Type: typelabel.Uint32, Length: 2, Mandatory: true, Label: "Timestamp", Description: "Timestamp value is the number of seconds since January 1, 2000"},
-					{Id: Ms, Offset: 4, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Milliseconds", Description: "Millisecond counter 0-999"},
-					{Id: Seq, Offset: 5, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "Sequence", Description: "Sequence number of response"},
-					{Id: Alm, Offset: 6, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "Alarm", Description: "Bitmask alarm code"},
-					{Id: Rsrvd, Offset: 7, Type: typelabel.Pad, Length: 1, Mandatory: true},
-					{Id: Alg, Offset: 8, Type: typelabel.Enum16, Length: 1, Mandatory: true, Label: "Algorithm", Description: "Algorithm used to compute the digital signature"},
-					{Id: N, Offset: 9, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "N", Description: "Number of registers comprising the digital signature."},
+					{Id: RqSeq, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "Request Sequence", Description: "Sequence number from the request"},
+					{Id: Sts, Offset: 1, Type: typelabel.Enum16, Mandatory: true, Label: "Status", Description: "Status of last write operation"},
+					{Id: Ts, Offset: 2, Type: typelabel.Uint32, Mandatory: true, Label: "Timestamp", Description: "Timestamp value is the number of seconds since January 1, 2000"},
+					{Id: Ms, Offset: 4, Type: typelabel.Uint16, Mandatory: true, Label: "Milliseconds", Description: "Millisecond counter 0-999"},
+					{Id: Seq, Offset: 5, Type: typelabel.Uint16, Mandatory: true, Label: "Sequence", Description: "Sequence number of response"},
+					{Id: Alm, Offset: 6, Type: typelabel.Enum16, Mandatory: true, Label: "Alarm", Description: "Bitmask alarm code"},
+					{Id: Rsrvd, Offset: 7, Type: typelabel.Pad, Mandatory: true},
+					{Id: Alg, Offset: 8, Type: typelabel.Enum16, Mandatory: true, Label: "Algorithm", Description: "Algorithm used to compute the digital signature"},
+					{Id: N, Offset: 9, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "N", Description: "Number of registers comprising the digital signature."},
 				},
 			},
 			{
 				Length: 1,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: DS, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "DS", Description: "Digital Signature"},
+					{Id: DS, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "DS", Description: "Digital Signature"},
 				},
 			},
 		}})

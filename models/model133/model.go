@@ -58,46 +58,46 @@ const (
 )
 
 type Block133Repeat struct {
-	ActPts  uint16              `sunspec:"offset=0,len=1,access=rw"`
-	StrTms  uint32              `sunspec:"offset=1,len=2,access=rw"`
-	RepPer  uint16              `sunspec:"offset=3,len=1,access=rw"`
-	IntvTyp sunspec.Enum16      `sunspec:"offset=4,len=1,access=rw"`
-	XTyp    sunspec.Enum16      `sunspec:"offset=5,len=1,access=rw"`
-	X_SF    sunspec.ScaleFactor `sunspec:"offset=6,len=1,access=rw"`
-	YTyp    sunspec.Enum16      `sunspec:"offset=7,len=1,access=rw"`
-	Y_SF    sunspec.ScaleFactor `sunspec:"offset=8,len=1,access=rw"`
-	X1      int32               `sunspec:"offset=9,len=2,sf=X_SF,access=rw"`
-	Y1      int32               `sunspec:"offset=11,len=2,sf=Y_SF,access=rw"`
-	X2      int32               `sunspec:"offset=13,len=2,sf=X_SF,access=rw"`
-	Y2      int32               `sunspec:"offset=15,len=2,sf=Y_SF,access=rw"`
-	X3      int32               `sunspec:"offset=17,len=2,sf=X_SF,access=rw"`
-	Y3      int32               `sunspec:"offset=19,len=2,sf=Y_SF,access=rw"`
-	X4      int32               `sunspec:"offset=21,len=2,sf=X_SF,access=rw"`
-	Y4      int32               `sunspec:"offset=23,len=2,sf=Y_SF,access=rw"`
-	X5      int32               `sunspec:"offset=25,len=2,sf=X_SF,access=rw"`
-	Y5      int32               `sunspec:"offset=27,len=2,sf=Y_SF,access=rw"`
-	X6      int32               `sunspec:"offset=29,len=2,sf=X_SF,access=rw"`
-	Y6      int32               `sunspec:"offset=31,len=2,sf=Y_SF,access=rw"`
-	X7      int32               `sunspec:"offset=33,len=2,sf=X_SF,access=rw"`
-	Y7      int32               `sunspec:"offset=35,len=2,sf=Y_SF,access=rw"`
-	X8      int32               `sunspec:"offset=37,len=2,sf=X_SF,access=rw"`
-	Y8      int32               `sunspec:"offset=39,len=2,sf=Y_SF,access=rw"`
-	X9      int32               `sunspec:"offset=41,len=2,sf=X_SF,access=rw"`
-	Y9      int32               `sunspec:"offset=43,len=2,sf=Y_SF,access=rw"`
-	X10     int32               `sunspec:"offset=45,len=2,sf=X_SF,access=rw"`
-	Y10     int32               `sunspec:"offset=47,len=2,sf=Y_SF,access=rw"`
+	ActPts  uint16              `sunspec:"offset=0,access=rw"`
+	StrTms  uint32              `sunspec:"offset=1,access=rw"`
+	RepPer  uint16              `sunspec:"offset=3,access=rw"`
+	IntvTyp sunspec.Enum16      `sunspec:"offset=4,access=rw"`
+	XTyp    sunspec.Enum16      `sunspec:"offset=5,access=rw"`
+	X_SF    sunspec.ScaleFactor `sunspec:"offset=6,access=rw"`
+	YTyp    sunspec.Enum16      `sunspec:"offset=7,access=rw"`
+	Y_SF    sunspec.ScaleFactor `sunspec:"offset=8,access=rw"`
+	X1      int32               `sunspec:"offset=9,sf=X_SF,access=rw"`
+	Y1      int32               `sunspec:"offset=11,sf=Y_SF,access=rw"`
+	X2      int32               `sunspec:"offset=13,sf=X_SF,access=rw"`
+	Y2      int32               `sunspec:"offset=15,sf=Y_SF,access=rw"`
+	X3      int32               `sunspec:"offset=17,sf=X_SF,access=rw"`
+	Y3      int32               `sunspec:"offset=19,sf=Y_SF,access=rw"`
+	X4      int32               `sunspec:"offset=21,sf=X_SF,access=rw"`
+	Y4      int32               `sunspec:"offset=23,sf=Y_SF,access=rw"`
+	X5      int32               `sunspec:"offset=25,sf=X_SF,access=rw"`
+	Y5      int32               `sunspec:"offset=27,sf=Y_SF,access=rw"`
+	X6      int32               `sunspec:"offset=29,sf=X_SF,access=rw"`
+	Y6      int32               `sunspec:"offset=31,sf=Y_SF,access=rw"`
+	X7      int32               `sunspec:"offset=33,sf=X_SF,access=rw"`
+	Y7      int32               `sunspec:"offset=35,sf=Y_SF,access=rw"`
+	X8      int32               `sunspec:"offset=37,sf=X_SF,access=rw"`
+	Y8      int32               `sunspec:"offset=39,sf=Y_SF,access=rw"`
+	X9      int32               `sunspec:"offset=41,sf=X_SF,access=rw"`
+	Y9      int32               `sunspec:"offset=43,sf=Y_SF,access=rw"`
+	X10     int32               `sunspec:"offset=45,sf=X_SF,access=rw"`
+	Y10     int32               `sunspec:"offset=47,sf=Y_SF,access=rw"`
 	Nam     string              `sunspec:"offset=49,len=8,access=rw"`
-	WinTms  uint16              `sunspec:"offset=57,len=1,access=rw"`
-	RmpTms  uint16              `sunspec:"offset=58,len=1,access=rw"`
-	ActIndx uint16              `sunspec:"offset=59,len=1"`
+	WinTms  uint16              `sunspec:"offset=57,access=rw"`
+	RmpTms  uint16              `sunspec:"offset=58,access=rw"`
+	ActIndx uint16              `sunspec:"offset=59"`
 }
 
 type Block133 struct {
-	ActSchd sunspec.Bitfield32 `sunspec:"offset=0,len=2,access=rw"`
-	ModEna  sunspec.Bitfield16 `sunspec:"offset=2,len=1,access=rw"`
-	NSchd   uint16             `sunspec:"offset=3,len=1"`
-	NPts    uint16             `sunspec:"offset=4,len=1"`
-	Pad     sunspec.Pad        `sunspec:"offset=5,len=1"`
+	ActSchd sunspec.Bitfield32 `sunspec:"offset=0,access=rw"`
+	ModEna  sunspec.Bitfield16 `sunspec:"offset=2,access=rw"`
+	NSchd   uint16             `sunspec:"offset=3"`
+	NPts    uint16             `sunspec:"offset=4"`
+	Pad     sunspec.Pad        `sunspec:"offset=5"`
 
 	Repeats []Block133Repeat
 }
@@ -118,49 +118,49 @@ func init() {
 				Length: 6,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: ActSchd, Offset: 0, Type: typelabel.Bitfield32, Access: "rw", Length: 2, Mandatory: true, Label: "ActSchd", Description: "Bitfield of active schedules"},
-					{Id: ModEna, Offset: 2, Type: typelabel.Bitfield16, Access: "rw", Length: 1, Mandatory: true, Label: "ModEna", Description: "Is basic scheduling active."},
-					{Id: NSchd, Offset: 3, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "NSchd", Description: "Number of schedules supported (recommend min. 4, max 32)"},
-					{Id: NPts, Offset: 4, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "NPts", Description: "Number of schedule entries supported (maximum of 10)."},
-					{Id: Pad, Offset: 5, Type: typelabel.Pad, Length: 1, Label: "Pad", Description: "Pad register."},
+					{Id: ActSchd, Offset: 0, Type: typelabel.Bitfield32, Access: "rw", Mandatory: true, Label: "ActSchd", Description: "Bitfield of active schedules"},
+					{Id: ModEna, Offset: 2, Type: typelabel.Bitfield16, Access: "rw", Mandatory: true, Label: "ModEna", Description: "Is basic scheduling active."},
+					{Id: NSchd, Offset: 3, Type: typelabel.Uint16, Mandatory: true, Label: "NSchd", Description: "Number of schedules supported (recommend min. 4, max 32)"},
+					{Id: NPts, Offset: 4, Type: typelabel.Uint16, Mandatory: true, Label: "NPts", Description: "Number of schedule entries supported (maximum of 10)."},
+					{Id: Pad, Offset: 5, Type: typelabel.Pad, Label: "Pad", Description: "Pad register."},
 				},
 			},
 			{
 				Length: 60,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: ActPts, Offset: 0, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "ActPts", Description: "Number of active entries in schedule."},
-					{Id: StrTms, Offset: 1, Type: typelabel.Uint32, Units: "Secs", Access: "rw", Length: 2, Mandatory: true, Label: "StrTms", Description: "Schedule start in seconds since 2000 JAN 01 00:00:00 UTC."},
-					{Id: RepPer, Offset: 3, Type: typelabel.Uint16, Access: "rw", Length: 1, Mandatory: true, Label: "RepPer", Description: "The repetition count for time-based schedules (0=repeat forever)"},
-					{Id: IntvTyp, Offset: 4, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "SchdTyp", Description: "The repetition frequency for time-based schedules: no repeat=0"},
-					{Id: XTyp, Offset: 5, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "XTyp", Description: "The meaning of the X-values in the array. "},
-					{Id: X_SF, Offset: 6, Type: typelabel.ScaleFactor, Access: "rw", Length: 1, Mandatory: true, Label: "X_SF", Description: "Scale factor for schedule range values."},
-					{Id: YTyp, Offset: 7, Type: typelabel.Enum16, Access: "rw", Length: 1, Mandatory: true, Label: "YTyp", Description: "The meaning of the Y-values in the array."},
-					{Id: Y_SF, Offset: 8, Type: typelabel.ScaleFactor, Access: "rw", Length: 1, Mandatory: true, Label: "Y_SF", Description: "Scale factor for schedule target values."},
-					{Id: X1, Offset: 9, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Mandatory: true, Label: "X1", Description: "Entry 1 range."},
-					{Id: Y1, Offset: 11, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Mandatory: true, Label: "Y1", Description: "Entry 1 target."},
-					{Id: X2, Offset: 13, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X2", Description: "Entry 2 range."},
-					{Id: Y2, Offset: 15, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y2", Description: "Entry 2 target."},
-					{Id: X3, Offset: 17, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X3", Description: "Entry 3 range."},
-					{Id: Y3, Offset: 19, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y3", Description: "Entry 3 target."},
-					{Id: X4, Offset: 21, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X4", Description: "Entry 4 range."},
-					{Id: Y4, Offset: 23, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y4", Description: "Entry 4 target."},
-					{Id: X5, Offset: 25, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X5", Description: "Entry 15range."},
-					{Id: Y5, Offset: 27, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y5", Description: "Entry 5 target."},
-					{Id: X6, Offset: 29, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X6", Description: "Entry 6 range."},
-					{Id: Y6, Offset: 31, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y6", Description: "Entry 6 target."},
-					{Id: X7, Offset: 33, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X7", Description: "Entry 7 range."},
-					{Id: Y7, Offset: 35, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y7", Description: "Entry 7 target."},
-					{Id: X8, Offset: 37, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X8", Description: "Entry 8 range."},
-					{Id: Y8, Offset: 39, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y8", Description: "Entry 8 target."},
-					{Id: X9, Offset: 41, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X9", Description: "Entry 9 range."},
-					{Id: Y9, Offset: 43, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y9", Description: "Entry 9 target."},
-					{Id: X10, Offset: 45, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Length: 2, Label: "X10", Description: "Entry 10 range."},
-					{Id: Y10, Offset: 47, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Length: 2, Label: "Y10", Description: "Entry 10 target."},
+					{Id: ActPts, Offset: 0, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "ActPts", Description: "Number of active entries in schedule."},
+					{Id: StrTms, Offset: 1, Type: typelabel.Uint32, Units: "Secs", Access: "rw", Mandatory: true, Label: "StrTms", Description: "Schedule start in seconds since 2000 JAN 01 00:00:00 UTC."},
+					{Id: RepPer, Offset: 3, Type: typelabel.Uint16, Access: "rw", Mandatory: true, Label: "RepPer", Description: "The repetition count for time-based schedules (0=repeat forever)"},
+					{Id: IntvTyp, Offset: 4, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "SchdTyp", Description: "The repetition frequency for time-based schedules: no repeat=0"},
+					{Id: XTyp, Offset: 5, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "XTyp", Description: "The meaning of the X-values in the array. "},
+					{Id: X_SF, Offset: 6, Type: typelabel.ScaleFactor, Access: "rw", Mandatory: true, Label: "X_SF", Description: "Scale factor for schedule range values."},
+					{Id: YTyp, Offset: 7, Type: typelabel.Enum16, Access: "rw", Mandatory: true, Label: "YTyp", Description: "The meaning of the Y-values in the array."},
+					{Id: Y_SF, Offset: 8, Type: typelabel.ScaleFactor, Access: "rw", Mandatory: true, Label: "Y_SF", Description: "Scale factor for schedule target values."},
+					{Id: X1, Offset: 9, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Mandatory: true, Label: "X1", Description: "Entry 1 range."},
+					{Id: Y1, Offset: 11, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Mandatory: true, Label: "Y1", Description: "Entry 1 target."},
+					{Id: X2, Offset: 13, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X2", Description: "Entry 2 range."},
+					{Id: Y2, Offset: 15, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y2", Description: "Entry 2 target."},
+					{Id: X3, Offset: 17, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X3", Description: "Entry 3 range."},
+					{Id: Y3, Offset: 19, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y3", Description: "Entry 3 target."},
+					{Id: X4, Offset: 21, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X4", Description: "Entry 4 range."},
+					{Id: Y4, Offset: 23, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y4", Description: "Entry 4 target."},
+					{Id: X5, Offset: 25, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X5", Description: "Entry 15range."},
+					{Id: Y5, Offset: 27, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y5", Description: "Entry 5 target."},
+					{Id: X6, Offset: 29, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X6", Description: "Entry 6 range."},
+					{Id: Y6, Offset: 31, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y6", Description: "Entry 6 target."},
+					{Id: X7, Offset: 33, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X7", Description: "Entry 7 range."},
+					{Id: Y7, Offset: 35, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y7", Description: "Entry 7 target."},
+					{Id: X8, Offset: 37, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X8", Description: "Entry 8 range."},
+					{Id: Y8, Offset: 39, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y8", Description: "Entry 8 target."},
+					{Id: X9, Offset: 41, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X9", Description: "Entry 9 range."},
+					{Id: Y9, Offset: 43, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y9", Description: "Entry 9 target."},
+					{Id: X10, Offset: 45, Type: typelabel.Int32, ScaleFactor: "X_SF", Access: "rw", Label: "X10", Description: "Entry 10 range."},
+					{Id: Y10, Offset: 47, Type: typelabel.Int32, ScaleFactor: "Y_SF", Access: "rw", Label: "Y10", Description: "Entry 10 target."},
 					{Id: Nam, Offset: 49, Type: typelabel.String, Access: "rw", Length: 8, Label: "Nam", Description: "Optional description for schedule."},
-					{Id: WinTms, Offset: 57, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "WinTms", Description: "Time window for schedule entry change."},
-					{Id: RmpTms, Offset: 58, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Length: 1, Label: "RmpTms", Description: "Ramp time for moving from current target to new target."},
-					{Id: ActIndx, Offset: 59, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "ActIndx", Description: "Index of active entry in the active schedule."},
+					{Id: WinTms, Offset: 57, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "WinTms", Description: "Time window for schedule entry change."},
+					{Id: RmpTms, Offset: 58, Type: typelabel.Uint16, Units: "Secs", Access: "rw", Label: "RmpTms", Description: "Ramp time for moving from current target to new target."},
+					{Id: ActIndx, Offset: 59, Type: typelabel.Uint16, Mandatory: true, Label: "ActIndx", Description: "Index of active entry in the active schedule."},
 				},
 			},
 		}})

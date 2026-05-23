@@ -37,25 +37,25 @@ const (
 )
 
 type Block401Repeat struct {
-	InID     uint16             `sunspec:"offset=0,len=1"`
-	InEvt    sunspec.Bitfield32 `sunspec:"offset=1,len=2"`
-	InEvtVnd sunspec.Bitfield32 `sunspec:"offset=3,len=2"`
-	InDCA    int16              `sunspec:"offset=5,len=1,sf=DCA_SF"`
-	InDCAhr  uint32             `sunspec:"offset=6,len=2,sf=DCAhr_SF"`
+	InID     uint16             `sunspec:"offset=0"`
+	InEvt    sunspec.Bitfield32 `sunspec:"offset=1"`
+	InEvtVnd sunspec.Bitfield32 `sunspec:"offset=3"`
+	InDCA    int16              `sunspec:"offset=5,sf=DCA_SF"`
+	InDCAhr  uint32             `sunspec:"offset=6,sf=DCAhr_SF"`
 }
 
 type Block401 struct {
-	DCA_SF   sunspec.ScaleFactor `sunspec:"offset=0,len=1"`
-	DCAhr_SF sunspec.ScaleFactor `sunspec:"offset=1,len=1"`
-	DCV_SF   sunspec.ScaleFactor `sunspec:"offset=2,len=1"`
-	DCAMax   uint16              `sunspec:"offset=3,len=1,sf=DCA_SF"`
-	N        sunspec.Count       `sunspec:"offset=4,len=1"`
-	Evt      sunspec.Bitfield32  `sunspec:"offset=5,len=2"`
-	EvtVnd   sunspec.Bitfield32  `sunspec:"offset=7,len=2"`
-	DCA      int16               `sunspec:"offset=9,len=1,sf=DCA_SF"`
-	DCAhr    uint32              `sunspec:"offset=10,len=2,sf=DCAhr_SF"`
-	DCV      uint16              `sunspec:"offset=12,len=1,sf=DCV_SF"`
-	Tmp      int16               `sunspec:"offset=13,len=1"`
+	DCA_SF   sunspec.ScaleFactor `sunspec:"offset=0"`
+	DCAhr_SF sunspec.ScaleFactor `sunspec:"offset=1"`
+	DCV_SF   sunspec.ScaleFactor `sunspec:"offset=2"`
+	DCAMax   uint16              `sunspec:"offset=3,sf=DCA_SF"`
+	N        sunspec.Count       `sunspec:"offset=4"`
+	Evt      sunspec.Bitfield32  `sunspec:"offset=5"`
+	EvtVnd   sunspec.Bitfield32  `sunspec:"offset=7"`
+	DCA      int16               `sunspec:"offset=9,sf=DCA_SF"`
+	DCAhr    uint32              `sunspec:"offset=10,sf=DCAhr_SF"`
+	DCV      uint16              `sunspec:"offset=12,sf=DCV_SF"`
+	Tmp      int16               `sunspec:"offset=13"`
 
 	Repeats []Block401Repeat
 }
@@ -76,28 +76,28 @@ func init() {
 				Length: 14,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: DCA_SF, Offset: 0, Type: typelabel.ScaleFactor, Length: 1, Mandatory: true},
-					{Id: DCAhr_SF, Offset: 1, Type: typelabel.ScaleFactor, Length: 1},
-					{Id: DCV_SF, Offset: 2, Type: typelabel.ScaleFactor, Length: 1},
-					{Id: DCAMax, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "DCA_SF", Units: "A", Length: 1, Mandatory: true, Label: "Rating", Description: "Maximum DC Current Rating"},
-					{Id: N, Offset: 4, Type: typelabel.Count, Length: 1, Mandatory: true, Label: "N", Description: "Number of Inputs"},
-					{Id: Evt, Offset: 5, Type: typelabel.Bitfield32, Length: 2, Mandatory: true, Label: "Event", Description: "Bitmask value.  Events"},
-					{Id: EvtVnd, Offset: 7, Type: typelabel.Bitfield32, Length: 2, Label: "Vendor Event", Description: "Bitmask value.  Vendor defined events"},
-					{Id: DCA, Offset: 9, Type: typelabel.Int16, ScaleFactor: "DCA_SF", Units: "A", Length: 1, Mandatory: true, Label: "Amps", Description: "Total measured current"},
-					{Id: DCAhr, Offset: 10, Type: typelabel.Uint32, ScaleFactor: "DCAhr_SF", Units: "Ah", Length: 2, Label: "Amp-hours", Description: "Total metered Amp-hours"},
-					{Id: DCV, Offset: 12, Type: typelabel.Uint16, ScaleFactor: "DCV_SF", Units: "V", Length: 1, Label: "Voltage", Description: "Output Voltage"},
-					{Id: Tmp, Offset: 13, Type: typelabel.Int16, Units: "C", Length: 1, Label: "Temp", Description: "Internal operating temperature"},
+					{Id: DCA_SF, Offset: 0, Type: typelabel.ScaleFactor, Mandatory: true},
+					{Id: DCAhr_SF, Offset: 1, Type: typelabel.ScaleFactor},
+					{Id: DCV_SF, Offset: 2, Type: typelabel.ScaleFactor},
+					{Id: DCAMax, Offset: 3, Type: typelabel.Uint16, ScaleFactor: "DCA_SF", Units: "A", Mandatory: true, Label: "Rating", Description: "Maximum DC Current Rating"},
+					{Id: N, Offset: 4, Type: typelabel.Count, Mandatory: true, Label: "N", Description: "Number of Inputs"},
+					{Id: Evt, Offset: 5, Type: typelabel.Bitfield32, Mandatory: true, Label: "Event", Description: "Bitmask value.  Events"},
+					{Id: EvtVnd, Offset: 7, Type: typelabel.Bitfield32, Label: "Vendor Event", Description: "Bitmask value.  Vendor defined events"},
+					{Id: DCA, Offset: 9, Type: typelabel.Int16, ScaleFactor: "DCA_SF", Units: "A", Mandatory: true, Label: "Amps", Description: "Total measured current"},
+					{Id: DCAhr, Offset: 10, Type: typelabel.Uint32, ScaleFactor: "DCAhr_SF", Units: "Ah", Label: "Amp-hours", Description: "Total metered Amp-hours"},
+					{Id: DCV, Offset: 12, Type: typelabel.Uint16, ScaleFactor: "DCV_SF", Units: "V", Label: "Voltage", Description: "Output Voltage"},
+					{Id: Tmp, Offset: 13, Type: typelabel.Int16, Units: "C", Label: "Temp", Description: "Internal operating temperature"},
 				},
 			},
 			{Name: "string",
 				Length: 8,
 				Type:   types.BlockRepeating,
 				Points: []types.Point{
-					{Id: InID, Offset: 0, Type: typelabel.Uint16, Length: 1, Mandatory: true, Label: "ID", Description: "Uniquely identifies this input set"},
-					{Id: InEvt, Offset: 1, Type: typelabel.Bitfield32, Length: 2, Mandatory: true, Label: "Input Event", Description: "String Input Event Flags"},
-					{Id: InEvtVnd, Offset: 3, Type: typelabel.Bitfield32, Length: 2, Label: "Input Event Vendor", Description: "String Input Vendor Event Flags"},
-					{Id: InDCA, Offset: 5, Type: typelabel.Int16, ScaleFactor: "DCA_SF", Units: "A", Length: 1, Mandatory: true, Label: "Amps", Description: "String Input Current"},
-					{Id: InDCAhr, Offset: 6, Type: typelabel.Uint32, ScaleFactor: "DCAhr_SF", Units: "Ah", Length: 2, Label: "Amp-hours", Description: "String Input Amp-Hours"},
+					{Id: InID, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "ID", Description: "Uniquely identifies this input set"},
+					{Id: InEvt, Offset: 1, Type: typelabel.Bitfield32, Mandatory: true, Label: "Input Event", Description: "String Input Event Flags"},
+					{Id: InEvtVnd, Offset: 3, Type: typelabel.Bitfield32, Label: "Input Event Vendor", Description: "String Input Vendor Event Flags"},
+					{Id: InDCA, Offset: 5, Type: typelabel.Int16, ScaleFactor: "DCA_SF", Units: "A", Mandatory: true, Label: "Amps", Description: "String Input Current"},
+					{Id: InDCAhr, Offset: 6, Type: typelabel.Uint32, ScaleFactor: "DCAhr_SF", Units: "Ah", Label: "Amp-hours", Description: "String Input Amp-Hours"},
 				},
 			},
 		}})

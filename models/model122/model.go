@@ -41,26 +41,26 @@ const (
 )
 
 type Block122 struct {
-	PVConn      sunspec.Bitfield16  `sunspec:"offset=0,len=1"`
-	StorConn    sunspec.Bitfield16  `sunspec:"offset=1,len=1"`
-	ECPConn     sunspec.Bitfield16  `sunspec:"offset=2,len=1"`
-	ActWh       sunspec.Acc64       `sunspec:"offset=3,len=4"`
-	ActVAh      sunspec.Acc64       `sunspec:"offset=7,len=4"`
-	ActVArhQ1   sunspec.Acc64       `sunspec:"offset=11,len=4"`
-	ActVArhQ2   sunspec.Acc64       `sunspec:"offset=15,len=4"`
-	ActVArhQ3   sunspec.Acc64       `sunspec:"offset=19,len=4"`
-	ActVArhQ4   sunspec.Acc64       `sunspec:"offset=23,len=4"`
-	VArAval     int16               `sunspec:"offset=27,len=1,sf=VArAval_SF"`
-	VArAval_SF  sunspec.ScaleFactor `sunspec:"offset=28,len=1"`
-	WAval       uint16              `sunspec:"offset=29,len=1,sf=WAval_SF"`
-	WAval_SF    sunspec.ScaleFactor `sunspec:"offset=30,len=1"`
-	StSetLimMsk sunspec.Bitfield32  `sunspec:"offset=31,len=2"`
-	StActCtl    sunspec.Bitfield32  `sunspec:"offset=33,len=2"`
+	PVConn      sunspec.Bitfield16  `sunspec:"offset=0"`
+	StorConn    sunspec.Bitfield16  `sunspec:"offset=1"`
+	ECPConn     sunspec.Bitfield16  `sunspec:"offset=2"`
+	ActWh       sunspec.Acc64       `sunspec:"offset=3"`
+	ActVAh      sunspec.Acc64       `sunspec:"offset=7"`
+	ActVArhQ1   sunspec.Acc64       `sunspec:"offset=11"`
+	ActVArhQ2   sunspec.Acc64       `sunspec:"offset=15"`
+	ActVArhQ3   sunspec.Acc64       `sunspec:"offset=19"`
+	ActVArhQ4   sunspec.Acc64       `sunspec:"offset=23"`
+	VArAval     int16               `sunspec:"offset=27,sf=VArAval_SF"`
+	VArAval_SF  sunspec.ScaleFactor `sunspec:"offset=28"`
+	WAval       uint16              `sunspec:"offset=29,sf=WAval_SF"`
+	WAval_SF    sunspec.ScaleFactor `sunspec:"offset=30"`
+	StSetLimMsk sunspec.Bitfield32  `sunspec:"offset=31"`
+	StActCtl    sunspec.Bitfield32  `sunspec:"offset=33"`
 	TmSrc       string              `sunspec:"offset=35,len=4"`
-	Tms         uint32              `sunspec:"offset=39,len=2"`
-	RtSt        sunspec.Bitfield16  `sunspec:"offset=41,len=1"`
-	Ris         uint16              `sunspec:"offset=42,len=1,sf=Ris_SF"`
-	Ris_SF      sunspec.ScaleFactor `sunspec:"offset=43,len=1"`
+	Tms         uint32              `sunspec:"offset=39"`
+	RtSt        sunspec.Bitfield16  `sunspec:"offset=41"`
+	Ris         uint16              `sunspec:"offset=42,sf=Ris_SF"`
+	Ris_SF      sunspec.ScaleFactor `sunspec:"offset=43"`
 }
 
 func (block *Block122) GetId() sunspec.ModelId {
@@ -79,26 +79,26 @@ func init() {
 				Length: 44,
 				Type:   types.BlockFixed,
 				Points: []types.Point{
-					{Id: PVConn, Offset: 0, Type: typelabel.Bitfield16, Length: 1, Mandatory: true, Label: "PVConn", Description: "PV inverter present/available status. Enumerated value."},
-					{Id: StorConn, Offset: 1, Type: typelabel.Bitfield16, Length: 1, Mandatory: true, Label: "StorConn", Description: "Storage inverter present/available status. Enumerated value."},
-					{Id: ECPConn, Offset: 2, Type: typelabel.Bitfield16, Length: 1, Mandatory: true, Label: "ECPConn", Description: "ECP connection status: disconnected=0  connected=1."},
-					{Id: ActWh, Offset: 3, Type: typelabel.Acc64, Units: "Wh", Length: 4, Label: "ActWh", Description: "AC lifetime active (real) energy output."},
-					{Id: ActVAh, Offset: 7, Type: typelabel.Acc64, Units: "VAh", Length: 4, Label: "ActVAh", Description: "AC lifetime apparent energy output."},
-					{Id: ActVArhQ1, Offset: 11, Type: typelabel.Acc64, Units: "varh", Length: 4, Label: "ActVArhQ1", Description: "AC lifetime reactive energy output in quadrant 1."},
-					{Id: ActVArhQ2, Offset: 15, Type: typelabel.Acc64, Units: "varh", Length: 4, Label: "ActVArhQ2", Description: "AC lifetime reactive energy output in quadrant 2."},
-					{Id: ActVArhQ3, Offset: 19, Type: typelabel.Acc64, Units: "varh", Length: 4, Label: "ActVArhQ3", Description: "AC lifetime negative energy output  in quadrant 3."},
-					{Id: ActVArhQ4, Offset: 23, Type: typelabel.Acc64, Units: "varh", Length: 4, Label: "ActVArhQ4", Description: "AC lifetime reactive energy output  in quadrant 4."},
-					{Id: VArAval, Offset: 27, Type: typelabel.Int16, ScaleFactor: "VArAval_SF", Units: "var", Length: 1, Label: "VArAval", Description: "Amount of VARs available without impacting watts output."},
-					{Id: VArAval_SF, Offset: 28, Type: typelabel.ScaleFactor, Length: 1, Label: "VArAval_SF", Description: "Scale factor for available VARs."},
-					{Id: WAval, Offset: 29, Type: typelabel.Uint16, ScaleFactor: "WAval_SF", Units: "var", Length: 1, Label: "WAval", Description: "Amount of Watts available."},
-					{Id: WAval_SF, Offset: 30, Type: typelabel.ScaleFactor, Length: 1, Label: "WAval_SF", Description: "Scale factor for available Watts."},
-					{Id: StSetLimMsk, Offset: 31, Type: typelabel.Bitfield32, Length: 2, Label: "StSetLimMsk", Description: "Bit Mask indicating setpoint limit(s) reached."},
-					{Id: StActCtl, Offset: 33, Type: typelabel.Bitfield32, Length: 2, Label: "StActCtl", Description: "Bit Mask indicating which inverter controls are currently active."},
+					{Id: PVConn, Offset: 0, Type: typelabel.Bitfield16, Mandatory: true, Label: "PVConn", Description: "PV inverter present/available status. Enumerated value."},
+					{Id: StorConn, Offset: 1, Type: typelabel.Bitfield16, Mandatory: true, Label: "StorConn", Description: "Storage inverter present/available status. Enumerated value."},
+					{Id: ECPConn, Offset: 2, Type: typelabel.Bitfield16, Mandatory: true, Label: "ECPConn", Description: "ECP connection status: disconnected=0  connected=1."},
+					{Id: ActWh, Offset: 3, Type: typelabel.Acc64, Units: "Wh", Label: "ActWh", Description: "AC lifetime active (real) energy output."},
+					{Id: ActVAh, Offset: 7, Type: typelabel.Acc64, Units: "VAh", Label: "ActVAh", Description: "AC lifetime apparent energy output."},
+					{Id: ActVArhQ1, Offset: 11, Type: typelabel.Acc64, Units: "varh", Label: "ActVArhQ1", Description: "AC lifetime reactive energy output in quadrant 1."},
+					{Id: ActVArhQ2, Offset: 15, Type: typelabel.Acc64, Units: "varh", Label: "ActVArhQ2", Description: "AC lifetime reactive energy output in quadrant 2."},
+					{Id: ActVArhQ3, Offset: 19, Type: typelabel.Acc64, Units: "varh", Label: "ActVArhQ3", Description: "AC lifetime negative energy output  in quadrant 3."},
+					{Id: ActVArhQ4, Offset: 23, Type: typelabel.Acc64, Units: "varh", Label: "ActVArhQ4", Description: "AC lifetime reactive energy output  in quadrant 4."},
+					{Id: VArAval, Offset: 27, Type: typelabel.Int16, ScaleFactor: "VArAval_SF", Units: "var", Label: "VArAval", Description: "Amount of VARs available without impacting watts output."},
+					{Id: VArAval_SF, Offset: 28, Type: typelabel.ScaleFactor, Label: "VArAval_SF", Description: "Scale factor for available VARs."},
+					{Id: WAval, Offset: 29, Type: typelabel.Uint16, ScaleFactor: "WAval_SF", Units: "var", Label: "WAval", Description: "Amount of Watts available."},
+					{Id: WAval_SF, Offset: 30, Type: typelabel.ScaleFactor, Label: "WAval_SF", Description: "Scale factor for available Watts."},
+					{Id: StSetLimMsk, Offset: 31, Type: typelabel.Bitfield32, Label: "StSetLimMsk", Description: "Bit Mask indicating setpoint limit(s) reached."},
+					{Id: StActCtl, Offset: 33, Type: typelabel.Bitfield32, Label: "StActCtl", Description: "Bit Mask indicating which inverter controls are currently active."},
 					{Id: TmSrc, Offset: 35, Type: typelabel.String, Length: 4, Label: "TmSrc", Description: "Source of time synchronization."},
-					{Id: Tms, Offset: 39, Type: typelabel.Uint32, Units: "Secs", Length: 2, Label: "Tms", Description: "Seconds since 01-01-2000 00:00 UTC"},
-					{Id: RtSt, Offset: 41, Type: typelabel.Bitfield16, Length: 1, Label: "RtSt", Description: "Bit Mask indicating active ride-through status."},
-					{Id: Ris, Offset: 42, Type: typelabel.Uint16, ScaleFactor: "Ris_SF", Units: "ohms", Length: 1, Label: "Ris", Description: "Isolation resistance."},
-					{Id: Ris_SF, Offset: 43, Type: typelabel.ScaleFactor, Length: 1, Label: "Ris_SF", Description: "Scale factor for isolation resistance."},
+					{Id: Tms, Offset: 39, Type: typelabel.Uint32, Units: "Secs", Label: "Tms", Description: "Seconds since 01-01-2000 00:00 UTC"},
+					{Id: RtSt, Offset: 41, Type: typelabel.Bitfield16, Label: "RtSt", Description: "Bit Mask indicating active ride-through status."},
+					{Id: Ris, Offset: 42, Type: typelabel.Uint16, ScaleFactor: "Ris_SF", Units: "ohms", Label: "Ris", Description: "Isolation resistance."},
+					{Id: Ris_SF, Offset: 43, Type: typelabel.ScaleFactor, Label: "Ris_SF", Description: "Scale factor for isolation resistance."},
 				},
 			},
 		}})
