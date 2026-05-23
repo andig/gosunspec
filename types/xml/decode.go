@@ -9,6 +9,7 @@ import (
 	"encoding/xml"
 	"io"
 
+	"github.com/andig/gosunspec/typelen"
 	"github.com/andig/gosunspec/types"
 )
 
@@ -130,7 +131,7 @@ func convert(doc *xmlModelDef) *types.Model {
 				Description: ps.Description,
 				Notes:       ps.Notes,
 				Offset:      xp.Offset,
-				Length:      xp.Length,
+				Length:      explicitLength(xp.Length, xp.Type),
 				Type:        xp.Type,
 				ScaleFactor: xp.ScaleFactor,
 				Units:       xp.Units,
@@ -142,6 +143,22 @@ func convert(doc *xmlModelDef) *types.Model {
 		m.Blocks = append(m.Blocks, b)
 	}
 	return m
+}
+
+// explicitLength returns the point length only when it overrides the
+// type's natural register count. SMDX XML declares len="1" on every
+// scalar point even though that's already the typelen default; keeping
+// it in the canonical Point would force a redundant ",len=1" into every
+// generated struct tag. Variable-width types (e.g. string, which has a
+// zero typelen) keep their declared length.
+func explicitLength(declared uint16, sstype string) uint16 {
+	if declared == 0 {
+		return 0
+	}
+	if uint16(typelen.Length(sstype)) == declared {
+		return 0
+	}
+	return declared
 }
 
 func convertSymbols(ss []xmlSymbol) []types.Symbol {
