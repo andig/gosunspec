@@ -5,7 +5,7 @@ package model64110
 
 import (
 	"github.com/andig/gosunspec"
-	"github.com/andig/gosunspec/smdx"
+	"github.com/andig/gosunspec/types"
 	"github.com/andig/gosunspec/typelabel"
 )
 
@@ -122,14 +122,14 @@ func (block *Block64110) GetId() sunspec.ModelId {
 }
 
 func init() {
-	smdx.RegisterModel(&smdx.ModelElement{
+	types.RegisterModel(&types.Model{
 		Id:     ModelID,
 		Name:   "",
 		Length: 282,
-		Blocks: []smdx.BlockElement{
+		Blocks: []types.Block{
 			{
 				Length: 282,
-				Points: []smdx.PointElement{
+				Points: []types.Point{
 					{Id: MajorFWRev, Offset: 0, Type: typelabel.Uint16, Mandatory: true, Label: "AXS Major Firmware Number", Description: ""},
 					{Id: MidFWRev, Offset: 1, Type: typelabel.Uint16, Mandatory: true, Label: "AXS Mid Firmware Number", Description: ""},
 					{Id: MinorFWRev, Offset: 2, Type: typelabel.Uint16, Mandatory: true, Label: "AXS Minor Firmware Number", Description: ""},
