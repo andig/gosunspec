@@ -1,6 +1,7 @@
 package modbus
 
 import (
+	"encoding/binary"
 	"errors"
 
 	sunspec "github.com/andig/gosunspec"
@@ -94,7 +95,14 @@ func (p *modbusDriver) Write(block spi.BlockSPI, pointIds ...string) error {
 			}
 			woff += pt.Length() * 2
 		}
-		if _, err := p.client.WriteMultipleRegisters(block.Anchor().(uint16)+run[0].Offset(), l, buffer); err != nil {
+		addr := block.Anchor().(uint16) + run[0].Offset()
+		if l == 1 {
+			// SunSpec V1.2 §6.3 mandates function code 6 for single-register writes;
+			// some devices reject fn 16 with a single register.
+			if _, err := p.client.WriteSingleRegister(addr, binary.BigEndian.Uint16(buffer)); err != nil {
+				return err
+			}
+		} else if _, err := p.client.WriteMultipleRegisters(addr, l, buffer); err != nil {
 			return err
 		}
 	}
